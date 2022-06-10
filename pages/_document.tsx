@@ -6,7 +6,7 @@ class CustomDocument extends Document {
       <Html>
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700;900&display=swap"
             rel="stylesheet"
           />
         </Head>
