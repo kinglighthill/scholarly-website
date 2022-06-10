@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import Navbar from '../components/Navbar'
-import styles from '../styles/Home.module.css'
+import Footer from '../components/reusables/Footer'
+import Navbar from '../components/reusables/Navbar'
+import TopBanner from '../components/TopBanner'
 
 const Home: NextPage = () => {
   return (
@@ -12,12 +12,11 @@ const Home: NextPage = () => {
         <meta name="description" content="Scholarly official website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Navbar />
       <main>
-        <Navbar />
+        <TopBanner />
       </main>
-
-      {/* <footer className={styles.footer}></footer> */}
+      <Footer />
     </div>
   )
 }
