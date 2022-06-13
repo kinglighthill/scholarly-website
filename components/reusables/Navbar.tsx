@@ -24,7 +24,7 @@ export default function Navbar() {
             <Link href='/'>Students</Link>
           </Text>
           <Text color='brand.lime.500' fontWeight='medium'>
-            <Link href='/'>Partners</Link>
+            <Link href='/partners'>Partners</Link>
           </Text>
           <Text color='brand.lime.500' fontWeight='medium'>
             <Link href='/'>Business</Link>
