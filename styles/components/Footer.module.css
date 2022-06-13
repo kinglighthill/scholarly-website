@@ -1,3 +1,8 @@
 .footer_container {
   padding: 75px 120px 45px;
 }
+
+.logo_wrapper {
+  display: inline-block;
+  margin-bottom: 20px;
+}
