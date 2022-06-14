@@ -3,6 +3,7 @@ const colors = {
     yellow: '#F7B71D',
     nearWhite: '#F5F6F6',
     green: '#415749',
+    gray: '#97A39B',
     lime: {
       50: '#E9F5ED',
       100: '#c4ead0',

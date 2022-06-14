@@ -14,10 +14,14 @@ import { PhoneIcon, AtSymbolIcon } from '@heroicons/react/outline';
 export default function Footer() {
   return (
     <Box as='footer' bgColor='brand.lime.700' className={classes.footer_container}>
-      <HStack spacing={1} mb={5} align='end'>
-        <Image src={scholarly_logo2} alt='Scholarly Logo' />
-        <Text fontWeight='bold' color='white' fontSize={24}>Scholarly</Text>
-      </HStack>
+      <Link href='/' passHref>
+        <a className={classes.logo_wrapper}>
+          <HStack spacing={1} align='end'>
+            <Image src={scholarly_logo2} alt='Scholarly Logo' />
+            <Text fontWeight='bold' color='white' fontSize={24}>Scholarly</Text>
+          </HStack>
+        </a>
+      </Link>
 
       <HStack align='start' justify='end' spacing='100px' mb='50px'>
         <FooterMenu title='Products'
