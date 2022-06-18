@@ -1,0 +1,55 @@
+/* Top Banner Section */
+
+.banner_container {
+  padding: 45px 90px 0 120px;
+}
+
+.banner_media > span {
+  max-height: 100%;
+}
+
+.banner_media > span > span {
+  max-height: 550px;
+}
+
+.female_student {
+  z-index: 1;
+  margin: 0 !important;
+  min-width: 93% !important;
+  max-width: 93% !important;
+}
+
+/* Students Section */
+
+.students_section {
+  padding: 95px 90px 95px 120px;
+}
+
+/* Partners Section */
+
+.partners_section {
+  padding: 55px 120px;
+}
+
+/* Business Section */
+
+.business_section {
+  background-image: url('../../public/scholarly_logo_bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 110px 90px 110px 120px;
+}
+
+/* Get Help form section */
+
+.get_help_section {
+  padding: 85px 120px;
+}
+
+.get_help_form {
+  flex: 2.5 1;
+}
+
+.carousel > div:nth-child(2) {
+  max-width: 70%;
+}
