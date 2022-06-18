@@ -9,3 +9,7 @@
 .referral {
   padding: 0px 120px 10px 65px;
 }
+
+.carousel > div:nth-child(2) {
+  max-width: 70%;
+}
