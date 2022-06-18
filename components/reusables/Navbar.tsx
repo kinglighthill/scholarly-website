@@ -21,7 +21,7 @@ export default function Navbar() {
 
         <HStack spacing={{base: 25, xl: 51}}>
           <Text color='brand.lime.500' fontWeight='medium'>
-            <Link href='/'>Students</Link>
+            <Link href='/students'>Students</Link>
           </Text>
           <Text color='brand.lime.500' fontWeight='medium'>
             <Link href='/partners'>Partners</Link>
