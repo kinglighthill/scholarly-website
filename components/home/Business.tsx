@@ -1,7 +1,7 @@
 import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import { PhoneIcon, PlusIcon } from '@heroicons/react/outline';
-import classes from '../../styles/components/Home.module.css';
+import classes from '../../styles/Home.module.css';
 import female_professional_working from '../../public/female_professional_working.png';
 
 export default function Business() {
