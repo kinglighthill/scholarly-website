@@ -1,0 +1,25 @@
+/* Slider section */
+
+.slider_container {
+  padding: 75px 120px;
+}
+
+.active {
+  background-color: #F8FFFA;
+  border-radius: 4px;
+  padding: 10.5px 16px;
+}
+
+/* Image and Text Grid Section */
+
+.image_grid_item > span {
+  max-height: 100%;
+}
+
+.image_grid_item > span > span {
+  max-height: 212px;
+}
+
+.image_grid_item > span > span > img {
+  max-height: 212px;
+}
