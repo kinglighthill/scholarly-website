@@ -17,7 +17,7 @@ export default function Testimonial({ name, title, image, message, rating }: Tes
   const handleDragStart = (e: React.DragEvent<HTMLElement>) => e.preventDefault();
 
   return (
-    <Box as="article" maxW='425px' pb={2.5} onDragStart={handleDragStart} role="presentation">
+    <Box as="article" maxW='425px' pb={2.5} m='auto' onDragStart={handleDragStart} role="presentation">
       <VStack spacing={5}>
         <HStack w='full' justify='space-between' align='center'>
           <Image src={opening_quotes} alt='Double opening quotes' />
