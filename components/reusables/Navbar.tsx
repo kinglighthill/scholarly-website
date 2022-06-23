@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack, Menu, MenuButton, MenuItem, MenuList, Spacer, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, HStack, Menu, MenuButton, MenuItem, MenuList, Spacer, Text, useDisclosure } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@chakra-ui/react';
@@ -7,11 +7,17 @@ import scholarly_logo1 from '../../public/scholarly_logo1.svg';
 import nigeria_flag from '../../public/nigeria_flag.svg';
 import classes from '../../styles/components/Navbar.module.css';
 import { BoxWithAppstoreIcon, BoxWithPlaystoreIcon, BoxWithWindowsIcon } from './BoxWithIcon';
+import { useRef } from 'react';
+import { MenuIcon } from '@heroicons/react/solid';
+import NavigationDrawer from '../navbar/NavigationDrawer';
 
 export default function Navbar() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const hamburgerRef = useRef<SVGSVGElement>(null);
+
   return (
     <nav className={classes.nav}>
-      <Flex>
+      <Flex align='center'>
         <Link href='/' passHref>
           <a className={classes.logo_wrapper}>
             <Image src={scholarly_logo1} alt="Scholarly Logo" priority />
@@ -19,7 +25,7 @@ export default function Navbar() {
         </Link>
         <Spacer />
 
-        <HStack spacing={{base: 25, xl: 51}}>
+        <HStack spacing={{base: 25, xl: 51}} display={{base: 'none', lg: 'flex'}} className={classes.desktop_nav}>
           <Text color='brand.lime.500' fontWeight='medium'>
             <Link href='/students'>Students</Link>
           </Text>
@@ -63,7 +69,7 @@ export default function Navbar() {
         </HStack>
 
         <Spacer />
-        <HStack spacing={{base: 5, xl: 6}}>
+        <HStack spacing={{base: 5, xl: 6}} display={{base: 'none', lg: 'flex'}} className={classes.desktop_nav}>
           <Button type='button' variant='outline'>Contact us</Button>
           <Button type='button' variant='solid'>Activate</Button>
           <Menu isLazy>
@@ -76,7 +82,14 @@ export default function Navbar() {
             </MenuList>
           </Menu>
         </HStack>
+      
+        <Icon as={MenuIcon} color='brand.lime.700' fontSize='200%' display={{lg: 'none'}}
+          _hover={{bgColor: 'brand.lime.50'}} className={classes.mobile_nav} ref={hamburgerRef}
+          onClick={onOpen}
+        />
       </Flex>
+      
+      <NavigationDrawer isOpen={isOpen} onClose={onClose} hamburgerRef={hamburgerRef} />
     </nav>
   )
 }

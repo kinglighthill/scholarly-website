@@ -1,10 +1,10 @@
 .nav {
   border-bottom: 1px solid #F7B71D;
+  padding: 16px 20px;
 }
 
-.logo_wrapper {
-  align-self: flex-end;
-  margin-bottom: 2px;
+.logo_wrapper > span {
+  vertical-align: middle;
 }
 
 @media screen and (min-width: 992px) {

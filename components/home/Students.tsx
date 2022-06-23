@@ -1,7 +1,7 @@
 import { Box, Flex, VStack, Text, Button, Spacer, Icon } from '@chakra-ui/react';
 import Image from 'next/image';
 import scholarly_students_demo from '../../public/scholarly_students_demo.png';
-import classes from '../../styles/components/Home.module.css';
+import classes from '../../styles/Home.module.css';
 import { BoxWithJambIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
 import Label from '../reusables/Label';
 import { ChevronRightIcon } from '@heroicons/react/solid';

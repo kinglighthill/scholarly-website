@@ -34,7 +34,7 @@
 /* Business Section */
 
 .business_section {
-  background-image: url('../../public/scholarly_logo_bg.svg');
+  background-image: url('../public/scholarly_logo_bg.svg');
   background-repeat: no-repeat;
   background-position: center;
   padding: 110px 90px 110px 120px;

@@ -1,8 +1,31 @@
 .footer_container {
-  padding: 75px 120px 45px;
+  padding: 70px 36px 45px;
 }
 
-.logo_wrapper {
-  display: inline-block;
-  margin-bottom: 20px;
+/* Footer Accordion for Mobile UI */
+
+.accordion > div.accordion_item {
+  border-top: none;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+/* End of Footer Accordion for Mobile UI */
+
+@media screen and (min-width: 600px) {
+  .footer_container {
+    padding: 70px 70px 45px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer_container {
+    padding: 75px 120px 45px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .logo_wrapper {
+    display: inline-block;
+    margin-bottom: 40px;
+  }
 }

@@ -12,7 +12,7 @@ import TopBanner from '../components/home/TopBanner';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/outline';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import classes from '../styles/components/Home.module.css';
+import classes from '../styles/Home.module.css';
 import { statistics, testimonials } from '../data';
 import useCarousel, { Breakpoints } from '../hooks/useCarousel';
 import { useRef } from 'react';

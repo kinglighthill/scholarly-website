@@ -1,7 +1,7 @@
 import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import { ChevronRightIcon } from "@heroicons/react/outline";
-import classes from "../../styles/components/Home.module.css";
+import classes from "../../styles/Home.module.css";
 import sign_up2 from "../../public/sign_up2.svg";
 import verify_identity2 from "../../public/verify_identity2.svg";
 import find_customers2 from "../../public/find_customers2.svg";

@@ -1,5 +1,5 @@
 import { Box, Button, Flex, FormControl, FormLabel, Icon, Input, Spacer, Text, Textarea, VStack } from '@chakra-ui/react'
-import classes from '../../styles/components/Home.module.css';
+import classes from '../../styles/Home.module.css';
 import { ChevronRightIcon } from '@heroicons/react/outline';
 
 export default function GetHelp() {
