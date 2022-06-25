@@ -1,15 +1,61 @@
+/* Top banner section */
 .top_banner {
-  padding: 115px 0;
+  padding: 85px 20px;
 }
 
+/* Steps Component styles */
 .steps {
-  padding: 60px 0;
+  padding: 60px 20px;
 }
+/* End of styles */
 
+/* Referral section */
 .referral {
-  padding: 0px 120px 10px 65px;
+  padding: 68px 20px 88px;
 }
 
+.megaphone_mobile > span {
+  max-width: 55% !important;
+}
+
+/* Testimonials section */
 .carousel > div:nth-child(2) {
-  max-width: 70%;
+  max-width: 85%;
+}
+
+@media screen and (min-width: 480px) {
+  /* Top banner section */
+  .top_banner {
+    padding: 115px 20px;
+  }
+
+  /* Referral section */
+  .referral {
+    padding: 50px 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* Steps Component styles */
+  .steps {
+    padding: 60px 35px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .referral {
+    padding: 10px 120px 20px 65px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .carousel > div:nth-child(2) {
+    max-width: 75%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .carousel > div:nth-child(2) {
+    max-width: 70%;
+  }
 }

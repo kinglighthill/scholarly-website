@@ -13,9 +13,11 @@ import find_customers from "../../public/find_customers.svg";
 import buy_pin from "../../public/buy_pin.svg";
 import sell_pin from "../../public/sell_pin.svg";
 import megaphone from "../../public/megaphone.png";
+import megaphone2 from "../../public/megaphone2.png";
 import yellow_pattern from "../../public/yellow_pattern.svg";
 import Footer from "../../components/reusables/Footer";
 import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import useCarousel, { Breakpoints } from '../../hooks/useCarousel';
 import Testimonial from '../../components/reusables/Testimonial';
 import { testimonials } from '../../data';
@@ -35,6 +37,9 @@ const items = testimonials.map(testimonial => (
 ));
 
 const responsive: Breakpoints = {
+  0: {
+    items: 1
+  },
   1024: {
     items: 2
   }
@@ -53,24 +58,24 @@ const Partners: NextPage = () => {
       <Box as="main">
         {/* Banner Section */}
         <Box as="section" className={classes.top_banner}>
-          <VStack spacing='51px' margin='auto' maxW='530px'>
-            <Text fontWeight='black' fontSize='5xl' textAlign='center' lineHeight='59px'>
+          <VStack spacing={[8, '51px']} margin='auto' maxW='530px' align={['start', 'center']}>
+            <Text fontWeight='black' fontSize={['4xl', '5xl']} textAlign={['left', 'center']} lineHeight={['47px', '59px']}>
               <Text as='span' color='brand.yellow'>Resell </Text>
               <Text as='span' color='brand.lime.500'>Activation Pins, </Text>
               <Text as='span' color='brand.yellow'>Make </Text>
               <Text as='span' color='brand.lime.500'>Profit</Text>
             </Text>
-            <Text fontSize={20} maxW='470px' color='brand.lime.700' textAlign='center' lineHeight='28.5px' fontWeight={450}>
+            <Text fontSize={[16, 20]} maxW='470px' color='brand.lime.700' textAlign={['left', 'center']} lineHeight='28.5px' fontWeight={450}>
               Make Money by buying Activation Pins and reselling to Customers
             </Text>
-            <HStack spacing={6}>
+            <HStack spacing={[4, 6]}>
               <Button type="button" variant='solid'>
                 Sign up
-                <Icon as={ChevronRightIcon} ml={5} />
+                <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
               </Button>
               <Button type="button" variant='outline'>
                 Download App
-                <Icon as={ChevronRightIcon} ml={5} />
+                <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
               </Button>
             </HStack>
           </VStack>
@@ -78,34 +83,37 @@ const Partners: NextPage = () => {
 
         {/* Steps to Become a Partner */}
         <Box as="section" bgColor='brand.nearWhite' className={classes.steps}>
-          <Text as='h2' fontSize={39} fontWeight='bold' color='brand.lime.500' mb='75px' textAlign='center'>Steps to become a Partner</Text>
-          <VStack spacing='93px' mb='75px'>
+          <Text as='h2' fontSize={[25, 39]} fontWeight='bold' color='brand.lime.500' mb={[8, '75px']} textAlign='center'>Steps to become a Partner</Text>
+          <VStack spacing={[9, '93px']} mb={[12, '75px']}>
             {steps.map(step => (
               <Step key={step.index} index={step.index} title={step.title} description={step.description}
                 icon={step.icon} direction={step.index%2 !== 0 ? 'forward' : 'reverse'}
               />
             ))}
           </VStack>
-          <HStack spacing={6} justify='center'>
+          <HStack spacing={[4, 6]} justify='center'>
             <Button type="button" variant='solid'>
               Sign up
-              <Icon as={ChevronRightIcon} ml={5} />
+              <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
             </Button>
             <Button type="button" variant='outline'>
               Download App
-              <Icon as={ChevronRightIcon} ml={5} />
+              <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
             </Button>
           </HStack>
         </Box>
         
         {/* Referral Section */}
         <Box as="section" className={classes.referral}>
-          <Flex align='center'>
-            <Box flexBasis='51%'>
+          <Flex align='center' wrap={['wrap', 'nowrap']} justify={[]}>
+            <Box flexBasis='49%' display={['none', 'initial']}>
               <Image src={megaphone} alt='A megaphone' />
             </Box>
+            <Box flexBasis='100%' mb={10} display={['initial', 'none']} textAlign='center' className={classes.megaphone_mobile} >
+              <Image src={megaphone2} alt='A megaphone' />
+            </Box>
             <Spacer />
-            <VStack flexBasis='35%' align='start' spacing={6}>
+            <VStack flexBasis={['100%', '49%', '40%', '35%']} align='start' spacing={6}>
               <Text color='brand.lime.700' fontSize={25} fontWeight='bold'>Referral Program</Text>
               <Text color='brand.lime.700'>Earn more when you refer other partners. Each time your referral makes a sale, you earn a commission.</Text>
               <VStack w='full' align='start' spacing={0} pos='relative'>
@@ -113,7 +121,7 @@ const Partners: NextPage = () => {
                   See Details
                   <Icon as={ChevronRightIcon} ml={5} />
                 </Button>
-                <Box pos='absolute' right={0} top={41}>
+                <Box pos='absolute' right={0} top={41} display={{base: 'none', md: 'initial'}}>
                   <Image src={yellow_pattern} alt='' />
                 </Box>
               </VStack>
@@ -121,20 +129,20 @@ const Partners: NextPage = () => {
           </Flex>
         </Box>
 
-         {/* Testimonials Section */}
-         <Box as='section' bgColor='brand.nearWhite' py="93px">
-          <Text mb={12} textAlign='center' color='brand.lime.700' fontSize={39} fontWeight='medium'>
+        {/* Testimonials Section */}
+        <Box as='section' bgColor='brand.nearWhite' py="93px">
+          <Text mb={{base: '60px', md: 12}} textAlign='center' color='brand.lime.700' fontSize={[25, 39]} fontWeight='medium'>
             Our 5 Star Agents
           </Text>
           <Box pos='relative' className={classes.carousel}>
-            <Box bgColor='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer'
-              pos='absolute' top='40%' left='8%' onClick={() => handleNavigation('prev')}
+            <Box bgColor='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
+              pos='absolute' top={{base: -12, md: '40%'}} left={{base: '4%', md: '12%', lg: '4%', xl: '8%'}} onClick={() => handleNavigation('prev')}
             >
               <Icon as={ChevronLeftIcon} color='white' />
             </Box>
             <AliceCarousel items={items} mouseTracking responsive={responsive} ref={carousel} disableButtonsControls disableDotsControls />
-            <Box bgColor='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer'
-              pos='absolute' top='40%' right='9%' onClick={() => handleNavigation('next')}
+            <Box bgColor='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
+              pos='absolute' top={{base: -12, md: '40%'}} right={{base: '4%', md: '12%', lg: '4%', xl: '9%'}} onClick={() => handleNavigation('next')}
             >
               <Icon as={ChevronRightIcon} color='white' />
             </Box>
