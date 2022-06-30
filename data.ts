@@ -1,4 +1,4 @@
-import { TestimonialProps } from "./components/reusables/Testimonial";
+import { TestimonialProps } from "./components/reusables/Testimonials";
 
 export const statistics = [
   { title: 'Apps', value: '30+' },
