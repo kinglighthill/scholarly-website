@@ -65,7 +65,7 @@ function MobileTabNavigation({ active, changeTab }: TabNavigationProps) {
 }
 
 const Apps: NextPage = () => {
-  const [activeTab, setActiveTab] = useState<string>('desktop');
+  const [activeTab, setActiveTab] = useState<string>('android');
   const changeTab = (tab: string) => {
     setActiveTab(tab);
   }
@@ -82,7 +82,7 @@ const Apps: NextPage = () => {
           {apps[activeTab].map((category, index) => {
             if (index === 0) {
               return (
-                <HStack spacing={{lg: "61px"}} align="start">
+                <HStack key={category.category_name} spacing={{lg: "61px"}} align="start">
                   <DesktopTabNavigation active={activeTab} changeTab={changeTab} />
                   <VStack key={category.category_name} spacing={4} align="start" py={10} pr={{base: 5, md: 8}} pl={{base: 5, md: "45px", lg: 0}} flexBasis={{base: "100%", lg: "75%"}}>
                     <VStack spacing={1} align="start">
