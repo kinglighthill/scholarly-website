@@ -1,11 +1,12 @@
 import type { NextPage } from 'next';
 import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer } from "@chakra-ui/react";
-import { useRef } from 'react';
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
+import { ChevronRightIcon } from "@heroicons/react/outline";
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../../components/reusables/Navbar";
 import Step from "../../components/partners/Step";
+import Footer from "../../components/reusables/Footer";
+import Testimonials from '../../components/reusables/Testimonials';
 import classes from "../../styles/Partners.module.css";
 import sign_up from "../../public/sign_up.svg";
 import verify_identity from "../../public/verify_identity.svg";
@@ -15,12 +16,6 @@ import sell_pin from "../../public/sell_pin.svg";
 import megaphone from "../../public/megaphone.png";
 import megaphone2 from "../../public/megaphone2.png";
 import yellow_pattern from "../../public/yellow_pattern.svg";
-import Footer from "../../components/reusables/Footer";
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
-import useCarousel, { Breakpoints } from '../../hooks/useCarousel';
-import Testimonial from '../../components/reusables/Testimonial';
-import { testimonials } from '../../data';
 
 const steps = [
   { index: 1, title: "Sign up", description: "Create an account on the site or with the app.", icon: sign_up },
@@ -30,25 +25,7 @@ const steps = [
   { index: 5, title: "Sell your first pin", description: "When you sell a pin to a student, you earn profit.", icon: sell_pin },
 ];
 
-const items = testimonials.map(testimonial => (
-  <Testimonial key={testimonial.image} name={testimonial.name} title={testimonial.title} rating={testimonial.rating} image={testimonial.image}
-    message={testimonial.message}
-  />
-));
-
-const responsive: Breakpoints = {
-  0: {
-    items: 1
-  },
-  1024: {
-    items: 2
-  }
-};
-
 const Partners: NextPage = () => {
-  const carousel = useRef<AliceCarousel>(null);
-  const { handleNavigation } = useCarousel(items, responsive, carousel);
-
   return (
     <div>
       <Head>
@@ -59,13 +36,13 @@ const Partners: NextPage = () => {
         {/* Banner Section */}
         <Box as="section" className={classes.top_banner}>
           <VStack spacing={[8, '51px']} margin='auto' maxW='530px' align={['start', 'center']}>
-            <Text fontWeight='black' fontSize={['4xl', '5xl']} textAlign={['left', 'center']} lineHeight={['47px', '59px']}>
+            <Text fontWeight='black' fontSize={['4xl', '5xl']} textAlign={['left', 'center']} lineHeight='120.5%'>
               <Text as='span' color='brand.yellow'>Resell </Text>
               <Text as='span' color='brand.lime.500'>Activation Pins, </Text>
               <Text as='span' color='brand.yellow'>Make </Text>
               <Text as='span' color='brand.lime.500'>Profit</Text>
             </Text>
-            <Text fontSize={[16, 20]} maxW='470px' color='brand.lime.700' textAlign={['left', 'center']} lineHeight='28.5px' fontWeight={450}>
+            <Text fontSize={[16, 20]} maxW='470px' color='brand.lime.700' textAlign={['left', 'center']} lineHeight='144%' fontWeight={450}>
               Make Money by buying Activation Pins and reselling to Customers
             </Text>
             <HStack spacing={[4, 6]}>
@@ -105,7 +82,7 @@ const Partners: NextPage = () => {
         
         {/* Referral Section */}
         <Box as="section" className={classes.referral}>
-          <Flex align='center' wrap={['wrap', 'nowrap']} justify={[]}>
+          <Flex align='center' wrap={['wrap', 'nowrap']}>
             <Box flexBasis='49%' display={['none', 'initial']}>
               <Image src={megaphone} alt='A megaphone' />
             </Box>
@@ -134,19 +111,7 @@ const Partners: NextPage = () => {
           <Text mb={{base: '60px', md: 12}} textAlign='center' color='brand.lime.700' fontSize={[25, 39]} fontWeight='medium'>
             Our 5 Star Agents
           </Text>
-          <Box pos='relative' className={classes.carousel}>
-            <Box bgColor='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
-              pos='absolute' top={{base: -12, md: '40%'}} left={{base: '4%', md: '12%', lg: '4%', xl: '8%'}} onClick={() => handleNavigation('prev')}
-            >
-              <Icon as={ChevronLeftIcon} color='white' />
-            </Box>
-            <AliceCarousel items={items} mouseTracking responsive={responsive} ref={carousel} disableButtonsControls disableDotsControls />
-            <Box bgColor='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
-              pos='absolute' top={{base: -12, md: '40%'}} right={{base: '4%', md: '12%', lg: '4%', xl: '9%'}} onClick={() => handleNavigation('next')}
-            >
-              <Icon as={ChevronRightIcon} color='white' />
-            </Box>
-          </Box>
+          <Testimonials />
         </Box>
       </Box>
 
