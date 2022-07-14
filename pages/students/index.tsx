@@ -15,9 +15,14 @@ import lady_on_headphones_typing from '../../public/lady_on_headphones_typing.pn
 import green_pattern from '../../public/green_pattern.svg';
 import classes from '../../styles/Students.module.css';
 import PinOutlets from '../../components/reusables/PinOutlets';
+import CbtCentres from '../../components/reusables/CbtCentres';
+import LearningCentres from '../../components/reusables/LearningCentres';
+import Link from 'next/link';
 
 const Students: NextPage = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen: isSalesOuletsOpen, onOpen: openSalesOutlets, onClose: closeSalesOutlets } = useDisclosure();
+  const { isOpen: isCbtCentresOpen, onOpen: openCbtCentres, onClose: closeCbtCentres } = useDisclosure();
+  const { isOpen: isLearningCentresOpen, onOpen: openLearningCentres, onClose: closeLearningCentres } = useDisclosure();
 
   return (
     <div>
@@ -49,10 +54,12 @@ const Students: NextPage = () => {
                   <Text as='h1' color='brand.lime.700' mb={3} fontSize={25} fontWeight='bold'>Over 30+ Exam Apps</Text>
                   <Text color='brand.lime.700'>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
                 </Box>
-                <Button type='button' variant='solid'>
-                  See Apps
-                  <Icon as={ChevronRightIcon} ml={4} />
-                </Button>
+                <Link href='/apps'>
+                  <Button type='button' variant='solid'>
+                    See Apps
+                    <Icon as={ChevronRightIcon} ml={4} />
+                  </Button>
+                </Link>
               </VStack>
             </GridItem>
             <GridItem>
@@ -66,7 +73,7 @@ const Students: NextPage = () => {
                     Buy now
                     <Icon as={ChevronRightIcon} ml={4} />
                   </Button>
-                  <Button type='button' variant='outline' onClick={onOpen}>
+                  <Button type='button' variant='outline' onClick={openSalesOutlets}>
                     Sales Outlets
                     <Icon as={ChevronRightIcon} ml={4} />
                   </Button>
@@ -79,7 +86,7 @@ const Students: NextPage = () => {
                   <Text as='h1' color='brand.lime.700' mb={3} fontSize={25} fontWeight='bold'>CBT Centres</Text>
                   <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
                 </Box>
-                <Button type='button' variant='solid'>
+                <Button type='button' variant='solid' onClick={openCbtCentres}>
                   Find Centres
                   <Icon as={ChevronRightIcon} ml={4} />
                 </Button>
@@ -104,7 +111,7 @@ const Students: NextPage = () => {
               </VStack>
               <Text as='h1' color='brand.lime.700' fontSize={31} fontWeight='bold'>Learning Centres</Text>
               <Text color='brand.lime.700'>Need to learn physically in person?<br/> Find learning centers around you.</Text>
-              <Button type='button' variant='solid'>
+              <Button type='button' variant='solid' onClick={openLearningCentres}>
                 Find Centres
                 <Icon as={ArrowNarrowRightIcon} ml={4} />
               </Button>
@@ -118,7 +125,9 @@ const Students: NextPage = () => {
 
       <Footer />
 
-      <PinOutlets isOpen={isOpen} onClose={onClose} />
+      <PinOutlets isOpen={isSalesOuletsOpen} onClose={closeSalesOutlets} />
+      <CbtCentres isOpen={isCbtCentresOpen} onClose={closeCbtCentres} />
+      <LearningCentres isOpen={isLearningCentresOpen} onClose={closeLearningCentres} />
     </div>
   )
 }
