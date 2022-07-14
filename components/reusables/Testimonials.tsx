@@ -10,14 +10,7 @@ import useCarousel, { Breakpoints } from "../../hooks/useCarousel";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import classes from "../../styles/components/Testimonials.module.css";
-
-export type TestimonialProps = {
-  name: string;
-  title: string;
-  image: string;
-  message: string;
-  rating: number;
-}
+import { TestimonialProps } from "../../types/components/reusables/testimonials";
 
 function Testimonial({ name, title, image, message, rating }: TestimonialProps) {
   const handleDragStart = (e: React.DragEvent<HTMLElement>) => e.preventDefault();

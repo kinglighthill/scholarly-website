@@ -6,11 +6,7 @@ import neco_logo from '../../public/neco_logo.svg';
 import playstore from '../../public/playstore.svg';
 import windows from '../../public/windows.svg';
 import appstore from '../../public/appstore.svg';
-
-type BoxWithIconProps = {
-  children: React.ReactNode;
-  styles?: object
-}
+import { BoxWithIconProps } from '../../types/components/reusables/box_with_icon';
 
 export function BoxWithJambIcon () {
   return (
