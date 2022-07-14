@@ -27,13 +27,13 @@ export default function GetHelp() {
 
         <form onSubmit={handleSubmit} aria-label="Send us a message" className={classes.get_help_form}>
           <VStack spacing={{base: 8, md: 6}} mb={{base: 8, md: 12}} align='start'>
-            <FormControl>
-              <FormLabel color='brand.lime.700' fontSize={13} fontWeight='medium' mb={2}>Email</FormLabel>
-              <Input type='email' w={['full', '70%', 'full']} focusBorderColor='brand.lime.500' placeholder='Enter your email' _placeholder={{fontSize: 13, color: 'brand.gray'}} />
+            <FormControl isRequired>
+              <FormLabel htmlFor='email' color='brand.lime.700' fontSize={13} fontWeight='medium' mb={2}>Email</FormLabel>
+              <Input id='email' type='email' w={['full', '70%', 'full']} focusBorderColor='brand.lime.500' placeholder='Enter your email' _placeholder={{fontSize: 13, color: 'brand.gray'}} />
             </FormControl>
-            <FormControl>
-              <FormLabel color='brand.lime.700' fontSize={13} fontWeight='medium' mb={2}>What can we help you with?</FormLabel>
-              <Textarea w={['full', '70%', 'full']} focusBorderColor='brand.lime.500' placeholder='Enter your question'  _placeholder={{fontSize: 13, color: 'brand.gray'}} />
+            <FormControl isRequired>
+              <FormLabel htmlFor='message' color='brand.lime.700' fontSize={13} fontWeight='medium' mb={2}>What can we help you with?</FormLabel>
+              <Textarea id='message' w={['full', '70%', 'full']} focusBorderColor='brand.lime.500' placeholder='Enter your question' _placeholder={{fontSize: 13, color: 'brand.gray'}} />
             </FormControl>
             <Text color='brand.lime.700'>We&apos;ll respond to your message within 24 hours</Text>
           </VStack>
