@@ -4,7 +4,6 @@ import { ChevronRightIcon } from "@heroicons/react/outline";
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../../components/reusables/Navbar";
-import Step from "../../components/partners/Step";
 import Footer from "../../components/reusables/Footer";
 import Testimonials from '../../components/reusables/Testimonials';
 import classes from "../../styles/Partners.module.css";
@@ -16,8 +15,10 @@ import sell_pin from "../../public/sell_pin.svg";
 import megaphone from "../../public/megaphone.png";
 import megaphone2 from "../../public/megaphone2.png";
 import yellow_pattern from "../../public/yellow_pattern.svg";
+import Step from "../../components/partners/Step";
+import { Step as StepType } from "../../types/pages/partners";
 
-const steps = [
+const steps: StepType[] = [
   { index: 1, title: "Sign up", description: "Create an account on the site or with the app.", icon: sign_up },
   { index: 2, title: "Verify identity", description: "Provide your BVN so that we can better understand who you are.", icon: verify_identity },
   { index: 3, title: "Find customers", description: "Search for students around you to sell and market the app to.", icon: find_customers },
