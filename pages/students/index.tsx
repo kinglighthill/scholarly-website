@@ -1,4 +1,4 @@
-import { Box, Button, Flex, GridItem, HStack, Icon, SimpleGrid, Spacer, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, GridItem, HStack, Icon, SimpleGrid, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from "next/head";
 import Image from 'next/image';
@@ -14,8 +14,11 @@ import cbt_centre from '../../public/cbt_centre.png';
 import lady_on_headphones_typing from '../../public/lady_on_headphones_typing.png';
 import green_pattern from '../../public/green_pattern.svg';
 import classes from '../../styles/Students.module.css';
+import PinOutlets from '../../components/reusables/PinOutlets';
 
 const Students: NextPage = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div>
       <Head>
@@ -63,7 +66,7 @@ const Students: NextPage = () => {
                     Buy now
                     <Icon as={ChevronRightIcon} ml={4} />
                   </Button>
-                  <Button type='button' variant='outline'>
+                  <Button type='button' variant='outline' onClick={onOpen}>
                     Sales Outlets
                     <Icon as={ChevronRightIcon} ml={4} />
                   </Button>
@@ -114,6 +117,8 @@ const Students: NextPage = () => {
       </Box>
 
       <Footer />
+
+      <PinOutlets isOpen={isOpen} onClose={onClose} />
     </div>
   )
 }
