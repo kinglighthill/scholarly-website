@@ -8,8 +8,9 @@ import syllabus from '../../public/syllabus.png';
 import Image from 'next/image';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import { SliderDetail } from '../../types/components/students/slider';
 
-const sliderDetails = [
+const sliderDetails: SliderDetail[] = [
   { title: "Notes", headline: "Access Thousands of Notes", description: "Find Scholarly approved CBT centers nationwide to practice for your next exam.", image: notes },
   { title: "Past Questions", headline: "Access Thousands of Past Questions", description: "Find Scholarly approved CBT centers nationwide to practice for your next exam.", image: scholarly_students_demo2 },
   { title: "Syllabus", headline: "Access Thousands of Syllabi", description: "Find Scholarly approved CBT centers nationwide to practice for your next exam.", image: syllabus },

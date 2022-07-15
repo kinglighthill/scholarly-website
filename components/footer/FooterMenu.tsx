@@ -1,15 +1,6 @@
 import { Box, VStack, Text } from "@chakra-ui/react";
 import Link from "next/link";
-
-type Item = {
-  name: string;
-  url: string;
-}
-
-type FooterMenuProps = {
-  title: string;
-  items: Item[];
-}
+import { FooterMenuProps } from "../../types/components/footer/footer_menu";
 
 export default function FooterMenu({ title, items }: FooterMenuProps) {
   return (

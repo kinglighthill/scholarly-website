@@ -1,13 +1,6 @@
 import { Box, VStack, Text, HStack } from "@chakra-ui/react";
 import Image from "next/image";
-
-type StepProps = {
-  index: number;
-  title: string;
-  description: string;
-  icon: string;
-  direction: string;
-}
+import { StepProps } from "../../types/components/partners/step";
 
 export default function Step({ index, title, description, icon, direction }: StepProps) {
   return (

@@ -1,10 +1,5 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
-
-type LabelProps = {
-  labelText: string;
-  labelIcon: React.ReactNode;
-  box?: object;
-}
+import { LabelProps } from "../../types/components/reusables/label";
 
 export default function Label({ labelText, labelIcon, box }: LabelProps) {
   return (

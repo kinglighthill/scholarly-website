@@ -1,14 +1,8 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, HStack, Icon, List, ListItem, Text, VStack } from '@chakra-ui/react';
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, HStack, List, ListItem, Text, VStack } from '@chakra-ui/react';
 import { XIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import { RefObject } from 'react';
+import { NavigationDrawerProps } from '../../types/components/navbar/navigation_drawer';
 import { BoxWithAppstoreIcon, BoxWithPlaystoreIcon, BoxWithWindowsIcon } from '../reusables/BoxWithIcon';
-
-type NavigationDrawerProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  hamburgerRef: RefObject<SVGSVGElement>;
-}
 
 export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: NavigationDrawerProps) {
   return (

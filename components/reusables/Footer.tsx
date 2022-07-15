@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Icon, SimpleGrid, Spacer, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, HStack, Icon, Spacer, Text, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import scholarly_logo2 from '../../public/scholarly_logo2.svg';

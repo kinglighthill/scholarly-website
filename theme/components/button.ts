@@ -1,5 +1,3 @@
-import { StyleFunctionProps } from '@chakra-ui/theme-tools';
-
 const button = {
   baseStyle: {
     fontWeight: 'medium',
