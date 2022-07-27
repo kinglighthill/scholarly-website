@@ -33,7 +33,7 @@ export default function Navbar() {
             <Link href='/partners'>Partners</Link>
           </Text>
           <Text color='brand.lime.500' fontWeight='medium'>
-            <Link href='/'>Business</Link>
+            <Link href='/business'>Business</Link>
           </Text>
           <Menu isLazy>
             <MenuButton color='brand.lime.500' fontWeight='medium'>

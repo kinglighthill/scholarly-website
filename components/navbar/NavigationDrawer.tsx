@@ -19,7 +19,7 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
               <Link href='/partners'>Partners</Link>
             </Text>
             <Text color='brand.lime.700' fontSize={20}>
-              <Link href='/'>Business</Link>
+              <Link href='/business'>Business</Link>
             </Text>
             <Accordion w='full' allowToggle>
               <AccordionItem border='none'>
