@@ -1,9 +1,10 @@
 const colors = {
   brand: {
-    yellow: '#F7B71D',
-    nearWhite: '#F5F6F6',
-    green: '#415749',
     gray: '#97A39B',
+    green: '#415749',
+    nearWhite: '#F5F6F6',
+    red: '#E53E3E',
+    yellow: '#F7B71D',
     lime: {
       50: '#E9F5ED',
       100: '#c4ead0',
