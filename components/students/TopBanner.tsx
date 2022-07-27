@@ -35,11 +35,11 @@ export default function TopBanner() {
           <HStack spacing={4}>
             <Button type='button' variant='solid'>
               Download App
-              <Icon as={ArrowNarrowRightIcon} marginTop={0.48} ml={15} />
+              <Icon as={ArrowNarrowRightIcon} verticalAlign='bottom' ml={15} />
             </Button>
             <Button type='button' variant='outline' display={['none', 'inline-block']} onClick={onOpen}>
               Buy Activation Pin
-              <Icon as={ArrowNarrowRightIcon} marginTop={0.48} ml={15} />
+              <Icon as={ArrowNarrowRightIcon} verticalAlign='bottom' mb={0.5} ml={15} />
             </Button>
           </HStack>
           <Box>
