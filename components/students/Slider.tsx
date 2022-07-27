@@ -16,10 +16,13 @@ const sliderDetails: SliderDetail[] = [
   { title: "Syllabus", headline: "Access Thousands of Syllabi", description: "Find Scholarly approved CBT centers nationwide to practice for your next exam.", image: syllabus },
 ]
 
-const sliderItems = sliderDetails.map(item => (
-  <Flex key={item.title} align='center'>
+const sliderItems = sliderDetails.map(item => {
+  const handleDragStart = (e: React.DragEvent<HTMLElement>) => e.preventDefault();
+
+  return (
+  <Flex key={item.title} align='center' flexDir={['column-reverse', 'row']} onDragStart={handleDragStart}>
     <VStack spacing={8} align='start' flexBasis='35%'>
-      <Text as='h2' color='brand.lime.700' fontSize={31} fontWeight='bold'>{item.headline}</Text>
+      <Text as='h2' color='brand.lime.700' fontSize={[31, 25, 25, 31]} fontWeight='bold'>{item.headline}</Text>
       <Text color='brand.lime.700'>{item.description}</Text>
       <Button type='button' variant="solid">
         Download App
@@ -31,7 +34,7 @@ const sliderItems = sliderDetails.map(item => (
       <Image src={item.image} alt="A Demo of the Scholarly Students App" />
     </Box>
   </Flex>
-));
+)});
 
 export default function Slider() {
   const [active, setActive] = useState<string>('Past Questions');
@@ -48,7 +51,7 @@ export default function Slider() {
 
   return (
     <Box as='section' className={classes.slider_container} bgColor='brand.nearWhite'>
-      <HStack spacing={9} mb={3.5}>
+      <HStack spacing={[5, 9]} mb={12}>
         {sliderDetails.map((item, index) => (
           <Text as='h1' key={item.title} fontSize={13} color='brand.lime.700' cursor='pointer'
             textTransform='capitalize' onClick={() => setActiveSection(index, item.title)}
