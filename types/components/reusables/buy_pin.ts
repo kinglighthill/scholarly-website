@@ -1,12 +1,5 @@
-export interface BuyPinProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+export type BuyPinTabOptions = 'select-apps' | 'cart' | 'pay';
 
-export interface SelectedApps {
-  [key: string]: string[];
-}
-
-export interface SelectAppsProps {
-  changeTab: (tab: string) => void;
+export interface BuyPinTabProps {
+  changeTab: (tab: BuyPinTabOptions) => void;
 }
