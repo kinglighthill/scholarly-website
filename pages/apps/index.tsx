@@ -10,8 +10,9 @@ import { DownloadIcon } from '@heroicons/react/solid';
 import { DesktopTabNavigation, MobileTabNavigation } from '../../components/apps/TabNavigation';
 
 const Apps: NextPage = () => {
-  const [activeTab, setActiveTab] = useState<string>('android');
-  const changeTab = (tab: string) => {
+  const [activeTab, setActiveTab] = useState<'android' | 'ios' | 'desktop'>('android');
+  
+  const changeTab = (tab: 'android' | 'ios' | 'desktop') => {
     setActiveTab(tab);
   }
 
