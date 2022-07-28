@@ -14,7 +14,7 @@ export default function TopBanner() {
   return (
     <Box as='section' bgColor='brand.nearWhite' className={classes.banner_container}>    
       <Flex justify='space-between' wrap={{base: 'wrap', lg: 'nowrap'}}>
-        <VStack spacing={8} align='start' flexBasis={{base: '100%', md: '80%', lg: '50%'}} pb={{lg: 5}}>
+        <VStack spacing={8} align='start' flexBasis={{base: '100%', lg: '50%'}} pb={{lg: 5}}>
           <Box>
             <Box display={{base: 'none', md: 'block'}}>
               <Image src={green_pattern} alt='' />
