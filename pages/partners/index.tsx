@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer } from "@chakra-ui/react";
+import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import Head from "next/head";
 import Image from "next/image";
@@ -16,7 +16,8 @@ import megaphone from "../../public/megaphone.png";
 import megaphone2 from "../../public/megaphone2.png";
 import yellow_pattern from "../../public/yellow_pattern.svg";
 import Step from "../../components/partners/Step";
-import { Step as StepType } from "../../types/pages/partners";
+import { StepType } from "../../types/pages/partners";
+import PartnerSignup from '../../components/reusables/PartnerSignup';
 
 const steps: StepType[] = [
   { index: 1, title: "Sign up", description: "Create an account on the site or with the app.", icon: sign_up },
@@ -27,6 +28,8 @@ const steps: StepType[] = [
 ];
 
 const Partners: NextPage = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div>
       <Head>
@@ -47,7 +50,7 @@ const Partners: NextPage = () => {
               Make Money by buying Activation Pins and reselling to Customers
             </Text>
             <HStack spacing={[4, 6]}>
-              <Button type="button" variant='solid'>
+              <Button type="button" variant='solid' onClick={onOpen}>
                 Sign up
                 <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
               </Button>
@@ -70,7 +73,7 @@ const Partners: NextPage = () => {
             ))}
           </VStack>
           <HStack spacing={[4, 6]} justify='center'>
-            <Button type="button" variant='solid'>
+            <Button type="button" variant='solid' onClick={onOpen}>
               Sign up
               <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
             </Button>
@@ -117,6 +120,8 @@ const Partners: NextPage = () => {
       </Box>
 
       <Footer />
+
+      <PartnerSignup isOpen={isOpen} onClose={onClose} />
     </div>
   )
 }
