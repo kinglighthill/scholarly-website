@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { NextPage } from 'next';
 import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
@@ -98,10 +99,12 @@ const Partners: NextPage = () => {
               <Text color='brand.lime.700' fontSize={25} fontWeight='bold'>Referral Program</Text>
               <Text color='brand.lime.700'>Earn more when you refer other partners. Each time your referral makes a sale, you earn a commission.</Text>
               <VStack w='full' align='start' spacing={0} pos='relative'>
-                <Button type="button" variant='solid'>
-                  See Details
-                  <Icon as={ChevronRightIcon} ml={5} />
-                </Button>
+                <Link href='/partners/referral'>
+                  <Button type="button" variant='solid'>
+                    See Details
+                    <Icon as={ChevronRightIcon} ml={5} />
+                  </Button>
+                </Link>
                 <Box pos='absolute' right={0} top={41} display={{base: 'none', md: 'initial'}}>
                   <Image src={yellow_pattern} alt='' />
                 </Box>
