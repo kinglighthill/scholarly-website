@@ -1,7 +1,7 @@
 /* Slider section */
 
 .slider_container {
-  padding: 75px 120px;
+  padding: 60px 20px;
 }
 
 .active {
@@ -10,16 +10,20 @@
   padding: 10.5px 16px;
 }
 
-/* Image and Text Grid Section */
-
-.image_grid_item > span {
-  max-height: 100%;
+@media screen and (min-width: 480px) {
+  .slider_container {
+    padding: 75px 35px;
+  }
 }
 
-.image_grid_item > span > span {
-  max-height: 212px;
+@media screen and (min-width: 768px) {
+  .slider_container {
+    padding: 75px 70px;
+  }
 }
 
-.image_grid_item > span > span > img {
-  max-height: 212px;
+@media screen and (min-width: 992px) {
+  .slider_container {
+    padding: 75px 120px;
+  }
 }
