@@ -20,6 +20,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      
       <main>
         <TopBanner />
         <Students />
@@ -50,6 +51,7 @@ const Home: NextPage = () => {
 
         <GetHelp />
       </main>
+
       <Footer />
     </div>
   )
