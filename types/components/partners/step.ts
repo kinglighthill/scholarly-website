@@ -1,5 +1,5 @@
-import { Step } from "../../pages/partners";
+import { StepType } from "../../pages/partners";
 
-export interface StepProps extends Step {
+export interface StepProps extends StepType {
   direction: string;
 }

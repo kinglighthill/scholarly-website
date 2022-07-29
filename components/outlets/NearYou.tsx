@@ -60,7 +60,7 @@ export default function NearYou({ allOutlets }: {allOutlets: Outlet[]}) {
                 </InputGroup>
                 <Button type='submit' variant='solid'>Search</Button>
               </HStack>
-              <FormHelperText fontSize={11}>For better search accuracy, we recommend that you include the city, state, and country in the address provided.</FormHelperText>
+              <FormHelperText fontSize={11}>For better search accuracy, we recommend that you include the city, state, and country in the address provided. Check below the map to see your search results.</FormHelperText>
             </FormControl>
           </form>
         </VStack>

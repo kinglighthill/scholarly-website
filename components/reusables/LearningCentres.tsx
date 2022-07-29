@@ -2,17 +2,17 @@ import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, ModalHe
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import { salesOutlets } from '../../data';
 import useSearchFilter from '../../hooks/useSearchFilter';
-import { PinOutletsProps } from '../../types/components/reusables/pin_outlets';
+import { ModalProps } from '../../types/generics/modal';
 import AllOutlets from '../outlets/AllOutlets';
 import NearYou from '../outlets/NearYou';
 
-export default function CbtCentres({ isOpen, onClose }: PinOutletsProps) {
+export default function CbtCentres({ isOpen, onClose }: ModalProps) {
   const { applyFilter, filteredOutlets } = useSearchFilter(salesOutlets);
 
   return (
     <Modal size={['full', 'md']} isOpen={isOpen} onClose={onClose} scrollBehavior="inside" isCentered>
       <ModalOverlay />
-      <ModalContent my={0} pt={3} pb={6} minH={{base: "85vh", '2xl': "70vh"}}>
+      <ModalContent my={0} pt={3} pb={6} minH={{base: "90vh", '2xl': "70vh"}}>
         <ModalHeader color='brand.lime.700' pl={5}>Learning Centres</ModalHeader>
         <ModalCloseButton color='#F98A8A' top={6} />
         <ModalBody p={0} overflowX='hidden'>

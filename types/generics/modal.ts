@@ -1,4 +1,4 @@
-export interface PinOutletsProps {
+export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
 }

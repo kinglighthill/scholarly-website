@@ -1,6 +1,5 @@
-export interface StepType {
+export interface ReferralStepCardProps {
   index: number;
   title: string;
   description: string;
-  icon: string;
 }

@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import type { NextPage } from 'next';
-import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer } from "@chakra-ui/react";
+import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import Head from "next/head";
 import Image from "next/image";
@@ -16,7 +17,8 @@ import megaphone from "../../public/megaphone.png";
 import megaphone2 from "../../public/megaphone2.png";
 import yellow_pattern from "../../public/yellow_pattern.svg";
 import Step from "../../components/partners/Step";
-import { Step as StepType } from "../../types/pages/partners";
+import { StepType } from "../../types/pages/partners";
+import PartnerSignup from '../../components/reusables/PartnerSignup';
 
 const steps: StepType[] = [
   { index: 1, title: "Sign up", description: "Create an account on the site or with the app.", icon: sign_up },
@@ -27,6 +29,8 @@ const steps: StepType[] = [
 ];
 
 const Partners: NextPage = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div>
       <Head>
@@ -47,7 +51,7 @@ const Partners: NextPage = () => {
               Make Money by buying Activation Pins and reselling to Customers
             </Text>
             <HStack spacing={[4, 6]}>
-              <Button type="button" variant='solid'>
+              <Button type="button" variant='solid' onClick={onOpen}>
                 Sign up
                 <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
               </Button>
@@ -70,7 +74,7 @@ const Partners: NextPage = () => {
             ))}
           </VStack>
           <HStack spacing={[4, 6]} justify='center'>
-            <Button type="button" variant='solid'>
+            <Button type="button" variant='solid' onClick={onOpen}>
               Sign up
               <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
             </Button>
@@ -95,10 +99,12 @@ const Partners: NextPage = () => {
               <Text color='brand.lime.700' fontSize={25} fontWeight='bold'>Referral Program</Text>
               <Text color='brand.lime.700'>Earn more when you refer other partners. Each time your referral makes a sale, you earn a commission.</Text>
               <VStack w='full' align='start' spacing={0} pos='relative'>
-                <Button type="button" variant='solid'>
-                  See Details
-                  <Icon as={ChevronRightIcon} ml={5} />
-                </Button>
+                <Link href='/partners/referral'>
+                  <Button type="button" variant='solid'>
+                    See Details
+                    <Icon as={ChevronRightIcon} ml={5} />
+                  </Button>
+                </Link>
                 <Box pos='absolute' right={0} top={41} display={{base: 'none', md: 'initial'}}>
                   <Image src={yellow_pattern} alt='' />
                 </Box>
@@ -117,6 +123,8 @@ const Partners: NextPage = () => {
       </Box>
 
       <Footer />
+
+      <PartnerSignup isOpen={isOpen} onClose={onClose} />
     </div>
   )
 }
