@@ -45,9 +45,9 @@ export default function Footer() {
           <Spacer />
           <FooterMenu title='Legal'
             items={[
-              { name: 'Terms', url: '/' },
-              { name: 'Privacy', url: '/' },
-              { name: 'Security', url: '/' },
+              { name: 'Terms', url: '/terms' },
+              { name: 'Privacy', url: '/privacy' },
+              { name: 'Security', url: '/security' },
             ]}
           />
           <Spacer />
@@ -95,8 +95,8 @@ export default function Footer() {
           <Text>Copyright 2020 Scholarly educational software, Inc. All Rights reserved</Text>
           <Spacer />
           <HStack spacing={8}>
-            <Link href='/'>Privacy</Link>
-            <Link href='/'>Terms of use</Link>
+            <Link href='/privacy'>Privacy</Link>
+            <Link href='/terms'>Terms of use</Link>
           </HStack>
         </Flex>
       </Box>

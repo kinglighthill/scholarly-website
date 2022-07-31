@@ -39,7 +39,8 @@ const Students: NextPage = () => {
         <title>Scholarly Africa | Students</title>
       </Head>
       <Navbar />
-      <Box as="main">
+      
+      <main>
         <TopBanner />
         <Slider />
 
@@ -189,16 +190,16 @@ const Students: NextPage = () => {
             <Image src={green_pattern} alt='' width={128} height={128} />
           </Box>
         </Box>
-      </Box>
+      
+        <CartProvider>
+          <BuyPin isOpen={isBuyPinOpen} onClose={closeBuyPin} />
+        </CartProvider>
+        <PinOutlets isOpen={isSalesOuletsOpen} onClose={closeSalesOutlets} />
+        <CbtCentres isOpen={isCbtCentresOpen} onClose={closeCbtCentres} />
+        <LearningCentres isOpen={isLearningCentresOpen} onClose={closeLearningCentres} />
+      </main>
 
       <Footer />
-
-      <CartProvider>
-        <BuyPin isOpen={isBuyPinOpen} onClose={closeBuyPin} />
-      </CartProvider>
-      <PinOutlets isOpen={isSalesOuletsOpen} onClose={closeSalesOutlets} />
-      <CbtCentres isOpen={isCbtCentresOpen} onClose={closeCbtCentres} />
-      <LearningCentres isOpen={isLearningCentresOpen} onClose={closeLearningCentres} />
     </div>
   )
 }
