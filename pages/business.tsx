@@ -1,9 +1,10 @@
-import { Box, Button, FormControl, FormLabel, Input, Text, VStack } from "@chakra-ui/react";
 import Head from "next/head";
-import Footer from "../../components/reusables/Footer";
-import Navbar from "../../components/reusables/Navbar";
+import type { NextPage } from 'next';
+import { Box, Button, FormControl, FormLabel, Input, Text, VStack } from "@chakra-ui/react";
+import Footer from "../components/reusables/Footer";
+import Navbar from "../components/reusables/Navbar";
 
-export default function Business() {
+const Business: NextPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log((e.target as HTMLFormElement).value);
@@ -39,3 +40,5 @@ export default function Business() {
     </div>
   )
 }
+
+export default Business;

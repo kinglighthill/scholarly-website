@@ -1,9 +1,10 @@
-import { Box, Flex, Spacer, Text, VStack } from "@chakra-ui/react";
 import Head from "next/head";
+import type { NextPage } from 'next';
+import { Box, Flex, Spacer, Text, VStack } from "@chakra-ui/react";
 import Footer from "../components/reusables/Footer";
 import Navbar from "../components/reusables/Navbar";
 
-export default function About() {
+const About: NextPage = () => {
   return (
     <div>
       <Head>
@@ -36,3 +37,5 @@ export default function About() {
     </div>
   )
 }
+
+export default About;

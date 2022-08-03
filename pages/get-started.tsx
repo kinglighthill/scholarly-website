@@ -1,9 +1,10 @@
-import { Box, Stack, Text } from "@chakra-ui/react";
 import Head from "next/head";
-import GetStartedCard from "../../components/get_started/Card";
-import Footer from "../../components/reusables/Footer";
-import Navbar from "../../components/reusables/Navbar";
-import { GetStartedCardProps } from "../../types/components/get_started/card";
+import type { NextPage } from 'next';
+import { Box, Stack, Text } from "@chakra-ui/react";
+import GetStartedCard from "../components/get_started/Card";
+import Footer from "../components/reusables/Footer";
+import Navbar from "../components/reusables/Navbar";
+import { GetStartedCardProps } from "../types/components/get_started/card";
 
 const getStartedOptions: GetStartedCardProps[] = [
   { title: "Partners", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id vitae faucibus sit male consectetur adipiscing elit. Id vitae faucibus sit male", btnHref: "/partners" },
@@ -11,7 +12,7 @@ const getStartedOptions: GetStartedCardProps[] = [
   { title: "Business", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id vitae faucibus sit male consectetur adipiscing elit. Id vitae faucibus sit male", btnHref: "/business" },
 ]
 
-export default function GetStarted() {
+const GetStarted: NextPage = () => {
   return (
     <div>
       <Head>
@@ -34,3 +35,5 @@ export default function GetStarted() {
     </div>
   )
 }
+
+export default GetStarted;
