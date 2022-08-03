@@ -65,7 +65,7 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
               </AccordionItem>
             </Accordion>
             <Text color='brand.lime.700' fontSize={20}>
-              <Link href='/'>Contact Us</Link>
+              <Link href='/contact-us'>Contact Us</Link>
             </Text>
             <Button type='button' variant='solid' w='full'>Activate</Button>
           </VStack>
