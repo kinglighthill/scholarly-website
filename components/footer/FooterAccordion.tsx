@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, HStack, Icon, List, ListItem, Text, VStack } from '@chakra-ui/react';
 import classes from '../../styles/components/Footer.module.css';
 
@@ -14,10 +15,18 @@ export default function FooterAccordion() {
           </h2>
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
-              <ListItem>Mobile Apps</ListItem>
-              <ListItem>Desktop Apps</ListItem>
-              <ListItem>Partners App</ListItem>
-              <ListItem>Enterprise Software</ListItem>
+              <ListItem>
+                <Link href='/'>Mobile Apps</Link>
+              </ListItem> 
+              <ListItem>
+                <Link href='/'>Desktop Apps</Link>
+              </ListItem> 
+              <ListItem>
+                <Link href='/'>Partners App</Link>
+              </ListItem> 
+              <ListItem>
+                <Link href='/'>Enterprise Software</Link>
+              </ListItem> 
             </List>
           </AccordionPanel>
         </AccordionItem>
@@ -31,9 +40,15 @@ export default function FooterAccordion() {
           </h2>
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
-              <ListItem>About</ListItem>
-              <ListItem>FAQs</ListItem>
-              <ListItem>Contact us</ListItem>
+              <ListItem>
+                <Link href='/about'>About</Link>
+              </ListItem> 
+              <ListItem>
+                <Link href='/faqs'>FAQs</Link>
+              </ListItem> 
+              <ListItem>
+                <Link href='/contact-us'>Contact us</Link>
+              </ListItem> 
             </List>
           </AccordionPanel>
         </AccordionItem>
@@ -47,9 +62,15 @@ export default function FooterAccordion() {
           </h2>
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
-              <ListItem>Terms</ListItem>
-              <ListItem>Privacy</ListItem>
-              <ListItem>Security</ListItem>
+              <ListItem>
+                <Link href='/terms'>Terms</Link>
+              </ListItem> 
+              <ListItem>
+                <Link href='/privacy'>Privacy</Link>
+              </ListItem> 
+              <ListItem>
+                <Link href='/security'>Security</Link>
+              </ListItem> 
             </List>
           </AccordionPanel>
         </AccordionItem>

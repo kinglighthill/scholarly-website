@@ -37,9 +37,9 @@ export default function Footer() {
           <Spacer />
           <FooterMenu title='Company'
             items={[
-              { name: 'About', url: '/' },
-              { name: 'FAQs', url: '/' },
-              { name: 'Contact us', url: '/' },
+              { name: 'About', url: '/about' },
+              { name: 'FAQs', url: '/faqs' },
+              { name: 'Contact us', url: '/contact-us' },
             ]}
           />
           <Spacer />
@@ -68,16 +68,16 @@ export default function Footer() {
               </VStack>
             </Box>
             <HStack spacing={4}>
-              <a href='https://facebook.com' target="blank" aria-label='Visit our facebook page'>
+              <a href='https://facebook.com/scholarlyng' target="blank" aria-label='Visit our facebook page'>
                 <Image src={facebook} alt='Facebook Icon' />
               </a>
               <a href='https://twitter.com' target="blank" aria-label='Visit our twitter handle'>
                 <Image src={twitter} alt='Twitter Icon' />
               </a>
-              <a href='https://linkedin.com' target="blank" aria-label='Visit our linkedin page'>
+              <a href='https://www.linkedin.com/company/scholarlyafrica/' target="blank" aria-label='Visit our linkedin page'>
                 <Image src={linkedin} alt='LinkedIn Icon' />
               </a>
-              <a href='https://instagram.com' target="blank" aria-label='Visit our instagram page'>
+              <a href='https://www.instagram.com/scholarlyng/' target="blank" aria-label='Visit our instagram page'>
                 <Image src={instagram} alt='Instagram Icon' />
               </a>
               <a href='https://wa.me/+2349061701939' target="blank" aria-label='Send us a message on Whatsapp'>
