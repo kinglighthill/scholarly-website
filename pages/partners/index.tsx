@@ -102,10 +102,12 @@ const Partners: NextPage = () => {
                 <Text color='brand.lime.700'>Earn more when you refer other partners. Each time your referral makes a sale, you earn a commission.</Text>
                 <VStack w='full' align='start' spacing={0} pos='relative'>
                   <Link href='/partners/referral'>
-                    <Button type="button" variant='solid'>
-                      See Details
-                      <Icon as={ChevronRightIcon} ml={5} />
-                    </Button>
+                    <a>
+                      <Button type="button" variant='solid'>
+                        See Details
+                        <Icon as={ChevronRightIcon} ml={5} />
+                      </Button>
+                    </a>
                   </Link>
                   <Box pos='absolute' right={0} top={41} display={{base: 'none', md: 'initial'}}>
                     <Image src={yellow_pattern} alt='' />

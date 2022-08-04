@@ -71,7 +71,9 @@ export default function Navbar() {
         <Spacer />
         <HStack spacing={{base: 5, xl: 6}} display={{base: 'none', lg: 'flex'}} className={classes.desktop_nav}>
           <Link href='/contact-us'>
-            <Button type='button' variant='outline'>Contact us</Button>
+            <a>
+              <Button type='button' variant='outline'>Contact us</Button>
+            </a>
           </Link>
           <Button type='button' variant='solid'>Activate</Button>
           <Menu isLazy>

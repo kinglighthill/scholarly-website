@@ -1,5 +1,6 @@
-import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
+import Link from "next/link";
+import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
 import { PhoneIcon, PlusIcon } from '@heroicons/react/outline';
 import classes from '../../styles/Home.module.css';
 import female_professional_working from '../../public/female_professional_working.png';
@@ -21,10 +22,14 @@ export default function Business() {
             Own a School, CBT center or Cyber cafe? Run your business efficiently with our enterprise software while you make more money.
           </Text>
           <HStack spacing={4}>
-            <Button type='button' variant='solid'>
-              Contact us
-              <Icon as={PhoneIcon} ml='15px' display={{base: 'none', md: 'inline-block'}} />
-            </Button>
+            <Link href='/contact-us'>
+              <a>
+                <Button type='button' variant='solid'>
+                  Contact us
+                  <Icon as={PhoneIcon} ml='15px' display={{base: 'none', md: 'inline-block'}} />
+                </Button>
+              </a>
+            </Link>
             <Button type='button' variant='outline'>
               Request a demo
               <Icon as={PlusIcon} ml='13px' display={{base: 'none', md: 'inline-block'}} />

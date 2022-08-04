@@ -35,10 +35,12 @@ export default function TopBanner() {
             Scholarly organizes the tools and resources needed to get better grades in an easy to use app.
           </Text>
           <Link href='/get-started'>
-            <Button type='button' variant='solid'>
-              Get Started
-              <Icon as={ArrowNarrowRightIcon} mt={0.48} ml={15} />
-            </Button>
+            <a>
+              <Button type='button' variant='solid'>
+                Get Started
+                <Icon as={ArrowNarrowRightIcon} mt={0.48} ml={15} />
+              </Button>
+            </a>
           </Link>
           <HStack spacing={4} display={{base: 'none', md: 'flex'}}>
             <BoxWithJambIcon />

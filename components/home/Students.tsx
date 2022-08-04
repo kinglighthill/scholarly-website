@@ -33,10 +33,12 @@ export default function Students() {
             Over 1 Million students use over 30 scholarly apps to access high quality academic resource and content.
           </Text>
           <Link href='/apps'>
-            <Button type='button' variant='solid'>
-              See Apps
-              <Icon as={ChevronRightIcon} ml={5} />
-            </Button>
+            <a>
+              <Button type='button' variant='solid'>
+                See Apps
+                <Icon as={ChevronRightIcon} ml={5} />
+              </Button>
+            </a>
           </Link>
         </VStack>
       </Flex>

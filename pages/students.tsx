@@ -65,10 +65,12 @@ const Students: NextPage = () => {
                   <Text color='brand.lime.700'>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
                 </Box>
                 <Link href='/apps'>
-                  <Button type='button' variant='solid'>
-                    See Apps
-                    <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
-                  </Button>
+                  <a>
+                    <Button type='button' variant='solid'>
+                      See Apps
+                      <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
+                    </Button>
+                  </a>
                 </Link>
               </VStack>
             </GridItem>
