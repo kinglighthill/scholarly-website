@@ -10,7 +10,7 @@ import uniben_putme from "./public/uniben_putme.png";
 import sales_outlet1 from "./public/sales_outlet1.png";
 import sales_outlet2 from "./public/sales_outlet2.png";
 import sales_outlet3 from "./public/sales_outlet3.png";
-import { Apps, Outlet, Statistic } from "./types/data";
+import { Apps, FAQ, Outlet, Statistic } from "./types/data";
 import { TestimonialProps } from "./types/components/reusables/testimonials";
 
 export const statistics: Statistic[] = [
@@ -112,3 +112,15 @@ export const apps: Apps = {
     },
   ]
 }
+
+export const faqs: FAQ[] = [
+  { category: 'partners', title: 'What is Scholarly all about 1?', question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem' },
+  { category: 'students', title: 'How is Scholarly all about 2?', question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem' },
+  { category: 'business', title: 'What is Scholarly all about 3?', question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem' },
+  { category: 'partners', title: 'Why is Scholarly all about 4?', question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem' },
+  { category: 'students', title: 'What is Scholarly all about 5?', question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem' },
+  { category: 'business', title: 'How is Scholarly all about 6?', question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem' },
+  { category: 'partners', title: 'How is Scholarly all about 7?', question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem' },
+  { category: 'students', title: 'Why is Scholarly all about 8?', question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem' },
+  { category: 'business', title: 'Why is Scholarly all about 9?', question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem' },
+]
