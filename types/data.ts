@@ -39,3 +39,11 @@ export interface Apps {
     apps: App[];
   }[];
 }
+
+export type QuestionCategory = 'students' | 'partners' | 'business';
+
+export interface FAQ {
+  category: QuestionCategory;
+  title: string;
+  question: string;
+}
