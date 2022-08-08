@@ -1,10 +1,11 @@
-import { Text } from "@chakra-ui/react";
 import Head from "next/head";
-import Footer from "../../components/reusables/Footer";
-import Navbar from "../../components/reusables/Navbar";
-import TermsPrivacySecurity from "../../components/reusables/TermsPrivacySecurity";
+import type { NextPage } from 'next';
+import { Text } from "@chakra-ui/react";
+import Footer from "../components/reusables/Footer";
+import Navbar from "../components/reusables/Navbar";
+import TermsPrivacySecurity from "../components/reusables/TermsPrivacySecurity";
 
-export default function Privacy() {
+const Privacy: NextPage = () => {
   return (
     <div>
       <Head>
@@ -27,3 +28,5 @@ export default function Privacy() {
     </div>
   )
 }
+
+export default Privacy;

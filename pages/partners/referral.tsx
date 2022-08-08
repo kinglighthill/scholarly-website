@@ -1,13 +1,14 @@
+import Head from "next/head";
+import type { NextPage } from 'next';
 import { Box, Button, Flex, Icon, Stack, Text, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import { DownloadIcon } from "@heroicons/react/solid";
-import Head from "next/head";
 import ReferralStepCard from "../../components/partners/ReferralStepCard";
 import Footer from "../../components/reusables/Footer";
 import Navbar from "../../components/reusables/Navbar";
 import PartnerSignup from "../../components/reusables/PartnerSignup";
 
-export default function PartnersReferral() {
+const PartnersReferral: NextPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -58,3 +59,5 @@ export default function PartnersReferral() {
     </div>
   )
 }
+
+export default PartnersReferral;
