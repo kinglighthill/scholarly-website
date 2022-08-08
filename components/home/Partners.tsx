@@ -1,5 +1,6 @@
-import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
+import Link from "next/link";
+import { Box, Button, Flex, HStack, Icon, Spacer, Text, useDisclosure, VStack } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import classes from "../../styles/Home.module.css";
 import sign_up2 from "../../public/sign_up2.svg";
@@ -7,8 +8,11 @@ import verify_identity2 from "../../public/verify_identity2.svg";
 import find_customers2 from "../../public/find_customers2.svg";
 import spiral from "../../public/spiral.svg";
 import scholarly_partners_demo from "../../public/scholarly_partners_demo.png";
+import PartnerSignup from "../reusables/PartnerSignup";
 
 export default function Partners() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box as="section" bgColor='brand.nearWhite' pos='relative' className={classes.partners_section}>
       <Flex wrap={{base: 'wrap', md: 'nowrap'}} flexDir={{base: 'column-reverse', md: 'row'}} align={{md: 'center'}}>
@@ -19,20 +23,20 @@ export default function Partners() {
           </VStack>
           <VStack spacing={[8, 12, '52px']} align='start' mb={{base: "50px", md: "77px"}}>
             <HStack spacing={{base: 0, md: 9}} align="start" wrap={{base: 'wrap', md: 'nowrap'}}>
-              <Box borderRadius={400} p={6} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(248, 195, 67, 0.2)">
+              <Box fontSize={0} borderRadius='50%' p={['18px', 6]} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(248, 195, 67, 0.2)">
                 <Image src={sign_up2} alt="" />
               </Box>
               <Box flexBasis={{base: '100%', md: 'initial'}}>
                 <Text fontSize={20} fontWeight="bold" color="brand.lime.700">Sign up</Text>
                 <Text mt={2} color="brand.lime.700">Create an account as a Scholarly partner.</Text>
-                <Button type="button" variant="solid" mt={{base: 5, md: 7}}>
+                <Button type="button" variant="solid" mt={{base: 5, md: 7}} onClick={onOpen}>
                   Sign up
                   <Icon as={ChevronRightIcon} ml={5} />
                 </Button>
               </Box>
             </HStack>
             <HStack spacing={{base: 0, md: 9}} align="start" wrap={{base: 'wrap', md: 'nowrap'}}>
-              <Box borderRadius={400} p={6} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(70, 172, 102, 0.2)">
+              <Box fontSize={0} borderRadius='50%' p={['18px', 6]} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(70, 172, 102, 0.2)">
                 <Image src={verify_identity2} alt="" />
               </Box>
               <Box flexBasis={{base: '100%', md: 'initial'}}>
@@ -41,7 +45,7 @@ export default function Partners() {
               </Box>
             </HStack>
             <HStack spacing={{base: 0, md: 9}} align="start" wrap={{base: 'wrap', md: 'nowrap'}}>
-              <Box borderRadius={300} p={6} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(0, 197, 255, 0.2)">
+              <Box fontSize={0} borderRadius='50%' p={['18px', 6]} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(0, 197, 255, 0.2)">
                 <Image src={find_customers2} alt="" />
               </Box>
               <Box flexBasis={{base: '100%', md: 'initial'}}>
@@ -51,10 +55,12 @@ export default function Partners() {
             </HStack>
           </VStack>
           <HStack spacing={{base: 5, md: "50px"}} justify={{base: 'center', md: 'initial'}}>
-            <Button type="button" variant="outline">
-              Learn More
-              <Icon as={ChevronRightIcon} ml={5} display={{base: 'none', md: 'inline-block'}} />
-            </Button>
+            <Link href='/partners'>
+              <Button type="button" variant="outline">
+                Learn More
+                <Icon as={ChevronRightIcon} ml={5} display={{base: 'none', md: 'inline-block'}} />
+              </Button>
+            </Link>
             <Button type="button" variant="solid">
               Download App
               <Icon as={ChevronRightIcon} ml={5} display={{base: 'none', md: 'inline-block'}} />
@@ -78,6 +84,8 @@ export default function Partners() {
       <Box pos="absolute" bottom={['51.5%', '45%', '8%', 2, -8]} left={{base: "39%", md: "55%", lg: "53%"}} zIndex={0}>
         <Image src={spiral} alt="" />
       </Box>
+
+      <PartnerSignup isOpen={isOpen} onClose={onClose} />
     </Box>
   )
 }

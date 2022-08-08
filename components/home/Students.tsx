@@ -1,5 +1,6 @@
-import { Box, Flex, VStack, Text, Button, Spacer, Icon } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Box, Flex, VStack, Text, Button, Spacer, Icon } from '@chakra-ui/react';
 import scholarly_students_demo from '../../public/scholarly_students_demo.png';
 import subtract from '../../public/subtract.svg';
 import classes from '../../styles/Home.module.css';
@@ -31,10 +32,12 @@ export default function Students() {
           <Text color='brand.lime.700' fontSize={{base: 16, md: 20}} textAlign={{base: 'center', md: 'left'}}>
             Over 1 Million students use over 30 scholarly apps to access high quality academic resource and content.
           </Text>
-          <Button type='button' variant='solid'>
-            See Apps
-            <Icon as={ChevronRightIcon} ml={5} />
-          </Button>
+          <Link href='/apps'>
+            <Button type='button' variant='solid'>
+              See Apps
+              <Icon as={ChevronRightIcon} ml={5} />
+            </Button>
+          </Link>
         </VStack>
       </Flex>
     </Box>

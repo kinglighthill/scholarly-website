@@ -28,10 +28,10 @@ const Students: NextPage = () => {
   const { isOpen: isLearningCentresOpen, onOpen: openLearningCentres, onClose: closeLearningCentres } = useDisclosure();
   const { isOpen: isBuyPinOpen, onOpen: openBuyPin, onClose: closeBuyPin } = useDisclosure();
 
-  // Remove cached data from the Buy Pin modal when the user leaves the Students page.
-  // useEffect(() => {
-  //   return () => sessionStorage.removeItem('selectedApps');
-  // }, []);
+  // Remove cached data from the Buy Pin modal when the user leaves or refreshes the Students page.
+  useEffect(() => {
+    return () => sessionStorage.removeItem('selectedApps');
+  }, []);
   
   return (
     <div>

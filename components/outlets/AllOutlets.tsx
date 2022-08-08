@@ -6,19 +6,10 @@ import { SearchIcon, StarIcon } from '@heroicons/react/solid';
 import direction from '../../public/direction.svg';
 import Filter from './Filter';
 import { AllOutletsProps } from '../../types/components/outlets/all_outlets';
+import useSearch from '../../hooks/useSearch';
 
 export default function AllOutlets({ searchBar=true, outlets, applyFilter=(() => null) }: AllOutletsProps) {
-  const [searchQuery, setSearchQuery] = useState<string>('');
-
-  const updateSearchQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-
-    // Update search query to filter results when the user has entered up to 3 characters in the search field.
-    // Reset it to default (i.e. display all results) when the search field is empty or erased.
-    if (value.length === 0) setSearchQuery('');
-    else if (value.length >= 3) setSearchQuery(value);
-    return;
-  }
+  const { searchQuery, updateSearchQuery } = useSearch();
   
   return (
     <>
@@ -40,7 +31,8 @@ export default function AllOutlets({ searchBar=true, outlets, applyFilter=(() =>
         <VStack spacing={4} align='start' bg='brand.nearWhite' borderRadius={3.5} py={5} pl={[3, 5]} pr={[3, 4]} divider={<StackDivider maxW='77%' borderColor='#B2BBB6' />}>
           {outlets.filter(outlet => outlet.name.toLowerCase().includes(searchQuery.toLowerCase()))
           .map((outlet, index) => {
-            const encodedUrl = encodeURIComponent(`${outlet.location.address}, ${outlet.location.city}, ${outlet.location.state}, ${outlet.location.country}`);
+            const { address, city, state, country } = outlet.location;
+            const encodedUrl = encodeURIComponent(`${address}, ${city}, ${state}, ${country}`);
             
             return (
               <HStack key={outlet.name+index} spacing={2.5} w='full' justify='space-between'>
