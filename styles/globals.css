@@ -25,3 +25,11 @@ a {
 .alice-carousel .alice-carousel__dots .alice-carousel__dots-item.__active {
   background-color: #46AC66;
 }
+
+@media screen and (min-width: 1440px) {
+  nav > *, footer > *, section > * {
+    max-width: 1440px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}

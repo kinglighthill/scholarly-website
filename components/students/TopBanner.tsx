@@ -11,9 +11,9 @@ export default function TopBanner() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   
   return (
-    <Box as='section' bgColor='white'>    
+    <Box as='section' bgColor='white' pl={[0, "55px", "120px", "55px", "120px"]} pr={{'2xl': "120px"}}>    
       <Flex justify='space-between' flexWrap={{base: 'wrap', lg: 'nowrap'}}>
-        <VStack spacing='44px' align='start' flexBasis={{base: '100%', lg: '42%'}} pl={[5, "55px", "120px"]} pr={[5, "55px", "120px", 0]} pt={['60px', 12]} pb={[6, 12]}>
+        <VStack spacing='44px' align='start' flexBasis={{base: '100%', lg: '42%'}} pl={[5, 0]} pr={[5, "55px", "120px", 0]} pt={['60px', 12]} pb={[6, 12]}>
           <VStack spacing={8} align='start'>
             <Box fontSize={0} display={{base: 'none', lg: 'block'}}>
               <Image src={green_pattern} alt='' />

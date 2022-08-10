@@ -41,61 +41,65 @@ const Students: NextPage = () => {
 
       {/* Exam Apps, Activation Pins, and CBT Centres sections for devices greater than 480px */}
       <Box as='section' pb='130px' display={['none', 'block']}>
-        <SimpleGrid columns={3} spacingX={5} fontSize={0} bgColor='brand.nearWhite' px={{base: 5, lg: '120px'}} pt={[5, '120px']}>
-          <GridItem className={classes.image_grid_item}>
-            <Image src={exam_apps} alt="" priority />
-          </GridItem>
-          <GridItem className={classes.image_grid_item}>
-            <Image src={activation_pins} alt="" />
-          </GridItem>
-          <GridItem className={classes.image_grid_item}>
-            <Image src={cbt_centre} alt="" />
-          </GridItem>
-        </SimpleGrid>
-        <SimpleGrid columns={3} spacingX={5} spacingY={0}  px={{base: 5, lg: '120px'}} pt={4}>
-          <GridItem>
-            <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
-              <Box>
-                <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>Over 30+ Exam Apps</Text>
-                <Text color='brand.lime.700'>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
-              </Box>
-              <Link href='/apps'>
-                <a>
-                  <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                    See Apps
+        <Box bgColor='brand.nearWhite' maxW='100vw' px={{base: 5, lg: '120px'}}>
+          <SimpleGrid columns={3} spacingX={5} fontSize={0} maxW='1440px' m='auto' pt={[5, '120px']}>
+            <GridItem className={classes.image_grid_item}>
+              <Image src={exam_apps} alt="" priority />
+            </GridItem>
+            <GridItem className={classes.image_grid_item}>
+              <Image src={activation_pins} alt="" />
+            </GridItem>
+            <GridItem className={classes.image_grid_item}>
+              <Image src={cbt_centre} alt="" />
+            </GridItem>
+          </SimpleGrid>
+        </Box>
+        <Box maxW='100vw' px={{base: 5, lg: '120px'}}>
+          <SimpleGrid columns={3} spacingX={5} spacingY={0} pt={4} maxW='1440px' m='auto'>
+            <GridItem>
+              <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
+                <Box>
+                  <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>Over 30+ Exam Apps</Text>
+                  <Text color='brand.lime.700'>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
+                </Box>
+                <Link href='/apps'>
+                  <a>
+                    <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                      See Apps
+                    </Button>
+                  </a>
+                </Link>
+              </VStack>
+            </GridItem>
+            <GridItem>
+              <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
+                <Box>
+                  <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>Activation Pins</Text>
+                  <Text color='brand.lime.700'>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
+                </Box>
+                <HStack spacing={{base: 0, xl: 2}}>
+                  <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-flex'}} onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                    Buy now
                   </Button>
-                </a>
-              </Link>
-            </VStack>
-          </GridItem>
-          <GridItem>
-            <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
-              <Box>
-                <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>Activation Pins</Text>
-                <Text color='brand.lime.700'>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
-              </Box>
-              <HStack spacing={{base: 0, xl: 2}}>
-                <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-flex'}} onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                  Buy now
+                  <Button type='button' variant='outline' onClick={openSalesOutlets} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                    Sales Outlets
+                  </Button>
+                </HStack>
+              </VStack>
+            </GridItem>
+            <GridItem>
+              <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
+                <Box mb={4}>
+                  <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>CBT Centres</Text>
+                  <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
+                </Box>
+                <Button type='button' variant='solid' onClick={openCbtCentres} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                  Find Centres
                 </Button>
-                <Button type='button' variant='outline' onClick={openSalesOutlets} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                  Sales Outlets
-                </Button>
-              </HStack>
-            </VStack>
-          </GridItem>
-          <GridItem>
-            <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
-              <Box mb={4}>
-                <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>CBT Centres</Text>
-                <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
-              </Box>
-              <Button type='button' variant='solid' onClick={openCbtCentres} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                Find Centres
-              </Button>
-            </VStack>
-          </GridItem>
-        </SimpleGrid>
+              </VStack>
+            </GridItem>
+          </SimpleGrid>
+        </Box>
       </Box>
 
       {/* Exam Apps Section for mobile */}
