@@ -11,10 +11,13 @@ export default function TopBanner() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   
   return (
-    <Box as='section' bgColor='white' pl={[0, "55px", "120px", "55px", "120px"]} pr={{'2xl': "120px"}}>    
-      <Flex justify='space-between' flexWrap={{base: 'wrap', lg: 'nowrap'}}>
-        <VStack spacing='44px' align='start' flexBasis={{base: '100%', lg: '42%'}} pl={[5, 0]} pr={[5, "55px", "120px", 0]} pt={['60px', 12]} pb={[6, 12]}>
-          <VStack spacing={8} align='start'>
+    <Box as='section' pl={[0, "55px", "120px", "55px", "120px"]} pr={{'2xl': "120px"}}>    
+      <Flex pos='relative' justify='space-between' flexWrap={{base: 'wrap', lg: 'nowrap'}}>
+        {/* Transparent overlay */}
+        <Box display={{base: 'none', lg: 'block'}} pos='absolute' w={{base: '57%', xl: '64%'}} h='100%' zIndex={1} right={0} bg='linear-gradient(90deg, #FFFFFF 5.93%, rgba(255, 255, 255, 0) 85.78%)'></Box>
+        
+        <VStack spacing='44px' align='start' flexBasis={{base: '100%', lg: '44%', xl: '37%'}} pl={[5, 0]} pr={[5, "55px", "120px", 0]} pt={['60px', 12]} pb={[6, 12]}>
+          <VStack spacing={8} align='start' zIndex={2}>
             <Box fontSize={0} display={{base: 'none', lg: 'block'}}>
               <Image src={green_pattern} alt='' />
             </Box>
@@ -51,7 +54,7 @@ export default function TopBanner() {
 
         <Spacer />
 
-        <Box pos='relative' display={['block', 'none', 'none', 'block']} flexBasis={{base: '100%', lg: '55%'}} h={{base: '340px', lg: 'auto'}} bgImage='/female_student_studying_with_laptop.png' bgSize='cover' bgRepeat='no-repeat'>
+        <Box pos='relative' display={['block', 'none', 'none', 'block']} flexBasis={{base: '100%', lg: '55%', xl: '63%'}} h={{base: '340px', lg: 'auto'}} bgImage='/female_student_studying_with_laptop.png' bgSize='cover' bgRepeat='no-repeat'>
           <Label labelText='Jamb Practice' labelIcon={<BoxWithJambIcon/>} box={{top: ['10%','38%'], left: ['5%','15%']}} />
           <Label labelText='WAEC Questions' labelIcon={<BoxWithWaecIcon/>} box={{bottom: '25%', right: '22%'}} />
         </Box>
