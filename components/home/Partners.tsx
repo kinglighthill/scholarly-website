@@ -79,8 +79,7 @@ export default function Partners() {
           </Box>
         </Box>
       </Flex>
-
-      <Box pos="absolute" bottom={['51.5%', '45%', '8%', 2, -8]} left={{base: "39%", md: "55%", lg: "53%"}} zIndex={0}>
+      <Box maxW={['270px', '300px', '350px', '100%']} pos="absolute" bottom={['51.5%', '45%', '7%', '-15%']} left={{base: "45%", md: "68%", lg: "44.7%", xl: '46%'}} zIndex={0}>
         <Image src={spiral} alt="" />
       </Box>
 
