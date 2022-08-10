@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Icon, Spacer, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, HStack, Icon, Link as ChakraLink, Spacer, Text, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import scholarly_logo2 from '../../public/scholarly_logo2.svg';
@@ -57,11 +57,15 @@ export default function Footer() {
                 <Box>
                   <HStack spacing={1.5} color='white'>
                     <Icon as={PhoneIcon} />
-                    <Link href='tel:+23490-6170-1939'>+23490-6170-1939</Link>
+                    <Link href='tel:+23490-6170-1939' passHref>
+                      <ChakraLink>+23490-6170-1939</ChakraLink>
+                    </Link>
                   </HStack>
                   <HStack spacing={1.5} color='brand.yellow'>
                     <Icon as={AtSymbolIcon} />
-                    <Link href='mailto:scholarlyafrica@gmail.com'>scholarlyafrica@gmail.com</Link>
+                    <Link href='mailto:scholarlyafrica@gmail.com' passHref>
+                      <ChakraLink>scholarlyafrica@gmail.com</ChakraLink>
+                    </Link>
                   </HStack>
                 </Box>
                 <Text color='white' fontSize={13} textAlign='right'>Samuelson close, near FGC. Independence Layout, Enugu, Nigeria</Text>
@@ -95,8 +99,12 @@ export default function Footer() {
           <Text>Copyright 2020 Scholarly educational software, Inc. All Rights reserved</Text>
           <Spacer />
           <HStack spacing={8}>
-            <Link href='/privacy'>Privacy</Link>
-            <Link href='/terms'>Terms of use</Link>
+            <Link href='/privacy' passHref>
+              <ChakraLink>Privacy</ChakraLink>
+            </Link>
+            <Link href='/terms' passHref>
+              <ChakraLink>Terms of use</ChakraLink>
+            </Link>
           </HStack>
         </Flex>
       </Box>
