@@ -34,9 +34,9 @@ export default function Students() {
           </Text>
           <Link href='/apps'>
             <a>
-              <Button type='button' variant='solid'>
+              <Button type='button' variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} mt={0.5} />}>
                 See Apps
-                <Icon as={ChevronRightIcon} ml={5} />
+                {/* <Icon as={ChevronRightIcon} ml={5} /> */}
               </Button>
             </a>
           </Link>

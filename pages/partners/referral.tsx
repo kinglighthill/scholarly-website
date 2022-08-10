@@ -35,13 +35,11 @@ const PartnersReferral: NextPage = () => {
             <ReferralStepCard index={3} title="Earn" description="When your friend make a sale, your referral wallet gets credited instantly." />
           </Stack>
           <Stack direction="row" spacing={6}>
-            <Button type="button" variant="solid" onClick={onOpen}>
+            <Button type="button" variant="solid" onClick={onOpen} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={["none", "inline-block"]}/>}>
               Sign up
-              <Icon as={ChevronRightIcon} ml={4} display={["none", "inline-block"]}/>
             </Button>
-            <Button type="button" variant="solid" color="brand.lime.500" bg="white" _hover={{bg: "gray.200"}}>
+            <Button type="button" variant="solid" color="brand.lime.500" bg="white" _hover={{bg: "gray.200"}} iconSpacing={{md: 4}} rightIcon={<Icon as={DownloadIcon} display={["none", "inline-block"]}/>}>
               Download App
-              <Icon as={DownloadIcon} ml={4} display={["none", "inline-block"]}/>
             </Button>
           </Stack>
         </Flex>

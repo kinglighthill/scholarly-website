@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Box, Button, Flex, HStack, Icon, Spacer, Text, useDisclosure, VStack } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@heroicons/react/outline";
+import { ChevronRightIcon } from "@heroicons/react/solid";
 import classes from "../../styles/Home.module.css";
 import sign_up2 from "../../public/sign_up2.svg";
 import verify_identity2 from "../../public/verify_identity2.svg";
@@ -29,9 +29,8 @@ export default function Partners() {
               <Box flexBasis={{base: '100%', md: 'initial'}}>
                 <Text fontSize={20} fontWeight="bold" color="brand.lime.700">Sign up</Text>
                 <Text mt={2} color="brand.lime.700">Create an account as a Scholarly partner.</Text>
-                <Button type="button" variant="solid" mt={{base: 5, md: 7}} onClick={onOpen}>
+                <Button type="button" variant="solid" mt={{base: 5, md: 7}} onClick={onOpen} iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} mt={0.5} />}>
                   Sign up
-                  <Icon as={ChevronRightIcon} ml={5} />
                 </Button>
               </Box>
             </HStack>
@@ -57,15 +56,13 @@ export default function Partners() {
           <HStack spacing={{base: 5, md: "50px"}} justify={{base: 'center', md: 'initial'}}>
             <Link href='/partners'>
               <a>
-                <Button type="button" variant="outline">
+                <Button type="button" variant="outline" iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                   Learn More
-                  <Icon as={ChevronRightIcon} ml={5} display={{base: 'none', md: 'inline-block'}} />
                 </Button>
               </a>
             </Link>
-            <Button type="button" variant="solid">
+            <Button type="button" variant="solid" iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
               Download App
-              <Icon as={ChevronRightIcon} ml={5} display={{base: 'none', md: 'inline-block'}} />
             </Button>
           </HStack>
         </Box>

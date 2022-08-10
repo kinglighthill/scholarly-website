@@ -24,15 +24,13 @@ export default function Business() {
           <HStack spacing={4}>
             <Link href='/contact-us'>
               <a>
-                <Button type='button' variant='solid'>
-                  Contact us
-                  <Icon as={PhoneIcon} ml='15px' display={{base: 'none', md: 'inline-block'}} />
+                <Button type='button' variant='solid' iconSpacing={{md: 15}} rightIcon={<Icon as={PhoneIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                  Contact us                  
                 </Button>
               </a>
             </Link>
-            <Button type='button' variant='outline'>
+            <Button type='button' variant='outline' iconSpacing={{md: 13}} rightIcon={<Icon as={PlusIcon} display={{base: 'none', md: 'inline-block'}} />}>
               Request a demo
-              <Icon as={PlusIcon} ml='13px' display={{base: 'none', md: 'inline-block'}} />
             </Button>
           </HStack>
         </VStack>

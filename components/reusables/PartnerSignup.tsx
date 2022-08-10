@@ -187,17 +187,15 @@ export default function PartnerSignup({ isOpen, onClose }: ModalProps) {
 
             <ModalFooter justifyContent="center">
               <HStack spacing={tabIndex === 0 ? 0 : 10}>
-                <Button type="button" variant="outline" display={tabIndex === 0 ? "none" : "inline-block"} onClick={() => setTabIndex(tabIndex-1)}>
-                  <Icon as={ArrowNarrowLeftIcon} mr={3.5} mb={0.5} verticalAlign="bottom" />
+                <Button type="button" variant="outline" display={tabIndex === 0 ? "none" : "inline-flex"} 
+                  onClick={() => setTabIndex(tabIndex-1)} iconSpacing={3.5} leftIcon={<Icon as={ArrowNarrowLeftIcon} />}
+                >
                   Back
                 </Button>
-                <Button type="button" variant="solid" mt={10} disabled={disableButton()} onClick={handleNavigation}>
-                  {tabIndex === tabData.length - 1 ? 
-                    "Verify" : 
-                    <>
-                      Next <Icon as={ArrowNarrowRightIcon} ml={3.5} />
-                    </>
-                  }
+                <Button type="button" variant="solid" mt={10} disabled={disableButton()} onClick={handleNavigation}
+                  iconSpacing={3.5} rightIcon={tabIndex !== tabData.length - 1 ? <Icon as={ArrowNarrowRightIcon} /> : undefined}
+                >
+                  {tabIndex === tabData.length - 1 ? "Verify" : "Next"}
                 </Button>
               </HStack>
             </ModalFooter>

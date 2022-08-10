@@ -61,9 +61,8 @@ const Students: NextPage = () => {
               </Box>
               <Link href='/apps'>
                 <a>
-                  <Button type='button' variant='solid'>
+                  <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                     See Apps
-                    <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
                   </Button>
                 </a>
               </Link>
@@ -76,13 +75,11 @@ const Students: NextPage = () => {
                 <Text color='brand.lime.700'>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
               </Box>
               <HStack spacing={{base: 0, xl: 2}}>
-                <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-block'}} onClick={openBuyPin}>
+                <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-flex'}} onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                   Buy now
-                  <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
                 </Button>
-                <Button type='button' variant='outline' onClick={openSalesOutlets}>
+                <Button type='button' variant='outline' onClick={openSalesOutlets} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                   Sales Outlets
-                  <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
                 </Button>
               </HStack>
             </VStack>
@@ -93,9 +90,8 @@ const Students: NextPage = () => {
                 <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>CBT Centres</Text>
                 <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
               </Box>
-              <Button type='button' variant='solid' onClick={openCbtCentres}>
+              <Button type='button' variant='solid' onClick={openCbtCentres} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                 Find Centres
-                <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
               </Button>
             </VStack>
           </GridItem>
@@ -113,9 +109,8 @@ const Students: NextPage = () => {
             <Text color='brand.lime.700'>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
           </Box>
           <Link href='/apps'>
-            <Button type='button' variant='solid'>
+            <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ChevronRightIcon} />}>
               See Apps
-              <Icon as={ChevronRightIcon} ml={4} />
             </Button>
           </Link>
         </VStack>
@@ -132,13 +127,11 @@ const Students: NextPage = () => {
             <Text color='brand.lime.700'>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
           </Box>
           <HStack spacing={2}>
-            <Button type='button' variant='solid' onClick={openBuyPin}>
+            <Button type='button' variant='solid' onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Buy now
-              <Icon as={ChevronRightIcon} ml={4} display={['none', 'inline-block']} />
             </Button>
-            <Button type='button' variant='outline' onClick={openSalesOutlets}>
+            <Button type='button' variant='outline' onClick={openSalesOutlets} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Sales Outlets
-              <Icon as={ChevronRightIcon} ml={4} display={['none', 'inline-block']} />
             </Button>
           </HStack>
         </VStack>
@@ -154,9 +147,8 @@ const Students: NextPage = () => {
             <Text as='h1' color='brand.lime.700' mb={3} fontSize={25} fontWeight='bold'>CBT Centres</Text>
             <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
           </Box>
-          <Button type='button' variant='solid' onClick={openCbtCentres}>
+          <Button type='button' variant='solid' onClick={openCbtCentres} iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
             Find Centres
-            <Icon as={ArrowNarrowRightIcon} ml={4} />
           </Button>
         </VStack>
       </Box>
@@ -177,9 +169,8 @@ const Students: NextPage = () => {
             </VStack>
             <Text as='h1' color='brand.lime.700' fontSize={[25, 23, 31]} fontWeight='bold'>Learning Centres</Text>
             <Text color='brand.lime.700'>Need to learn physically in person?<br/> Find learning centers around you.</Text>
-            <Button type='button' variant='solid' onClick={openLearningCentres}>
+            <Button type='button' variant='solid' onClick={openLearningCentres} iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
               Find Centres
-              <Icon as={ArrowNarrowRightIcon} ml={4} />
             </Button>
           </VStack>
         </Flex>

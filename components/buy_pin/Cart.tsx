@@ -34,7 +34,7 @@ export default function Cart({ changeTab }: BuyPinTabProps) {
       <ModalBody p={5}>
         <Flex mb={8}>
           <Button type="button" variant="unstyled" onClick={() => changeTab("select-apps")}>
-            <Icon as={ArrowNarrowLeftIcon} mr={2} verticalAlign="middle" mb={0.5} />
+            <Icon as={ArrowNarrowLeftIcon} mr={2} verticalAlign="middle" mb={1} />
             Back to Select Apps
           </Button>
           <Spacer />
@@ -79,9 +79,10 @@ export default function Cart({ changeTab }: BuyPinTabProps) {
       </ModalBody>
 
       <ModalFooter justifyContent="center">
-        <Button type="button" variant="solid" disabled={total <= 0} onClick={() => changeTab("pay")}>
+        <Button type="button" variant="solid" disabled={total <= 0} onClick={() => changeTab("pay")}
+          iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}
+        >
           Checkout
-          <Icon as={ArrowNarrowRightIcon} ml={4} />
         </Button>
       </ModalFooter>
     </>

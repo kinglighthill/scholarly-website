@@ -45,13 +45,11 @@ const Partners: NextPage = () => {
               Make Money by buying Activation Pins and reselling to Customers
             </Text>
             <HStack spacing={[4, 6]}>
-              <Button type="button" variant='solid' onClick={onOpen}>
+              <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
                 Sign up
-                <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
               </Button>
-              <Button type="button" variant='outline'>
+              <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
                 Download App
-                <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
               </Button>
             </HStack>
           </VStack>
@@ -68,13 +66,11 @@ const Partners: NextPage = () => {
             ))}
           </VStack>
           <HStack spacing={[4, 6]} justify='center'>
-            <Button type="button" variant='solid' onClick={onOpen}>
+            <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Sign up
-              <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
             </Button>
-            <Button type="button" variant='outline'>
+            <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Download App
-              <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
             </Button>
           </HStack>
         </Box>
@@ -95,9 +91,8 @@ const Partners: NextPage = () => {
               <VStack w='full' align='start' spacing={0} pos='relative'>
                 <Link href='/partners/referral'>
                   <a>
-                    <Button type="button" variant='solid'>
+                    <Button type="button" variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
                       See Details
-                      <Icon as={ChevronRightIcon} ml={5} />
                     </Button>
                   </a>
                 </Link>

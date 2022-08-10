@@ -24,9 +24,8 @@ const sliderItems = sliderDetails.map(item => {
     <VStack spacing={8} align='start' flexBasis='35%'>
       <Text as='h2' color='brand.lime.700' fontSize={[31, 25, 25, 31]} fontWeight='bold'>{item.headline}</Text>
       <Text color='brand.lime.700'>{item.description}</Text>
-      <Button type='button' variant="solid">
+      <Button type='button' variant="solid" iconSpacing={5} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
         Download App
-        <Icon as={ArrowNarrowRightIcon} ml={5} />  
       </Button>
     </VStack>
     <Spacer />

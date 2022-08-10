@@ -36,9 +36,8 @@ export default function TopBanner() {
           </Text>
           <Link href='/get-started'>
             <a>
-              <Button type='button' variant='solid'>
+              <Button type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
                 Get Started
-                <Icon as={ArrowNarrowRightIcon} mt={0.48} ml={15} />
               </Button>
             </a>
           </Link>

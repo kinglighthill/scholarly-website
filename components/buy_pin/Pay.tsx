@@ -48,7 +48,7 @@ export default function Pay({ changeTab }: BuyPinTabProps) {
               </Tab>
             </TabList>
             <Button type="button" variant="unstyled" mx={5} mt={3} mb={6} onClick={() => changeTab("cart")}>
-              <Icon as={ArrowNarrowLeftIcon} mr={2} verticalAlign="middle" mb={0.5} />
+              <Icon as={ArrowNarrowLeftIcon} mr={2} verticalAlign="middle" mb={1} />
               Back to Cart
             </Button>
             <TabPanels px={[5, 12]} pb={6}>
