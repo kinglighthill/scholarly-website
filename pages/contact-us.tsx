@@ -27,7 +27,7 @@ const ContactUs: NextPage = () => {
               </a>
             </GridItem>
             <GridItem maxW="max-content">
-              <a href="https://twitter.com" target="blank">
+              <a href="https://twitter.com/scholarlyng" target="blank">
                 <Box p={9} fontSize={0} borderRadius={4} bg="rgba(255, 255, 255, 0.2)">
                   <Image src="/twitter.svg" width={80} height={80} alt="Twitter Icon" />
                 </Box>
