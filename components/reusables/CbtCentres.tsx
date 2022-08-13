@@ -7,7 +7,7 @@ import AllOutlets from '../outlets/AllOutlets';
 import NearYou from '../outlets/NearYou';
 
 export default function CbtCentres({ isOpen, onClose }: ModalProps) {
-  const { applyFilter, filteredOutlets } = useSearchFilter(salesOutlets);
+  const { applyFilter, filteredOutlets, filterQueries, updateQueryList } = useSearchFilter(salesOutlets);
 
   return (
     <Modal size={['full', 'md']} isOpen={isOpen} onClose={onClose} scrollBehavior="inside" isCentered>
@@ -36,7 +36,9 @@ export default function CbtCentres({ isOpen, onClose }: ModalProps) {
 
             <TabPanels px={[3, 5]} py={6}>
               <TabPanel p={0}>
-                <AllOutlets outlets={filteredOutlets ? filteredOutlets : salesOutlets} applyFilter={applyFilter} />
+                <AllOutlets outlets={filteredOutlets ? filteredOutlets : salesOutlets} applyFilter={applyFilter}
+                  filterQueries={filterQueries} updateQueryList={updateQueryList}
+                />
               </TabPanel>
               <TabPanel p={0}>
                 <NearYou allOutlets={salesOutlets} />
