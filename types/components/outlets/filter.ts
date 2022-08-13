@@ -8,6 +8,8 @@ export interface TabItem {
 export interface FilterProps {
   children: React.ReactNode;
   applyFilter: ApplyFilter;
+  filterQueries: FilterQueries;
+  updateQueryList: (id: string, value: string[]) => void;
 }
 
 export interface FilterQueries {
