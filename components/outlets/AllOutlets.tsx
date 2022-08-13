@@ -1,19 +1,26 @@
-import { useState } from 'react';
 import Image from 'next/image';
-import { Box, StackDivider, HStack, Icon, Input, InputGroup, InputLeftElement, InputRightElement, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, Text, VStack, Divider, Center, FormControl, FormLabel, ModalHeader, useDisclosure } from '@chakra-ui/react';
+import { Box, StackDivider, HStack, Icon, Input, InputGroup, InputLeftElement, InputRightElement, Text, VStack, Divider, Center, Flex } from '@chakra-ui/react';
 import { FilterIcon, StarIcon as OutlinedStarIcon } from '@heroicons/react/outline';
-import { SearchIcon, StarIcon } from '@heroicons/react/solid';
+import { SearchIcon, StarIcon, XIcon } from '@heroicons/react/solid';
 import direction from '../../public/direction.svg';
 import Filter from './Filter';
 import { AllOutletsProps } from '../../types/components/outlets/all_outlets';
 import useSearch from '../../hooks/useSearch';
+import { capitalize } from '../../utils';
 
-export default function AllOutlets({ searchBar=true, outlets, applyFilter=(() => null) }: AllOutletsProps) {
+export default function AllOutlets({ outlets, searchBar=true, applyFilter=(() => null), filterQueries={}, updateQueryList=(() => null) }: AllOutletsProps) {
   const { searchQuery, updateSearchQuery } = useSearch();
+
+  const removeChip = (item: string, id: string, value: string[]) => {
+    const remainingItems = [...value];
+    remainingItems.splice(remainingItems.indexOf(item), 1);
+
+    updateQueryList(id, remainingItems, 'chip');
+  }
   
   return (
-    <>
-      <InputGroup mb={6} display={searchBar ? 'flex' : 'none'}>
+    <VStack spacing={3} w='full' alignItems='stretch'>
+      <InputGroup display={searchBar ? 'flex' : 'none'}>
         <InputLeftElement pointerEvents='none' color='#B2BBB6'>
           <Icon as={SearchIcon} fontSize='1.2em' />
         </InputLeftElement>
@@ -21,11 +28,25 @@ export default function AllOutlets({ searchBar=true, outlets, applyFilter=(() =>
           focusBorderColor='brand.lime.500' onChange={updateSearchQuery}
         />
         <InputRightElement color='#B2BBB6'>
-          <Filter applyFilter={applyFilter}>
+          <Filter applyFilter={applyFilter} filterQueries={filterQueries} updateQueryList={updateQueryList}>
             <Icon as={FilterIcon} fontSize='1.2em' cursor='pointer' />
           </Filter>
         </InputRightElement>
       </InputGroup>
+
+      <Flex flexWrap='wrap'>
+        {filterQueries && Object.entries(filterQueries).map(query => {
+          const [id, value] = query;
+          return (
+            value.map(item => (
+              <HStack key={id+item} spacing={2} mb={1.5} mr={1} color='brand.lime.700' bg='brand.lime.50' px={3} py={1.5} borderRadius={8}>
+                <Text>{capitalize(item)}</Text>
+                <Icon as={XIcon} cursor='pointer' onClick={() => removeChip(item, id, value)} />
+              </HStack>
+            ))
+          )
+        })}
+      </Flex>
 
       {outlets.length !== 0 &&
         <VStack spacing={4} align='start' bg='brand.nearWhite' borderRadius={3.5} py={5} pl={[3, 5]} pr={[3, 4]} divider={<StackDivider maxW='77%' borderColor='#B2BBB6' />}>
@@ -70,6 +91,6 @@ export default function AllOutlets({ searchBar=true, outlets, applyFilter=(() =>
           })}
         </VStack>
       }
-    </>
+    </VStack>
   )
 }
