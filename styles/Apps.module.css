@@ -1,4 +1,4 @@
-.active {
+.activeTab {
   color: #46AC66 !important;
   opacity: 1 !important;
   padding-bottom: 7px;
@@ -9,7 +9,7 @@
 
 
 @media screen and (min-width: 992px) {
-  .active {
+  .activeTab {
     background-color: #46AC66;
     padding-bottom: 0;
     border-bottom: none;
@@ -17,7 +17,7 @@
     border-bottom-right-radius: 0;
   }
   
-  .active > p {
+  .activeTab > p {
     color: white;
   }
 }
