@@ -62,7 +62,7 @@ const Students: NextPage = () => {
                   <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>Over 30+ Exam Apps</Text>
                   <Text color='brand.lime.700'>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
                 </Box>
-                <Link href='/apps'>
+                <Link href='/apps/android'>
                   <a>
                     <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                       See Apps
