@@ -1,12 +1,25 @@
 import { Box, VStack, Text, Button, Icon, HStack, SimpleGrid, GridItem } from "@chakra-ui/react";
 import Image from "next/image";
+import Link from "next/link";
 import { apps } from '../../data';
 import { DownloadIcon } from '@heroicons/react/solid';
 import { DesktopTabNavigation, MobileTabNavigation } from '../../components/apps/TabNavigation';
 import { TabNavigationProps } from '../../types/components/apps/tab_navigation';
-import Link from "next/link";
+import ComingSoon from "../reusables/ComingSoon";
 
-export default function Apps({ activeTab }: TabNavigationProps) {  
+export default function Apps({ activeTab }: TabNavigationProps) {
+  if (activeTab === "desktop" || activeTab === "ios") {
+    return (
+      <Box as="section">
+        <MobileTabNavigation activeTab={activeTab} />
+        <HStack spacing={0} align="start">
+          <DesktopTabNavigation activeTab={activeTab} />
+          <ComingSoon />
+        </HStack>
+      </Box>
+    )
+  }
+
   return (
     <Box as="section">
       <MobileTabNavigation activeTab={activeTab} />
