@@ -1,11 +1,8 @@
-import Head from "next/head";
 import type { NextPage } from 'next';
 import { Box, Button, Flex, Icon, Stack, Text, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import { DownloadIcon } from "@heroicons/react/solid";
 import ReferralStepCard from "../../components/partners/ReferralStepCard";
-import Footer from "../../components/reusables/Footer";
-import Navbar from "../../components/reusables/Navbar";
 import PartnerSignup from "../../components/reusables/PartnerSignup";
 import Page from "../../components/reusables/Page";
 

@@ -1,11 +1,8 @@
 import { useEffect } from 'react';
-import Head from "next/head";
 import Image from 'next/image';
 import Link from 'next/link';
 import type { NextPage } from 'next';
 import { Box, Button, Flex, GridItem, HStack, Icon, SimpleGrid, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
-import Footer from '../components/reusables/Footer';
-import Navbar from '../components/reusables/Navbar';
 import Slider from '../components/students/Slider';
 import TopBanner from '../components/students/TopBanner';
 import { ChevronRightIcon, LocationMarkerIcon } from '@heroicons/react/outline';

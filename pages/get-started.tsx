@@ -1,9 +1,6 @@
-import Head from "next/head";
 import type { NextPage } from 'next';
 import { Box, Stack, Text } from "@chakra-ui/react";
 import GetStartedCard from "../components/get_started/Card";
-import Footer from "../components/reusables/Footer";
-import Navbar from "../components/reusables/Navbar";
 import { GetStartedCardProps } from "../types/components/get_started/card";
 import Page from "../components/reusables/Page";
 

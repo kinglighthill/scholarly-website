@@ -1,8 +1,5 @@
-import Head from "next/head";
 import Image from 'next/image';
 import type { NextPage } from 'next';
-import Navbar from "../components/reusables/Navbar";
-import Footer from "../components/reusables/Footer";
 import { Box, Flex, GridItem, SimpleGrid, Spacer, Text, VStack } from "@chakra-ui/react";
 import Page from "../components/reusables/Page";
 
