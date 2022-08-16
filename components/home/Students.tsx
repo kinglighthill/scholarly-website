@@ -32,7 +32,7 @@ export default function Students() {
           <Text color='brand.lime.700' fontSize={{base: 16, md: 20}} textAlign={{base: 'center', md: 'left'}}>
             Over 1 Million students use over 30 scholarly apps to access high quality academic resource and content.
           </Text>
-          <Link href='/apps'>
+          <Link href='/apps/android'>
             <a>
               <Button type='button' variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} mt={0.5} />}>
                 See Apps
