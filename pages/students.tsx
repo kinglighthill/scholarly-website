@@ -78,9 +78,16 @@ const Students: NextPage = () => {
                   <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-flex'}} onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                     Buy now
                   </Button>
-                  <Button type='button' variant='outline' onClick={openSalesOutlets} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                    Sales Outlets
-                  </Button>
+                  {/* When pin sales outlets are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+                  <Link href='/pin-sales-outlets'>
+                    <a>
+                      <Button type='button' variant='outline' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}
+                        // onClick={openSalesOutlets}
+                      >
+                        Sales Outlets
+                      </Button>
+                    </a>
+                  </Link>
                 </HStack>
               </VStack>
             </GridItem>
@@ -90,9 +97,16 @@ const Students: NextPage = () => {
                   <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>CBT Centres</Text>
                   <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
                 </Box>
-                <Button type='button' variant='solid' onClick={openCbtCentres} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                  Find Centres
-                </Button>
+                {/* When cbt centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+                <Link href='/cbt-centres'>
+                  <a>
+                    <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}
+                      // onClick={openCbtCentres}
+                    >
+                      Find Centres
+                    </Button>
+                  </a>
+                </Link>
               </VStack>
             </GridItem>
           </SimpleGrid>
@@ -131,9 +145,16 @@ const Students: NextPage = () => {
             <Button type='button' variant='solid' onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Buy now
             </Button>
-            <Button type='button' variant='outline' onClick={openSalesOutlets} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-              Sales Outlets
-            </Button>
+            {/* When pin sales outlets are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+            <Link href='/pin-sales-outlets'>
+              <a>
+                <Button type='button' variant='outline' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}
+                  // onClick={openSalesOutlets}
+                >
+                  Sales Outlets
+                </Button>
+              </a>
+            </Link>
           </HStack>
         </VStack>
       </Box>
@@ -148,9 +169,16 @@ const Students: NextPage = () => {
             <Text as='h1' color='brand.lime.700' mb={3} fontSize={25} fontWeight='bold'>CBT Centres</Text>
             <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
           </Box>
-          <Button type='button' variant='solid' onClick={openCbtCentres} iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
-            Find Centres
-          </Button>
+          {/* When cbt centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+          <Link href='/cbt-centres'>
+            <a>
+              <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}
+                // onClick={openCbtCentres}
+              >
+                Find Centres
+              </Button>
+            </a>
+          </Link>
         </VStack>
       </Box>
 
@@ -170,9 +198,16 @@ const Students: NextPage = () => {
             </VStack>
             <Text as='h1' color='brand.lime.700' fontSize={[25, 23, 31]} fontWeight='bold'>Learning Centres</Text>
             <Text color='brand.lime.700'>Need to learn physically in person?<br/> Find learning centers around you.</Text>
-            <Button type='button' variant='solid' onClick={openLearningCentres} iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
-              Find Centres
-            </Button>
+            {/* When learning centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+            <Link href='/learning-centres'>
+              <a>
+                <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}
+                  // onClick={openLearningCentres}
+                >
+                  Find Centres
+                </Button>
+              </a>
+            </Link>
           </VStack>
         </Flex>
         <Box pos='absolute' top={{base: '6%', md: '12%', lg: '10%'}} left={{base: '38%', md: '42%', lg: '44%'}} zIndex={0} display={['none', 'block']}>
