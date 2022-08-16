@@ -19,28 +19,28 @@ const ContactUs: NextPage = () => {
             <GridItem maxW="max-content">
               <a href="https://facebook.com/scholarlyng" target="blank">
                 <Box p={9} fontSize={0} borderRadius={4} bg="rgba(255, 255, 255, 0.2)">
-                  <Image src="/facebook.svg" width={80} height={80} alt="Facebook Icon" />
+                  <Image src="/facebook.svg" width={80} height={80} alt="Facebook Icon" priority />
                 </Box>
               </a>
             </GridItem>
             <GridItem maxW="max-content">
               <a href="https://twitter.com/scholarlyng" target="blank">
                 <Box p={9} fontSize={0} borderRadius={4} bg="rgba(255, 255, 255, 0.2)">
-                  <Image src="/twitter.svg" width={80} height={80} alt="Twitter Icon" />
+                  <Image src="/twitter.svg" width={80} height={80} alt="Twitter Icon" priority />
                 </Box>
               </a>
             </GridItem>
             <GridItem maxW="max-content">
               <a href="https://www.linkedin.com/company/scholarlyafrica/" target="blank">
                 <Box p={9} fontSize={0} borderRadius={4} bg="rgba(255, 255, 255, 0.2)">
-                  <Image src="/linkedin.svg" width={80} height={80} alt="Linkedin Icon" />
+                  <Image src="/linkedin.svg" width={80} height={80} alt="Linkedin Icon" priority />
                 </Box>
               </a>
             </GridItem>
             <GridItem maxW="max-content">
               <a href="https://wa.me/+2349061701939" target="blank">
                 <Box p={9} fontSize={0} borderRadius={4} bg="rgba(255, 255, 255, 0.2)">
-                  <Image src="/whatsapp.svg" width={80} height={80} alt="WhatsApp Icon" />
+                  <Image src="/whatsapp.svg" width={80} height={80} alt="WhatsApp Icon" priority />
                 </Box>
               </a>
             </GridItem>

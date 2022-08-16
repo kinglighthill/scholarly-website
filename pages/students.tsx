@@ -186,7 +186,7 @@ const Students: NextPage = () => {
       <Box as='section' px={{base: 5, lg: '120px'}} py={{base: '60px', md: '110px'}} pos='relative'>
         <Flex align='center' flexWrap={['wrap', 'nowrap']}>
           <Box fontSize={0} flexBasis={['100%', '49%']} zIndex={1}>
-            <Image src={lady_on_headphones_typing} alt="A lady on headphones and a pair of glasses typing on a computer" />
+            <Image src={lady_on_headphones_typing} alt="A lady on headphones and a pair of glasses typing on a computer" priority />
           </Box>
           <Spacer />
           <VStack spacing={8} align='start' flexBasis={['100%', '43%', '38%']}>

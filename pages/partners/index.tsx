@@ -79,10 +79,10 @@ const Partners: NextPage = () => {
         <Box as="section" className={classes.referral}>
           <Flex align='center' wrap={['wrap', 'nowrap']}>
             <Box flexBasis='49%' display={['none', 'initial']}>
-              <Image src={megaphone} alt='A megaphone' />
+              <Image src={megaphone} alt='A megaphone' priority />
             </Box>
             <Box flexBasis='100%' mb={10} display={['initial', 'none']} textAlign='center' className={classes.megaphone_mobile} >
-              <Image src={megaphone2} alt='A megaphone' />
+              <Image src={megaphone2} alt='A megaphone' priority />
             </Box>
             <Spacer />
             <VStack flexBasis={['100%', '49%', '40%', '35%']} align='start' spacing={6}>

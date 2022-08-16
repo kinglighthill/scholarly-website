@@ -75,7 +75,7 @@ export default function Partners() {
             <Text fontSize={16}>Resell Scholarly Apps. Earn profit!</Text>
           </VStack>
           <Box maxW={{base: '70%', md: '100%'}} m={{base: "auto", md: 0}}>
-            <Image src={scholarly_partners_demo} alt="Demo of the Scholarly Partners App" />
+            <Image src={scholarly_partners_demo} alt="Demo of the Scholarly Partners App" priority />
           </Box>
         </Box>
       </Flex>

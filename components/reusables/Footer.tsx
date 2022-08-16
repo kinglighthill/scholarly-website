@@ -19,7 +19,7 @@ export default function Footer() {
         <Link href='/' passHref>
           <a className={classes.logo_wrapper}>
             <HStack spacing={1} align='end'>
-              <Image src={scholarly_logo2} alt='Scholarly Logo' />
+              <Image src={scholarly_logo2} alt='Scholarly Logo' priority />
               <Text fontWeight='bold' color='white' fontSize={24}>Scholarly</Text>
             </HStack>
           </a>

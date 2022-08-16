@@ -10,7 +10,7 @@ export default function Business() {
     <Box as="section" className={classes.business_section}>
       <Flex align='center' wrap={{base: 'wrap', md: 'nowrap'}}>
         <Box fontSize={0} flexBasis={{base: '100%', md: '45%'}}>
-          <Image src={female_professional_working} alt='A young female professional working in a cafe' />
+          <Image src={female_professional_working} alt='A young female professional working in a cafe' priority />
         </Box>
         <Spacer />
         <VStack spacing={{base: 9, md: 10}} align='start' flexBasis={{base: '100%', md: '40%'}} px={{base: 8, md: 0}} mt={{base: 9, md: 0}}>

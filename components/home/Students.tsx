@@ -13,7 +13,7 @@ export default function Students() {
     <Box as='section' className={classes.students_section}>
       <Flex align='center' wrap={{base: 'wrap', md: 'nowrap'}} flexDir={{base: 'column-reverse', md: 'row'}}>
         <Box pos='relative' flexBasis={{base: '100%', md: '48%'}}>
-          <Image src={scholarly_students_demo} alt='Demo of Scholarly for Students' />
+          <Image src={scholarly_students_demo} alt='Demo of Scholarly for Students' priority />
           <Label labelText='Jamb Practice' labelIcon={<BoxWithJambIcon/>} box={{display: {base: 'none', md: 'block'}, top: 6, left: -5}} />
           <Label labelText='Detailed result' labelIcon={<BoxWithWaecIcon/>} box={{display: {base: 'none', md: 'block'}, bottom: '-40px', right: '-60px'}} />
         </Box>

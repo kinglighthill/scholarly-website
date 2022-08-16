@@ -37,7 +37,7 @@ export default function Apps({ activeTab }: TabNavigationProps) {
                   {category.apps.map(app => (
                     <GridItem key={app.name}>
                       <VStack spacing={4} bgColor="brand.nearWhite" p={5} borderRadius={4}>
-                        <Image src={app.logo.static_img} alt="" width={152} height={152} />
+                        <Image src={app.logo.static_img} alt="" width={152} height={152} priority />
                         <Link href="/">
                           <a>
                             <Button type="button" variant="outline" iconSpacing={{base: 0, md: 3.5}} rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}>
@@ -63,7 +63,7 @@ export default function Apps({ activeTab }: TabNavigationProps) {
               {category.apps.map(app => (
                 <GridItem key={app.name}>
                   <VStack spacing={4} bgColor={index%2 === 0 ? "brand.nearWhite" : "white"} p={5} borderRadius={4}>
-                    <Image src={app.logo.static_img} alt="" width={152} height={152} />
+                    <Image src={app.logo.static_img} alt="" width={152} height={152} priority />
                     <Link href="/">
                       <a>
                         <Button type="button" variant="outline" iconSpacing={{base: 0, md: 3.5}} rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}>
