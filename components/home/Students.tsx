@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Box, Flex, VStack, Text, Button, Spacer, Icon } from '@chakra-ui/react';
-import scholarly_students_demo from '../../public/scholarly_students_demo.png';
+import scholarly_students_demo from '../../public/scholarly_students_demo.webp';
 import subtract from '../../public/subtract.svg';
 import classes from '../../styles/Home.module.css';
 import { BoxWithJambIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';

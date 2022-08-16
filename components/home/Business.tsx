@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
 import { PhoneIcon, PlusIcon } from '@heroicons/react/outline';
 import classes from '../../styles/Home.module.css';
-import female_professional_working from '../../public/female_professional_working.png';
+import female_professional_working from '../../public/female_professional_working.webp';
 
 export default function Business() {
   return (

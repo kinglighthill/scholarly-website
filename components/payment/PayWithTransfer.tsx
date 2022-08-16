@@ -2,7 +2,7 @@ import { Box, Button, HStack, ListItem, OrderedList, Text, VStack } from "@chakr
 import Image from "next/image";
 import AliceCarousel from "react-alice-carousel";
 import 'react-alice-carousel/lib/alice-carousel.css';
-import zenith_bank_logo from "../../public/zenith_bank_logo.png";
+import zenith_bank_logo from "../../public/zenith_bank_logo.webp";
 import { BankAccount } from "../../types/components/payment/pay_with_transfer";
 
 const bankAccounts: BankAccount[] = [

@@ -5,7 +5,7 @@ import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import green_pattern from '../../public/green_pattern.svg';
 import star from '../../public/star.svg';
 import fan_blades from '../../public/fan_blades.svg';
-import female_student from '../../public/female_student.png';
+import female_student from '../../public/female_student.webp';
 import classes from '../../styles/Home.module.css';
 import { BoxWithJambIcon, BoxWithNecoIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
 import Label from '../reusables/Label';

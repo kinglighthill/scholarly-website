@@ -7,7 +7,7 @@ import sign_up2 from "../../public/sign_up2.svg";
 import verify_identity2 from "../../public/verify_identity2.svg";
 import find_customers2 from "../../public/find_customers2.svg";
 import spiral from "../../public/spiral.svg";
-import scholarly_partners_demo from "../../public/scholarly_partners_demo.png";
+import scholarly_partners_demo from "../../public/scholarly_partners_demo.webp";
 import PartnerSignup from "../reusables/PartnerSignup";
 
 export default function Partners() {

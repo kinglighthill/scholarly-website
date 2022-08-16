@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from '@chakra-ui/react';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import classes from '../../styles/Students.module.css';
-import notes from '../../public/notes.png';
-import scholarly_students_demo2 from '../../public/scholarly_students_demo2.png';
-import syllabus from '../../public/syllabus.png';
-import Image from 'next/image';
+import notes from '../../public/notes.webp';
+import scholarly_students_demo2 from '../../public/scholarly_students_demo2.webp';
+import syllabus from '../../public/syllabus.webp';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { SliderDetail } from '../../types/components/students/slider';
@@ -30,7 +30,7 @@ const sliderItems = sliderDetails.map(item => {
     </VStack>
     <Spacer />
     <Box flexBasis='50%'>
-      <Image src={item.image} alt="A Demo of the Scholarly Students App" />
+      <Image src={item.image} alt="A Demo of the Scholarly Students App" priority />
     </Box>
   </Flex>
 )});

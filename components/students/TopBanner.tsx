@@ -54,7 +54,7 @@ export default function TopBanner() {
 
         <Spacer />
 
-        <Box pos='relative' display={['block', 'none', 'none', 'block']} flexBasis={{base: '100%', lg: '55%', xl: '63%'}} h={{base: '340px', lg: 'auto'}} bgImage='/female_student_studying_with_laptop.png' bgSize='cover' bgRepeat='no-repeat'>
+        <Box pos='relative' display={['block', 'none', 'none', 'block']} flexBasis={{base: '100%', lg: '55%', xl: '63%'}} h={{base: '340px', lg: 'auto'}} bgImage='/female_student_studying_with_laptop.webp' bgSize='cover' bgRepeat='no-repeat'>
           <Label labelText='Jamb Practice' labelIcon={<BoxWithJambIcon/>} box={{top: ['10%','38%'], left: ['5%','15%']}} />
           <Label labelText='WAEC Questions' labelIcon={<BoxWithWaecIcon/>} box={{bottom: '25%', right: '22%'}} />
         </Box>
