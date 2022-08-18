@@ -56,10 +56,12 @@ export default function Partners() {
           </VStack>
           <HStack spacing={{base: 5, md: "50px"}} justify={{base: 'center', md: 'initial'}}>
             <Link href='/partners'>
-              <Button type="button" variant="outline">
-                Learn More
-                <Icon as={ChevronRightIcon} ml={5} display={{base: 'none', md: 'inline-block'}} />
-              </Button>
+              <a>
+                <Button type="button" variant="outline">
+                  Learn More
+                  <Icon as={ChevronRightIcon} ml={5} display={{base: 'none', md: 'inline-block'}} />
+                </Button>
+              </a>
             </Link>
             <Button type="button" variant="solid">
               Download App
