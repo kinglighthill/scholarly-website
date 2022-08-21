@@ -10,7 +10,7 @@ import whatsapp from '../../public/whatsapp.svg';
 import classes from '../../styles/components/Footer.module.css';
 import FooterMenu from '../footer/FooterMenu';
 import { PhoneIcon, AtSymbolIcon } from '@heroicons/react/outline';
-import FooterAccordion from '../footer/FooterAccordion';
+import MobileFooter from '../footer/MobileFooter';
 
 export default function Footer() {
   return (
@@ -110,7 +110,7 @@ export default function Footer() {
       </Box>
       
       <Box display={{lg: 'none'}}>
-        <FooterAccordion />
+        <MobileFooter />
       </Box>
     </Box>
   )
