@@ -28,13 +28,6 @@
   padding: 0 0 60px;
 }
 
-/* Get Help form section */
-
-.get_help_form {
-  flex-basis: 100%;
-  margin-top: 40px;
-}
-
 @media screen and (min-width: 600px) {
   /* Top Banner Section */
   .banner_container {
@@ -59,12 +52,6 @@
   /* Business Section */
   .business_section {
     padding: 60px 55px;
-  }
-
-  /* Get Help form section */ 
-  .get_help_form {
-    flex-basis: 43%;
-    margin-top: 0;
   }
 }
 
