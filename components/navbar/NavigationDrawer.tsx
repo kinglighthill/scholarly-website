@@ -59,7 +59,8 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
                             <BoxWithWindowsIcon />
                             <Box color='brand.green'>
                               <Text fontWeight='medium'>Desktop Apps</Text>
-                              <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Access over 30 apps for PC</Text>
+                              {/* <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Access over 30 apps for PC</Text> */}
+                              <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Apps not currently available</Text>
                             </Box>
                           </HStack>
                         </ListItem>

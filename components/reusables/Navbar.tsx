@@ -66,7 +66,8 @@ export default function Navbar() {
                         <BoxWithWindowsIcon />
                         <Box ml={3.5} color='brand.green'>
                           <Text fontWeight='medium'>Desktop Apps</Text>
-                          <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Access over 30 apps for PC</Text>
+                          {/* <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Access over 30 apps for PC</Text> */}
+                          <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Apps not currently available</Text>
                         </Box>
                       </MenuItem>
                     </ChakraLink>
