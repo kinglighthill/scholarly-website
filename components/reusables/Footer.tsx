@@ -75,7 +75,7 @@ export default function Footer() {
               <a href='https://facebook.com/scholarlyng' target="blank" aria-label='Visit our facebook page'>
                 <Image src={facebook} alt='Facebook Icon' />
               </a>
-              <a href='https://twitter.com' target="blank" aria-label='Visit our twitter handle'>
+              <a href='https://twitter.com/scholarlyng' target="blank" aria-label='Visit our twitter handle'>
                 <Image src={twitter} alt='Twitter Icon' />
               </a>
               <a href='https://www.linkedin.com/company/scholarlyafrica/' target="blank" aria-label='Visit our linkedin page'>

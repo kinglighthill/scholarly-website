@@ -29,9 +29,13 @@ export default function Business() {
                 </Button>
               </a>
             </Link>
-            <Button type='button' variant='outline' iconSpacing={{md: 13}} rightIcon={<Icon as={PlusIcon} display={{base: 'none', md: 'inline-block'}} />}>
-              Request a demo
-            </Button>
+            <Link href='/business'>
+              <a>
+                <Button type='button' variant='outline' iconSpacing={{md: 13}} rightIcon={<Icon as={PlusIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                  Request a demo
+                </Button>
+              </a>
+            </Link>
           </HStack>
         </VStack>
       </Flex>

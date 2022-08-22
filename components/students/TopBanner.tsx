@@ -1,5 +1,6 @@
-import { Flex, VStack, Text, Button, Box, HStack, Spacer, Icon, useDisclosure } from '@chakra-ui/react';
+import Link from 'next/link';
 import Image from 'next/image';
+import { Flex, VStack, Text, Button, Box, HStack, Spacer, Icon, useDisclosure } from '@chakra-ui/react';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import green_pattern from '../../public/green_pattern.svg';
 import { BoxWithJambIcon, BoxWithNecoIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
@@ -36,9 +37,13 @@ export default function TopBanner() {
             </Box>
           </VStack>
           <HStack spacing={4}>
-            <Button type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
-              Download App
-            </Button>
+            <Link href='/apps/android'>
+              <a>
+                <Button type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
+                  Download App
+                </Button>
+              </a>
+            </Link>
             {/* <Button type='button' variant='outline' display={['none', 'inline-flex']} onClick={onOpen} iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
               Buy Activation Pin
             </Button> */}

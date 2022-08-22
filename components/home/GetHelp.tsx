@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Box, Button, Flex, Icon, Spacer, Text } from '@chakra-ui/react'
 import classes from '../../styles/Home.module.css';
 import { ChevronRightIcon } from '@heroicons/react/outline';
@@ -14,9 +15,13 @@ export default function GetHelp() {
           <Text color='brand.lime.700' mb={{base: 6, md: 10}}>
             Check our frequently asked questions to see answers to popular questions or simply send us a message using the contact us fields.
           </Text>
-          <Button type='button' variant='link' fontSize={{base: 16, md: 20}} fontWeight='medium' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
-            FAQs
-          </Button>
+          <Link href='/faqs'>
+            <a>
+              <Button type='button' variant='link' fontSize={{base: 16, md: 20}} fontWeight='medium' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
+                FAQs
+              </Button>
+            </a>
+          </Link>
         </Box>
 
         <Spacer />
