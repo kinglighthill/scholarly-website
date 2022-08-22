@@ -28,10 +28,10 @@ export default function Footer() {
         <Flex mb='50px'>
           <FooterMenu title='Products'
             items={[
-              { name: 'Mobile Apps', url: '/' },
-              { name: 'Desktop Apps', url: '/' },
-              { name: 'Partner Apps', url: '/' },
-              { name: 'Enterprise Software', url: '/' }
+              { name: 'Mobile Apps', url: '/apps/android' },
+              { name: 'Desktop Apps', url: '/apps/desktop' },
+              { name: 'Partner Apps', url: '/partners' },
+              { name: 'Enterprise Software', url: '/business' }
             ]}
           />
           <Spacer />

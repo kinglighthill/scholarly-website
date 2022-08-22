@@ -23,16 +23,16 @@ export default function MobileFooter() {
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
               <ListItem>
-                <Link href='/'>Mobile Apps</Link>
+                <Link href='/apps/android'>Mobile Apps</Link>
               </ListItem> 
               <ListItem>
-                <Link href='/'>Desktop Apps</Link>
+                <Link href='/apps/desktop'>Desktop Apps</Link>
               </ListItem> 
               <ListItem>
-                <Link href='/'>Partners App</Link>
+                <Link href='/partners'>Partners App</Link>
               </ListItem> 
               <ListItem>
-                <Link href='/'>Enterprise Software</Link>
+                <Link href='/business'>Enterprise Software</Link>
               </ListItem> 
             </List>
           </AccordionPanel>
