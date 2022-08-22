@@ -45,9 +45,9 @@ const Partners: NextPage = () => {
               Make Money by buying Activation Pins and reselling to Customers
             </Text>
             <HStack spacing={[4, 6]}>
-              <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+              {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
                 Sign up
-              </Button>
+              </Button> */}
               <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
                 Download App
               </Button>
@@ -66,9 +66,9 @@ const Partners: NextPage = () => {
             ))}
           </VStack>
           <HStack spacing={[4, 6]} justify='center'>
-            <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+            {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Sign up
-            </Button>
+            </Button> */}
             <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Download App
             </Button>

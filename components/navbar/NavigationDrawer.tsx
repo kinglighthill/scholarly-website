@@ -88,7 +88,7 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
                 <ChakraLink>Contact Us</ChakraLink>
               </Link>
             </Text>
-            <Button type='button' variant='solid' w='full'>Activate</Button>
+            {/* <Button type='button' variant='solid' w='full'>Activate</Button> */}
           </VStack>
         </DrawerBody>
       </DrawerContent>

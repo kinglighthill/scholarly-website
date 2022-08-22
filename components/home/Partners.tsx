@@ -29,9 +29,9 @@ export default function Partners() {
               <Box flexBasis={{base: '100%', md: 'initial'}}>
                 <Text fontSize={20} fontWeight="bold" color="brand.lime.700">Sign up</Text>
                 <Text mt={2} color="brand.lime.700">Create an account as a Scholarly partner.</Text>
-                <Button type="button" variant="solid" mt={{base: 5, md: 7}} onClick={onOpen} iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} mt={0.5} />}>
+                {/* <Button type="button" variant="solid" mt={{base: 5, md: 7}} onClick={onOpen} iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} mt={0.5} />}>
                   Sign up
-                </Button>
+                </Button> */}
               </Box>
             </HStack>
             <HStack spacing={{base: 0, md: 9}} align="start" wrap={{base: 'wrap', md: 'nowrap'}}>

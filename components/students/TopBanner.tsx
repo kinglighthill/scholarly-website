@@ -39,9 +39,9 @@ export default function TopBanner() {
             <Button type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
               Download App
             </Button>
-            <Button type='button' variant='outline' display={['none', 'inline-flex']} onClick={onOpen} iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
+            {/* <Button type='button' variant='outline' display={['none', 'inline-flex']} onClick={onOpen} iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
               Buy Activation Pin
-            </Button>
+            </Button> */}
           </HStack>
           <Box>
             <HStack spacing={4}>

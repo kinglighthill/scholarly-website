@@ -99,7 +99,7 @@ export default function Navbar() {
                 <Button type='button' variant='outline'>Contact us</Button>
               </a>
             </Link>
-            <Button type='button' variant='solid'>Activate</Button>
+            {/* <Button type='button' variant='solid'>Activate</Button> */}
             <Menu isLazy>
               <MenuButton color='brand.lime.500' fontWeight='medium' pt={1.5}>
                 <Image src={nigeria_flag} alt="Nigerian flag" />
