@@ -1,19 +1,16 @@
 import { useEffect } from 'react';
-import Head from "next/head";
 import Image from 'next/image';
 import Link from 'next/link';
 import type { NextPage } from 'next';
 import { Box, Button, Flex, GridItem, HStack, Icon, SimpleGrid, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
-import Footer from '../components/reusables/Footer';
-import Navbar from '../components/reusables/Navbar';
 import Slider from '../components/students/Slider';
 import TopBanner from '../components/students/TopBanner';
 import { ChevronRightIcon, LocationMarkerIcon } from '@heroicons/react/outline';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
-import exam_apps from '../public/exam_apps.png';
-import activation_pins from '../public/activation_pins.png';
-import cbt_centre from '../public/cbt_centre.png';
-import lady_on_headphones_typing from '../public/lady_on_headphones_typing.png';
+import exam_apps from '../public/exam_apps.webp';
+import activation_pins from '../public/activation_pins.webp';
+import cbt_centre from '../public/cbt_centre.webp';
+import lady_on_headphones_typing from '../public/lady_on_headphones_typing.webp';
 import green_pattern from '../public/green_pattern.svg';
 import classes from '../styles/Students.module.css';
 import PinOutlets from '../components/reusables/PinOutlets';
@@ -41,65 +38,79 @@ const Students: NextPage = () => {
 
       {/* Exam Apps, Activation Pins, and CBT Centres sections for devices greater than 480px */}
       <Box as='section' pb='130px' display={['none', 'block']}>
-        <SimpleGrid columns={3} spacingX={5} fontSize={0} bgColor='brand.nearWhite' px={{base: 5, lg: '120px'}} pt={[5, '120px']}>
-          <GridItem className={classes.image_grid_item}>
-            <Image src={exam_apps} alt="" priority />
-          </GridItem>
-          <GridItem className={classes.image_grid_item}>
-            <Image src={activation_pins} alt="" />
-          </GridItem>
-          <GridItem className={classes.image_grid_item}>
-            <Image src={cbt_centre} alt="" />
-          </GridItem>
-        </SimpleGrid>
-        <SimpleGrid columns={3} spacingX={5} spacingY={0}  px={{base: 5, lg: '120px'}} pt={4}>
-          <GridItem>
-            <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
-              <Box>
-                <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>Over 30+ Exam Apps</Text>
-                <Text color='brand.lime.700'>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
-              </Box>
-              <Link href='/apps'>
-                <a>
-                  <Button type='button' variant='solid'>
-                    See Apps
-                    <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
+        <Box bgColor='brand.nearWhite' maxW='100vw' px={{base: 5, lg: '120px'}}>
+          <SimpleGrid columns={3} spacingX={5} fontSize={0} maxW='1440px' m='auto' pt={[5, '120px']}>
+            <GridItem className={classes.image_grid_item}>
+              <Image src={exam_apps} alt="" priority />
+            </GridItem>
+            <GridItem className={classes.image_grid_item}>
+              <Image src={activation_pins} alt="" />
+            </GridItem>
+            <GridItem className={classes.image_grid_item}>
+              <Image src={cbt_centre} alt="" />
+            </GridItem>
+          </SimpleGrid>
+        </Box>
+        <Box maxW='100vw' px={{base: 5, lg: '120px'}}>
+          <SimpleGrid columns={3} spacingX={5} spacingY={0} pt={4} maxW='1440px' m='auto'>
+            <GridItem>
+              <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
+                <Box>
+                  <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>Over 30+ Exam Apps</Text>
+                  <Text color='brand.lime.700'>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
+                </Box>
+                <Link href='/apps/android'>
+                  <a>
+                    <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                      See Apps
+                    </Button>
+                  </a>
+                </Link>
+              </VStack>
+            </GridItem>
+            <GridItem>
+              <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
+                <Box>
+                  <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>Activation Pins</Text>
+                  <Text color='brand.lime.700'>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
+                </Box>
+                <HStack spacing={{base: 0, xl: 2}}>
+                  <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-flex'}} onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                    Buy now
                   </Button>
-                </a>
-              </Link>
-            </VStack>
-          </GridItem>
-          <GridItem>
-            <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
-              <Box>
-                <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>Activation Pins</Text>
-                <Text color='brand.lime.700'>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
-              </Box>
-              <HStack spacing={{base: 0, xl: 2}}>
-                <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-block'}} onClick={openBuyPin}>
-                  Buy now
-                  <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
-                </Button>
-                <Button type='button' variant='outline' onClick={openSalesOutlets}>
-                  Sales Outlets
-                  <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
-                </Button>
-              </HStack>
-            </VStack>
-          </GridItem>
-          <GridItem>
-            <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
-              <Box mb={4}>
-                <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>CBT Centres</Text>
-                <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
-              </Box>
-              <Button type='button' variant='solid' onClick={openCbtCentres}>
-                Find Centres
-                <Icon as={ChevronRightIcon} ml={4} display={{base: 'none', md: 'inline-block'}} />
-              </Button>
-            </VStack>
-          </GridItem>
-        </SimpleGrid>
+                  {/* When pin sales outlets are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+                  <Link href='/pin-sales-outlets'>
+                    <a>
+                      <Button type='button' variant='outline' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}
+                        // onClick={openSalesOutlets}
+                      >
+                        Sales Outlets
+                      </Button>
+                    </a>
+                  </Link>
+                </HStack>
+              </VStack>
+            </GridItem>
+            <GridItem>
+              <VStack align='start' justify='space-between' h='100%' maxW='89%' m='auto'>
+                <Box mb={4}>
+                  <Text as='h1' color='brand.lime.700' mb={3} fontSize={{base: 23, md: 25}} fontWeight='bold'>CBT Centres</Text>
+                  <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
+                </Box>
+                {/* When cbt centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+                <Link href='/cbt-centres'>
+                  <a>
+                    <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}
+                      // onClick={openCbtCentres}
+                    >
+                      Find Centres
+                    </Button>
+                  </a>
+                </Link>
+              </VStack>
+            </GridItem>
+          </SimpleGrid>
+        </Box>
       </Box>
 
       {/* Exam Apps Section for mobile */}
@@ -113,9 +124,8 @@ const Students: NextPage = () => {
             <Text color='brand.lime.700'>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
           </Box>
           <Link href='/apps'>
-            <Button type='button' variant='solid'>
+            <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ChevronRightIcon} />}>
               See Apps
-              <Icon as={ChevronRightIcon} ml={4} />
             </Button>
           </Link>
         </VStack>
@@ -132,14 +142,19 @@ const Students: NextPage = () => {
             <Text color='brand.lime.700'>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
           </Box>
           <HStack spacing={2}>
-            <Button type='button' variant='solid' onClick={openBuyPin}>
+            <Button type='button' variant='solid' onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Buy now
-              <Icon as={ChevronRightIcon} ml={4} display={['none', 'inline-block']} />
             </Button>
-            <Button type='button' variant='outline' onClick={openSalesOutlets}>
-              Sales Outlets
-              <Icon as={ChevronRightIcon} ml={4} display={['none', 'inline-block']} />
-            </Button>
+            {/* When pin sales outlets are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+            <Link href='/pin-sales-outlets'>
+              <a>
+                <Button type='button' variant='outline' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}
+                  // onClick={openSalesOutlets}
+                >
+                  Sales Outlets
+                </Button>
+              </a>
+            </Link>
           </HStack>
         </VStack>
       </Box>
@@ -154,10 +169,16 @@ const Students: NextPage = () => {
             <Text as='h1' color='brand.lime.700' mb={3} fontSize={25} fontWeight='bold'>CBT Centres</Text>
             <Text color='brand.lime.700'>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
           </Box>
-          <Button type='button' variant='solid' onClick={openCbtCentres}>
-            Find Centres
-            <Icon as={ArrowNarrowRightIcon} ml={4} />
-          </Button>
+          {/* When cbt centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+          <Link href='/cbt-centres'>
+            <a>
+              <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}
+                // onClick={openCbtCentres}
+              >
+                Find Centres
+              </Button>
+            </a>
+          </Link>
         </VStack>
       </Box>
 
@@ -165,7 +186,7 @@ const Students: NextPage = () => {
       <Box as='section' px={{base: 5, lg: '120px'}} py={{base: '60px', md: '110px'}} pos='relative'>
         <Flex align='center' flexWrap={['wrap', 'nowrap']}>
           <Box fontSize={0} flexBasis={['100%', '49%']} zIndex={1}>
-            <Image src={lady_on_headphones_typing} alt="A lady on headphones and a pair of glasses typing on a computer" />
+            <Image src={lady_on_headphones_typing} alt="A lady on headphones and a pair of glasses typing on a computer" priority />
           </Box>
           <Spacer />
           <VStack spacing={8} align='start' flexBasis={['100%', '43%', '38%']}>
@@ -177,10 +198,16 @@ const Students: NextPage = () => {
             </VStack>
             <Text as='h1' color='brand.lime.700' fontSize={[25, 23, 31]} fontWeight='bold'>Learning Centres</Text>
             <Text color='brand.lime.700'>Need to learn physically in person?<br/> Find learning centers around you.</Text>
-            <Button type='button' variant='solid' onClick={openLearningCentres}>
-              Find Centres
-              <Icon as={ArrowNarrowRightIcon} ml={4} />
-            </Button>
+            {/* When learning centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
+            <Link href='/learning-centres'>
+              <a>
+                <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}
+                  // onClick={openLearningCentres}
+                >
+                  Find Centres
+                </Button>
+              </a>
+            </Link>
           </VStack>
         </Flex>
         <Box pos='absolute' top={{base: '6%', md: '12%', lg: '10%'}} left={{base: '38%', md: '42%', lg: '44%'}} zIndex={0} display={['none', 'block']}>

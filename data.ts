@@ -1,15 +1,15 @@
-import jamb_cbt_practice from "./public/jamb_cbt_practice.png";
-import waec_paq from "./public/waec_paq.png";
-import waec_literature from "./public/waec_literature.png";
-import bece_neco from "./public/bece_neco.png";
-import bece_jhs from "./public/bece_jhs.png";
-import futo_putme from "./public/futo_putme.png";
-import imsu_putme from "./public/imsu_putme.png";
-import unn_putme from "./public/unn_putme.png";
-import uniben_putme from "./public/uniben_putme.png";
-import sales_outlet1 from "./public/sales_outlet1.png";
-import sales_outlet2 from "./public/sales_outlet2.png";
-import sales_outlet3 from "./public/sales_outlet3.png";
+import jamb_cbt_practice from "./public/jamb_cbt_practice.webp";
+import waec_paq from "./public/waec_paq.webp";
+import waec_literature from "./public/waec_literature.webp";
+import bece_neco from "./public/bece_neco.webp";
+import bece_jhs from "./public/bece_jhs.webp";
+import futo_putme from "./public/futo_putme.webp";
+import imsu_putme from "./public/imsu_putme.webp";
+import unn_putme from "./public/unn_putme.webp";
+import uniben_putme from "./public/uniben_putme.webp";
+import sales_outlet1 from "./public/sales_outlet1.webp";
+import sales_outlet2 from "./public/sales_outlet2.webp";
+import sales_outlet3 from "./public/sales_outlet3.webp";
 import { Apps, FAQ, Outlet, Statistic } from "./types/data";
 import { TestimonialProps } from "./types/components/reusables/testimonials";
 
@@ -49,33 +49,33 @@ export const apps: Apps = {
       category_name: "UTME",
       category_description: "UTME stands for Unified Tertiary Matriculations Examination. It is usually written yearly by students seeking to gain admission into higher institutions.",
       apps: [
-        { name: "Jamb CBT Practice", logo: { static_img: jamb_cbt_practice, url: 'jamb_cbt_practice.png' }, download_link: "", price: 2000 },
+        { name: "Jamb CBT Practice", logo: { static_img: jamb_cbt_practice, url: 'jamb_cbt_practice.webp' }, download_link: "", price: 2000 },
       ]
     },
     { 
       category_name: "Senior School",
       category_description: "Organized in 5 west African countries, WASSCE tests senior students on their knowledge of core subjects.",
       apps: [
-        { name: "WAEC Past Questions", logo: { static_img: waec_paq, url: 'waec_paq.png' }, download_link: "", price: 1000 },
-        { name: "WAEC Literature", logo: { static_img: waec_literature, url: 'waec_literature.png' }, download_link: "", price: 1000 },    
+        { name: "WAEC Past Questions", logo: { static_img: waec_paq, url: 'waec_paq.webp' }, download_link: "", price: 1000 },
+        { name: "WAEC Literature", logo: { static_img: waec_literature, url: 'waec_literature.webp' }, download_link: "", price: 1000 },    
       ]
     },
     {
       category_name: "Junior School",
       category_description: "Organized in 5 west African countries, BECE tests junior students on their knowledge of core subjects.",
       apps: [
-        { name: "BECE NECO", logo: { static_img: bece_neco, url: 'bece_neco.png' }, download_link: "", price: 1000 },
-        { name: "BECE JHS", logo: { static_img: bece_jhs, url: 'bece_jhs.png' }, download_link: "", price: 1000 },    
+        { name: "BECE NECO", logo: { static_img: bece_neco, url: 'bece_neco.webp' }, download_link: "", price: 1000 },
+        { name: "BECE JHS", logo: { static_img: bece_jhs, url: 'bece_jhs.webp' }, download_link: "", price: 1000 },    
       ]
     },
     {
       category_name: "Post UTME",
       category_description: "Organized by higher institutions post UTME for students seeking admission in such institutions.",
       apps: [
-        { name: "FUTO Post UTME", logo: { static_img: futo_putme, url: 'futo_putme.png' }, download_link: "", price: 2000 },
-        { name: "IMSU Post UTME", logo: { static_img: imsu_putme, url: 'imsu_putme.png' }, download_link: "", price: 2000 },
-        { name: "UNN Post UTME", logo: { static_img: unn_putme, url: 'unn_putme.png' }, download_link: "", price: 2000 },
-        { name: "UNIBEN Post UTME", logo: { static_img: uniben_putme, url: 'uniben_putme.png' }, download_link: "", price: 2000 },    
+        { name: "FUTO Post UTME", logo: { static_img: futo_putme, url: 'futo_putme.webp' }, download_link: "", price: 2000 },
+        { name: "IMSU Post UTME", logo: { static_img: imsu_putme, url: 'imsu_putme.webp' }, download_link: "", price: 2000 },
+        { name: "UNN Post UTME", logo: { static_img: unn_putme, url: 'unn_putme.webp' }, download_link: "", price: 2000 },
+        { name: "UNIBEN Post UTME", logo: { static_img: uniben_putme, url: 'uniben_putme.webp' }, download_link: "", price: 2000 },    
       ]
     },
   ],
@@ -84,14 +84,14 @@ export const apps: Apps = {
       category_name: "Post UTME",
       category_description: "Organized by higher institutions post UTME for students seeking admission in such institutions.",
       apps: [
-        { name: "UNIBEN Post UTME", logo: { static_img: uniben_putme, url: 'uniben_putme.png' }, download_link: "", price: 2000 },    
+        { name: "UNIBEN Post UTME", logo: { static_img: uniben_putme, url: 'uniben_putme.webp' }, download_link: "", price: 2000 },    
       ]
     },
     {
       category_name: "Junior School",
       category_description: "Organized in 5 west African countries, BECE tests junior students on their knowledge of core subjects.",
       apps: [
-        { name: "BECE JHS", logo: { static_img: bece_jhs, url: 'bece_jhs.png' }, download_link: "", price: 1000 },    
+        { name: "BECE JHS", logo: { static_img: bece_jhs, url: 'bece_jhs.webp' }, download_link: "", price: 1000 },    
       ]
     },
   ],
@@ -100,14 +100,14 @@ export const apps: Apps = {
       category_name: "UTME",
       category_description: "UTME stands for Unified Tertiary Matriculations Examination. It is usually written yearly by students seeking to gain admission into higher institutions.",
       apps: [
-        { name: "Jamb CBT Practice", logo: { static_img: jamb_cbt_practice, url: 'jamb_cbt_practice.png' }, download_link: "", price: 2000 },
+        { name: "Jamb CBT Practice", logo: { static_img: jamb_cbt_practice, url: 'jamb_cbt_practice.webp' }, download_link: "", price: 2000 },
       ]
     },
     {
       category_name: "Post UTME",
       category_description: "Organized by higher institutions post UTME for students seeking admission in such institutions.",
       apps: [
-        { name: "FUTO Post UTME", logo: { static_img: futo_putme, url: 'futo_putme.png' }, download_link: "", price: 2000 },
+        { name: "FUTO Post UTME", logo: { static_img: futo_putme, url: 'futo_putme.webp' }, download_link: "", price: 2000 },
       ]
     },
   ]

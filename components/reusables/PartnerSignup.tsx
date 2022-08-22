@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Icon, HStack } from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Icon, HStack, StackDivider, Divider } from "@chakra-ui/react";
 import { Button, Text, VStack } from '@chakra-ui/react';
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
 import AccountCredentials from '../partner_signup/AccountCredentials';
@@ -158,19 +158,22 @@ export default function PartnerSignup({ isOpen, onClose }: ModalProps) {
             <ModalBody>
               <Tabs variant="unstyled" index={tabIndex} isLazy px={6} onChange={(index) => setTabIndex(index)}>
                 <TabList display="flex" justifyContent="space-between">
-                  {tabData.map((data, index, arr) => (
-                    <Tab key={index} isDisabled={index > tabIndex} px={0} maxW="25%" display="flex" alignItems="start" justifyContent="start">
-                      <VStack spacing={2}>
-                        <Text px={tabIndex > index ? 1.5 : 2} py="1px" borderRadius={25} fontWeight="medium" color={tabIndex === index ? "white" : "brand.lime.700"} 
-                          bg={tabIndex >= index ? "brand.lime.500" : "brand.lime.50"}
-                        >
-                          {tabIndex > index ? <Icon as={CheckIcon} color="white" mt={1} /> : index+1}
-                        </Text>
-                        <Text color="brand.lime.700" fontSize={13} fontWeight="medium">{data.label}</Text> 
-                      </VStack>
-                      {index < arr.length-1 && <Text minW="36px" h="1px" borderRadius={2} bg="#A6B1AA" mt="18%" ml="9%"></Text>}
-                    </Tab>
-                  ))}
+                  <HStack w="full" justify="space-between" divider={<Text w="36px" h="1px" borderRadius={2} bg="#A6B1AA" mb="25px"></Text>}>
+                    {tabData.map((data, index, arr) => (
+                      <Tab key={index} isDisabled={index > tabIndex} px={0} w="17%">
+                        <VStack spacing={2}>
+                          <Text px={tabIndex > index ? 1.5 : 2} py="1px" borderRadius={25} fontWeight="medium" color={tabIndex === index ? "white" : "brand.lime.700"} 
+                            bg={tabIndex >= index ? "brand.lime.500" : "brand.lime.50"}
+                          >
+                            {tabIndex > index ? <Icon as={CheckIcon} color="white" mt={1} /> : index+1}
+                          </Text>
+                          <Text color="brand.lime.700" fontSize={13} fontWeight="medium">{data.label}</Text> 
+                        </VStack>
+                        {/* Alternate method for adding a horizontal divider between the tab lists */}
+                        {/* {index < arr.length-1 && <Text minW="36px" h="1px" borderRadius={2} bg="#A6B1AA" mt="18%" ml="9%"></Text>} */}
+                      </Tab>
+                    ))}
+                  </HStack>
                 </TabList>
                 <TabPanels>
                   {tabData.map((data, index) => {
@@ -187,17 +190,15 @@ export default function PartnerSignup({ isOpen, onClose }: ModalProps) {
 
             <ModalFooter justifyContent="center">
               <HStack spacing={tabIndex === 0 ? 0 : 10}>
-                <Button type="button" variant="outline" display={tabIndex === 0 ? "none" : "inline-block"} onClick={() => setTabIndex(tabIndex-1)}>
-                  <Icon as={ArrowNarrowLeftIcon} mr={3.5} mb={0.5} verticalAlign="bottom" />
+                <Button type="button" variant="outline" display={tabIndex === 0 ? "none" : "inline-flex"} 
+                  onClick={() => setTabIndex(tabIndex-1)} iconSpacing={3.5} leftIcon={<Icon as={ArrowNarrowLeftIcon} />}
+                >
                   Back
                 </Button>
-                <Button type="button" variant="solid" mt={10} disabled={disableButton()} onClick={handleNavigation}>
-                  {tabIndex === tabData.length - 1 ? 
-                    "Verify" : 
-                    <>
-                      Next <Icon as={ArrowNarrowRightIcon} ml={3.5} />
-                    </>
-                  }
+                <Button type="button" variant="solid" mt={10} disabled={disableButton()} onClick={handleNavigation}
+                  iconSpacing={3.5} rightIcon={tabIndex !== tabData.length - 1 ? <Icon as={ArrowNarrowRightIcon} /> : undefined}
+                >
+                  {tabIndex === tabData.length - 1 ? "Verify" : "Next"}
                 </Button>
               </HStack>
             </ModalFooter>

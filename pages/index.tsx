@@ -1,4 +1,4 @@
-import { Box, HStack, Icon, Text } from '@chakra-ui/react';
+import { Box, HStack, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Business from '../components/home/Business';

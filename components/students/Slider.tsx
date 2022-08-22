@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from '@chakra-ui/react';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import classes from '../../styles/Students.module.css';
-import notes from '../../public/notes.png';
-import scholarly_students_demo2 from '../../public/scholarly_students_demo2.png';
-import syllabus from '../../public/syllabus.png';
-import Image from 'next/image';
+import notes from '../../public/notes.webp';
+import scholarly_students_demo2 from '../../public/scholarly_students_demo2.webp';
+import syllabus from '../../public/syllabus.webp';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { SliderDetail } from '../../types/components/students/slider';
@@ -24,14 +24,13 @@ const sliderItems = sliderDetails.map(item => {
     <VStack spacing={8} align='start' flexBasis='35%'>
       <Text as='h2' color='brand.lime.700' fontSize={[31, 25, 25, 31]} fontWeight='bold'>{item.headline}</Text>
       <Text color='brand.lime.700'>{item.description}</Text>
-      <Button type='button' variant="solid">
+      <Button type='button' variant="solid" iconSpacing={5} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
         Download App
-        <Icon as={ArrowNarrowRightIcon} ml={5} />  
       </Button>
     </VStack>
     <Spacer />
     <Box flexBasis='50%'>
-      <Image src={item.image} alt="A Demo of the Scholarly Students App" />
+      <Image src={item.image} alt="A Demo of the Scholarly Students App" priority />
     </Box>
   </Flex>
 )});

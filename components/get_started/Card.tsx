@@ -9,9 +9,8 @@ export default function GetStartedCard({ title, description, btnText, btnHref }:
       <Text as="h2" mb={6} color="white" fontSize={25} fontWeight="medium">{title}</Text>
       <Text mb={4} color="white">{description}</Text>
       <Link href={btnHref}>
-        <Button type="button" variant="solid" w="max-content" bg="white" color="brand.lime.500" _hover={{bg: "gray.200"}}>
+        <Button type="button" variant="solid" w="max-content" bg="white" color="brand.lime.500" _hover={{bg: "gray.200"}} iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
           Continue
-          <Icon as={ArrowNarrowRightIcon} ml={4} />
         </Button>
       </Link>
     </Box>

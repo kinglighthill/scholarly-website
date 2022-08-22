@@ -106,9 +106,10 @@ export default function SelectApps({ changeTab }: BuyPinTabProps) {
       </ModalBody>
 
       <ModalFooter justifyContent="center">
-        <Button type="button" variant="solid" disabled={Object.entries(selectedApps).length === 0} onClick={handleNavigation}>
+        <Button type="button" variant="solid" disabled={Object.entries(selectedApps).length === 0}
+          onClick={handleNavigation} iconSpacing={4} rightIcon={<Icon as={ChevronRightIcon} />}
+        >
           Next
-          <Icon as={ChevronRightIcon} ml={4} />
         </Button>
       </ModalFooter>
     </>

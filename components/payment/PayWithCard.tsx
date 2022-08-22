@@ -91,9 +91,8 @@ export default function PayWithCard({ updatePaymentStatus, updateProvidedEmail }
         </FormControl>
       </VStack>
       
-      <Button type="submit" variant="solid" disabled={loading} mt={7}>
+      <Button type="submit" variant="solid" disabled={loading} mt={7} iconSpacing={3.5} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
         Confirm Payment
-        <Icon as={ArrowNarrowRightIcon} ml={3.5} />
       </Button>
     </form>
   )

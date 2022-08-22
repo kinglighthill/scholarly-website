@@ -5,7 +5,7 @@ import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import green_pattern from '../../public/green_pattern.svg';
 import star from '../../public/star.svg';
 import fan_blades from '../../public/fan_blades.svg';
-import female_student from '../../public/female_student.png';
+import female_student from '../../public/female_student.webp';
 import classes from '../../styles/Home.module.css';
 import { BoxWithJambIcon, BoxWithNecoIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
 import Label from '../reusables/Label';
@@ -36,9 +36,8 @@ export default function TopBanner() {
           </Text>
           <Link href='/get-started'>
             <a>
-              <Button type='button' variant='solid'>
+              <Button type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
                 Get Started
-                <Icon as={ArrowNarrowRightIcon} mt={0.48} ml={15} />
               </Button>
             </a>
           </Link>
@@ -53,7 +52,7 @@ export default function TopBanner() {
 
         <Box pos='relative' flexBasis={{base: '100%', lg: '48%'}} mt={{base: 12, lg: 0}} className={classes.banner_media}>
           <Box fontSize={0}>
-            <Image className={classes.female_student} src={female_student} alt="Young African Female Student with a face mask holding her books" />
+            <Image className={classes.female_student} src={female_student} alt="Young African Female Student with a face mask holding her books" priority />
           </Box>
           <Box display={{base: 'none', md: 'block'}} pos='absolute' top={{base: '27%', lg: 100, xl: 140}} right={{base: 0, lg: -4}} zIndex={0}>
             <Image src={star} alt="" />

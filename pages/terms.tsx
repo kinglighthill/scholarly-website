@@ -1,8 +1,5 @@
-import Head from "next/head";
 import type { NextPage } from 'next';
 import { Text } from "@chakra-ui/react";
-import Footer from "../components/reusables/Footer";
-import Navbar from "../components/reusables/Navbar";
 import TermsPrivacySecurity from "../components/reusables/TermsPrivacySecurity";
 import Page from "../components/reusables/Page";
 

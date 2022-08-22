@@ -3,14 +3,14 @@ import Link from "next/link";
 import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
 import { PhoneIcon, PlusIcon } from '@heroicons/react/outline';
 import classes from '../../styles/Home.module.css';
-import female_professional_working from '../../public/female_professional_working.png';
+import female_professional_working from '../../public/female_professional_working.webp';
 
 export default function Business() {
   return (
     <Box as="section" className={classes.business_section}>
       <Flex align='center' wrap={{base: 'wrap', md: 'nowrap'}}>
         <Box fontSize={0} flexBasis={{base: '100%', md: '45%'}}>
-          <Image src={female_professional_working} alt='A young female professional working in a cafe' />
+          <Image src={female_professional_working} alt='A young female professional working in a cafe' priority />
         </Box>
         <Spacer />
         <VStack spacing={{base: 9, md: 10}} align='start' flexBasis={{base: '100%', md: '40%'}} px={{base: 8, md: 0}} mt={{base: 9, md: 0}}>
@@ -24,15 +24,13 @@ export default function Business() {
           <HStack spacing={4}>
             <Link href='/contact-us'>
               <a>
-                <Button type='button' variant='solid'>
-                  Contact us
-                  <Icon as={PhoneIcon} ml='15px' display={{base: 'none', md: 'inline-block'}} />
+                <Button type='button' variant='solid' iconSpacing={{md: 15}} rightIcon={<Icon as={PhoneIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                  Contact us                  
                 </Button>
               </a>
             </Link>
-            <Button type='button' variant='outline'>
+            <Button type='button' variant='outline' iconSpacing={{md: 13}} rightIcon={<Icon as={PlusIcon} display={{base: 'none', md: 'inline-block'}} />}>
               Request a demo
-              <Icon as={PlusIcon} ml='13px' display={{base: 'none', md: 'inline-block'}} />
             </Button>
           </HStack>
         </VStack>

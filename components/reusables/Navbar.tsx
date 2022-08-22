@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack, Menu, MenuButton, MenuItem, MenuList, Spacer, Text, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, Flex, HStack, Link as ChakraLink, Menu, MenuButton, MenuItem, MenuList, Spacer, Text, useDisclosure } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Icon } from '@chakra-ui/react';
@@ -27,44 +27,67 @@ export default function Navbar() {
 
         <HStack spacing={{base: 25, xl: 51}} display={{base: 'none', lg: 'flex'}} className={classes.desktop_nav}>
           <Text color='brand.lime.500' fontWeight='medium'>
-            <Link href='/students'>Students</Link>
+            <Link href='/students' passHref>
+              <ChakraLink>Students</ChakraLink>
+            </Link>
           </Text>
           <Text color='brand.lime.500' fontWeight='medium'>
-            <Link href='/partners'>Partners</Link>
+            <Link href='/partners' passHref>
+              <ChakraLink>Partners</ChakraLink>
+            </Link>
           </Text>
           <Text color='brand.lime.500' fontWeight='medium'>
-            <Link href='/business'>Business</Link>
+            <Link href='/business' passHref>
+              <ChakraLink>Business</ChakraLink>
+            </Link>
           </Text>
-          <Menu isLazy>
-            <MenuButton color='brand.lime.500' fontWeight='medium'>
-              Apps <Icon verticalAlign='middle' as={ChevronDownIcon} />
-            </MenuButton>
-            <MenuList zIndex={3} borderRadius={16} p={6} boxShadow='0px 0px 20px rgba(0, 0, 0, 0.15)'>
-              <MenuItem mb={6}>
-                <BoxWithPlaystoreIcon />
-                <Box ml={3.5} color='brand.green'>
-                  <Text fontWeight='medium'>Android Apps</Text>
-                  <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Download from over 30 android apps</Text>
-                </Box>
-              </MenuItem>
-              <MenuItem mb={6}>
-                <BoxWithWindowsIcon />
-                <Box ml={3.5} color='brand.green'>
-                  <Text fontWeight='medium'>Desktop Apps</Text>
-                  <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Access over 30 apps for PC</Text>
-                </Box>
-              </MenuItem>
-              <MenuItem>
-                <BoxWithAppstoreIcon />
-                <Box ml={3.5} color='brand.green'>
-                  <Text fontWeight='medium'>IOS Apps</Text>
-                  <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Apps not currently available</Text>
-                </Box>
-              </MenuItem>
-            </MenuList>
-          </Menu>
+          {/* Menu is placed within Box as a workaround to the warning that Chakra UI gives when Menu is a direct child of HStack */}
+          <Box>
+            <Menu isLazy>
+              <MenuButton color='brand.lime.500' fontWeight='medium'>
+                Apps <Icon verticalAlign='middle' as={ChevronDownIcon} />
+              </MenuButton>
+              <MenuList zIndex={3} borderRadius={16} p={6} boxShadow='0px 0px 20px rgba(0, 0, 0, 0.15)'>
+                <Link href='/apps/android' passHref>
+                  <ChakraLink>
+                    <MenuItem mb={6}>
+                      <BoxWithPlaystoreIcon />
+                      <Box ml={3.5} color='brand.green'>
+                        <Text fontWeight='medium'>Android Apps</Text>
+                        <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Download from over 30 android apps</Text>
+                      </Box>
+                    </MenuItem>
+                  </ChakraLink>
+                </Link>
+                <Link href='/apps/desktop' passHref>
+                  <ChakraLink>
+                    <MenuItem mb={6}>
+                      <BoxWithWindowsIcon />
+                      <Box ml={3.5} color='brand.green'>
+                        <Text fontWeight='medium'>Desktop Apps</Text>
+                        <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Access over 30 apps for PC</Text>
+                      </Box>
+                    </MenuItem>
+                  </ChakraLink>
+                </Link>
+                <Link href='/apps/ios' passHref>
+                  <ChakraLink>
+                    <MenuItem>
+                      <BoxWithAppstoreIcon />
+                      <Box ml={3.5} color='brand.green'>
+                        <Text fontWeight='medium'>IOS Apps</Text>
+                        <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Apps not currently available</Text>
+                      </Box>
+                    </MenuItem>
+                  </ChakraLink>
+                </Link>
+              </MenuList>
+            </Menu>
+          </Box>
           <Text color='brand.lime.500' fontWeight='medium'>
-            <Link href='/'>Blog</Link>
+            <Link href='/blog' passHref>
+              <ChakraLink>Blog</ChakraLink>
+            </Link>
           </Text>
         </HStack>
 

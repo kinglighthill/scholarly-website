@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import { Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, HStack, CheckboxGroup, VStack, Checkbox } from '@chakra-ui/react';
+import { Popover, PopoverTrigger, PopoverContent, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, CheckboxGroup, VStack, Checkbox, useDisclosure } from '@chakra-ui/react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/react';
 import { areas, countries, lgas, states } from '../../data';
-import { FilterProps, FilterQueries, TabItem } from '../../types/components/outlets/filter';
+import { FilterProps, TabItem } from '../../types/components/outlets/filter';
 
 const tabs: string[] = ['Country', 'State', 'Area', 'LGA'];
 const tabItems: TabItem[] = [
@@ -13,23 +12,16 @@ const tabItems: TabItem[] = [
   { id: 'lga', panel: lgas },
 ];
 
-export default function Filter({ children, applyFilter }: FilterProps) {
-  const [filterQueries, setFilterQueries] = useState<FilterQueries>({});
+export default function Filter({ children, applyFilter, filterQueries, updateQueryList }: FilterProps) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const updateFilterQueries = (id: string, value: string[]) => {
-    if (value.length === 0) {
-      // If the value of the checkbox group is an empty array, remove the corresponding property entirely from the filterQueries to prevent having object property values with empty arrays.
-      // This is important to ensure accuracy of the applyFilter function in the useSearchFilter hook.
-      const { [id]: discarded, ...rest } = filterQueries;
-      setFilterQueries(rest);
-      return;
-    }
-
-    setFilterQueries(prevQueries => ({...prevQueries, [id]: value}))
+  const handleApplyFilter = () => {
+    onClose();
+    applyFilter();
   }
 
   return (
-    <Popover isLazy placement='bottom-end' closeOnBlur={false}>
+    <Popover isLazy placement='bottom-end' isOpen={isOpen} onOpen={onOpen} onClose={onClose} closeOnBlur={false}>
       <PopoverTrigger>
         {children}
       </PopoverTrigger>
@@ -53,7 +45,7 @@ export default function Filter({ children, applyFilter }: FilterProps) {
             <TabPanels>
               {tabItems.map((tabItem, index) => (
                 <TabPanel key={index}>
-                  <CheckboxGroup colorScheme="brand.lime" defaultValue={filterQueries[tabItem.id]} onChange={(value: string[]) => updateFilterQueries(tabItem.id, value)}>
+                  <CheckboxGroup colorScheme="brand.lime" defaultValue={filterQueries[tabItem.id]} onChange={(value: string[]) => updateQueryList(tabItem.id, value)}>
                     <VStack spacing={5} align="start" w="full">
                       {tabItem.panel.map(item => (
                         <Checkbox key={item} value={item.toLowerCase()} spacing='8px !important' color='brand.lime.700'>
@@ -69,7 +61,7 @@ export default function Filter({ children, applyFilter }: FilterProps) {
         </PopoverBody>
 
         <PopoverFooter color='brand.lime.500' bg='brand.lime.50' textAlign='center' fontWeight='medium' p={0}>
-          <Button type='button' variant='unstyled' w='full' onClick={() => applyFilter(filterQueries)}>
+          <Button type='button' variant='unstyled' w='full' onClick={handleApplyFilter}>
             Apply filter
           </Button>
         </PopoverFooter>

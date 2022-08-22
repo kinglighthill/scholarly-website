@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Box, Button, Flex, HStack, Icon, Spacer, Text, useDisclosure, VStack } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@heroicons/react/outline";
+import { ChevronRightIcon } from "@heroicons/react/solid";
 import classes from "../../styles/Home.module.css";
 import sign_up2 from "../../public/sign_up2.svg";
 import verify_identity2 from "../../public/verify_identity2.svg";
 import find_customers2 from "../../public/find_customers2.svg";
 import spiral from "../../public/spiral.svg";
-import scholarly_partners_demo from "../../public/scholarly_partners_demo.png";
+import scholarly_partners_demo from "../../public/scholarly_partners_demo.webp";
 import PartnerSignup from "../reusables/PartnerSignup";
 
 export default function Partners() {
@@ -29,9 +29,8 @@ export default function Partners() {
               <Box flexBasis={{base: '100%', md: 'initial'}}>
                 <Text fontSize={20} fontWeight="bold" color="brand.lime.700">Sign up</Text>
                 <Text mt={2} color="brand.lime.700">Create an account as a Scholarly partner.</Text>
-                <Button type="button" variant="solid" mt={{base: 5, md: 7}} onClick={onOpen}>
+                <Button type="button" variant="solid" mt={{base: 5, md: 7}} onClick={onOpen} iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} mt={0.5} />}>
                   Sign up
-                  <Icon as={ChevronRightIcon} ml={5} />
                 </Button>
               </Box>
             </HStack>
@@ -57,15 +56,13 @@ export default function Partners() {
           <HStack spacing={{base: 5, md: "50px"}} justify={{base: 'center', md: 'initial'}}>
             <Link href='/partners'>
               <a>
-                <Button type="button" variant="outline">
+                <Button type="button" variant="outline" iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                   Learn More
-                  <Icon as={ChevronRightIcon} ml={5} display={{base: 'none', md: 'inline-block'}} />
                 </Button>
               </a>
             </Link>
-            <Button type="button" variant="solid">
+            <Button type="button" variant="solid" iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
               Download App
-              <Icon as={ChevronRightIcon} ml={5} display={{base: 'none', md: 'inline-block'}} />
             </Button>
           </HStack>
         </Box>
@@ -78,12 +75,11 @@ export default function Partners() {
             <Text fontSize={16}>Resell Scholarly Apps. Earn profit!</Text>
           </VStack>
           <Box maxW={{base: '70%', md: '100%'}} m={{base: "auto", md: 0}}>
-            <Image src={scholarly_partners_demo} alt="Demo of the Scholarly Partners App" />
+            <Image src={scholarly_partners_demo} alt="Demo of the Scholarly Partners App" priority />
           </Box>
         </Box>
       </Flex>
-
-      <Box pos="absolute" bottom={['51.5%', '45%', '8%', 2, -8]} left={{base: "39%", md: "55%", lg: "53%"}} zIndex={0}>
+      <Box maxW={['270px', '300px', '350px', '100%']} pos="absolute" bottom={['51.5%', '45%', '7%', '-15%']} left={{base: "45%", md: "68%", lg: "44.7%", xl: '46%'}} zIndex={0}>
         <Image src={spiral} alt="" />
       </Box>
 

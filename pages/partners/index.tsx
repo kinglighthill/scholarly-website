@@ -10,8 +10,8 @@ import verify_identity from "../../public/verify_identity.svg";
 import find_customers from "../../public/find_customers.svg";
 import buy_pin from "../../public/buy_pin.svg";
 import sell_pin from "../../public/sell_pin.svg";
-import megaphone from "../../public/megaphone.png";
-import megaphone2 from "../../public/megaphone2.png";
+import megaphone from "../../public/megaphone.webp";
+import megaphone2 from "../../public/megaphone2.webp";
 import yellow_pattern from "../../public/yellow_pattern.svg";
 import Step from "../../components/partners/Step";
 import { StepType } from "../../types/pages/partners";
@@ -45,13 +45,11 @@ const Partners: NextPage = () => {
               Make Money by buying Activation Pins and reselling to Customers
             </Text>
             <HStack spacing={[4, 6]}>
-              <Button type="button" variant='solid' onClick={onOpen}>
+              <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
                 Sign up
-                <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
               </Button>
-              <Button type="button" variant='outline'>
+              <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
                 Download App
-                <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
               </Button>
             </HStack>
           </VStack>
@@ -68,13 +66,11 @@ const Partners: NextPage = () => {
             ))}
           </VStack>
           <HStack spacing={[4, 6]} justify='center'>
-            <Button type="button" variant='solid' onClick={onOpen}>
+            <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Sign up
-              <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
             </Button>
-            <Button type="button" variant='outline'>
+            <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Download App
-              <Icon as={ChevronRightIcon} ml={5} display={['none', 'initial']} />
             </Button>
           </HStack>
         </Box>
@@ -83,10 +79,10 @@ const Partners: NextPage = () => {
         <Box as="section" className={classes.referral}>
           <Flex align='center' wrap={['wrap', 'nowrap']}>
             <Box flexBasis='49%' display={['none', 'initial']}>
-              <Image src={megaphone} alt='A megaphone' />
+              <Image src={megaphone} alt='A megaphone' priority />
             </Box>
             <Box flexBasis='100%' mb={10} display={['initial', 'none']} textAlign='center' className={classes.megaphone_mobile} >
-              <Image src={megaphone2} alt='A megaphone' />
+              <Image src={megaphone2} alt='A megaphone' priority />
             </Box>
             <Spacer />
             <VStack flexBasis={['100%', '49%', '40%', '35%']} align='start' spacing={6}>
@@ -95,9 +91,8 @@ const Partners: NextPage = () => {
               <VStack w='full' align='start' spacing={0} pos='relative'>
                 <Link href='/partners/referral'>
                   <a>
-                    <Button type="button" variant='solid'>
+                    <Button type="button" variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
                       See Details
-                      <Icon as={ChevronRightIcon} ml={5} />
                     </Button>
                   </a>
                 </Link>
