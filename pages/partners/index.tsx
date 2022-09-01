@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import type { NextPage } from 'next';
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import Image from "next/image";
-import Testimonials from '../../components/reusables/Testimonials';
+import Testimonials, { Testimonial } from '../../components/reusables/Testimonials';
 import classes from "../../styles/Partners.module.css";
 import sign_up from "../../public/sign_up.svg";
 import verify_identity from "../../public/verify_identity.svg";
@@ -17,6 +17,8 @@ import Step from "../../components/partners/Step";
 import { StepType } from "../../types/pages/partners";
 import PartnerSignup from '../../components/reusables/PartnerSignup';
 import Page from '../../components/reusables/Page';
+import { fetchContent } from '../../services/fetch_content.service';
+import { TestimonialProps } from '../../types/components/reusables/testimonials';
 
 const steps: StepType[] = [
   { index: 1, title: "Sign up", description: "Create an account on the site or with the app.", icon: sign_up },
@@ -26,11 +28,31 @@ const steps: StepType[] = [
   { index: 5, title: "Sell your first pin", description: "When you sell a pin to a student, you earn profit.", icon: sell_pin },
 ];
 
-const Partners: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const response = await fetchContent('getTestimonials/testimonials/partner');
+    const content = await response.json();
+    // Pass content to the page via props  
+    return { props: { data: content.data } }
+  }
+  catch (error) {
+    console.log('An error occurred: ' + error);
+    return { props: { error: true } }
+  }
+}
+
+const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { data } = props;
+
+  const testimonials = data.map((testimonial: TestimonialProps, index: number) => (
+    <Testimonial key={testimonial.full_name + index+1} full_name={testimonial.full_name} user_type={testimonial.user_type}
+      rating={testimonial.rating} profile_pic_sm={testimonial.profile_pic_sm} content={testimonial.content}
+    />
+  ));
 
   return (
-    <Page title='Scholarly Africa | Partners'>
+    <Page title='Scholarly For Partners - Resell Activation Pins, Make Profit' description='Sign up to become a certified Scholarly partner. Scholarly partners are licensed to distribute Scholarly apps and software while they make profit in turn.'>
       <Box as="main">
         {/* Banner Section */}
         <Box as="section" className={classes.top_banner}>
@@ -48,9 +70,13 @@ const Partners: NextPage = () => {
               {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
                 Sign up
               </Button> */}
-              <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-                Download App
-              </Button>
+              <Link href='/apps/android'>
+                <a>
+                  <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+                    Download App
+                  </Button>
+                </a>
+              </Link>
             </HStack>
           </VStack>
         </Box>
@@ -69,9 +95,13 @@ const Partners: NextPage = () => {
             {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Sign up
             </Button> */}
-            <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-              Download App
-            </Button>
+            <Link href='/apps/android'>
+              <a>
+                <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+                  Download App
+                </Button>
+              </a>
+            </Link>
           </HStack>
         </Box>
         
@@ -109,7 +139,7 @@ const Partners: NextPage = () => {
           <Text mb={{base: '60px', md: 12}} textAlign='center' color='brand.lime.700' fontSize={[25, 39]} fontWeight='medium'>
             Our 5 Star Agents
           </Text>
-          <Testimonials />
+          <Testimonials testimonials={testimonials} />
         </Box>
       </Box>
 

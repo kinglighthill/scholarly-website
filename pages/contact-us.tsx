@@ -6,7 +6,7 @@ import ContactForm from '../components/reusables/ContactForm';
 
 const ContactUs: NextPage = () => {
   return (
-    <Page title="Scholarly Africa | Contact Us">
+    <Page title="Contact Us | Scholarly" description="Email: info@scholarly.africa, Phone: +2348136941462, WhatsApp: +2348136941462">
       <Box as="section" px={[5, "10%", 10, 10, "10%"]} pt={{base: 14, md: 28}} pb={28} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
         <Flex wrap={{base: "wrap", md: "nowrap"}} align="center">
           <VStack spacing={["18px", 9]} align="start" mb={{base: "70px", md: 0}} flexBasis={{base: "100%", md: "45%"}}>

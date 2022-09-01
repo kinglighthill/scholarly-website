@@ -10,7 +10,7 @@ const PartnersReferral: NextPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Page title="Scholarly Africa | Partners Referral Program">
+    <Page title="Refer A Partner and Earn Extra Income" description="Increase your revenue as a partner with our Partners Referral program. Earn monetary commission each time your referral makes a sale">
       <Box as="section" px={[5, 7, "10%"]} pt={14} pb={24} bgColor="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
         <Stack direction="row" spacing={[3.5, 5, 20]} w="full" pl={[3.5, 5, 10]} py="18px" mb={12} borderRadius={10} bg="rgba(255, 255, 255, 0.1)">
           <Stack direction="column" spacing={1.5} maxW={{lg: "60%"}}>

@@ -1,11 +1,27 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { Box, Flex, Spacer, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack } from "@chakra-ui/react";
 import Questions from "../components/faqs/Questions";
 import Page from "../components/reusables/Page";
+import { fetchContent } from '../services/fetch_content.service';
 
-const FAQs: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const response = await fetchContent('getFAQs/faqs');
+    const content = await response.json();
+    // Pass content to the page via props  
+    return { props: { data: content.data } }
+  }
+  catch (error) {
+    console.log('An error occurred: ' + error);
+    return { props: { error: true } }
+  }
+}
+
+const FAQs: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { data } = props;
+  
   return (
-    <Page title="Scholarly Africa | Frequently Asked Questions">
+    <Page title="Frequently Asked Questions | Scholarly" description="See a list of answers to the most popular questions asked by our users about our products and services">
       <Box as="section" px={[5, "10%", 10, 10, "10%"]} pt={{base: 14, md: 20}} pb={16} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
         <Tabs variant='unstyled' isLazy>
           <Flex wrap={{base: "wrap", md: "nowrap"}}>
@@ -25,13 +41,13 @@ const FAQs: NextPage = () => {
 
             <TabPanels flexBasis={{base: "100%", md: "48%"}}>
               <TabPanel p={0}>
-                <Questions category="students" />
+                <Questions questions={data} category="student" />
               </TabPanel>
               <TabPanel p={0}>
-                <Questions category="partners" />
+                <Questions questions={data} category="partner" />
               </TabPanel>
               <TabPanel p={0}>
-                <Questions category="business" />
+                <Questions questions={data} category="business" />
               </TabPanel>
             </TabPanels>
           </Flex>

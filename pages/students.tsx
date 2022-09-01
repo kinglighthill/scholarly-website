@@ -32,7 +32,7 @@ const Students: NextPage = () => {
   }, []);
   
   return (
-    <Page title='Scholarly Africa | Students'>
+    <Page title='Scholarly For Students - Smash Any Exam' description='Smash your JAMB, WAEC, Post UTME, NECO, BECE and other exams with Scholarly Apps. Over 1 million students use Scholarly apps to study for their exams. Available for Android, iOS and Desktop.'>
       <TopBanner />
       <Slider />
 
