@@ -1,7 +1,10 @@
-export const postRequest = (url: string, data: object) => {
+export const postRequest = (url: string, payload: object) => {
   return fetch(url, {
     method: "POST",
-    body: JSON.stringify(data)
+    body: JSON.stringify(payload),
+    headers: {
+      "content-type": "application/json",
+    },
   });
 };
 
