@@ -4,8 +4,10 @@ import ComingSoon from "../components/reusables/ComingSoon";
 
 const Business: NextPage = () => {
   return (
-    <Page title="Scholarly Africa | Business">
-      <ComingSoon />
+    <Page title="Scholarly For Business - Run your Business with Scholarly Enterprise Software"
+      description="Own a School, CBT Centre or Cyber Cafe? Increase your revenue with our Enterprise Software. Request a demo now!"
+    >
+      <ComingSoon feature='scholarly-for-business' />
     </Page>
   )
 }

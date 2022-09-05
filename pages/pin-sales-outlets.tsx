@@ -4,8 +4,8 @@ import ComingSoon from "../components/reusables/ComingSoon";
 
 const PinSalesOutlets: NextPage = () => {
   return (
-    <Page title="Scholarly Africa | Pin Sales Outlets">
-      <ComingSoon />
+    <Page title="Scholarly Activation Pin Sales Outlet" description="Find hundreds of accredited activation pins sales outlets nationwide where you can go in-person to purchase activation pins">
+      <ComingSoon feature='pin-sales-outlets' />
     </Page>
   )
 }
