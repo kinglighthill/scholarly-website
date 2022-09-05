@@ -24,28 +24,28 @@ const ContactUs: NextPage = () => {
               <Text color="white" fontSize={13} textAlign="center">Or reach us via our Social Media</Text>
             </GridItem>
             <GridItem maxW="max-content" justifySelf={["center", "initial"]}>
-              <a href="https://facebook.com/scholarlyng" target="blank">
+              <a href="https://facebook.com/scholarlyng" target="_blank" rel="noreferrer">
                 <Box p={[0, 9]} maxW={["45px", "100%"]} fontSize={0} borderRadius={4} bg={["none", "rgba(255, 255, 255, 0.2)"]}>
                   <Image src="/facebook.svg" width={80} height={80} alt="Facebook Icon" priority />
                 </Box>
               </a>
             </GridItem>
             <GridItem maxW="max-content" justifySelf={["center", "initial"]} rowSpan={1}>
-              <a href="https://twitter.com/scholarlyng" target="blank">
+              <a href="https://twitter.com/scholarlyng" target="_blank" rel="noreferrer">
                 <Box p={[0, 9]} maxW={["45px", "100%"]} fontSize={0} borderRadius={4} bg={["none", "rgba(255, 255, 255, 0.2)"]}>
                   <Image src="/twitter.svg" width={80} height={80} alt="Twitter Icon" priority />
                 </Box>
               </a>
             </GridItem>
             <GridItem maxW="max-content" justifySelf={["center", "initial"]}>
-              <a href="https://www.instagram.com/scholarlyng/" target="blank">
+              <a href="https://www.instagram.com/scholarlyng/" target="_blank" rel="noreferrer">
                 <Box p={[0, 9]} maxW={["45px", "100%"]} fontSize={0} borderRadius={4} bg={["none", "rgba(255, 255, 255, 0.2)"]}>
                   <Image src="/instagram.svg" width={80} height={80} alt="Instagram Icon" priority />
                 </Box>
               </a>
             </GridItem>
             <GridItem maxW="max-content" justifySelf={["center", "initial"]}>
-              <a href="https://www.linkedin.com/company/scholarlyafrica/" target="blank">
+              <a href="https://www.linkedin.com/company/scholarlyafrica/" target="_blank" rel="noreferrer">
                 <Box p={[0, 9]} maxW={["45px", "100%"]} fontSize={0} borderRadius={4} bg={["none", "rgba(255, 255, 255, 0.2)"]}>
                   <Image src="/linkedin.svg" width={80} height={80} alt="Linkedin Icon" priority />
                 </Box>
