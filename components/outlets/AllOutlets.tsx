@@ -78,7 +78,7 @@ export default function AllOutlets({ outlets, searchBar=true, applyFilter=(() =>
                   <Divider orientation='vertical' borderColor='#B2BBB6' />
                 </Center>
                 
-                <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodedUrl}`} target='blank'>
+                <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodedUrl}`} target="_blank" rel="noreferrer">
                   <VStack spacing={0} align='center' cursor='pointer' title='This opens in Google Maps'>
                     <Box fontSize={0}>
                       <Image src={direction} alt='' />

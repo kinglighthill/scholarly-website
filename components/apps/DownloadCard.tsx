@@ -20,7 +20,7 @@ export default function DownloadCard({ store_icon, store_name, app_rating, app_a
         </Box>
         <Text textAlign="center">Download from {store_name}</Text>
         <Link href={download_link ? download_link : '/apps/android'}>
-          <a>
+          <a target="_blank" rel="noreferrer">
             <Button disabled={!app_availability} type="button" variant="solid" iconSpacing={{base: 0, md: 4}} rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}>
               Download
             </Button>

@@ -62,7 +62,7 @@ export default function PayWithTransfer() {
           Recieve activation pin after payment confirmation may take up to 20 minutes
         </Text>
       </VStack>
-      <a href="https://wa.me/+2348136941462" target="blank" aria-label='Send us a message on Whatsapp'>
+      <a href="https://wa.me/+2348136941462" target="_blank" rel="noreferrer" aria-label='Send us a message on Whatsapp'>
         <Button type="button" variant="solid">I have paid</Button>
       </a>
     </VStack>
