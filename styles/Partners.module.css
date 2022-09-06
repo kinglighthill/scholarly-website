@@ -1,6 +1,9 @@
 /* Top banner section */
 .top_banner {
   padding: 85px 20px;
+  background-image: url('../public/spiral_for_partners_top_banner.svg');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Steps Component styles */
