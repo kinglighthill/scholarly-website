@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import Image from "next/image";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
-import Image from "next/image";
 import Testimonials, { Testimonial } from '../../components/reusables/Testimonials';
+import TopBanner from '../../components/partners/TopBanner';
 import classes from "../../styles/Partners.module.css";
 import sign_up from "../../public/sign_up.svg";
 import verify_identity from "../../public/verify_identity.svg";
@@ -53,94 +54,68 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
 
   return (
     <Page title='Scholarly For Partners - Resell Activation Pins, Make Profit' description='Sign up to become a certified Scholarly partner. Scholarly partners are licensed to distribute Scholarly apps and software while they make profit in turn.'>
-      <Box as="main">
-        {/* Banner Section */}
-        <Box as="section" className={classes.top_banner}>
-          <VStack spacing={[8, '51px']} margin='auto' maxW='530px' align={['start', 'center']}>
-            <Text fontWeight='black' fontSize={['4xl', '5xl']} textAlign={['left', 'center']} lineHeight='120.5%'>
-              <Text as='span' color='brand.yellow'>Resell </Text>
-              <Text as='span' color='brand.lime.500'>Activation Pins, </Text>
-              <Text as='span' color='brand.yellow'>Make </Text>
-              <Text as='span' color='brand.lime.500'>Profit</Text>
-            </Text>
-            <Text fontSize={[16, 20]} maxW='470px' color='brand.lime.700' textAlign={['left', 'center']} lineHeight='144%' fontWeight={450}>
-              Make Money by buying Activation Pins and reselling to Customers
-            </Text>
-            <HStack spacing={[4, 6]}>
-              {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-                Sign up
-              </Button> */}
-              <Link href='/apps/android'>
+      {/* Banner Section */}
+      <TopBanner openSignUp={onOpen} />
+
+      {/* Steps to Become a Partner */}
+      <Box as="section" bgColor='brand.nearWhite' className={classes.steps}>
+        <Text as='h2' fontSize={[25, 39]} fontWeight='bold' color='brand.lime.500' mb={[8, '75px']} textAlign='center'>Steps to become a Partner</Text>
+        <VStack spacing={[9, '93px']} mb={[12, '75px']}>
+          {steps.map(step => (
+            <Step key={step.index} index={step.index} title={step.title} description={step.description}
+              icon={step.icon} direction={step.index%2 !== 0 ? 'forward' : 'reverse'}
+            />
+          ))}
+        </VStack>
+        <HStack spacing={[4, 6]} justify='center'>
+          {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+            Sign up
+          </Button> */}
+          <Link href='/apps/android'>
+            <a>
+              <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+                Download App
+              </Button>
+            </a>
+          </Link>
+        </HStack>
+      </Box>
+      
+      {/* Referral Section */}
+      <Box as="section" className={classes.referral}>
+        <Flex align='center' wrap={['wrap', 'nowrap']}>
+          <Box flexBasis='49%' display={['none', 'initial']}>
+            <Image src={megaphone} alt='A megaphone' priority />
+          </Box>
+          <Box flexBasis='100%' mb={10} display={['initial', 'none']} textAlign='center' className={classes.megaphone_mobile} >
+            <Image src={megaphone2} alt='A megaphone' priority />
+          </Box>
+          <Spacer />
+          <VStack flexBasis={['100%', '49%', '40%', '35%']} align='start' spacing={6}>
+            <Text color='brand.lime.700' fontSize={25} fontWeight='bold'>Referral Program</Text>
+            <Text color='brand.lime.700'>Earn more when you refer other partners. Each time your referral makes a sale, you earn a commission.</Text>
+            <VStack w='full' align='start' spacing={0} pos='relative'>
+              <Link href='/partners/referral'>
                 <a>
-                  <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-                    Download App
+                  <Button type="button" variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
+                    See Details
                   </Button>
                 </a>
               </Link>
-            </HStack>
-          </VStack>
-        </Box>
-
-        {/* Steps to Become a Partner */}
-        <Box as="section" bgColor='brand.nearWhite' className={classes.steps}>
-          <Text as='h2' fontSize={[25, 39]} fontWeight='bold' color='brand.lime.500' mb={[8, '75px']} textAlign='center'>Steps to become a Partner</Text>
-          <VStack spacing={[9, '93px']} mb={[12, '75px']}>
-            {steps.map(step => (
-              <Step key={step.index} index={step.index} title={step.title} description={step.description}
-                icon={step.icon} direction={step.index%2 !== 0 ? 'forward' : 'reverse'}
-              />
-            ))}
-          </VStack>
-          <HStack spacing={[4, 6]} justify='center'>
-            {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-              Sign up
-            </Button> */}
-            <Link href='/apps/android'>
-              <a>
-                <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-                  Download App
-                </Button>
-              </a>
-            </Link>
-          </HStack>
-        </Box>
-        
-        {/* Referral Section */}
-        <Box as="section" className={classes.referral}>
-          <Flex align='center' wrap={['wrap', 'nowrap']}>
-            <Box flexBasis='49%' display={['none', 'initial']}>
-              <Image src={megaphone} alt='A megaphone' priority />
-            </Box>
-            <Box flexBasis='100%' mb={10} display={['initial', 'none']} textAlign='center' className={classes.megaphone_mobile} >
-              <Image src={megaphone2} alt='A megaphone' priority />
-            </Box>
-            <Spacer />
-            <VStack flexBasis={['100%', '49%', '40%', '35%']} align='start' spacing={6}>
-              <Text color='brand.lime.700' fontSize={25} fontWeight='bold'>Referral Program</Text>
-              <Text color='brand.lime.700'>Earn more when you refer other partners. Each time your referral makes a sale, you earn a commission.</Text>
-              <VStack w='full' align='start' spacing={0} pos='relative'>
-                <Link href='/partners/referral'>
-                  <a>
-                    <Button type="button" variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
-                      See Details
-                    </Button>
-                  </a>
-                </Link>
-                <Box pos='absolute' right={0} top={41} display={{base: 'none', md: 'initial'}}>
-                  <Image src={yellow_pattern} alt='' />
-                </Box>
-              </VStack>
+              <Box pos='absolute' right={0} top={41} display={{base: 'none', md: 'initial'}}>
+                <Image src={yellow_pattern} alt='' />
+              </Box>
             </VStack>
-          </Flex>
-        </Box>
+          </VStack>
+        </Flex>
+      </Box>
 
-        {/* Testimonials Section */}
-        <Box as='section' bgColor='brand.nearWhite' py="93px">
-          <Text mb={{base: '60px', md: 12}} textAlign='center' color='brand.lime.700' fontSize={[25, 39]} fontWeight='medium'>
-            Our 5 Star Agents
-          </Text>
-          <Testimonials testimonials={testimonials} />
-        </Box>
+      {/* Testimonials Section */}
+      <Box as='section' bgColor='brand.nearWhite' py="93px">
+        <Text mb={{base: '60px', md: 12}} textAlign='center' color='brand.lime.700' fontSize={[25, 39]} fontWeight='medium'>
+          Our 5 Star Agents
+        </Text>
+        <Testimonials testimonials={testimonials} />
       </Box>
 
       <PartnerSignup isOpen={isOpen} onClose={onClose} />
