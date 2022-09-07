@@ -32,14 +32,13 @@ export default function useFeatureNotifier(feature: string) {
       if (response.ok) {
         makeToast('Email submitted successfully', "We'll notify you when this feature is available.");
         setEmail('');
-        setLoading(false);
       }
     }
     catch (error) {
       console.log(error);
       makeToast('An error occured', "Please ensure that you're connected to the internet and try again.", 'error');
-      setLoading(false);
     }
+    setLoading(false);
   }
 
   return (
