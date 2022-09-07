@@ -5,6 +5,7 @@ import { DownloadIcon } from '@heroicons/react/solid';
 import { DesktopTabNavigation, MobileTabNavigation } from '../../components/apps/TabNavigation';
 import ComingSoon from "../reusables/ComingSoon";
 import { AppsProps } from "../../types/components/apps/apps";
+import ContactForm from "../reusables/ContactForm";
 
 export default function Apps({ apps_info, activeTab }: AppsProps) {  
   if (activeTab === "desktop" || activeTab === "ios") {
@@ -81,6 +82,18 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
           </VStack>
         )
       })}
+      <Box as="section" bg={apps_info.length%2 === 0 ? "white" : "brand.nearWhite"} px={{base: 5, md: "60px", lg: "79px", xl: "120px"}} py={{base: "60px", lg: "100px"}}>
+        <Flex align='start' wrap={{base: 'wrap', md: 'nowrap'}}>
+          <VStack spacing={6} align="start" flexBasis={{base: '100%', md: '52%', xl: '45%'}}>
+            <Text color="brand.lime.700" fontSize={22} fontWeight="bold">Didn&apos;t find the app you were looking for?</Text>
+            <Text color="brand.lime.700">Request an app and we&apos;ll consider adding it in future releases.</Text>
+          </VStack>
+          <Spacer />
+          <Box flexBasis={{base: "100%", md: "43%"}} mt={{base: 10, md: 0}}>
+            <ContactForm textColor='brand.lime.700' defaultSubject='Request for an app' />        
+          </Box>
+        </Flex>
+      </Box>
     </Box>
   )
 }
