@@ -96,18 +96,18 @@ export default function MobileFooter() {
                   <Box>
                     <HStack spacing={1.5} color='white'>
                       <Icon as={PhoneIcon} />
-                      <Link href='tel:+23490-6170-1939' passHref>
-                        <ChakraLink>+23490-6170-1939</ChakraLink>
+                      <Link href='tel:+23481-3694-1462' passHref>
+                        <ChakraLink>+23481-3694-1462</ChakraLink>
                       </Link>
                     </HStack>
                     <HStack spacing={1.5} color='brand.yellow'>
                       <Icon as={AtSymbolIcon} />
-                      <Link href='mailto:scholarlyafrica@gmail.com' passHref>
-                        <ChakraLink>scholarlyafrica@gmail.com</ChakraLink>
+                      <Link href='mailto:info@scholarly.africa' passHref>
+                        <ChakraLink>info@scholarly.africa</ChakraLink>
                       </Link>
                     </HStack>
                   </Box>
-                  <Text color='white' fontSize={13} textAlign='right'>Samuelson close, near FGC. Independence Layout, Enugu, Nigeria</Text>
+                  <Text color='white' fontSize={13} textAlign='right'>5, Samuelson Close, Isiuzo Street, Independence Layout, Enugu, Nigeria</Text>
                 </VStack>
               </Box>
               <HStack spacing={4}>
