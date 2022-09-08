@@ -19,6 +19,7 @@ export default function Questions({ questions, category }: QuestionsProps) {
 
       <Accordion w='full' mb={4} allowMultiple defaultIndex={[0]}>
         {questions.filter((question) => question.user_type === category)
+         .sort((a,b) => a.order - b.order)
          .filter(question => question.question.toLowerCase().includes(searchQuery.toLowerCase()))
          .map((question, index) => (
           <AccordionItem key={question.user_type+index+1} mb={7} pb={10} borderTop='none' borderBottom='0.5px solid rgba(255, 255, 255, 0.5)'>
