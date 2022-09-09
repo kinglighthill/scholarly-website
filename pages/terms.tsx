@@ -22,15 +22,7 @@ const Terms: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) 
 
   return (
     <Page title="Terms of Service | Scholarly">
-      <TermsPrivacySecurity page="terms" title="Terms of Service"
-        content={
-          <>
-            {data && data.content.split('\\n').map((item: string, index: number) => (
-              <Text key={index+1} color="white">{item}</Text>
-            ))}
-          </>
-        } 
-      />
+      <TermsPrivacySecurity page="terms" title="Terms of Service" content={data.content} />
     </Page>
   )
 }

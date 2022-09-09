@@ -12,9 +12,9 @@ import { SliderDetail } from '../../types/components/students/slider';
 import Link from 'next/link';
 
 const sliderDetails: SliderDetail[] = [
-  { title: "Notes", headline: "Access Thousands of Notes", description: "Find Scholarly approved CBT centers nationwide to practice for your next exam.", image: notes },
-  { title: "Past Questions", headline: "Access Thousands of Past Questions", description: "Find Scholarly approved CBT centers nationwide to practice for your next exam.", image: scholarly_students_demo2 },
-  { title: "Syllabus", headline: "Access Thousands of Syllabi", description: "Find Scholarly approved CBT centers nationwide to practice for your next exam.", image: syllabus },
+  { title: "Notes", headline: "Better Explanation to Topics", description: "Well-explained topics and notes based on the accredited syllabus.", image: notes },
+  { title: "Past Questions", headline: "Access Thousands of Past Questions and Answers", description: "Find Scholarly-approved CBT centers nationwide to practice for your next exam.", image: scholarly_students_demo2 },
+  { title: "Syllabus", headline: "Study only what is Relevant", description: "Our syllabus is designed to be easy to use. Find topics that are relevant to you and study on the go.", image: syllabus },
 ]
 
 const sliderItems = sliderDetails.map(item => {

@@ -22,15 +22,7 @@ const Privacy: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>
   
   return (
     <Page title="Privacy Policy | Scholarly">
-      <TermsPrivacySecurity page="privacy" title="Privacy"
-        content={
-          <>
-            {data && data.content.split('\\n').map((item: string, index: number) => (
-              <Text key={index+1} color="white">{item}</Text>
-            ))}
-          </>
-        } 
-      />
+      <TermsPrivacySecurity page="privacy" title="Privacy" content={data.content} />
     </Page>
   )
 }

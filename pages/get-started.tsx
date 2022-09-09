@@ -5,9 +5,9 @@ import { GetStartedCardProps } from "../types/components/get_started/card";
 import Page from "../components/reusables/Page";
 
 const getStartedOptions: GetStartedCardProps[] = [
-  { title: "Partners", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id vitae faucibus sit male consectetur adipiscing elit. Id vitae faucibus sit male", btnHref: "/partners" },
-  { title: "Students", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id vitae faucibus sit male consectetur adipiscing elit. Id vitae faucibus sit male", btnHref: "/students" },
-  { title: "Business", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id vitae faucibus sit male consectetur adipiscing elit. Id vitae faucibus sit male", btnHref: "/business" },
+  { title: "Partners", description: "For individuals who seek to earn extra income from marketing and reselling Scholarly apps to students or other relevant stakeholders.", btnHref: "/partners" },
+  { title: "Students", description: "For students looking to study or prepare for an exam: Notes, Past Questions, Syllabus, and all your Study Materials in one app.", btnHref: "/students" },
+  { title: "Business", description: "For owners of businesses with up to 10 PCs such as schools, lesson centres, CBT centres, cyber cafes, etc. who want to better run their operations and increase revenue.", btnHref: "/business" },
 ]
 
 const GetStarted: NextPage = () => {

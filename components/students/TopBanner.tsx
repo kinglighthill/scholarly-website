@@ -23,7 +23,7 @@ export default function TopBanner() {
               <Image src={green_pattern} alt='' />
             </Box>
             <Text fontWeight='black' fontSize='5xl' lineHeight={['120%', '144%']} mt={['0 !important', 'inherit']}>
-              <Text as='span' color='brand.yellow'>Smash </Text>
+              <Text as='span' color='brand.yellow'>Ace </Text>
               <Text as='span' color='brand.lime.500'>any </Text>
               <Text as='span' color='brand.yellow'>Exam </Text>
             </Text>
