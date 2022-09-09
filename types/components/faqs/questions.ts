@@ -4,6 +4,7 @@ interface FAQ {
   user_type: QuestionCategory;
   question: string;
   answer: string;
+  order: number;
 }
 
 export interface QuestionsProps {
