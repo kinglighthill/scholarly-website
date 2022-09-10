@@ -1,15 +1,18 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
-import { Box, HStack, Text } from '@chakra-ui/react';
+import { Box, Button, HStack, Link as ChakraLink, Stack, Text } from '@chakra-ui/react';
 import Business from '../components/home/Business';
-import GetHelp from '../components/home/GetHelp';
 import Students from '../components/home/Students';
 import Partners from '../components/home/Partners';
 import Testimonials, { Testimonial } from '../components/reusables/Testimonials';
 import TopBanner from '../components/home/TopBanner';
+import Page from '../components/reusables/Page';
 import { statistics } from '../data';
 import { fetchContent } from '../services/fetch_content.service';
 import { TestimonialProps } from '../types/components/reusables/testimonials';
-import Page from '../components/reusables/Page';
+import classes from '../styles/Home.module.css';
+import useSWR from 'swr';
+import BlogPost from '../components/reusables/BlogPost';
+import { BlogPostData } from '../types/components/reusables/blog_post';
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
@@ -24,7 +27,10 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+const fetcher = (args: string) => fetchContent(args).then((res) => res.json());
+
 const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { data: blogPosts, error } = useSWR('getBlogPosts/blog-posts/recent', fetcher);
   const { data } = props;
   const testimonials = data.map((testimonial: TestimonialProps, index: number) => (
     <Testimonial key={testimonial.full_name + index+1} full_name={testimonial.full_name} user_type={testimonial.user_type}
@@ -63,7 +69,22 @@ const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
         <Testimonials testimonials={testimonials} />
       </Box>
 
-      <GetHelp />
+      {/* Blog Section */}
+      {blogPosts && 
+        <Box as="section" className={classes.blog_section}>
+          <Text as='h2' color='brand.lime.700' mb={12} textAlign='center' fontSize={31} fontWeight='bold'>From Our Blog</Text>
+          <Stack spacing={{base: 6, md: 0}} direction={{base: 'column', md: 'row'}} w='full' justify='space-between' align={{base: 'center', md: 'stretch'}}>
+            {blogPosts.data.posts.map((post: BlogPostData) => (
+              <BlogPost key={post.url} post_data={post} />
+            ))}
+          </Stack>
+          <Box textAlign='center' mt={10}>
+            <ChakraLink href='https://blog.scholarly.africa/' target='_blank' _hover={{textDecoration: 'none'}}>
+              <Button type='button' variant='solid'>Go to Blog</Button>
+            </ChakraLink>
+          </Box>
+        </Box>
+      }
     </Page>
   )
 }
