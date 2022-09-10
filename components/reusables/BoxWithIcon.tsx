@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Box } from '@chakra-ui/react';
 import jamb_logo from '../../public/jamb_logo.svg';
+import ghana_educational_service_logo from '../../public/ghana_educational_service_logo.svg';
 import waec_logo from '../../public/waec_logo.svg';
 import neco_logo from '../../public/neco_logo.svg';
 import playstore from '../../public/playstore.svg';
@@ -28,6 +29,14 @@ export function BoxWithWaecIcon () {
   return (
     <BoxWithIcon>
       <Image src={waec_logo} alt='WAEC Logo' />
+    </BoxWithIcon>
+  )
+}
+
+export function BoxWithGESIcon () {
+  return (
+    <BoxWithIcon>
+      <Image src={ghana_educational_service_logo} alt='Ghana Educational Service Logo' />
     </BoxWithIcon>
   )
 }
