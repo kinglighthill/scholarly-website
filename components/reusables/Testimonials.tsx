@@ -30,8 +30,8 @@ export function Testimonial({ full_name, user_type, profile_pic_sm, content, rat
             {content}
           </Text>
         </Box>
-        <HStack justify='space-between' align='start' w='full'>
-          <HStack spacing={6}>
+        <HStack spacing={0} justify='space-between' align='start' w='full'>
+          <HStack spacing={6} align='start' flexBasis='72%'>
             <Avatar name={full_name} src={profile_pic_sm}>
               <AvatarBadge boxSize='1em' bg='brand.lime.500' />
             </Avatar>
@@ -40,7 +40,7 @@ export function Testimonial({ full_name, user_type, profile_pic_sm, content, rat
               <Text color='brand.lime.700' fontSize={13} mt={0.5}>{capitalize(user_type)}</Text>
             </Box>
           </HStack>
-          <Box>
+          <Box flexBasis='25%'>
             {[...Array(5)].map((item, index) => (
               <Icon key={index+1} as={index+1 <= rating ? StarIcon : OutlinedStarIcon} color='brand.yellow' />
             ))}
