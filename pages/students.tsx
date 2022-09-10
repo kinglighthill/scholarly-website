@@ -32,7 +32,7 @@ const Students: NextPage = () => {
   }, []);
   
   return (
-    <Page title='Scholarly Africa | Students'>
+    <Page title='Scholarly For Students - Smash Any Exam' description='Smash your JAMB, WAEC, Post UTME, NECO, BECE and other exams with Scholarly Apps. Over 1 million students use Scholarly apps to study for their exams. Available for Android, iOS and Desktop.'>
       <TopBanner />
       <Slider />
 
@@ -75,9 +75,9 @@ const Students: NextPage = () => {
                   <Text color='brand.lime.700'>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
                 </Box>
                 <HStack spacing={{base: 0, xl: 2}}>
-                  <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-flex'}} onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+                  {/* <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-flex'}} onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                     Buy now
-                  </Button>
+                  </Button> */}
                   {/* When pin sales outlets are available, remove the Link and 'a' tags and uncomment the onClick handler */}
                   <Link href='/pin-sales-outlets'>
                     <a>
@@ -142,9 +142,9 @@ const Students: NextPage = () => {
             <Text color='brand.lime.700'>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
           </Box>
           <HStack spacing={2}>
-            <Button type='button' variant='solid' onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+            {/* <Button type='button' variant='solid' onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
               Buy now
-            </Button>
+            </Button> */}
             {/* When pin sales outlets are available, remove the Link and 'a' tags and uncomment the onClick handler */}
             <Link href='/pin-sales-outlets'>
               <a>

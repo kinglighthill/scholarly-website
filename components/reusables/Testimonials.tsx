@@ -3,18 +3,18 @@ import Image from "next/image";
 import { Avatar, AvatarBadge, Box, HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import { StarIcon } from "@heroicons/react/solid";
 import { StarIcon as OutlinedStarIcon, ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/outline";
-import { testimonials } from '../../data';
 import scholarly_logo2 from "../../public/scholarly_logo2.svg";
 import opening_quotes from "../../public/opening_quotes.svg";
 import useCarousel, { Breakpoints } from "../../hooks/useCarousel";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import classes from "../../styles/components/Testimonials.module.css";
-import { TestimonialProps } from "../../types/components/reusables/testimonials";
+import { TestimonialProps, TestimonialsProps } from "../../types/components/reusables/testimonials";
+import { capitalize } from "../../utils";
 
-function Testimonial({ name, title, image, message, rating }: TestimonialProps) {
-  const handleDragStart = (e: React.DragEvent<HTMLElement>) => e.preventDefault();
+const handleDragStart = (e: React.DragEvent<HTMLElement>) => e.preventDefault();
 
+export function Testimonial({ full_name, user_type, profile_pic_sm, content, rating }: TestimonialProps) {
   return (
     <Box as="article" maxW='425px' pb={2.5} m='auto' onDragStart={handleDragStart} role="presentation">
       <VStack spacing={5}>
@@ -27,20 +27,20 @@ function Testimonial({ name, title, image, message, rating }: TestimonialProps) 
         </HStack>
         <Box bgColor='white' borderRadius={20} py='34px' px='22px'>
           <Text color='brand.lime.700'>
-            {message}
+            {content}
           </Text>
         </Box>
-        <HStack justify='space-between' align='start' w='full'>
-          <HStack spacing={6}>
-            <Avatar name={name} src={image}>
+        <HStack spacing={0} justify='space-between' align='start' w='full'>
+          <HStack spacing={6} align='start' flexBasis='72%'>
+            <Avatar name={full_name} src={profile_pic_sm}>
               <AvatarBadge boxSize='1em' bg='brand.lime.500' />
             </Avatar>
             <Box>
-              <Text color='brand.lime.700' fontWeight='medium'>{name}</Text>
-              <Text color='brand.lime.700' fontSize={13} mt={0.5}>{title}</Text>
+              <Text color='brand.lime.700' fontWeight='medium'>{full_name}</Text>
+              <Text color='brand.lime.700' fontSize={13} mt={0.5}>{capitalize(user_type)}</Text>
             </Box>
           </HStack>
-          <Box>
+          <Box flexBasis='25%'>
             {[...Array(5)].map((item, index) => (
               <Icon key={index+1} as={index+1 <= rating ? StarIcon : OutlinedStarIcon} color='brand.yellow' />
             ))}
@@ -51,12 +51,6 @@ function Testimonial({ name, title, image, message, rating }: TestimonialProps) 
   )
 }
 
-const items = testimonials.map(testimonial => (
-  <Testimonial key={testimonial.image} name={testimonial.name} title={testimonial.title} rating={testimonial.rating} image={testimonial.image}
-    message={testimonial.message}
-  />
-));
-
 const responsive: Breakpoints = {
   0: {
     items: 1
@@ -66,9 +60,9 @@ const responsive: Breakpoints = {
   }
 };
 
-export default function Testimonials() {
+export default function Testimonials({ testimonials }: TestimonialsProps) {  
   const carousel = useRef<AliceCarousel>(null);
-  const { handleNavigation } = useCarousel(items, responsive, carousel);
+  const { handleNavigation } = useCarousel(testimonials, responsive, carousel);
 
   return (
     <Box pos='relative' className={classes.carousel}>
@@ -77,7 +71,7 @@ export default function Testimonials() {
       >
         <Icon as={ChevronLeftIcon} color='white' />
       </Box>
-      <AliceCarousel items={items} mouseTracking responsive={responsive} ref={carousel} disableButtonsControls disableDotsControls />
+      <AliceCarousel items={testimonials} mouseTracking responsive={responsive} ref={carousel} disableButtonsControls disableDotsControls />
       <Box bgColor='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
         pos='absolute' top={{base: -12, md: '40%'}} right={{base: '4%', md: '12%', lg: '4%', xl: '9%'}} onClick={() => handleNavigation('next')}
       >

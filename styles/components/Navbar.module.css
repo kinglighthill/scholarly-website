@@ -1,6 +1,10 @@
 .nav {
   border-bottom: 1px solid #F7B71D;
   padding: 16px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
 }
 
 .logo_wrapper > span {

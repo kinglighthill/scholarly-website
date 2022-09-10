@@ -1,12 +1,10 @@
-import { Box, Button, Flex, FormControl, FormLabel, Input, Spacer, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
+import { Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, Spacer, Text, VStack } from "@chakra-ui/react";
 import coming_soon from "../../public/coming_soon.svg";
+import useFeatureNotifier from "../../hooks/useFeatureNotifier";
 
-export default function ComingSoon() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log((e.target as HTMLFormElement).email.value);
-  }
+export default function ComingSoon({ feature }: {feature: string}) {
+  const { email, emailError, loading, handleChange, handleSubmit } = useFeatureNotifier(feature);
 
   return (
     <Box as="section" py={24} px={[5, 12, 7, 14, 24]}>
@@ -20,11 +18,14 @@ export default function ComingSoon() {
           <Text color="brand.lime.700" fontSize={13}>Our team is working hard to develop this product. Kindly provide your email so we&apos;ll inform you when we launch.</Text>
           <Text color="brand.lime.500" fontWeight="medium">Be the first to know when we launch</Text>
           <form aria-label="Join the waitlist" onSubmit={handleSubmit} style={{width: "100%"}}>
-            <FormControl mb={6}>
+            <FormControl mb={6} isRequired isInvalid={emailError}>
               <FormLabel htmlFor="email" mb={2} fontSize={13} fontWeight="medium">Email</FormLabel>
-              <Input type="email" id="email" name="email" placeholder="Enter your email" fontSize={13} focusBorderColor="brand.lime.500" />
+              <Input id="email" type="email" name="email" value={email} placeholder="Enter your email" fontSize={13}
+                focusBorderColor="brand.lime.500" onChange={handleChange}
+              />
+              <FormErrorMessage>Email is invalid.</FormErrorMessage>
             </FormControl>
-            <Button type="submit" variant="solid">Join waitlist</Button>
+            <Button type="submit" variant="solid" isLoading={loading}>Join waitlist</Button>
           </form>
         </VStack>
       </Flex>

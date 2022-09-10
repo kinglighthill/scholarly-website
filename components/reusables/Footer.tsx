@@ -28,10 +28,10 @@ export default function Footer() {
         <Flex mb='50px'>
           <FooterMenu title='Products'
             items={[
-              { name: 'Mobile Apps', url: '/' },
-              { name: 'Desktop Apps', url: '/' },
-              { name: 'Partner Apps', url: '/' },
-              { name: 'Enterprise Software', url: '/' }
+              { name: 'Mobile Apps', url: '/apps/android' },
+              { name: 'Desktop Apps', url: '/apps/desktop' },
+              { name: 'Partner Apps', url: '/partners' },
+              { name: 'Enterprise Software', url: '/business' }
             ]}
           />
           <Spacer />
@@ -57,34 +57,34 @@ export default function Footer() {
                 <Box>
                   <HStack spacing={1.5} color='white'>
                     <Icon as={PhoneIcon} />
-                    <Link href='tel:+23490-6170-1939' passHref>
-                      <ChakraLink>+23490-6170-1939</ChakraLink>
+                    <Link href='tel:+23481-3694-1462' passHref>
+                      <ChakraLink>+23481-3694-1462</ChakraLink>
                     </Link>
                   </HStack>
                   <HStack spacing={1.5} color='brand.yellow'>
                     <Icon as={AtSymbolIcon} />
-                    <Link href='mailto:scholarlyafrica@gmail.com' passHref>
-                      <ChakraLink>scholarlyafrica@gmail.com</ChakraLink>
+                    <Link href='mailto:info@scholarly.africa' passHref>
+                      <ChakraLink>info@scholarly.africa</ChakraLink>
                     </Link>
                   </HStack>
                 </Box>
-                <Text color='white' fontSize={13} textAlign='right'>Samuelson close, near FGC. Independence Layout, Enugu, Nigeria</Text>
+                <Text color='white' fontSize={13} textAlign='right'>5, Samuelson close, Isiuzo street, Independence Layout, Enugu, Nigeria</Text>
               </VStack>
             </Box>
             <HStack spacing={4}>
-              <a href='https://facebook.com/scholarlyng' target="blank" aria-label='Visit our facebook page'>
+              <a href='https://facebook.com/scholarlyng' target="_blank" rel="noreferrer" aria-label='Visit our facebook page'>
                 <Image src={facebook} alt='Facebook Icon' />
               </a>
-              <a href='https://twitter.com' target="blank" aria-label='Visit our twitter handle'>
+              <a href='https://twitter.com/scholarlyng' target="_blank" rel="noreferrer" aria-label='Visit our twitter handle'>
                 <Image src={twitter} alt='Twitter Icon' />
               </a>
-              <a href='https://www.linkedin.com/company/scholarlyafrica/' target="blank" aria-label='Visit our linkedin page'>
+              <a href='https://www.linkedin.com/company/scholarlyafrica/' target="_blank" rel="noreferrer" aria-label='Visit our linkedin page'>
                 <Image src={linkedin} alt='LinkedIn Icon' />
               </a>
-              <a href='https://www.instagram.com/scholarlyng/' target="blank" aria-label='Visit our instagram page'>
+              <a href='https://www.instagram.com/scholarlyng/' target="_blank" rel="noreferrer" aria-label='Visit our instagram page'>
                 <Image src={instagram} alt='Instagram Icon' />
               </a>
-              <a href='https://wa.me/+2349061701939' target="blank" aria-label='Send us a message on Whatsapp'>
+              <a href='https://wa.me/+2349061701939' target="_blank" rel="noreferrer" aria-label='Send us a message on Whatsapp'>
                 <Image src={whatsapp} alt='WhatsApp Icon' />
               </a>
             </HStack>

@@ -7,7 +7,7 @@ import star from '../../public/star.svg';
 import fan_blades from '../../public/fan_blades.svg';
 import female_student from '../../public/female_student.webp';
 import classes from '../../styles/Home.module.css';
-import { BoxWithJambIcon, BoxWithNecoIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
+import { BoxWithGESIcon, BoxWithJambIcon, BoxWithNecoIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
 import Label from '../reusables/Label';
 
 export default function TopBanner() {
@@ -60,7 +60,7 @@ export default function TopBanner() {
           <Box display={{base: 'block', md: 'none'}} pos='absolute' top={['10%', '18%']} left={['7%', '13%']} zIndex={0}>
             <Image src={fan_blades} alt="" />
           </Box>
-          <Label labelText='Jamb Practice' labelIcon={<BoxWithJambIcon/>} box={{top: ['2%', '6%', '6%', 160], right: {base: '50%', lg: 303}}} />
+          <Label labelText='BECE JHS' labelIcon={<BoxWithGESIcon/>} box={{top: ['2%', '6%', '6%', 160], right: {base: '50%', lg: 303}}} />
           <Label labelText='WAEC Questions' labelIcon={<BoxWithWaecIcon/>} box={{bottom: {base: '37%', md: '8%', lg: 5}, right: {base: '10%', md: 1}}} />
         </Box>
       </Flex>

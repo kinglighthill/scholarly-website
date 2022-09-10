@@ -23,16 +23,16 @@ export default function MobileFooter() {
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
               <ListItem>
-                <Link href='/'>Mobile Apps</Link>
+                <Link href='/apps/android'>Mobile Apps</Link>
               </ListItem> 
               <ListItem>
-                <Link href='/'>Desktop Apps</Link>
+                <Link href='/apps/desktop'>Desktop Apps</Link>
               </ListItem> 
               <ListItem>
-                <Link href='/'>Partners App</Link>
+                <Link href='/partners'>Partners App</Link>
               </ListItem> 
               <ListItem>
-                <Link href='/'>Enterprise Software</Link>
+                <Link href='/business'>Enterprise Software</Link>
               </ListItem> 
             </List>
           </AccordionPanel>
@@ -96,34 +96,34 @@ export default function MobileFooter() {
                   <Box>
                     <HStack spacing={1.5} color='white'>
                       <Icon as={PhoneIcon} />
-                      <Link href='tel:+23490-6170-1939' passHref>
-                        <ChakraLink>+23490-6170-1939</ChakraLink>
+                      <Link href='tel:+23481-3694-1462' passHref>
+                        <ChakraLink>+23481-3694-1462</ChakraLink>
                       </Link>
                     </HStack>
                     <HStack spacing={1.5} color='brand.yellow'>
                       <Icon as={AtSymbolIcon} />
-                      <Link href='mailto:scholarlyafrica@gmail.com' passHref>
-                        <ChakraLink>scholarlyafrica@gmail.com</ChakraLink>
+                      <Link href='mailto:info@scholarly.africa' passHref>
+                        <ChakraLink>info@scholarly.africa</ChakraLink>
                       </Link>
                     </HStack>
                   </Box>
-                  <Text color='white' fontSize={13} textAlign='right'>Samuelson close, near FGC. Independence Layout, Enugu, Nigeria</Text>
+                  <Text color='white' fontSize={13} textAlign='right'>5, Samuelson Close, Isiuzo Street, Independence Layout, Enugu, Nigeria</Text>
                 </VStack>
               </Box>
               <HStack spacing={4}>
-                <a href='https://facebook.com/scholarlyng' target="blank" aria-label='Visit our facebook page'>
+                <a href='https://facebook.com/scholarlyng' target="_blank" rel='noreferrer' aria-label='Visit our facebook page'>
                   <Image src={facebook} alt='Facebook Icon' />
                 </a>
-                <a href='https://twitter.com' target="blank" aria-label='Visit our twitter handle'>
+                <a href='https://twitter.com/scholarlyng' target="_blank" rel='noreferrer' aria-label='Visit our twitter handle'>
                   <Image src={twitter} alt='Twitter Icon' />
                 </a>
-                <a href='https://www.linkedin.com/company/scholarlyafrica/' target="blank" aria-label='Visit our linkedin page'>
+                <a href='https://www.linkedin.com/company/scholarlyafrica/' target="_blank" rel='noreferrer' aria-label='Visit our linkedin page'>
                   <Image src={linkedin} alt='LinkedIn Icon' />
                 </a>
-                <a href='https://www.instagram.com/scholarlyng/' target="blank" aria-label='Visit our instagram page'>
+                <a href='https://www.instagram.com/scholarlyng/' target="_blank" rel='noreferrer' aria-label='Visit our instagram page'>
                   <Image src={instagram} alt='Instagram Icon' />
                 </a>
-                <a href='https://wa.me/+2349061701939' target="blank" aria-label='Send us a message on Whatsapp'>
+                <a href='https://wa.me/+2349061701939' target="_blank" rel='noreferrer' aria-label='Send us a message on Whatsapp'>
                   <Image src={whatsapp} alt='WhatsApp Icon' />
                 </a>
               </HStack>

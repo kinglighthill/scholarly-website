@@ -1,8 +1,24 @@
 import Link from "next/link";
-import { Box, Flex, Spacer, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, ListItem, OrderedList, Spacer, Text, VStack } from "@chakra-ui/react";
 import { TermsPrivacySecurityProps } from "../../types/components/reusables/terms_privacy_security";
+import parse, { domToReact, HTMLReactParserOptions, Element } from 'html-react-parser';
 
 export default function TermsPrivacyService({ page, title, content }: TermsPrivacySecurityProps) {
+  const parserOptions: HTMLReactParserOptions = {
+    replace: domNode => {
+      if (domNode instanceof Element) {
+        const { name, children } = domNode;
+
+        if (name === 'ol') {
+          return <OrderedList spacing={5}>{domToReact(children)}</OrderedList>
+        }
+        if (name === 'li') {
+          return <ListItem>{domToReact(children)}</ListItem>
+        }
+      }
+    }
+  };
+
   return (
     <Box as="section" pl={[5, "10%", 0]} pr={[5, "10%"]} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
       <Flex>
@@ -18,18 +34,15 @@ export default function TermsPrivacyService({ page, title, content }: TermsPriva
               <a style={{display: "block"}}>Privacy</a>
             </Link>
           </Text>
-          <Text py={3} pl={4} bg={page === 'security' ? "rgba(255, 255, 255, 0.3)" : "none"}>
-            <Link href="/security">
-              <a style={{display: "block"}}>Security</a>
-            </Link>
-          </Text>
         </Box>
 
         <Spacer />
 
         <VStack spacing={8} align="start" mt={[6, "74px"]} mb={[36, "74px"]} flexBasis={{base: "100%", md: "60%"}}>
           <Text as="h1" color="brand.yellow" fontSize={[31, 39]} fontWeight={["bold", "black"]}>{title}</Text>
-          <VStack spacing={3} py={5} px={6} borderRadius={8} bg="rgba(255, 255, 255, 0.2)">{content}</VStack>
+          <Box color="white" py={5} px={6} borderRadius={8} bg="rgba(255, 255, 255, 0.2)">
+            {parse(content, parserOptions)}
+          </Box>
         </VStack>
       </Flex>
 
@@ -40,9 +53,6 @@ export default function TermsPrivacyService({ page, title, content }: TermsPriva
         </Text>
         <Text color="brand.yellow" fontWeight="medium" display={page === "privacy" ? "none" : "block"}>
           <Link href="/privacy">Privacy</Link>
-        </Text>
-        <Text color="brand.yellow" fontWeight="medium" display={page === "security" ? "none" : "block"}>
-          <Link href="/security">Security</Link>
         </Text>
       </VStack>
     </Box>
