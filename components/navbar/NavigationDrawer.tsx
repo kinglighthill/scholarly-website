@@ -13,21 +13,9 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
         <DrawerCloseButton as={XIcon} color='brand.lime.700' _hover={{bgColor: 'brand.lime.50'}} />
         <DrawerBody px={9} pb={9} pt='75px'>
           <VStack spacing={10} align='start'>
-            <Text color='brand.lime.700' fontSize={20}>
-              <Link href='/students' passHref>
-                <ChakraLink>Students</ChakraLink>
-              </Link>
-            </Text>
-            <Text color='brand.lime.700' fontSize={20}>
-              <Link href='/partners' passHref>
-                <ChakraLink>Partners</ChakraLink>
-              </Link>
-            </Text>
-            <Text color='brand.lime.700' fontSize={20}>
-              <Link href='/business' passHref>
-                <ChakraLink>Business</ChakraLink>
-              </Link>
-            </Text>
+            <ChakraLink href='/students' color='brand.lime.700' fontSize={20}>Students</ChakraLink>
+            <ChakraLink href='/partners' color='brand.lime.700' fontSize={20}>Partners</ChakraLink>
+            <ChakraLink href='/business' color='brand.lime.700' fontSize={20}>Business</ChakraLink>
             <Accordion w='full' allowToggle>
               <AccordionItem border='none'>
                 <h2>
@@ -84,11 +72,12 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
-            <Text color='brand.lime.700' fontSize={20}>
-              <Link href='/contact-us' passHref>
-                <ChakraLink>Contact Us</ChakraLink>
-              </Link>
-            </Text>
+            <ChakraLink href='https://blog.scholarly.africa' target='_blank' color='brand.lime.700' fontSize={20}>Blog</ChakraLink>
+            <Link href='/contact-us' passHref>
+              <ChakraLink w='full' _hover={{textDecoration: 'none'}}>
+                <Button type='button' variant='outline' w='full'>Contact Us</Button>
+              </ChakraLink>
+            </Link>
             {/* <Button type='button' variant='solid' w='full'>Activate</Button> */}
           </VStack>
         </DrawerBody>
