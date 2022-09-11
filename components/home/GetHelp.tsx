@@ -24,11 +24,11 @@ export default function GetHelp() {
           </Link>
         </Box>
 
-        <Spacer />
+        {/* <Spacer /> */}
 
-        <Box flexBasis={{base: "100%", md: "43%"}} mt={{base: 10, md: 0}}>
+        {/* <Box flexBasis={{base: "100%", md: "43%"}} mt={{base: 10, md: 0}}>
           <ContactForm textColor='brand.lime.700' />        
-        </Box>
+        </Box> */}
       </Flex>
     </Box>
   )
