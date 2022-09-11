@@ -12,9 +12,9 @@ const ContactUs: NextPage = () => {
           <VStack spacing={["18px", 9]} align="start" mb={{base: "70px", md: 0}} flexBasis={{base: "100%", md: "45%"}}>
             <Text as="h1" color="brand.yellow" lineHeight="120%" fontSize={[31, 39]} fontWeight="bold">Contact Us</Text>
             <Text color="white" fontSize={20}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc</Text>
-            <Box w="full">
+            {/* <Box w="full">
               <ContactForm textColor='white' />
-            </Box>
+            </Box> */}
           </VStack>
           
           <Spacer />

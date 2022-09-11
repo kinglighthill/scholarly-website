@@ -21,10 +21,10 @@ export const statistics: Statistic[] = [
 ];
 
 export const testimonials: TestimonialProps[] = [
-  { name: 'Umeh Chibuzor', title: 'Student', image: 'jrotanson.svg', rating: 4, message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem ipsum dolor sit amet.' },
-  { name: 'Umeh Chibuzor', title: 'Agent', image: '', rating: 5, message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem ipsum dolor sit amet.' },
-  { name: 'Umeh Dhibuzor', title: 'Agent', image: '', rating: 5, message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem ipsum dolor sit amet.' },
-  { name: 'Umeh Xhibuzor', title: 'Agent', image: '', rating: 5, message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem ipsum dolor sit amet.' },
+  { full_name: 'Umeh Chibuzor', user_type: 'Student', profile_pic_sm: 'jrotanson.svg', rating: 4, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem ipsum dolor sit amet.' },
+  { full_name: 'Umeh Chibuzor', user_type: 'Agent', profile_pic_sm: '', rating: 5, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem ipsum dolor sit amet.' },
+  { full_name: 'Umeh Dhibuzor', user_type: 'Agent', profile_pic_sm: '', rating: 5, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem ipsum dolor sit amet.' },
+  { full_name: 'Umeh Xhibuzor', user_type: 'Agent', profile_pic_sm: '', rating: 5, content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non pellentesque faucibus sed in nunc Lorem ipsum dolor sit  consectetur adipiscing elit. Lorem ipsum dolor sit amet.' },
 ];
 
 export const salesOutlets: Outlet[] = [
