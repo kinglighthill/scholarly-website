@@ -40,7 +40,7 @@ const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
   
   return (
     <Page title='Scholarly | Improved Learning, Better Academic Performance'
-      description='Smash your JAMB, WAEC, Post UTME, NECO, BECE, and other exams with Scholarly Apps. Over 1 million students use Scholarly apps to study for their exams. Available for Android, iOS and Desktop.'
+      description='Ace your JAMB, WAEC, Post UTME, NECO, BECE, and other exams with Scholarly Apps. Over 1 million students use Scholarly apps to study for their exams. Available for Android, iOS and Desktop.'
     >
       <TopBanner />
       <Students />
