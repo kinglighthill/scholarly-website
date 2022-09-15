@@ -25,11 +25,6 @@ export default function TopBanner() {
               <Text as='span' color='brand.yellow'>Better </Text>
               <Text as='span' color='brand.lime.500'>Academic Performance</Text>
             </Text>
-            {/* <Text display={['block', 'none']} fontWeight='black' fontSize='5xl' textAlign={{base: 'left', md: 'center'}} lineHeight='112%'>
-              <Text as='span' color='brand.yellow'>Learning </Text>
-              <Text as='span' color='brand.lime.500'>is simple with </Text>
-              <Text as='span' color='brand.yellow'>Scholarly </Text>
-            </Text> */}
           </Box>
           <Text color='brand.lime.700' fontSize={{base: 16, lg: 20}} lineHeight='144%' mb={{base: 4, lg: 0}}>
             Scholarly organizes the tools and resources needed to get better grades in an easy to use app.
@@ -61,7 +56,7 @@ export default function TopBanner() {
             <Image src={fan_blades} alt="" />
           </Box>
           <Label labelText='BECE JHS' labelIcon={<BoxWithGESIcon/>} box={{top: ['2%', '6%', '6%', 160], right: {base: '50%', lg: 303}}} />
-          <Label labelText='WAEC Questions' labelIcon={<BoxWithWaecIcon/>} box={{bottom: {base: '37%', md: '8%', lg: 5}, right: {base: '10%', md: 1}}} />
+          <Label labelText='WAEC' labelIcon={<BoxWithWaecIcon/>} box={{bottom: {base: '37%', md: '8%', lg: 5}, right: {base: '10%', md: 1}}} />
         </Box>
       </Flex>
     </Box>
