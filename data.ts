@@ -15,7 +15,7 @@ import { Outlet, Statistic } from "./types/data";
 export const statistics: Statistic[] = [
   { title: 'Apps', value: '30+' },
   { title: 'Downloads', value: '1 million+' },
-  { title: 'Rating', value: '4+ stars' },
+  { title: 'Average Rating', value: '4+ stars' },
   // { title: 'Partners', value: '20,000+' },
   // { title: 'Businesses', value: '600+' },
 ];
