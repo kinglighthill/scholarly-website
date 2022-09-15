@@ -14,7 +14,7 @@ import { capitalize } from "../../utils";
 
 const handleDragStart = (e: React.DragEvent<HTMLElement>) => e.preventDefault();
 
-export function Testimonial({ full_name, user_type, profile_pic_sm, content, rating }: TestimonialProps) {
+export function Testimonial({ full_name, user_type, profile_pic_sm, content, rating, bg }: TestimonialProps) {
   return (
     <Box as="article" maxW='425px' pb={2.5} m='auto' onDragStart={handleDragStart} role="presentation">
       <VStack spacing={5}>
@@ -25,7 +25,7 @@ export function Testimonial({ full_name, user_type, profile_pic_sm, content, rat
             <Text color='gray'fontWeight='semibold'>Scholarly</Text>
           </HStack>
         </HStack>
-        <Box bgColor='white' borderRadius={20} py='34px' px='22px'>
+        <Box bg={bg ? bg : 'white'} borderRadius={20} py='34px' px='22px'>
           <Text color='brand.lime.700'>
             {content}
           </Text>
@@ -66,13 +66,13 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
 
   return (
     <Box pos='relative' className={classes.carousel}>
-      <Box bgColor='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
+      <Box bg='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
         pos='absolute' top={{base: -12, md: '40%'}} left={{base: '4%', md: '12%', lg: '4%', xl: '8%'}} onClick={() => handleNavigation('prev')}
       >
         <Icon as={ChevronLeftIcon} color='white' />
       </Box>
       <AliceCarousel items={testimonials} mouseTracking responsive={responsive} ref={carousel} disableButtonsControls disableDotsControls />
-      <Box bgColor='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
+      <Box bg='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
         pos='absolute' top={{base: -12, md: '40%'}} right={{base: '4%', md: '12%', lg: '4%', xl: '9%'}} onClick={() => handleNavigation('next')}
       >
         <Icon as={ChevronRightIcon} color='white' />
