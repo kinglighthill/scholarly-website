@@ -19,7 +19,7 @@ export default function App({ appData }: AppProps) {
 
   const testimonials = appData.testimonials.map((testimonial: TestimonialProps, index: number) => (
     <Testimonial key={testimonial.full_name + index+1} full_name={testimonial.full_name} user_type={testimonial.user_type}
-      rating={testimonial.rating} profile_pic_sm={testimonial.profile_pic_sm} content={testimonial.content}
+      rating={testimonial.rating} profile_pic_sm={testimonial.profile_pic_sm} content={testimonial.content} bg="brand.nearWhite"
     />
   ));
 
@@ -42,7 +42,7 @@ export default function App({ appData }: AppProps) {
       </Box>
 
       {/* App Details */}
-      <Box as="section" py="50px" px={[5, 12, 12, "120px"]}>
+      <Box as="section" py="50px" px={[5, 12, 12, "120px"]} bg="brand.nearWhite">
         <Stack direction="row" spacing={{base: 0, md: 10}} justify="center">
           <Box display={{base: "none", md: "block"}}>
             <Image src={appData.icon_url} alt={`${appData.name} Icon`} width={145} height={145} style={{boxShadow: "0px 2.90312px 33px 8px rgba(0, 0, 0, 0.08)"}} />
@@ -55,7 +55,7 @@ export default function App({ appData }: AppProps) {
       </Box>
 
       {/* Download Section */}
-      <Box as="section" py={8} px={[5, 12, 12, "120px"]} bg={{md: "linear-gradient(to bottom, white 50%, #FEF8E8 50%)"}}>
+      <Box as="section" py={8} px={[5, 12, 12, "120px"]} bg={{md: "linear-gradient(to bottom, #F5F6F6 50%, white 50%)"}}>
         <Stack direction={{base: "column", md: "row"}} spacing={6} justify="center">
           <DownloadCard store_icon={playstore} store_name="PlayStore" app_rating={5} app_availability={appData.available_on_android} download_link={appData.download_link_android} />
           <DownloadCard store_icon={appstore} store_name="Appstore" app_rating={5} app_availability={appData.available_on_ios} />
@@ -65,7 +65,7 @@ export default function App({ appData }: AppProps) {
 
       {/* Testimonials Section */}
       {testimonials.length !== 0 &&
-        <Box as='section' bg='brand.nearWhite' pt={{base: '60px', md: '82px'}} pb={{base: '60px', md: '115px'}}>
+        <Box as='section' bg='white' pt={{base: '60px', md: '82px'}} pb={{base: '60px', md: '115px'}}>
           <Box textAlign='center' mb={{base: '90px', md: 12}} px={{base: 5, md: 0}}>
             <Text display='inline-block' textAlign='center' px='42px' py='10px' borderRadius={4} bgColor='brand.lime.700' color='brand.nearWhite' fontSize={[20, 31]} fontWeight='medium'>
               What people are saying
