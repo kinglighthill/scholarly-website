@@ -23,8 +23,8 @@ export default function Partners() {
           </VStack>
           <VStack spacing={[8, 12, '52px']} align='start' mb={{base: "50px", md: "77px"}}>
             <HStack spacing={{base: 0, md: 9}} align="start" wrap={{base: 'wrap', md: 'nowrap'}}>
-              <Box fontSize={0} borderRadius='50%' p={['18px', 6]} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(248, 195, 67, 0.2)">
-                <Image src={sign_up2} alt="" />
+              <Box fontSize={0} borderRadius='50%' p={["18px", "22px"]} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(248, 195, 67, 0.2)">
+                <Image src={sign_up2} alt="" width={"30%"} height={"30%"} />
               </Box>
               <Box flexBasis={{base: '100%', md: 'initial'}}>
                 <Text fontSize={20} fontWeight="bold" color="brand.lime.700">Sign up</Text>
@@ -35,7 +35,7 @@ export default function Partners() {
               </Box>
             </HStack>
             <HStack spacing={{base: 0, md: 9}} align="start" wrap={{base: 'wrap', md: 'nowrap'}}>
-              <Box fontSize={0} borderRadius='50%' p={['18px', 6]} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(70, 172, 102, 0.2)">
+              <Box fontSize={0} borderRadius='50%' p={["18px", "22px"]} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(70, 172, 102, 0.2)">
                 <Image src={verify_identity2} alt="" />
               </Box>
               <Box flexBasis={{base: '100%', md: 'initial'}}>
@@ -44,7 +44,7 @@ export default function Partners() {
               </Box>
             </HStack>
             <HStack spacing={{base: 0, md: 9}} align="start" wrap={{base: 'wrap', md: 'nowrap'}}>
-              <Box fontSize={0} borderRadius='50%' p={['18px', 6]} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(0, 197, 255, 0.2)">
+              <Box fontSize={0} borderRadius='49%' py={['22px', 6]} px={['18px', "22px"]} mb={{base: 4, md: 0}} maxW='19%' backgroundColor="rgba(0, 197, 255, 0.2)">
                 <Image src={find_customers2} alt="" />
               </Box>
               <Box flexBasis={{base: '100%', md: 'initial'}}>
