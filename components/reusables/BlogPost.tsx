@@ -12,12 +12,14 @@ export default function BlogPost({ post_data }: BlogPostProps) {
   }
 
   return (
-    <VStack spacing={0} maxW="335px" bg="white" flexBasis="30%" boxShadow="0px 4px 50px 24px rgba(0, 0, 0, 0.08)">
+    <VStack spacing={0} maxW="335px" bg="white" flexBasis="30%" pos="relative" boxShadow="0px 4px 50px 24px rgba(0, 0, 0, 0.08)">
       <Box maxH="160px" fontSize={0} flexBasis="26%">
         <Image src={feature_image} alt={title} width={333} height={160} />
       </Box>
       <VStack spacing={4} p={4} align="start" justify="space-between" flexBasis="74%">
-        <ChakraLink href={url} target="_blank">
+        <ChakraLink href={url} isExternal
+          _before={{content: "''", display: "block", pos: "absolute", top: 0, left: 0, w: "100%", h: "100%"}}
+        >
           <Text as="h3" color="brand.lime.700" lineHeight="120%" fontWeight="extrabold" textTransform="uppercase">
             {title}
           </Text>
@@ -29,7 +31,11 @@ export default function BlogPost({ post_data }: BlogPostProps) {
             <Text>{reading_time} min. read</Text>
           </HStack>
         </Box>
-        <ChakraLink href={url} color="brand.lime.500" fontSize={14}>Read more</ChakraLink>
+        <ChakraLink href={url} isExternal color="brand.lime.500" fontSize={14} pos="relative" zIndex={1}
+          onClick={(e) => e.stopPropagation()}
+        >
+          Read more
+        </ChakraLink>
       </VStack>
     </VStack>
   )
