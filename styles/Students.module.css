@@ -5,25 +5,26 @@
 }
 
 .active {
-  background-color: #F8FFFA;
+  background-color: white;
+  border: 1px solid #209B47;
   border-radius: 4px;
   padding: 10.5px 16px;
 }
 
 @media screen and (min-width: 480px) {
   .slider_container {
-    padding: 75px 35px;
+    padding: 75px 60px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .slider_container {
-    padding: 75px 70px;
+    padding-inline: 70px;
   }
 }
 
 @media screen and (min-width: 992px) {
   .slider_container {
-    padding: 75px 120px;
+    padding-inline: 120px;
   }
 }
