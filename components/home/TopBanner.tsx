@@ -36,7 +36,7 @@ export default function TopBanner() {
               </Button>
             </a>
           </Link>
-          <HStack spacing={4} display={{base: 'none', md: 'flex'}}>
+          <HStack spacing={4}>
             <BoxWithJambIcon />
             <BoxWithWaecIcon />
             <BoxWithNecoIcon />
