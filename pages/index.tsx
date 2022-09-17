@@ -73,7 +73,7 @@ const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
       {blogPosts && 
         <Box as="section" className={classes.blog_section}>
           <Text as='h2' color='brand.lime.700' mb={12} textAlign='center' fontSize={31} fontWeight='bold'>From Our Blog</Text>
-          <Stack spacing={5} direction={{base: 'column', md: 'row'}} w='full' justify='center' align={{base: 'center', md: 'stretch'}}>
+          <Stack spacing={5} direction={{base: 'column', md: 'row'}} w='full' justify='space-between' align={{base: 'center', md: 'stretch'}}>
             {blogPosts.data.posts.map((post: BlogPostData) => (
               <BlogPost key={post.url} post_data={post} />
             ))}
