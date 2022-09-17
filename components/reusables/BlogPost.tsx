@@ -12,9 +12,9 @@ export default function BlogPost({ post_data }: BlogPostProps) {
   }
 
   return (
-    <VStack spacing={0} maxW="335px" bg="white" flexBasis="30%" pos="relative" boxShadow="0px 4px 50px 24px rgba(0, 0, 0, 0.08)">
-      <Box maxH="160px" fontSize={0} flexBasis="26%">
-        <Image src={feature_image} alt={title} width={333} height={160} />
+    <VStack spacing={0} maxW="432px" bg="white" flexBasis="30%" pos="relative" boxShadow="0px 4px 50px 24px rgba(0, 0, 0, 0.08)">
+      <Box maxH="180px" fontSize={0} flexBasis="26%">
+        <Image src={feature_image} alt={title} width={432} height={180} />
       </Box>
       <VStack spacing={4} p={4} align="start" justify="space-between" flexBasis="74%">
         <ChakraLink href={url} isExternal
