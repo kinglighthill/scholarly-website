@@ -13,8 +13,8 @@ import Label from '../reusables/Label';
 export default function TopBanner() {
   return (
     <Box as='section' bgColor='brand.nearWhite' className={classes.banner_container}>    
-      <Flex justify='space-between' wrap={{base: 'wrap', lg: 'nowrap'}}>
-        <VStack spacing={8} align='start' flexBasis={{base: '100%', lg: '50%'}} pb={{lg: 5}}>
+      <Flex justify='center' wrap={{base: 'wrap', lg: 'nowrap'}}>
+        <VStack spacing={8} align='start' flexBasis={{base: '100%', lg: '50%'}} pb={{lg: 12}}>
           <Box>
             <Box display={{base: 'none', md: 'block'}}>
               <Image src={green_pattern} alt='' />
@@ -45,9 +45,9 @@ export default function TopBanner() {
 
         <Spacer />
 
-        <Box pos='relative' flexBasis={{base: '100%', lg: '48%'}} mt={{base: 12, lg: 0}} className={classes.banner_media}>
-          <Box fontSize={0}>
-            <Image className={classes.female_student} src={female_student} alt="Young African Female Student with a face mask holding her books" priority />
+        <Box pos='relative' flexBasis={{base: '100%', md: '90%', lg: '48%'}} mt={{base: 12, lg: 0}}>
+          <Box fontSize={0} h='clamp(440px, 440px + 1vw, 550px)'>
+            <Image layout='fill' className={classes.female_student} src={female_student} alt="Young African Female Student with a face mask holding her books" priority />
           </Box>
           <Box display={{base: 'none', md: 'block'}} pos='absolute' top={{base: '27%', lg: 100, xl: 140}} right={{base: 0, lg: -4}} zIndex={0}>
             <Image src={star} alt="" />
