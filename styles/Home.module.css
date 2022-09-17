@@ -16,7 +16,7 @@
   padding: 60px 20px;
 }
 
-/* Business Section */
+/* Blog Section */
 
 .blog_section {
   background-image: url('../public/scholarly_logo_bg.svg');
@@ -24,6 +24,8 @@
   background-position: center;
   background-color: white;
 }
+
+/* Business Section */
 
 .business_section {
   composes: blog_section;
