@@ -49,15 +49,6 @@ export default function Slider() {
     setActive(index);
   }
 
-  const handleSlideChange = (e: EventObject) => {
-    if (e.item+1 === sliderItems.length) {
-      setActive(0);
-    }
-    else {
-      setActive(e.item + 1);
-    }
-  }
-
   return (
     <Box as='section' className={classes.slider_container} bgColor='brand.nearWhite'>
       <HStack spacing={[5, 9]} mb={12} justify={{base: 'center', md: 'start'}}>
@@ -71,9 +62,9 @@ export default function Slider() {
         ))}
       </HStack>
       
-      <AliceCarousel items={sliderItems} activeIndex={1} mouseTracking disableButtonsControls disableDotsControls
+      <AliceCarousel items={sliderItems} activeIndex={1} disableButtonsControls disableDotsControls
         autoPlay autoPlayStrategy='all' autoPlayInterval={4000} infinite ref={carousel}
-        onSlideChange={handleSlideChange} 
+        keyboardNavigation touchTracking={false} onSlideChanged={(e) => setActive(e.slide)} 
       />
     </Box>
   )
