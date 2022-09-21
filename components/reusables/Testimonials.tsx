@@ -6,11 +6,12 @@ import { StarIcon as OutlinedStarIcon, ChevronRightIcon, ChevronLeftIcon } from 
 import scholarly_logo2 from "../../public/scholarly_logo2.svg";
 import opening_quotes from "../../public/opening_quotes.svg";
 import useCarousel, { Breakpoints } from "../../hooks/useCarousel";
-import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import classes from "../../styles/components/Testimonials.module.css";
 import { TestimonialProps, TestimonialsProps } from "../../types/components/reusables/testimonials";
 import { capitalize } from "../../utils";
+import NavButtons from "./NavButtons";
+import Carousel from "./Carousel";
 
 const handleDragStart = (e: React.DragEvent<HTMLElement>) => e.preventDefault();
 
@@ -55,28 +56,22 @@ const responsive: Breakpoints = {
   0: {
     items: 1
   },
-  1024: {
+  992: {
     items: 2
   }
 };
 
 export default function Testimonials({ testimonials }: TestimonialsProps) {  
-  const carousel = useRef<AliceCarousel>(null);
-  const { handleNavigation } = useCarousel(testimonials, responsive, carousel);
+  // const carousel = useRef<AliceCarousel>(null);
+  // const { handleNavigation } = useCarousel(testimonials, responsive, carousel);
 
   return (
     <Box pos='relative' className={classes.carousel}>
-      <Box bg='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
-        pos='absolute' top={{base: -12, md: '40%'}} left={{base: '4%', md: '12%', lg: '4%', xl: '8%'}} onClick={() => handleNavigation('prev')}
-      >
-        <Icon as={ChevronLeftIcon} color='white' />
-      </Box>
-      <AliceCarousel items={testimonials} mouseTracking responsive={responsive} ref={carousel} disableButtonsControls disableDotsControls />
-      <Box bg='#B2BBB6' px={2} pt={1.5} pb={0.5} borderRadius='20px' display='inline-block' cursor='pointer' zIndex={1}
-        pos='absolute' top={{base: -12, md: '40%'}} right={{base: '4%', md: '12%', lg: '4%', xl: '9%'}} onClick={() => handleNavigation('next')}
-      >
-        <Icon as={ChevronRightIcon} color='white' />
-      </Box>
+      <Carousel items={testimonials} mouseTracking responsive={responsive} infinite disableDotsControls
+        autoPlay autoPlayStrategy="all" autoPlayInterval={4000}
+        renderPrevButton={() => <NavButtons variant='prev' />}
+        renderNextButton={() => <NavButtons variant='next' />}
+      />
     </Box>
   )
 }
