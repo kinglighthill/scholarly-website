@@ -7,7 +7,7 @@ import classes from '../../styles/Students.module.css';
 import notes from '../../public/notes.webp';
 import scholarly_students_demo2 from '../../public/scholarly_students_demo2.webp';
 import syllabus from '../../public/syllabus.webp';
-import AliceCarousel from 'react-alice-carousel';
+import AliceCarousel, { EventObject } from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { SliderDetail } from '../../types/components/students/slider';
 
@@ -41,16 +41,21 @@ const sliderItems = sliderDetails.map(item => {
 )});
 
 export default function Slider() {
-  const [active, setActive] = useState<string>('Past Questions');
+  const [active, setActive] = useState<number>(1);
   const carousel = useRef<AliceCarousel>(null);
 
   const handleNavigation = (index: number) => {
     carousel.current?.slideTo(index);
+    setActive(index);
   }
 
-  const setActiveSection = (index: number, item: string) => {
-    handleNavigation(index);
-    setActive(item);
+  const handleSlideChange = (e: EventObject) => {
+    if (e.item+1 === sliderItems.length) {
+      setActive(0);
+    }
+    else {
+      setActive(e.item + 1);
+    }
   }
 
   return (
@@ -58,15 +63,18 @@ export default function Slider() {
       <HStack spacing={[5, 9]} mb={12} justify={{base: 'center', md: 'start'}}>
         {sliderDetails.map((item, index) => (
           <Text as='h1' key={item.title} fontSize={13} color='brand.lime.700' cursor='pointer'
-            textTransform='capitalize' onClick={() => setActiveSection(index, item.title)}
-            className={item.title === active ? classes.active : undefined}
+            textTransform='capitalize' onClick={() => handleNavigation(index)}
+            className={index === active ? classes.active : undefined}
           >
             {item.title}
           </Text>
         ))}
       </HStack>
       
-      <AliceCarousel items={sliderItems} activeIndex={1} mouseTracking ref={carousel} disableButtonsControls disableDotsControls />
+      <AliceCarousel items={sliderItems} activeIndex={1} mouseTracking disableButtonsControls disableDotsControls
+        autoPlay autoPlayStrategy='all' autoPlayInterval={4000} infinite ref={carousel}
+        onSlideChange={handleSlideChange} 
+      />
     </Box>
   )
 }
