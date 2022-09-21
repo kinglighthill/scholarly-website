@@ -22,7 +22,6 @@ export const getStaticProps: GetStaticProps = async () => {
     return { props: { data: content.data } }
   }
   catch (error) {
-    console.log('An error occurred: ' + error);
     return { props: { error: true } }
   }
 }
