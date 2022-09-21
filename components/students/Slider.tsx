@@ -22,7 +22,7 @@ const sliderItems = sliderDetails.map(item => {
 
   return (
   <Flex key={item.title} align='center' flexDir={{base: 'column-reverse', md: 'row'}} onDragStart={handleDragStart}>
-    <VStack spacing={8} align='start' flexBasis='46%'>
+    <VStack spacing={8} align='start' flexBasis='42%'>
       <Text as='h2' color='brand.lime.700' fontSize={{base: 31, md: 25, lg: 31}} fontWeight='bold'>{item.headline}</Text>
       <Text color='brand.lime.700'>{item.description}</Text>
       <Link href='/apps/android'>
@@ -34,7 +34,7 @@ const sliderItems = sliderDetails.map(item => {
       </Link>
     </VStack>
     <Spacer />
-    <Box flexBasis='50%' mb={{base: 8, md: 0}}>
+    <Box flexBasis='54%' mb={{base: 8, md: 0}}>
       <Image src={item.image} alt="A Demo of the Scholarly Students App" priority />
     </Box>
   </Flex>
