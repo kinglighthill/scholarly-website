@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { NextPage } from 'next';
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { Box, Button, Flex, GridItem, HStack, Icon, SimpleGrid, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import Slider from '../components/students/Slider';
 import TopBanner from '../components/students/TopBanner';
@@ -19,12 +19,35 @@ import LearningCentres from '../components/reusables/LearningCentres';
 import BuyPin from '../components/reusables/BuyPin';
 import CartProvider from '../context/CartContext';
 import Page from '../components/reusables/Page';
+import Testimonials, { Testimonial } from '../components/reusables/Testimonials';
+import { fetchContent } from '../services/fetch_content.service';
+import { TestimonialProps } from '../types/components/reusables/testimonials';
 
-const Students: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const response = await fetchContent('getTestimonials/testimonials/student');
+    const content = await response.json();
+    // Pass content to the page via props  
+    return { props: { data: content.data } }
+  }
+  catch (error) {
+    console.log('An error occurred: ' + error);
+    return { props: { error: true } }
+  }
+}
+
+const Students: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { isOpen: isSalesOuletsOpen, onOpen: openSalesOutlets, onClose: closeSalesOutlets } = useDisclosure();
   const { isOpen: isCbtCentresOpen, onOpen: openCbtCentres, onClose: closeCbtCentres } = useDisclosure();
   const { isOpen: isLearningCentresOpen, onOpen: openLearningCentres, onClose: closeLearningCentres } = useDisclosure();
   const { isOpen: isBuyPinOpen, onOpen: openBuyPin, onClose: closeBuyPin } = useDisclosure();
+  const { data } = props;
+
+  const testimonials = data.map((testimonial: TestimonialProps, index: number) => (
+    <Testimonial key={testimonial.full_name + index+1} full_name={testimonial.full_name} user_type={testimonial.user_type}
+      rating={testimonial.rating} profile_pic_sm={testimonial.profile_pic_sm} content={testimonial.content}
+    />
+  ));
 
   // Remove cached data from the Buy Pin modal when the user leaves or refreshes the Students page.
   useEffect(() => {
@@ -213,6 +236,15 @@ const Students: NextPage = () => {
         <Box pos='absolute' top={{base: '6%', md: '12%', lg: '10%'}} left={{base: '38%', md: '42%', lg: '44%'}} zIndex={0} display={['none', 'block']}>
           <Image src={green_pattern} alt='' width={128} height={128} />
         </Box>
+      </Box>
+
+      <Box as='section' bgColor='brand.nearWhite' pt={{base: '60px', md: '82px'}} pb={{base: '60px', md: '115px'}}>
+        <Box textAlign='center' mb={{base: '90px', md: 12}} px={{base: 5, md: 0}}>
+          <Text display='inline-block' textAlign='center' px='42px' py='10px' borderRadius={4} bgColor='brand.lime.700' color='brand.nearWhite' fontSize={[20, 31]} fontWeight='medium'>
+            What users are saying
+          </Text>
+        </Box>
+        <Testimonials testimonials={testimonials} />
       </Box>
     
       <CartProvider>
