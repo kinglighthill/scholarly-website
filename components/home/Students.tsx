@@ -26,7 +26,7 @@ export default function Students() {
 
         <VStack spacing={{base: 8, md: 9}} flexBasis={{base: '100%', md: '40%'}} align={{base: 'center', md: 'start'}}>
           <Box pos='relative' w={{base: 'full', md: 'max'}}>
-            <Text as='h2' color='brand.lime.700' fontWeight='bold' fontSize={{base: 31, md: 39}} textAlign={{base: 'center', md: 'left'}}>For Students</Text>
+            <Text as='h2' color='brand.lime.700' fontWeight='bold' fontSize={[25, 31, 39]} textAlign={{base: 'center', md: 'left'}}>For Students</Text>
             <Box display={{base: 'none', md: 'block'}} pos='absolute' bottom='2px' w='20%' borderTop='4px solid' borderColor='brand.yellow' borderRadius={2}></Box>
           </Box>
           <Text color='brand.lime.700' fontSize={{base: 16, md: 20}} textAlign={{base: 'center', md: 'left'}}>

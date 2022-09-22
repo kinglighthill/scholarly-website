@@ -75,8 +75,8 @@ export default function Partners() {
 
         <Box flexBasis={{base: "100%", md: "42%"}} mb={{base: '60px', md: 0}} zIndex={1}>
           <VStack display={{base: "flex", md: "none"}} spacing={4} align='start' color='brand.lime.700' mb={8}>
-            <Text as='h2' fontSize={31} fontWeight='bold'>For Partners</Text>
-            <Text fontSize={16}>Resell Scholarly Apps. Earn profit!</Text>
+            <Text as='h2' fontSize={[25, 31]} fontWeight='bold'>For Partners</Text>
+            <Text>Resell Scholarly Apps. Earn profit!</Text>
           </VStack>
           <Box maxW={{base: '70%', md: '100%'}} m={{base: "auto", md: 0}}>
             <Image src={scholarly_partners_demo} alt="Demo of the Scholarly Partners App" priority />
