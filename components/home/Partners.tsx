@@ -61,13 +61,13 @@ export default function Partners() {
                 </Button>
               </a>
             </Link>
-            <Link href='/apps/android'>
+            {/* <Link href='/apps/android'>
               <a>
                 <Button type="button" variant="solid" iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
                   Download App
                 </Button>
               </a>
-            </Link>
+            </Link> */}
           </HStack>
         </Box>
 
