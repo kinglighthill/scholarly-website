@@ -38,16 +38,16 @@ const FAQs: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
             </Box>
 
             <Spacer />
-
+            
             <TabPanels flexBasis={{base: "100%", md: "48%"}}>
               <TabPanel p={0}>
-                <Questions questions={data} category="student" />
+                <Questions questions={data} category="student" color="255, 255, 255" />
               </TabPanel>
               <TabPanel p={0}>
-                <Questions questions={data} category="partner" />
+                <Questions questions={data} category="partner" color="255, 255, 255" />
               </TabPanel>
               <TabPanel p={0}>
-                <Questions questions={data} category="business" />
+                <Questions questions={data} category="business" color="255, 255, 255" />
               </TabPanel>
             </TabPanels>
           </Flex>
