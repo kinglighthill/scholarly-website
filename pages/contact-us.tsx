@@ -35,7 +35,7 @@ const ContactUs: NextPage = () => {
               </HStack>
             </VStack>
             <VStack spacing={2} align="start">
-              <Text color="brand.yellow" fontWeight={500}>WhatsApp</Text>
+              <Text color="brand.yellow" fontWeight={500}>Email</Text>
               <HStack spacing={3.5} color='white' fontSize={{base: 18, md: 25, lg: 31}} fontWeight={500}>
                 <Icon as={MailIcon} />
                 <Link href='mailto:info@scholarly.africa' passHref>
