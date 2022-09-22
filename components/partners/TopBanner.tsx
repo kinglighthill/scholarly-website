@@ -26,7 +26,8 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
             <HStack spacing={6} justify={['start', 'center']} align='start'>
               <FormControl maxW='50%' isRequired isInvalid={emailError}>
                 <Input id="email" type="email" name="email" value={email} placeholder="Enter your email" fontSize={13}
-                  focusBorderColor="brand.lime.500" onChange={handleChange}
+                  borderColor="rgba(0,0,0,0.42)" focusBorderColor="brand.lime.500" onChange={handleChange}
+                  _hover={{borderColor: "rgba(0,0,0,0.87)"}}
                 />
                 <FormErrorMessage>Email is invalid.</FormErrorMessage>
               </FormControl>
