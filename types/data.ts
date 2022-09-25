@@ -22,28 +22,20 @@ export interface Outlet {
   location: OutletLocation;
 }
 
-export interface App {
-  name: string;
-  logo: {
-    static_img: StaticImageData;
-    url: string;
-  };
-  download_link: string;
-  price: number;
-}
+// export interface App {
+//   name: string;
+//   logo: {
+//     static_img: StaticImageData;
+//     url: string;
+//   };
+//   download_link: string;
+//   price: number;
+// }
 
-export interface Apps {
-  [key: string]: {
-    category_name: string;
-    category_description: string;
-    apps: App[];
-  }[];
-}
-
-export type QuestionCategory = 'students' | 'partners' | 'business';
-
-export interface FAQ {
-  category: QuestionCategory;
-  title: string;
-  question: string;
-}
+// export interface Apps {
+//   [key: string]: {
+//     category_name: string;
+//     category_description: string;
+//     apps: App[];
+//   }[];
+// }

@@ -1,15 +1,15 @@
-.carousel > div:nth-child(2) {
-  max-width: 85%;
+.carousel :global .alice-carousel {
+  max-width: 90%;
 }
 
-@media screen and (min-width: 1150px) {
-  .carousel > div:nth-child(2) {
-    max-width: 75%;
+@media screen and (min-width: 1024px) {
+  .carousel :global .alice-carousel {
+    max-width: 85%;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .carousel > div:nth-child(2) {
+  .carousel :global .alice-carousel {
     max-width: 70%;
   }
 }

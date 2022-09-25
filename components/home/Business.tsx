@@ -15,7 +15,7 @@ export default function Business() {
         <Spacer />
         <VStack spacing={{base: 9, md: 10}} align='start' flexBasis={{base: '100%', md: '40%'}} px={{base: 8, md: 0}} mt={{base: 9, md: 0}}>
           <Box pos='relative'>
-            <Text as='h2' color='brand.lime.700' fontWeight='bold' fontSize={{base: 31, md: 39}}>For Business</Text>
+            <Text as='h2' color='brand.lime.700' fontWeight='bold' fontSize={[25, 31, 39]}>For Business</Text>
             <Box display={{base: 'none', md: 'block'}} pos='absolute' bottom='2px' w='20%' borderTop='4px solid' borderColor='brand.lime.500' borderRadius={2}></Box>
           </Box>
           <Text color='brand.lime.700' fontSize={{base: 16, md: 20}}>

@@ -13,8 +13,8 @@ import Label from '../reusables/Label';
 export default function TopBanner() {
   return (
     <Box as='section' bgColor='brand.nearWhite' className={classes.banner_container}>    
-      <Flex justify='space-between' wrap={{base: 'wrap', lg: 'nowrap'}}>
-        <VStack spacing={8} align='start' flexBasis={{base: '100%', lg: '50%'}} pb={{lg: 5}}>
+      <Flex justify='center' wrap={{base: 'wrap', lg: 'nowrap'}}>
+        <VStack spacing={8} align='start' flexBasis={{base: '100%', lg: '50%'}} pb={{lg: 12}}>
           <Box>
             <Box display={{base: 'none', md: 'block'}}>
               <Image src={green_pattern} alt='' />
@@ -25,11 +25,6 @@ export default function TopBanner() {
               <Text as='span' color='brand.yellow'>Better </Text>
               <Text as='span' color='brand.lime.500'>Academic Performance</Text>
             </Text>
-            {/* <Text display={['block', 'none']} fontWeight='black' fontSize='5xl' textAlign={{base: 'left', md: 'center'}} lineHeight='112%'>
-              <Text as='span' color='brand.yellow'>Learning </Text>
-              <Text as='span' color='brand.lime.500'>is simple with </Text>
-              <Text as='span' color='brand.yellow'>Scholarly </Text>
-            </Text> */}
           </Box>
           <Text color='brand.lime.700' fontSize={{base: 16, lg: 20}} lineHeight='144%' mb={{base: 4, lg: 0}}>
             Scholarly organizes the tools and resources needed to get better grades in an easy to use app.
@@ -41,7 +36,7 @@ export default function TopBanner() {
               </Button>
             </a>
           </Link>
-          <HStack spacing={4} display={{base: 'none', md: 'flex'}}>
+          <HStack spacing={4}>
             <BoxWithJambIcon />
             <BoxWithWaecIcon />
             <BoxWithNecoIcon />
@@ -50,9 +45,9 @@ export default function TopBanner() {
 
         <Spacer />
 
-        <Box pos='relative' flexBasis={{base: '100%', lg: '48%'}} mt={{base: 12, lg: 0}} className={classes.banner_media}>
-          <Box fontSize={0}>
-            <Image className={classes.female_student} src={female_student} alt="Young African Female Student with a face mask holding her books" priority />
+        <Box pos='relative' flexBasis={{base: '100%', md: '90%', lg: '48%'}} mt={{base: 12, lg: 0}}>
+          <Box pos='relative' fontSize={0} h='clamp(440px, 440px + 8vw, 550px)'>
+            <Image layout='fill' className={classes.female_student} src={female_student} alt="Young African Female Student with a face mask holding her books" priority />
           </Box>
           <Box display={{base: 'none', md: 'block'}} pos='absolute' top={{base: '27%', lg: 100, xl: 140}} right={{base: 0, lg: -4}} zIndex={0}>
             <Image src={star} alt="" />
@@ -61,7 +56,7 @@ export default function TopBanner() {
             <Image src={fan_blades} alt="" />
           </Box>
           <Label labelText='BECE JHS' labelIcon={<BoxWithGESIcon/>} box={{top: ['2%', '6%', '6%', 160], right: {base: '50%', lg: 303}}} />
-          <Label labelText='WAEC Questions' labelIcon={<BoxWithWaecIcon/>} box={{bottom: {base: '37%', md: '8%', lg: 5}, right: {base: '10%', md: 1}}} />
+          <Label labelText='WAEC' labelIcon={<BoxWithWaecIcon/>} box={{bottom: {base: '37%', md: '8%', lg: 5}, right: {base: '10%', md: 1}}} />
         </Box>
       </Flex>
     </Box>

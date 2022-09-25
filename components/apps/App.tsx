@@ -44,8 +44,8 @@ export default function App({ appData }: AppProps) {
       {/* App Details */}
       <Box as="section" py="50px" px={[5, 12, 12, "120px"]}>
         <Stack direction="row" spacing={{base: 0, md: 10}} justify="center">
-          <Box display={{base: "none", md: "block"}}>
-            <Image src={appData.icon_url} alt={`${appData.name} Icon`} width={145} height={145} style={{boxShadow: "0px 2.90312px 33px 8px rgba(0, 0, 0, 0.08)"}} />
+          <Box display={{base: "none", md: "block"}} filter="drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25))">
+            <Image src={appData.icon_url} alt={`${appData.name} Icon`} width={145} height={145} />
           </Box>
           <VStack spacing={4} align="start">
             <Text as="h1" color="brand.lime.700" lineHeight="120%" fontSize={[20, 32]} fontWeight="bold">{appData.name}</Text>

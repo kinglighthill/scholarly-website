@@ -12,11 +12,11 @@
 
 /* Students Section */
 
-.students_section, .partners_section, .get_help_section, .blog_section {
+.students_section, .partners_section, .get_help_section, .blog_section, .faqs_section {
   padding: 60px 20px;
 }
 
-/* Business Section */
+/* Blog Section */
 
 .blog_section {
   background-image: url('../public/scholarly_logo_bg.svg');
@@ -24,6 +24,8 @@
   background-position: center;
   background-color: white;
 }
+
+/* Business Section */
 
 .business_section {
   composes: blog_section;
@@ -38,7 +40,7 @@
     padding: 60px 80px 0;
   }
 
-  .students_section, .partners_section, .get_help_section, .blog_section {
+  .students_section, .partners_section, .get_help_section, .blog_section, .faqs_section {
     padding: 60px 60px;
   }
 }
@@ -76,7 +78,7 @@
   }
   
   /* Blog Section */
-  .blog_section {
+  .blog_section, .faqs_section {
     padding: 50px 110px 85px;
   }
 

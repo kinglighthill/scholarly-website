@@ -47,7 +47,6 @@ export default function Footer() {
             items={[
               { name: 'Terms', url: '/terms' },
               { name: 'Privacy', url: '/privacy' },
-              { name: 'Security', url: '/security' },
             ]}
           />
           <Spacer />

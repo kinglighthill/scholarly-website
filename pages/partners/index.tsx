@@ -71,13 +71,13 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
           {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
             Sign up
           </Button> */}
-          <Link href='/apps/android'>
+          {/* <Link href='/apps/android'>
             <a>
               <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
                 Download App
               </Button>
             </a>
-          </Link>
+          </Link> */}
         </HStack>
       </Box>
       

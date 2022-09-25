@@ -75,9 +75,6 @@ export default function MobileFooter() {
               <ListItem>
                 <Link href='/privacy'>Privacy</Link>
               </ListItem> 
-              <ListItem>
-                <Link href='/security'>Security</Link>
-              </ListItem> 
             </List>
           </AccordionPanel>
         </AccordionItem>

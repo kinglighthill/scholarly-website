@@ -50,10 +50,9 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // params contains the app path as obtained from getStaticPaths() above.
   // If the route is like /apps/jamb-utme, then params.id is 'jamb-utme'
-  if (params) {
+  if (params && params.app) {
     try {
-      const app = params.app;
-      const response = await fetchContent(`getApps/apps/${app}`);
+      const response = await fetchContent(`getApps/apps/${params.app}`);
       const content = await response.json();
       // Pass content to the page via props  
       return { props: { data: content.data } }

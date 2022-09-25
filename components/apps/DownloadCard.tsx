@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Box, Button, Icon, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Icon, Link as ChakraLink, Text, Tooltip, VStack } from "@chakra-ui/react";
 import { DownloadIcon, StarIcon } from "@heroicons/react/solid";
 import { StarIcon as OutlinedStarIcon } from "@heroicons/react/outline";
 import { DownloadCardProps } from "../../types/components/apps/download_card";
@@ -19,13 +19,15 @@ export default function DownloadCard({ store_icon, store_name, app_rating, app_a
           ))}
         </Box>
         <Text textAlign="center">Download from {store_name}</Text>
-        <Link href={download_link ? download_link : '/apps/android'}>
-          <a target="_blank" rel="noreferrer">
-            <Button disabled={!app_availability} type="button" variant="solid" iconSpacing={{base: 0, md: 4}} rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}>
-              Download
-            </Button>
-          </a>
-        </Link>
+        <Tooltip hasArrow label={app_availability ? undefined : 'App is currently unavailable on this platform'} bg='blue.600' shouldWrapChildren>
+          <Link href={download_link ? download_link : '/apps/android'} passHref>
+            <ChakraLink isExternal _hover={{textDecoration: 'none'}}>
+              <Button disabled={!app_availability} type="button" variant="solid" iconSpacing={{base: 0, md: 4}} rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}>
+                Download
+              </Button>
+            </ChakraLink>
+          </Link>
+        </Tooltip>
       </VStack>
     </Box>
   )

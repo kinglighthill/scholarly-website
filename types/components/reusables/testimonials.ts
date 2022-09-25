@@ -5,6 +5,7 @@ export interface TestimonialProps {
   profile_pic_sm: string;
   content: string;
   rating: number;
+  bg?: string;
 }
 
 export interface TestimonialsProps {
