@@ -5,7 +5,7 @@ import { ModalBody, ModalFooter } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import { useCartContext } from "../../context/CartContext";
 import { BuyPinTabProps } from "../../types/components/reusables/buy_pin";
-import { apps } from "../../data";
+// import { apps } from "../../data";
 import { CartItem } from "../../types/context/cart_context";
 import { SelectedApps } from "../../types/components/buy_pin/select_apps";
 
@@ -82,7 +82,7 @@ export default function SelectApps({ changeTab }: BuyPinTabProps) {
           <option value='desktop'>Desktop Apps</option>
           <option value='ios'>IOS Apps</option>
         </Select>
-        <VStack spacing={7} align="start">
+        {/* <VStack spacing={7} align="start">
           {apps[platform].map(category => (
             <VStack key={category.category_name} spacing={3} align="start" w="full">
               <Text color="brand.lime.500" fontSize={20} fontWeight="medium">{category.category_name}</Text>
@@ -102,7 +102,7 @@ export default function SelectApps({ changeTab }: BuyPinTabProps) {
               </CheckboxGroup>
             </VStack>
           ))}
-        </VStack>
+        </VStack> */}
       </ModalBody>
 
       <ModalFooter justifyContent="center">
