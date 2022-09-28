@@ -13,7 +13,7 @@ import Label from '../reusables/Label';
 export default function TopBanner() {
   return (
     <Box as='section' bgColor='brand.nearWhite' className={classes.banner_container}>    
-      <Flex justify='center' wrap={{base: 'wrap', lg: 'nowrap'}}>
+      <Flex align='center' justify='center' wrap={{base: 'wrap', lg: 'nowrap'}}>
         <VStack spacing={8} align='start' flexBasis={{base: '100%', lg: '50%'}} pb={{lg: 12}}>
           <Box>
             <Box display={{base: 'none', md: 'block'}}>
