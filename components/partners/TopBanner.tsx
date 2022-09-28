@@ -17,7 +17,7 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
           <Text as='span' color='brand.lime.500'>Profit</Text>
         </Text>
         <Text fontSize={[16, 20]} maxW='470px' color='brand.lime.700' textAlign={['left', 'center']} lineHeight='144%' fontWeight={450}>
-          Make Money by buying Activation Pins and reselling to Customers
+          Earn profit by reselling discounted activation pins
         </Text>
         <Box w='full' textAlign={['left', 'center']}>
           <Text color='#A6B1AA' mb={2}>Partners Program currently unavailable</Text>
