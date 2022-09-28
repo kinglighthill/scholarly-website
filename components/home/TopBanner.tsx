@@ -47,7 +47,7 @@ export default function TopBanner() {
 
         <Box pos='relative' flexBasis={{base: '100%', md: '90%', lg: '48%'}} mt={{base: 12, lg: 0}}>
           <Box pos='relative' fontSize={0} h='clamp(440px, 440px + 8vw, 550px)'>
-            <Image layout='fill' className={classes.female_student} src={female_student} alt="Young African Female Student with a face mask holding her books" priority />
+            <Image layout='fill' objectFit='contain' className={classes.female_student} src={female_student} alt="Young African Female Student with a face mask holding her books" priority />
           </Box>
           <Box display={{base: 'none', md: 'block'}} pos='absolute' top={{base: '27%', lg: 100, xl: 140}} right={{base: 0, lg: -4}} zIndex={0}>
             <Image src={star} alt="" />
