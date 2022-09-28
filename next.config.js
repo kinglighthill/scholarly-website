@@ -7,6 +7,9 @@ const nextConfig = withBundleAnalyzer({
   reactStrictMode: true,
   images: {
     domains: ['play-lh.googleusercontent.com', 'firebasestorage.googleapis.com', 'blog.scholarly.africa'],
+  },
+  experimental: {
+    scrollRestoration: true,
   }
 })
 
