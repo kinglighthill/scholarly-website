@@ -6,7 +6,7 @@ import { ModalProps } from '../../types/generics/modal';
 import AllOutlets from '../outlets/AllOutlets';
 import NearYou from '../outlets/NearYou';
 
-export default function CbtCentres({ isOpen, onClose }: ModalProps) {
+export default function LearningCentres({ isOpen, onClose }: ModalProps) {
   const { applyFilter, filteredOutlets, filterQueries, updateQueryList } = useSearchFilter(salesOutlets);
 
   return (
