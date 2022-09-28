@@ -37,7 +37,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                   {app_info.apps.map((app, index) => (
                     <GridItem key={app.name + index+1} cursor="pointer">
                       <VStack spacing={4} bgColor="brand.nearWhite" p={5} borderRadius={4} pos='relative'>
-                        <Link href={`/apps/${app.path}`} passHref>
+                        <Link href={`/apps/${encodeURIComponent(app.path)}`} passHref>
                           <ChakraLink fontSize={0} boxShadow="0px 2.90312px 33px 8px rgba(0, 0, 0, 0.08)"
                             _before={{content: "''", display: 'block', pos: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                           >
@@ -67,7 +67,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
               {app_info.apps.map((app, appIndex) => (
                 <GridItem key={app.name + appIndex+1} cursor="pointer">
                   <VStack spacing={4} bgColor={categoryIndex%2 === 0 ? "brand.nearWhite" : "white"} p={5} borderRadius={4} pos='relative'>
-                    <Link href={`/apps/${app.path}`} passHref>
+                    <Link href={`/apps/${encodeURIComponent(app.path)}`} passHref>
                       <ChakraLink fontSize={0} boxShadow="0px 2.90312px 33px 8px rgba(0, 0, 0, 0.08)"
                         _before={{content: "''", display: 'block', pos: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                       >
