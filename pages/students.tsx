@@ -1,27 +1,17 @@
 import { useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
-import { Box, Button, Flex, GridItem, HStack, Icon, SimpleGrid, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { Box, GridItem, SimpleGrid, Text } from '@chakra-ui/react';
 import Slider from '../components/students/Slider';
 import TopBanner from '../components/students/TopBanner';
-import { ChevronRightIcon, LocationMarkerIcon } from '@heroicons/react/outline';
-import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
-import exam_apps from '../public/exam_apps.webp';
-import activation_pins from '../public/activation_pins.webp';
-import cbt_centre from '../public/cbt_centre.webp';
-import lady_on_headphones_typing from '../public/lady_on_headphones_typing.webp';
-import green_pattern from '../public/green_pattern.svg';
 import classes from '../styles/Students.module.css';
-import PinOutlets from '../components/reusables/PinOutlets';
-import CbtCentres from '../components/reusables/CbtCentres';
-import LearningCentres from '../components/reusables/LearningCentres';
-import BuyPin from '../components/reusables/BuyPin';
-import CartProvider from '../context/CartContext';
 import Page from '../components/reusables/Page';
 import Testimonials, { Testimonial } from '../components/reusables/Testimonials';
 import { fetchContent } from '../services/fetch_content.service';
 import { TestimonialProps } from '../types/components/reusables/testimonials';
+import ExamApps from '../components/students/ExamApps';
+import ActivationPins from '../components/students/ActivationPins';
+import CbtCentresSection from '../components/students/CbtCentresSection';
+import LearningCentresSection from '../components/students/LearningCentresSection';
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
@@ -37,10 +27,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Students: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { isOpen: isSalesOuletsOpen, onOpen: openSalesOutlets, onClose: closeSalesOutlets } = useDisclosure();
-  const { isOpen: isCbtCentresOpen, onOpen: openCbtCentres, onClose: closeCbtCentres } = useDisclosure();
-  const { isOpen: isLearningCentresOpen, onOpen: openLearningCentres, onClose: closeLearningCentres } = useDisclosure();
-  const { isOpen: isBuyPinOpen, onOpen: openBuyPin, onClose: closeBuyPin } = useDisclosure();
   const { data } = props;
 
   const testimonials = data.map((testimonial: TestimonialProps, index: number) => (
@@ -59,123 +45,28 @@ const Students: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
       <TopBanner />
       <Slider />
 
-      {/* Activation */}
+      {/* Exam Apps, Activation Pins, and CBT Centres Section */}
       <Box as='section'>
         <Box maxW='100vw' px={{base: 5, lg: '120px'}} pt={['60px', '120px']} pb={['60px', 0, '130px']}>
           <SimpleGrid columns={{base: 1, md: 3}} spacingX={5} spacingY={["60px", "110px", 0]} fontSize={0}
             maxW='1440px' m='auto'
           >
             <GridItem className={classes.image_grid_item}>
-              <VStack spacing={4} align={{base: "start", md: "center"}} h="100%">
-                <Box fontSize={0} pos="relative">
-                  <Box display={{base: "none", md: "block"}} pos="absolute" top="-121px" left={{base: -5, lg: "-120px"}} w="100vw" h="calc(100% + 121px)" bg="#F5F6F6"></Box>
-                  <Image src={exam_apps} alt="" priority />
-                </Box>
-                <VStack align='start' justify='space-between' h='100%' maxW={{base: '100%', md: '89%'}}>
-                  <Box mb={4}>
-                    <Text as='h1' color='brand.lime.700' mb={3} fontSize={[23, 25]} fontWeight='bold'>Over 30+ Exam Apps</Text>
-                    <Text color='brand.lime.700' fontSize={16}>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
-                  </Box>
-                  <Link href='/apps/android'>
-                    <a>
-                      <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                        See Apps
-                      </Button>
-                    </a>
-                  </Link>
-                </VStack>
-              </VStack>
+              <ExamApps />
             </GridItem>
             <GridItem className={classes.image_grid_item}>
-              <VStack spacing={4} align={{base: "start", md: "center"}} h="100%">
-                <Box fontSize={0}>
-                  <Image src={activation_pins} alt="" />
-                </Box>
-                <VStack align='start' justify='space-between' h='100%' maxW={{base: '100%', md: '89%'}}>
-                  <Box mb={4}>
-                    <Text as='h1' color='brand.lime.700' mb={3} fontSize={[23, 25]} fontWeight='bold'>Activation Pins</Text>
-                    <Text color='brand.lime.700' fontSize={16}>Get 16 digits activation pin to unlock all the locked contents in Scholarly apps.</Text>
-                  </Box>
-                  <HStack spacing={{base: 0, xl: 2}}>
-                    {/* <Button type='button' variant='solid' display={{base: 'none', xl: 'inline-flex'}} onClick={openBuyPin} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                      Buy now
-                    </Button> */}
-                    {/* When pin sales outlets are available, remove the Link and 'a' tags and uncomment the onClick handler */}
-                    <Link href='/pin-sales-outlets'>
-                      <a>
-                        <Button type='button' variant='outline' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}
-                          // onClick={openSalesOutlets}
-                        >
-                          Sales Outlets
-                        </Button>
-                      </a>
-                    </Link>
-                  </HStack>
-                </VStack>
-              </VStack>
+              <ActivationPins />
             </GridItem>
             <GridItem className={classes.image_grid_item}>
-              <VStack spacing={4} align={{base: "start", md: "center"}} h="100%">
-                <Box fontSize={0}>
-                  <Image src={cbt_centre} alt="" />
-                </Box>
-                <VStack align='start' justify='space-between' h='100%' maxW={{base: '100%', md: '89%'}}>
-                  <Box mb={4}>
-                    <Text as='h1' color='brand.lime.700' mb={3} fontSize={[23, 25]} fontWeight='bold'>CBT Centres</Text>
-                    <Text color='brand.lime.700' fontSize={16}>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
-                  </Box>
-                  {/* When cbt centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
-                  <Link href='/cbt-centres'>
-                    <a>
-                      <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}
-                        // onClick={openCbtCentres}
-                      >
-                        Find Centres
-                      </Button>
-                    </a>
-                  </Link>
-                </VStack>
-              </VStack>
+              <CbtCentresSection />
             </GridItem>
           </SimpleGrid>
         </Box>
-        {/* <Box maxW='100vw' px={{base: 5, lg: '120px'}}>
-          <SimpleGrid columns={3} spacingX={5} spacingY={0} pt={4} maxW='1440px' m='auto'>
-          </SimpleGrid>
-        </Box> */}
       </Box>
 
       {/* Learning Centres Section */}
       <Box as='section' px={{base: 5, lg: '120px'}} pt={[0, '110px']} pb={['60px', '110px']} pos='relative'>
-        <Flex align='center' flexWrap={{base: 'wrap', md: 'nowrap'}}>
-          <Box fontSize={0} flexBasis={{base: '100%', md: '49%'}} zIndex={1}>
-            <Image src={lady_on_headphones_typing} alt="A lady on headphones and a pair of glasses typing on a computer" priority />
-          </Box>
-          <Spacer />
-          <VStack spacing={{base: 5, md: 8}} align='start' flexBasis={{base: '100%', md: '38%'}}>
-            <VStack spacing={2.5} align='start' display={{base: 'none', md: 'flex'}}>
-              <Box p={2} pb={1} bgColor='brand.lime.500' borderRadius={4} boxShadow="0px 2px 15px rgba(70, 172, 102, 0.25)">
-                <Icon as={LocationMarkerIcon} color='white' fontSize='105%' />
-              </Box>
-              <Text textTransform='uppercase' fontSize={13} color='brand.lime.500'>Centres</Text>
-            </VStack>
-            <Text as='h1' color='brand.lime.700' fontSize={{base: 25, md: 31}} fontWeight='bold'>Learning Centres</Text>
-            <Text color='brand.lime.700'>Need to learn physically in person? Find learning centers around you.</Text>
-            {/* When learning centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
-            <Link href='/learning-centres'>
-              <a>
-                <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}
-                  // onClick={openLearningCentres}
-                >
-                  Find Centres
-                </Button>
-              </a>
-            </Link>
-          </VStack>
-        </Flex>
-        <Box pos='absolute' top={{base: '6%', md: '12%', lg: '10%'}} left={{base: '38%', md: '42%', lg: '44%'}} zIndex={0} display={{base: 'none', md: 'block'}}>
-          <Image src={green_pattern} alt='' width={128} height={128} />
-        </Box>
+        <LearningCentresSection />
       </Box>
 
       {/* Testimonials Section */}
@@ -186,14 +77,7 @@ const Students: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
           </Text>
         </Box>
         <Testimonials testimonials={testimonials} />
-      </Box>
-    
-      <CartProvider>
-        <BuyPin isOpen={isBuyPinOpen} onClose={closeBuyPin} />
-      </CartProvider>
-      <PinOutlets isOpen={isSalesOuletsOpen} onClose={closeSalesOutlets} />
-      <CbtCentres isOpen={isCbtCentresOpen} onClose={closeCbtCentres} />
-      <LearningCentres isOpen={isLearningCentresOpen} onClose={closeLearningCentres} />
+      </Box>    
     </Page>
   )
 }
