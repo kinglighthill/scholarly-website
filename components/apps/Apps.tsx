@@ -74,7 +74,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                     <CustomLink href={`/apps/${encodeURIComponent(app.path)}`} fontSize={0} boxShadow="0px 2.90312px 33px 8px rgba(0, 0, 0, 0.08)"
                       _before={{content: "''", display: 'block', pos: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                     >
-                      <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} priority />
+                      <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} />
                     </CustomLink>
                     <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.50'}} onClick={(e) => e.stopPropagation()}
                       display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium' verticalAlign='middle'

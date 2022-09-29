@@ -31,7 +31,7 @@ const sliderItems = sliderDetails.map(item => {
       </VStack>
       <Spacer />
       <Box flexBasis='54%' mb={{base: 8, md: 0}}>
-        <Image src={item.image} alt="A Demo of the Scholarly Students App" priority />
+        <Image src={item.image} alt="A Demo of the Scholarly Students App" />
       </Box>
     </Flex>
 )});

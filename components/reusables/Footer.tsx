@@ -18,7 +18,7 @@ export default function Footer() {
       <Box display={{base: 'none', lg: 'block'}} className='responsive_1440px'>
         <CustomLink href='/' className={classes.logo_wrapper} _hover={{textDecor: 'none'}}>
           <HStack spacing={1} align='end'>
-            <Image src={scholarly_logo2} alt='Scholarly Logo' priority />
+            <Image src={scholarly_logo2} alt='Scholarly Logo' />
             <Text fontWeight='bold' color='white' fontSize={24}>Scholarly</Text>
           </HStack>
         </CustomLink>

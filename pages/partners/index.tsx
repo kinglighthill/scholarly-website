@@ -85,10 +85,10 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
       <Box as="section" className={classes.referral}>
         <Flex align='center' wrap={['wrap', 'nowrap']} className='responsive_1440px'>
           <Box flexBasis='49%' display={['none', 'initial']}>
-            <Image src={megaphone} alt='A megaphone' priority />
+            <Image src={megaphone} alt='A megaphone' />
           </Box>
           <Box flexBasis='100%' mb={10} display={['initial', 'none']} textAlign='center' className={classes.megaphone_mobile} >
-            <Image src={megaphone2} alt='A megaphone' priority />
+            <Image src={megaphone2} alt='A megaphone' />
           </Box>
           <Spacer />
           <VStack flexBasis={['100%', '49%', '40%', '35%']} align='start' spacing={6}>

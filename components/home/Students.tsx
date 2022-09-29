@@ -13,7 +13,7 @@ export default function Students() {
         className='responsive_1440px'
       >
         <Box pos='relative' flexBasis={{base: '100%', md: '48%'}}>
-          <Image src={scholarly_students_demo} alt='Demo of Scholarly for Students' priority />
+          <Image src={scholarly_students_demo} alt='Demo of Scholarly for Students' />
         </Box>
 
         <Spacer />

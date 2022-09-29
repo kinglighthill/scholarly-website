@@ -29,11 +29,11 @@ export default function App({ appData }: AppProps) {
       <Box as="section" bg="#F8C343" pt={7} px={{base: 14, md: 16, lg: 32}}>
         <Flex className='responsive_1440px'>
           <Box fontSize={0} flexBasis="23%" display={{base: "none", md: "block"}}>
-            <Image src={young_male_with_khaki_shirt} alt="A young male wearing a khaki shirt" />
+            <Image src={young_male_with_khaki_shirt} alt="A young male wearing a khaki shirt" priority />
           </Box>
           <Spacer />
           <Box fontSize={0} flexBasis={{base: "100%", md: "53%"}} pos="relative">
-            <Image src={scholarly_students_demo2} alt="Scholarly Students App Demo" />
+            <Image src={scholarly_students_demo2} alt="Scholarly Students App Demo" priority />
             <Box maxW={{md: "75px", lg: "100%"}} pos="absolute" bottom="-35px" right="-10px" display={{base: "none", md: "block"}}>
               <Image src={appData.logo_url} alt={generateLogoAlt()} width={95} height={90} />
             </Box>
