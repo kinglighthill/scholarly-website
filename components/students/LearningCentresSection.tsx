@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { Box, Button, Flex, Icon, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { Box, Flex, Icon, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { LocationMarkerIcon } from '@heroicons/react/outline';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import LearningCentres from '../reusables/LearningCentres';
 import lady_on_headphones_typing from '../../public/lady_on_headphones_typing.webp';
 import green_pattern from '../../public/green_pattern.svg';
+import CustomLink from '../reusables/CustomLink';
 
 export default function LearningCentresSection() {
   const { isOpen: isLearningCentresOpen, onOpen: openLearningCentres, onClose: closeLearningCentres } = useDisclosure();
@@ -28,16 +28,14 @@ export default function LearningCentresSection() {
           </VStack>
           <Text as='h1' color='brand.lime.700' fontSize={{base: 25, md: 31}} fontWeight='bold'>Learning Centres</Text>
           <Text color='brand.lime.700'>Need to learn physically in person? Find learning centers around you.</Text>
-          {/* When learning centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
-          <Link href='/learning-centres'>
-            <a>
-              <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}
-                // onClick={openLearningCentres}
-              >
-                Find Centres
-              </Button>
-            </a>
-          </Link>
+          {/* When learning centres are available, remove the CustomLink tags and uncomment the Button */}
+          <CustomLink href='/learning-centres' type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
+            {/* <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}
+              onClick={openLearningCentres}
+            > */}
+              Find Centres
+            {/* </Button> */}
+          </CustomLink>
         </VStack>
       </Flex>
       <Box pos='absolute' top={{base: '6%', md: '12%', lg: '10%'}} left={{base: '38%', md: '42%', lg: '44%'}} zIndex={0} display={{base: 'none', md: 'block'}}>

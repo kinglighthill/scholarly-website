@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { Box, VStack, Text, Button, HStack, FormControl, FormLabel, Input, Icon, FormErrorMessage } from "@chakra-ui/react";
+import { Box, VStack, Text, Button, HStack, FormControl, FormLabel, Input, FormErrorMessage } from "@chakra-ui/react";
 import classes from "../../styles/Partners.module.css";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import useFeatureNotifier from '../../hooks/useFeatureNotifier';
@@ -39,13 +38,9 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
           <Button type="button" variant='solid' onClick={openSignUp} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
             Sign up
           </Button>
-          <Link href='/apps/android'>
-            <a>
-              <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-                Download App
-              </Button>
-            </a>
-          </Link>
+          <CustomLink href='/apps/android' type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+            Download App
+          </CustomLink>
         </HStack> */}
       </VStack>
     </Box>

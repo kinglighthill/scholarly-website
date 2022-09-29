@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { Box, Button, Icon, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { Box, Icon, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@heroicons/react/outline';
 import CbtCentres from '../reusables/CbtCentres';
 import cbt_centre from '../../public/cbt_centre.webp';
+import CustomLink from '../reusables/CustomLink';
 
 export default function CbtCentresSection() {
   const { isOpen: isCbtCentresOpen, onOpen: openCbtCentres, onClose: closeCbtCentres } = useDisclosure();
@@ -20,16 +20,14 @@ export default function CbtCentresSection() {
             <Text as='h1' color='brand.lime.700' mb={3} fontSize={[23, 25]} fontWeight='bold'>CBT Centres</Text>
             <Text color='brand.lime.700' fontSize={16}>Find Scholarly approved CBT centers nationwide to practice for your next exam.</Text>
           </Box>
-          {/* When cbt centres are available, remove the Link and 'a' tags and uncomment the onClick handler */}
-          <Link href='/cbt-centres'>
-            <a>
-              <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}
-                // onClick={openCbtCentres}
-              >
-                Find Centres
-              </Button>
-            </a>
-          </Link>
+          {/* When cbt centres are available, remove the CustomLink and uncomment the Button */}
+          <CustomLink href='/cbt-centres' type='button' variant='solid' fontSize={16} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+            {/* <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}
+              onClick={openCbtCentres}
+            > */}
+              Find Centres
+            {/* </Button> */}
+          </CustomLink>
         </VStack>
       </VStack>
 

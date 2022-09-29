@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, HStack, Icon, Spacer, Text, VStack } from '@chakra-ui/react';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import classes from '../../styles/Students.module.css';
 import notes from '../../public/notes.webp';
@@ -10,6 +9,7 @@ import syllabus from '../../public/syllabus.webp';
 import AliceCarousel, { EventObject } from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { SliderDetail } from '../../types/components/students/slider';
+import CustomLink from '../reusables/CustomLink';
 
 const sliderDetails: SliderDetail[] = [
   { title: "Notes", headline: "Better Explanation to Topics", description: "Well-explained topics and notes based on the accredited syllabus.", image: notes },
@@ -25,13 +25,9 @@ const sliderItems = sliderDetails.map(item => {
       <VStack spacing={8} align='start' flexBasis='42%'>
         <Text as='h2' color='brand.lime.700' fontSize={{base: 31, md: 25, lg: 31}} fontWeight='bold'>{item.headline}</Text>
         <Text color='brand.lime.700'>{item.description}</Text>
-        <Link href='/apps/android'>
-          <a>
-            <Button type='button' variant="solid" iconSpacing={5} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
-              Download App
-            </Button>
-          </a>
-        </Link>
+        <CustomLink href='/apps/android' type='button' variant="solid" iconSpacing={5} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
+          Download App
+        </CustomLink>
       </VStack>
       <Spacer />
       <Box flexBasis='54%' mb={{base: 8, md: 0}}>

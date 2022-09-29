@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, HStack, Icon, Link as ChakraLink, List, ListItem, Text, VStack } from '@chakra-ui/react';
 import { PhoneIcon, AtSymbolIcon } from '@heroicons/react/outline';
@@ -8,6 +7,7 @@ import linkedin from '../../public/linkedin.svg';
 import instagram from '../../public/instagram.svg';
 import whatsapp from '../../public/whatsapp.svg';
 import classes from '../../styles/components/Footer.module.css';
+import CustomLink from '../reusables/CustomLink';
 
 export default function MobileFooter() {
   return (
@@ -23,16 +23,16 @@ export default function MobileFooter() {
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
               <ListItem>
-                <Link href='/apps/android'>Mobile Apps</Link>
+                <CustomLink href='/apps/android'>Mobile Apps</CustomLink>
               </ListItem> 
               <ListItem>
-                <Link href='/apps/desktop'>Desktop Apps</Link>
+                <CustomLink href='/apps/desktop'>Desktop Apps</CustomLink>
               </ListItem> 
               <ListItem>
-                <Link href='/partners'>Partners App</Link>
+                <CustomLink href='/partners'>Partners App</CustomLink>
               </ListItem> 
               <ListItem>
-                <Link href='/business'>Enterprise Software</Link>
+                <CustomLink href='/business'>Enterprise Software</CustomLink>
               </ListItem> 
             </List>
           </AccordionPanel>
@@ -48,13 +48,13 @@ export default function MobileFooter() {
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
               <ListItem>
-                <Link href='/about'>About</Link>
+                <CustomLink href='/about'>About</CustomLink>
               </ListItem> 
               <ListItem>
-                <Link href='/faqs'>FAQs</Link>
+                <CustomLink href='/faqs'>FAQs</CustomLink>
               </ListItem> 
               <ListItem>
-                <Link href='/contact-us'>Contact us</Link>
+                <CustomLink href='/contact-us'>Contact us</CustomLink>
               </ListItem> 
             </List>
           </AccordionPanel>
@@ -70,10 +70,10 @@ export default function MobileFooter() {
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
               <ListItem>
-                <Link href='/terms'>Terms</Link>
+                <CustomLink href='/terms'>Terms</CustomLink>
               </ListItem> 
               <ListItem>
-                <Link href='/privacy'>Privacy</Link>
+                <CustomLink href='/privacy'>Privacy</CustomLink>
               </ListItem> 
             </List>
           </AccordionPanel>
@@ -93,36 +93,32 @@ export default function MobileFooter() {
                   <Box>
                     <HStack spacing={1.5} color='white'>
                       <Icon as={PhoneIcon} />
-                      <Link href='tel:+23481-3694-1462' passHref>
-                        <ChakraLink>+23481-3694-1462</ChakraLink>
-                      </Link>
+                      <CustomLink href='tel:+23481-3694-1462'>+23481-3694-1462</CustomLink>
                     </HStack>
                     <HStack spacing={1.5} color='brand.yellow'>
                       <Icon as={AtSymbolIcon} />
-                      <Link href='mailto:info@scholarly.africa' passHref>
-                        <ChakraLink>info@scholarly.africa</ChakraLink>
-                      </Link>
+                      <CustomLink href='mailto:info@scholarly.africa'>info@scholarly.africa</CustomLink>
                     </HStack>
                   </Box>
                   <Text color='white' fontSize={13} textAlign='right'>5, Samuelson Close, Isiuzo Street, Independence Layout, Enugu, Nigeria</Text>
                 </VStack>
               </Box>
               <HStack spacing={4}>
-                <a href='https://facebook.com/scholarlyng' target="_blank" rel='noreferrer' aria-label='Visit our facebook page'>
+                <ChakraLink href='https://facebook.com/scholarlyng' isExternal aria-label='Visit our facebook page'>
                   <Image src={facebook} alt='Facebook Icon' />
-                </a>
-                <a href='https://twitter.com/scholarlyng' target="_blank" rel='noreferrer' aria-label='Visit our twitter handle'>
+                </ChakraLink>
+                <ChakraLink href='https://twitter.com/scholarlyng' isExternal aria-label='Visit our twitter handle'>
                   <Image src={twitter} alt='Twitter Icon' />
-                </a>
-                <a href='https://www.linkedin.com/company/scholarlyafrica/' target="_blank" rel='noreferrer' aria-label='Visit our linkedin page'>
+                </ChakraLink>
+                <ChakraLink href='https://www.linkedin.com/company/scholarlyafrica/' isExternal aria-label='Visit our linkedin page'>
                   <Image src={linkedin} alt='LinkedIn Icon' />
-                </a>
-                <a href='https://www.instagram.com/scholarlyng/' target="_blank" rel='noreferrer' aria-label='Visit our instagram page'>
+                </ChakraLink>
+                <ChakraLink href='https://www.instagram.com/scholarlyng/' isExternal aria-label='Visit our instagram page'>
                   <Image src={instagram} alt='Instagram Icon' />
-                </a>
-                <a href='https://wa.me/+2349061701939' target="_blank" rel='noreferrer' aria-label='Send us a message on Whatsapp'>
+                </ChakraLink>
+                <ChakraLink href='https://wa.me/+2349061701939' isExternal aria-label='Send us a message on Whatsapp'>
                   <Image src={whatsapp} alt='WhatsApp Icon' />
-                </a>
+                </ChakraLink>
               </HStack>
             </VStack>
           </AccordionPanel>

@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { Box, Button, HStack, Icon, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { Box, HStack, Icon, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@heroicons/react/outline';
 import activation_pins from '../../public/activation_pins.webp';
 import CartProvider from '../../context/CartContext';
 import BuyPin from '../reusables/BuyPin';
 import PinOutlets from '../reusables/PinOutlets';
+import CustomLink from '../reusables/CustomLink';
 
 export default function ActivationPins() {
   const { isOpen: isSalesOuletsOpen, onOpen: openSalesOutlets, onClose: closeSalesOutlets } = useDisclosure();
@@ -29,16 +29,14 @@ export default function ActivationPins() {
             >
               Buy now
             </Button> */}
-            {/* When pin sales outlets are available, remove the Link and 'a' tags and uncomment the onClick handler */}
-            <Link href='/pin-sales-outlets'>
-              <a>
-                <Button type='button' variant='outline' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}
-                  // onClick={openSalesOutlets}
-                >
-                  Sales Outlets
-                </Button>
-              </a>
-            </Link>
+            {/* When pin sales outlets are available, remove the CustomLink and uncomment the Button */}
+            <CustomLink href='/pin-sales-outlets' type='button' variant='outline' fontSize={16} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+              {/* <Button
+                onClick={openSalesOutlets}
+              > */}
+                Sales Outlets
+              {/* </Button> */}
+            </CustomLink>
           </HStack>
         </VStack>
       </VStack>

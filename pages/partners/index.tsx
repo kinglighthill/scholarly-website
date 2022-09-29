@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import Image from "next/image";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
-import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
+import { Box, VStack, Text, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import Testimonials, { Testimonial } from '../../components/reusables/Testimonials';
 import TopBanner from '../../components/partners/TopBanner';
@@ -20,6 +19,7 @@ import PartnerSignup from '../../components/reusables/PartnerSignup';
 import Page from '../../components/reusables/Page';
 import { fetchContent } from '../../services/fetch_content.service';
 import { TestimonialProps } from '../../types/components/reusables/testimonials';
+import CustomLink from '../../components/reusables/CustomLink';
 
 const steps: StepType[] = [
   { index: 1, title: "Sign up", description: "Create an account on the site or with the app.", icon: sign_up },
@@ -75,13 +75,9 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
           {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
             Sign up
           </Button> */}
-          {/* <Link href='/apps/android'>
-            <a>
-              <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-                Download App
-              </Button>
-            </a>
-          </Link> */}
+          {/* <CustomLink href='/apps/android' type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+            Download App
+          </CustomLink> */}
         </HStack>
       </Box>
       
@@ -99,13 +95,9 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
             <Text color='brand.lime.700' fontSize={25} fontWeight='bold'>Referral Program</Text>
             <Text color='brand.lime.700'>Earn more when you refer other partners. Each time your referral makes a sale, you earn a commission.</Text>
             <VStack w='full' align='start' spacing={0} pos='relative'>
-              <Link href='/partners/referral'>
-                <a>
-                  <Button type="button" variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
-                    See Details
-                  </Button>
-                </a>
-              </Link>
+              <CustomLink href='/partners/referral' type="button" variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
+                See Details
+              </CustomLink>
               <Box pos='absolute' right={0} top={41} display={{base: 'none', md: 'initial'}}>
                 <Image src={yellow_pattern} alt='' />
               </Box>

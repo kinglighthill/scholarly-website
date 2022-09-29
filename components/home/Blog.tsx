@@ -1,4 +1,4 @@
-import { Box, Button, Link as ChakraLink, Stack, Text } from '@chakra-ui/react';
+import { Box, Link as ChakraLink, Stack, Text } from '@chakra-ui/react';
 import useSWR from 'swr';
 import { fetchContent } from '../../services/fetch_content.service';
 import { BlogPostData } from '../../types/components/reusables/blog_post';
@@ -24,8 +24,11 @@ export default function Blog() {
           ))}
         </Stack>
         <Box textAlign='center' mt={10} className='responsive_1440px'>
-          <ChakraLink href='https://blog.scholarly.africa/' isExternal _hover={{textDecoration: 'none'}}>
-            <Button type='button' variant='solid'>Go to Blog</Button>
+          <ChakraLink href='https://blog.scholarly.africa/' isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.600'}}
+            display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium'
+            verticalAlign='middle' px={4} h={10} borderRadius={4} color='white' bg='brand.lime.500'
+          >
+            Go to Blog
           </ChakraLink>
         </Box>
       </Box>

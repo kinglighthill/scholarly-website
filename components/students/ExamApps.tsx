@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { Box, Button, Icon, Text, VStack } from '@chakra-ui/react';
+import { Box, Icon, Text, VStack } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@heroicons/react/outline';
 import exam_apps from '../../public/exam_apps.webp';
+import CustomLink from '../reusables/CustomLink';
 
 export default function ExamApps() {
   return (
@@ -16,13 +16,9 @@ export default function ExamApps() {
           <Text as='h1' color='brand.lime.700' mb={3} fontSize={[23, 25]} fontWeight='bold'>Over 30+ Exam Apps</Text>
           <Text color='brand.lime.700' fontSize={16}>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
         </Box>
-        <Link href='/apps/android'>
-          <a>
-            <Button type='button' variant='solid' iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
-              See Apps
-            </Button>
-          </a>
-        </Link>
+        <CustomLink href='/apps/android' type='button' variant='solid' fontSize={16} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+          See Apps
+        </CustomLink>
       </VStack>
     </VStack>
   )

@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { Box, Button, Icon, Link as ChakraLink, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
+import { Box, Icon, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import classes from '../../styles/Home.module.css';
 import { FAQ } from '../../types/components/faqs/questions';
 import Questions from '../faqs/Questions';
+import CustomLink from '../reusables/CustomLink';
 
 export default function FAQs({ data }: { data: FAQ[]}) {
   return (
@@ -31,13 +31,9 @@ export default function FAQs({ data }: { data: FAQ[]}) {
       </Tabs>
 
       <Box textAlign='center' mt={9} className='responsive_1440px'>
-        <Link href='/faqs' passHref>
-          <ChakraLink _hover={{textDecoration: 'none'}}>
-            <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
-              View All
-            </Button>
-          </ChakraLink>
-        </Link>
+        <CustomLink href='/faqs' type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
+          View All
+        </CustomLink>
       </Box>
     </Box>
   )

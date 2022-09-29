@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Box, VStack, Text, Button, Icon, HStack, SimpleGrid, GridItem, Link as ChakraLink, Flex, Spacer } from "@chakra-ui/react";
+import { Box, VStack, Text, Icon, HStack, SimpleGrid, GridItem, Link as ChakraLink, Flex, Spacer } from "@chakra-ui/react";
 import { DownloadIcon } from '@heroicons/react/solid';
 import { DesktopTabNavigation, MobileTabNavigation } from '../../components/apps/TabNavigation';
 import ComingSoon from "../reusables/ComingSoon";
 import { AppsProps } from "../../types/components/apps/apps";
 import ContactForm from "../reusables/ContactForm";
+import CustomLink from "../reusables/CustomLink";
 
 export default function Apps({ apps_info, activeTab }: AppsProps) {  
   if (activeTab === "desktop" || activeTab === "ios") {
@@ -37,17 +37,19 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                   {app_info.apps.map((app, index) => (
                     <GridItem key={app.name + index+1} cursor="pointer">
                       <VStack spacing={4} bgColor="brand.nearWhite" p={5} borderRadius={4} pos='relative'>
-                        <Link href={`/apps/${encodeURIComponent(app.path)}`} passHref>
-                          <ChakraLink fontSize={0} boxShadow="0px 2.90312px 33px 8px rgba(0, 0, 0, 0.08)"
-                            _before={{content: "''", display: 'block', pos: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-                          >
-                            <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} priority />
-                          </ChakraLink>
-                        </Link>
-                        <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none'}} onClick={(e) => e.stopPropagation()}>
-                          <Button type="button" variant="outline" iconSpacing={{base: 0, md: 3.5}} rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}>
-                            Download
-                          </Button>
+                        <CustomLink href={`/apps/${encodeURIComponent(app.path)}`} fontSize={0} boxShadow="0px 2.90312px 33px 8px rgba(0, 0, 0, 0.08)"
+                          _before={{content: "''", display: 'block', pos: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+                        >
+                          <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} priority />
+                        </CustomLink>
+                        <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.50'}} onClick={(e) => e.stopPropagation()}
+                          display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium' verticalAlign='middle'
+                          px={4} h={10} borderRadius={4} color='brand.lime.500' border='1px solid' borderColor='brand.lime.500' zIndex={1}
+                        >
+                          Download
+                          <Text as='span' ml={{base: 0, md: 3.5}} display='inline-flex'>
+                            <Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />
+                          </Text>
                         </ChakraLink>
                       </VStack>
                     </GridItem>
@@ -69,17 +71,19 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
               {app_info.apps.map((app, appIndex) => (
                 <GridItem key={app.name + appIndex+1} cursor="pointer">
                   <VStack spacing={4} bgColor={categoryIndex%2 === 0 ? "brand.nearWhite" : "white"} p={5} borderRadius={4} pos='relative'>
-                    <Link href={`/apps/${encodeURIComponent(app.path)}`} passHref>
-                      <ChakraLink fontSize={0} boxShadow="0px 2.90312px 33px 8px rgba(0, 0, 0, 0.08)"
-                        _before={{content: "''", display: 'block', pos: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-                      >
-                        <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} priority />
-                      </ChakraLink>
-                    </Link>
-                    <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none'}} onClick={(e) => e.stopPropagation()}>
-                      <Button type="button" variant="outline" iconSpacing={{base: 0, md: 3.5}} rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}>
-                        Download
-                      </Button>
+                    <CustomLink href={`/apps/${encodeURIComponent(app.path)}`} fontSize={0} boxShadow="0px 2.90312px 33px 8px rgba(0, 0, 0, 0.08)"
+                      _before={{content: "''", display: 'block', pos: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+                    >
+                      <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} priority />
+                    </CustomLink>
+                    <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.50'}} onClick={(e) => e.stopPropagation()}
+                      display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium' verticalAlign='middle'
+                      px={4} h={10} borderRadius={4} color='brand.lime.500' border='1px solid' borderColor='brand.lime.500' zIndex={1}
+                    >
+                      Download
+                      <Text as='span' ml={{base: 0, md: 3.5}} display='inline-flex'>
+                        <Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />
+                      </Text>
                     </ChakraLink>
                   </VStack>
                 </GridItem>
