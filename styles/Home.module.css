@@ -12,7 +12,7 @@
 
 /* Students Section */
 
-.students_section, .partners_section, .get_help_section, .blog_section, .faqs_section {
+.students_section, .partners_section, .blog_section, .faqs_section {
   padding: 60px 20px;
 }
 
@@ -40,7 +40,7 @@
     padding: 60px 80px 0;
   }
 
-  .students_section, .partners_section, .get_help_section, .blog_section, .faqs_section {
+  .students_section, .partners_section, .blog_section, .faqs_section {
     padding: 60px 60px;
   }
 }
@@ -80,11 +80,6 @@
   /* Blog Section */
   .blog_section, .faqs_section {
     padding: 50px 110px 85px;
-  }
-
-  /* Get Help form section */ 
-  .get_help_section {
-    padding: 85px 120px;
   }
 }
 
