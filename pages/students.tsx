@@ -47,7 +47,7 @@ const Students: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
 
       {/* Exam Apps, Activation Pins, and CBT Centres Section */}
       <Box as='section'>
-        <Box maxW='100vw' px={{base: 5, lg: '120px'}} pt={['60px', '120px']} pb={['60px', 0, '130px']}>
+        <Box maxW='100vw' overflowX='hidden' px={{base: 5, lg: '120px'}} pt={['60px', '120px']} pb={['60px', 0, '130px']}>
           <SimpleGrid columns={{base: 1, md: 3}} spacingX={5} spacingY={["60px", "110px", 0]} fontSize={0}
             maxW='1440px' m='auto'
           >
