@@ -6,8 +6,8 @@
 
 .female_student {
   z-index: 1;
-  min-width: 93% !important;
-  max-width: 93% !important;
+  /* min-width: 93% !important;
+  max-width: 93% !important; */
 }
 
 /* Students Section */
@@ -51,9 +51,9 @@
     padding: 60px 100px 0;
   }
 
-  .female_student {
+  /* .female_student {
     margin: 0 !important;
-  }
+  } */
 
   /* Business Section */
   .business_section {
