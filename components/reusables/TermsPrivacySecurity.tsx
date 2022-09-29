@@ -21,7 +21,7 @@ export default function TermsPrivacyService({ page, title, content }: TermsPriva
 
   return (
     <Box as="section" pl={[5, "10%", 0]} pr={[5, "10%"]} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
-      <Flex>
+      <Flex className='responsive_1440px'>
         {/* Navigation for devices above 768px */}
         <Box display={{base: "none", md: "block"}} pt={12} color="white" flexBasis="22%" bg="rgba(255, 255, 255, 0.2)">
           <Text py={3} pl={4} bg={page === 'terms' ? "rgba(255, 255, 255, 0.3)" : "none"}>

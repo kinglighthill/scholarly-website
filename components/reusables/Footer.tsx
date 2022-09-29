@@ -15,7 +15,7 @@ import MobileFooter from '../footer/MobileFooter';
 export default function Footer() {
   return (
     <Box as='footer' bgColor='brand.lime.700' className={classes.footer_container}>
-      <Box display={{base: 'none', lg: 'block'}}>
+      <Box display={{base: 'none', lg: 'block'}} className='responsive_1440px'>
         <Link href='/' passHref>
           <a className={classes.logo_wrapper}>
             <HStack spacing={1} align='end'>

@@ -10,8 +10,10 @@ const ContactUs: NextPage = () => {
   return (
     <Page title="Contact Us | Scholarly" description="Email: info@scholarly.africa, Phone: +2348136941462, WhatsApp: +2348136941462">
       <Box as="section" px={[5, "10%", 10, "13%"]} pt={{base: 14, md: 28}} pb={28} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
-        <Text as="h1" color="brand.yellow" mb={["18px", 9]} lineHeight="120%" fontSize={[31, 39]} fontWeight="bold">Contact Us</Text>
-        <Flex wrap={{base: "wrap", md: "nowrap"}} align="start">
+        <Text as="h1" color="brand.yellow" mb={["18px", 9]} lineHeight="120%" fontSize={[31, 39]} fontWeight="bold" className='responsive_1440px'>
+          Contact Us
+        </Text>
+        <Flex wrap={{base: "wrap", md: "nowrap"}} align="start" className='responsive_1440px'>
           <VStack spacing="26px" align="start" flexBasis={{base: "100%", md: "45%"}} mb={{base: "70px", md: 16}}>
             <Text color="white" fontSize={20}>Have an enquiry or complaints? Reach out to us via any of the channels and we&apos;ll respond promptly</Text>
             <VStack spacing={2} align="start">

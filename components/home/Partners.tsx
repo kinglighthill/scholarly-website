@@ -15,7 +15,7 @@ export default function Partners() {
 
   return (
     <Box as="section" bgColor='brand.nearWhite' pos='relative' className={classes.partners_section}>
-      <Flex wrap={{base: 'wrap', md: 'nowrap'}} flexDir={{base: 'column-reverse', md: 'row'}} align={{md: 'center'}}>
+      <Flex wrap={{base: 'wrap', md: 'nowrap'}} flexDir={{base: 'column-reverse', md: 'row'}} align={{md: 'center'}} className='responsive_1440px'>
         <Box flexBasis={{base: "100%", md: "40%"}}>
           <VStack display={{base: "none", md: "flex"}} spacing={2} align='start' color='brand.lime.700' mb={9}>
             <Text as='h2' fontSize={39} fontWeight='bold'>For Partners</Text>

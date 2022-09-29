@@ -8,7 +8,7 @@ export default function ComingSoon({ feature }: {feature: string}) {
 
   return (
     <Box as="section" py={24} px={[5, 12, 7, 14, 24]}>
-      <Flex alignItems="center" justify={{base: "center"}} flexWrap={{base: "wrap", md: "nowrap"}}>
+      <Flex alignItems="center" justify={{base: "center"}} flexWrap={{base: "wrap", md: "nowrap"}} className='responsive_1440px'>
         <Box fontSize={0} flexBasis={["100%", "70%", "48%"]} mb={{base: 14, md: 0}}>
           <Image src={coming_soon} alt="" priority />
         </Box>

@@ -4,14 +4,14 @@ import { Box, Flex, VStack, Text, Button, Spacer, Icon } from '@chakra-ui/react'
 import scholarly_students_demo from '../../public/scholarly_students_demo.webp';
 import subtract from '../../public/subtract.svg';
 import classes from '../../styles/Home.module.css';
-import { BoxWithJambIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
-import Label from '../reusables/Label';
 import { ChevronRightIcon } from '@heroicons/react/solid';
 
 export default function Students() {
   return (
     <Box as='section' className={classes.students_section}>
-      <Flex align='center' wrap={{base: 'wrap', md: 'nowrap'}} flexDir={{base: 'column-reverse', md: 'row'}}>
+      <Flex align='center' wrap={{base: 'wrap', md: 'nowrap'}} flexDir={{base: 'column-reverse', md: 'row'}}
+        className='responsive_1440px'
+      >
         <Box pos='relative' flexBasis={{base: '100%', md: '48%'}}>
           <Image src={scholarly_students_demo} alt='Demo of Scholarly for Students' priority />
           {/* <Label labelText='Jamb Practice' labelIcon={<BoxWithJambIcon/>} box={{display: {base: 'none', md: 'block'}, top: 6, left: -5}} />

@@ -12,7 +12,7 @@ export default function LearningCentresSection() {
 
   return (
     <>
-      <Flex align='center' flexWrap={{base: 'wrap', md: 'nowrap'}}>
+      <Flex align='center' flexWrap={{base: 'wrap', md: 'nowrap'}} className='responsive_1440px'>
         <Box fontSize={0} flexBasis={{base: '100%', md: '49%'}} zIndex={1}>
           <Image src={lady_on_headphones_typing} alt="A lady on headphones and a pair of glasses typing on a computer" priority />
         </Box>

@@ -9,7 +9,7 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
 
   return (
     <Box as="section" className={classes.top_banner}>
-      <VStack spacing={[8, '51px']} m='auto' maxW='530px' align={['start', 'center']}>
+      <VStack spacing={[8, '51px']} m='auto' maxW='530px' align={['start', 'center']} className='responsive_1440px'>
         <Text fontWeight='black' fontSize={['4xl', '5xl']} textAlign={['left', 'center']} lineHeight='120.5%'>
           <Text as='span' color='brand.yellow'>Resell </Text>
           <Text as='span' color='brand.lime.500'>Activation Pins, </Text>

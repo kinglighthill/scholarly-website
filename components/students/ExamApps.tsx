@@ -8,7 +8,7 @@ export default function ExamApps() {
   return (
     <VStack spacing={4} align={{base: "start", md: "center"}} h="100%">
       <Box fontSize={0} pos="relative">
-        <Box display={{base: "none", md: "block"}} pos="absolute" top="-121px" left={{base: -5, lg: "-120px"}} w="100vw" h="calc(100% + 121px)" bg="#F5F6F6"></Box>
+        <Box display={{base: "none", md: "block"}} pos="absolute" top="-121px" left={{md: "calc((100vw - (300% + 40px))/-2)"}} w="100vw" h="calc(100% + 121px)" bg="#F5F6F6"></Box>
         <Image src={exam_apps} alt="" priority />
       </Box>
       <VStack align='start' justify='space-between' h='100%' maxW={{base: '100%', md: '89%'}}>

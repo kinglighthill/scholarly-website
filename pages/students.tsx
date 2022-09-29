@@ -72,7 +72,9 @@ const Students: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
       {/* Testimonials Section */}
       <Box as='section' bgColor='brand.nearWhite' pt={{base: '60px', md: '82px'}} pb={{base: '60px', md: '115px'}}>
         <Box textAlign='center' mb={{base: '90px', md: 12}} px={{base: 5, md: 0}}>
-          <Text display='inline-block' textAlign='center' px='42px' py='10px' borderRadius={4} bgColor='brand.lime.700' color='brand.nearWhite' fontSize={[20, 31]} fontWeight='medium'>
+          <Text display='inline-block' textAlign='center' px='42px' py='10px' borderRadius={4} bgColor='brand.lime.700' color='brand.nearWhite'
+            fontSize={[20, 31]} fontWeight='medium' className='responsive_1440px'
+          >
             What users are saying
           </Text>
         </Box>

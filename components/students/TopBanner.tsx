@@ -13,7 +13,7 @@ export default function TopBanner() {
   
   return (
     <Box as='section' pl={[0, "55px", "120px", "55px", "120px"]} pr={{'2xl': "120px"}}>    
-      <Flex pos='relative' justify='space-between' flexWrap={{base: 'wrap', lg: 'nowrap'}}>
+      <Flex pos='relative' justify='space-between' flexWrap={{base: 'wrap', lg: 'nowrap'}} className='responsive_1440px'>
         {/* Transparent overlay */}
         <Box display={{base: 'none', lg: 'block'}} pos='absolute' w={{base: '57%', xl: '64%'}} h='100%' zIndex={1} right={0} bg='linear-gradient(90deg, #FFFFFF 5.93%, rgba(255, 255, 255, 0) 85.78%)'></Box>
         

@@ -12,7 +12,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
     return (
       <Box as="section">
         <MobileTabNavigation activeTab={activeTab} />
-        <HStack spacing={0} align="start">
+        <HStack spacing={0} align="start" className='responsive_1440px'>
           <DesktopTabNavigation activeTab={activeTab} />
           <ComingSoon feature={`${activeTab}-apps`} />
         </HStack>
@@ -26,7 +26,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
       {apps_info && apps_info.map((app_info, categoryIndex) => {
         if (categoryIndex === 0) {
           return (
-            <HStack key={app_info.title} spacing={{lg: "61px"}} align="start">
+            <HStack key={app_info.title} spacing={{lg: "61px"}} align="start" className='responsive_1440px'>
               <DesktopTabNavigation activeTab={activeTab} />
               <VStack key={app_info.title} spacing={4} align="start" py={10} pr={{base: 5, md: 8}} pl={{base: 5, md: "45px", lg: 0}} flexBasis={{base: "100%", lg: "75%"}}>
                 <VStack spacing={1} align="start">
@@ -58,7 +58,9 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
           )
         }
         return (
-          <VStack key={app_info.title} spacing={4} align="start" py={10} pr={{base: 5, md: 8}} pl={{base: 5, md: "45px", lg: "279px"}} bgColor={categoryIndex%2 === 0 ? "white" : "brand.nearWhite"}>
+          <VStack key={app_info.title} spacing={4} align="start" py={10} pr={{base: 5, md: 8}} pl={{base: 5, md: "45px", lg: "279px"}}
+            bgColor={categoryIndex%2 === 0 ? "white" : "brand.nearWhite"} className='responsive_1440px'
+          >
             <VStack spacing={1} align="start">
               <Text as="h2" color="brand.lime.700" fontSize={[25, 31]} fontWeight="bold">{app_info.title}</Text>
               <Text color="brand.lime.700" opacity={0.7} fontSize={[16, 20]}>{app_info.description}</Text>
@@ -87,7 +89,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
         )
       })}
       <Box as="section" bg={apps_info.length%2 === 0 ? "white" : "brand.nearWhite"} px={{base: 5, md: "60px", lg: "79px", xl: "120px"}} py={{base: "60px", lg: "100px"}}>
-        <Flex align='start' wrap={{base: 'wrap', md: 'nowrap'}}>
+        <Flex align='start' wrap={{base: 'wrap', md: 'nowrap'}} className='responsive_1440px'>
           <VStack spacing={6} align="start" flexBasis={{base: '100%', md: '52%', xl: '45%'}}>
             <Text color="brand.lime.700" fontSize={22} fontWeight="bold">Didn&apos;t find the app you were looking for?</Text>
             <Text color="brand.lime.700">Request an app and we&apos;ll consider adding it in future releases.</Text>

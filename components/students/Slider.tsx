@@ -21,23 +21,23 @@ const sliderItems = sliderDetails.map(item => {
   const handleDragStart = (e: React.DragEvent<HTMLElement>) => e.preventDefault();
 
   return (
-  <Flex key={item.title} align='center' flexDir={{base: 'column-reverse', md: 'row'}} onDragStart={handleDragStart}>
-    <VStack spacing={8} align='start' flexBasis='42%'>
-      <Text as='h2' color='brand.lime.700' fontSize={{base: 31, md: 25, lg: 31}} fontWeight='bold'>{item.headline}</Text>
-      <Text color='brand.lime.700'>{item.description}</Text>
-      <Link href='/apps/android'>
-        <a>
-          <Button type='button' variant="solid" iconSpacing={5} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
-            Download App
-          </Button>
-        </a>
-      </Link>
-    </VStack>
-    <Spacer />
-    <Box flexBasis='54%' mb={{base: 8, md: 0}}>
-      <Image src={item.image} alt="A Demo of the Scholarly Students App" priority />
-    </Box>
-  </Flex>
+    <Flex key={item.title} align='center' flexDir={{base: 'column-reverse', md: 'row'}} onDragStart={handleDragStart}>
+      <VStack spacing={8} align='start' flexBasis='42%'>
+        <Text as='h2' color='brand.lime.700' fontSize={{base: 31, md: 25, lg: 31}} fontWeight='bold'>{item.headline}</Text>
+        <Text color='brand.lime.700'>{item.description}</Text>
+        <Link href='/apps/android'>
+          <a>
+            <Button type='button' variant="solid" iconSpacing={5} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
+              Download App
+            </Button>
+          </a>
+        </Link>
+      </VStack>
+      <Spacer />
+      <Box flexBasis='54%' mb={{base: 8, md: 0}}>
+        <Image src={item.image} alt="A Demo of the Scholarly Students App" priority />
+      </Box>
+    </Flex>
 )});
 
 export default function Slider() {
@@ -51,7 +51,7 @@ export default function Slider() {
 
   return (
     <Box as='section' className={classes.slider_container} bgColor='brand.nearWhite'>
-      <HStack spacing={[5, 9]} mb={12} justify={{base: 'center', md: 'start'}}>
+      <HStack spacing={[5, 9]} mb={12} justify={{base: 'center', md: 'start'}} className='responsive_1440px'>
         {sliderDetails.map((item, index) => (
           <Text as='h1' key={item.title} fontSize={13} color='brand.lime.700' cursor='pointer'
             textTransform='capitalize' onClick={() => handleNavigation(index)}
@@ -62,10 +62,12 @@ export default function Slider() {
         ))}
       </HStack>
       
-      <AliceCarousel items={sliderItems} activeIndex={1} disableButtonsControls disableDotsControls
-        autoPlay autoPlayStrategy='all' autoPlayInterval={4000} infinite ref={carousel}
-        keyboardNavigation touchTracking={false} onSlideChanged={(e) => setActive(e.slide)} 
-      />
+      <Box className='responsive_1440px'>
+        <AliceCarousel items={sliderItems} activeIndex={1} disableButtonsControls disableDotsControls
+          autoPlay autoPlayStrategy='all' autoPlayInterval={4000} infinite ref={carousel}
+          keyboardNavigation touchTracking={false} onSlideChanged={(e) => setActive(e.slide)} 
+        />
+      </Box>
     </Box>
   )
 }

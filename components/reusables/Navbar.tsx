@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <Box as="header" pos='relative' h={{base: 16, lg: 20}} zIndex={100}>
       <nav className={classes.nav}>
-        <Flex align='center'>
+        <Flex align='center' className='responsive_1440px'>
           <Link href='/' passHref>
             <a className={classes.logo_wrapper}>
               <Image src={scholarly_logo1} alt="Scholarly Logo" priority />

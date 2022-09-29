@@ -8,7 +8,7 @@ import female_professional_working from '../../public/female_professional_workin
 export default function Business() {
   return (
     <Box as="section" className={classes.business_section}>
-      <Flex align='center' wrap={{base: 'wrap', md: 'nowrap'}}>
+      <Flex align='center' wrap={{base: 'wrap', md: 'nowrap'}} className='responsive_1440px'>
         <Box fontSize={0} flexBasis={{base: '100%', md: '45%'}}>
           <Image src={female_professional_working} alt='A young female professional working in a cafe' priority />
         </Box>

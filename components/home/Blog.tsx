@@ -13,13 +13,17 @@ export default function Blog() {
   return (
     blogPosts && 
       <Box as="section" className={classes.blog_section}>
-        <Text as='h2' color='brand.lime.700' mb={12} textAlign='center' fontSize={[25, 31]} fontWeight='bold'>From Our Blog</Text>
-        <Stack spacing={5} direction={{base: 'column', md: 'row'}} w='full' justify='space-between' align={{base: 'center', md: 'stretch'}}>
+        <Text as='h2' color='brand.lime.700' mb={12} textAlign='center' fontSize={[25, 31]} fontWeight='bold' className='responsive_1440px'>
+          From Our Blog
+        </Text>
+        <Stack spacing={5} direction={{base: 'column', md: 'row'}} w='full' justify='space-between'
+          align={{base: 'center', md: 'stretch'}} className='responsive_1440px'
+        >
           {blogPosts.data.posts.map((post: BlogPostData) => (
             <BlogPost key={post.url} post_data={post} />
           ))}
         </Stack>
-        <Box textAlign='center' mt={10}>
+        <Box textAlign='center' mt={10} className='responsive_1440px'>
           <ChakraLink href='https://blog.scholarly.africa/' isExternal _hover={{textDecoration: 'none'}}>
             <Button type='button' variant='solid'>Go to Blog</Button>
           </ChakraLink>

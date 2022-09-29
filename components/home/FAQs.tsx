@@ -8,8 +8,10 @@ import Questions from '../faqs/Questions';
 export default function FAQs({ data }: { data: FAQ[]}) {
   return (
     <Box as='section' bg='brand.nearWhite' className={classes.faqs_section}>
-      <Text as='h2' color='brand.lime.700' mb={8} textAlign='center' fontSize={[25, 31]} fontWeight='bold'>Frequently Asked Questions (FAQs)</Text>
-      <Tabs variant='unstyled' isLazy maxW="min(800px, 95%)" m="auto">
+      <Text as='h2' color='brand.lime.700' mb={8} textAlign='center' fontSize={[25, 31]} fontWeight='bold' className='responsive_1440px'>
+        Frequently Asked Questions (FAQs)
+      </Text>
+      <Tabs variant='unstyled' isLazy maxW="min(800px, 95%)" m="auto" className='responsive_1440px'>
         <TabList mb={9} color="brand.lime.700" justifyContent="center">
           <Tab pl={0} _selected={{pl: 4, borderRadius: 4, color: "white", bg: "brand.lime.500"}}>Students</Tab>
           <Tab _selected={{borderRadius: 4, color: "white", bg: "brand.lime.500"}}>Partners</Tab>
@@ -28,7 +30,7 @@ export default function FAQs({ data }: { data: FAQ[]}) {
         </TabPanels>
       </Tabs>
 
-      <Box textAlign='center' mt={9}>
+      <Box textAlign='center' mt={9} className='responsive_1440px'>
         <Link href='/faqs' passHref>
           <ChakraLink _hover={{textDecoration: 'none'}}>
             <Button type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>

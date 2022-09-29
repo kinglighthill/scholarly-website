@@ -27,7 +27,7 @@ export default function App({ appData }: AppProps) {
     <Box>
       {/* Banner Section */}
       <Box as="section" bg="#F8C343" pt={7} px={{base: 14, md: 16, lg: 32}}>
-        <Flex>
+        <Flex className='responsive_1440px'>
           <Box fontSize={0} flexBasis="23%" display={{base: "none", md: "block"}}>
             <Image src={young_male_with_khaki_shirt} alt="A young male wearing a khaki shirt" />
           </Box>
@@ -43,7 +43,7 @@ export default function App({ appData }: AppProps) {
 
       {/* App Details */}
       <Box as="section" py="50px" px={[5, 12, 12, "120px"]}>
-        <Stack direction="row" spacing={{base: 0, md: 10}} justify="center">
+        <Stack direction="row" spacing={{base: 0, md: 10}} justify="center" className='responsive_1440px'>
           <Box display={{base: "none", md: "block"}} filter="drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25))">
             <Image src={appData.icon_url} alt={`${appData.name} Icon`} width={145} height={145} />
           </Box>
@@ -56,7 +56,7 @@ export default function App({ appData }: AppProps) {
 
       {/* Download Section */}
       <Box as="section" py={8} px={[5, 12, 12, "120px"]} bg={{md: "linear-gradient(to bottom, white 50%, #FEF8E8 50%)"}}>
-        <Stack direction={{base: "column", md: "row"}} spacing={6} justify="center">
+        <Stack direction={{base: "column", md: "row"}} spacing={6} justify="center" className='responsive_1440px'>
           <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android} download_link={appData.download_link_android} />
           <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios} />
           <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop} />
@@ -67,7 +67,9 @@ export default function App({ appData }: AppProps) {
       {testimonials.length !== 0 &&
         <Box as='section' bg='brand.nearWhite' pt={{base: '60px', md: '82px'}} pb={{base: '60px', md: '115px'}}>
           <Box textAlign='center' mb={{base: '90px', md: 12}} px={{base: 5, md: 0}}>
-            <Text display='inline-block' textAlign='center' px='42px' py='10px' borderRadius={4} bgColor='brand.lime.700' color='brand.nearWhite' fontSize={[20, 31]} fontWeight='medium'>
+            <Text display='inline-block' textAlign='center' px='42px' py='10px' borderRadius={4} bgColor='brand.lime.700' color='brand.nearWhite'
+              fontSize={[20, 31]} fontWeight='medium' className='responsive_1440px'
+            >
               What people are saying
             </Text>
           </Box>

@@ -59,8 +59,12 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
 
       {/* Steps to Become a Partner */}
       <Box as="section" bgColor='brand.nearWhite' className={classes.steps}>
-        <Text as='h2' fontSize={[25, 39]} fontWeight='bold' color='brand.lime.500' mb={[8, '75px']} textAlign='center'>Steps to become a Partner</Text>
-        <VStack spacing={[9, '93px']} mb={[12, '75px']}>
+        <Text as='h2' fontSize={[25, 39]} fontWeight='bold' color='brand.lime.500' mb={[8, '75px']}
+          textAlign='center' className='responsive_1440px'
+        >
+          Steps to become a Partner
+        </Text>
+        <VStack spacing={[9, '93px']} mb={[12, '75px']} className='responsive_1440px'>
           {steps.map(step => (
             <Step key={step.index} index={step.index} title={step.title} description={step.description}
               icon={step.icon} direction={step.index%2 !== 0 ? 'forward' : 'reverse'}
@@ -83,7 +87,7 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
       
       {/* Referral Section */}
       <Box as="section" className={classes.referral}>
-        <Flex align='center' wrap={['wrap', 'nowrap']}>
+        <Flex align='center' wrap={['wrap', 'nowrap']} className='responsive_1440px'>
           <Box flexBasis='49%' display={['none', 'initial']}>
             <Image src={megaphone} alt='A megaphone' priority />
           </Box>
@@ -112,7 +116,9 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
 
       {/* Testimonials Section */}
       <Box as='section' bgColor='brand.nearWhite' py="93px">
-        <Text mb={{base: '60px', md: 12}} textAlign='center' color='brand.lime.700' fontSize={[25, 39]} fontWeight='medium'>
+        <Text mb={{base: '60px', md: 12}} textAlign='center' color='brand.lime.700' fontSize={[25, 39]} fontWeight='medium'
+          className='responsive_1440px'
+        >
           Our 5 Star Agents
         </Text>
         <Testimonials testimonials={testimonials} />
