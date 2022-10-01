@@ -1,6 +1,6 @@
-import { Box, Link as ChakraLink, VStack, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, VStack, Text } from "@chakra-ui/react";
 import { FooterMenuProps } from "../../types/components/footer/footer_menu";
+import CustomLink from "../reusables/CustomLink";
 
 export default function FooterMenu({ title, items }: FooterMenuProps) {
   return (
@@ -9,9 +9,7 @@ export default function FooterMenu({ title, items }: FooterMenuProps) {
       <VStack spacing={4} align='start'>
         {items.map(item => (
           <Text key={item.name+item.url} fontWeight='light'>
-            <Link href={item.url} passHref>
-              <ChakraLink>{item.name}</ChakraLink>
-            </Link>
+            <CustomLink href={item.url}>{item.name}</CustomLink>
           </Text>
         ))}
       </VStack>

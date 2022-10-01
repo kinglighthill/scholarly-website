@@ -1,19 +1,19 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { Flex, VStack, Text, Button, Box, HStack, Spacer, Icon, useDisclosure } from '@chakra-ui/react';
+import { Flex, VStack, Text, Box, HStack, Spacer, Icon, useDisclosure } from '@chakra-ui/react';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import green_pattern from '../../public/green_pattern.svg';
 import { BoxWithJambIcon, BoxWithNecoIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
 import Label from '../reusables/Label';
 import BuyPin from '../reusables/BuyPin';
 import CartProvider from '../../context/CartContext';
+import CustomLink from '../reusables/CustomLink';
 
 export default function TopBanner() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   
   return (
     <Box as='section' pl={[0, "55px", "120px", "55px", "120px"]} pr={{'2xl': "120px"}}>    
-      <Flex pos='relative' justify='space-between' flexWrap={{base: 'wrap', lg: 'nowrap'}}>
+      <Flex pos='relative' justify='space-between' flexWrap={{base: 'wrap', lg: 'nowrap'}} className='responsive_1440px'>
         {/* Transparent overlay */}
         <Box display={{base: 'none', lg: 'block'}} pos='absolute' w={{base: '57%', xl: '64%'}} h='100%' zIndex={1} right={0} bg='linear-gradient(90deg, #FFFFFF 5.93%, rgba(255, 255, 255, 0) 85.78%)'></Box>
         
@@ -37,13 +37,9 @@ export default function TopBanner() {
             </Box>
           </VStack>
           <HStack spacing={4}>
-            <Link href='/apps/android'>
-              <a>
-                <Button type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
-                  Download App
-                </Button>
-              </a>
-            </Link>
+            <CustomLink href='/apps/android' type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
+              Download App
+            </CustomLink>
             {/* <Button type='button' variant='outline' display={['none', 'inline-flex']} onClick={onOpen} iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
               Buy Activation Pin
             </Button> */}

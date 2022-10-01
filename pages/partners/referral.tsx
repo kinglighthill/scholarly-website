@@ -12,7 +12,7 @@ const PartnersReferral: NextPage = () => {
   return (
     <Page title="Refer A Partner and Earn Extra Income" description="Increase your revenue as a partner with our Partners Referral program. Earn monetary commission each time your referral makes a sale">
       <Box as="section" px={[5, 7, "10%"]} pt={14} pb={24} bgColor="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
-        <Stack direction="row" spacing={[3.5, 5, 20]} w="full" pl={[3.5, 5, 10]} py="18px" mb={12} borderRadius={10} bg="rgba(255, 255, 255, 0.1)">
+        <Stack direction="row" spacing={[3.5, 5, 20]} w="full" pl={[3.5, 5, 10]} py="18px" mb={12} borderRadius={10} bg="rgba(255, 255, 255, 0.1)" className='responsive_1440px'>
           <Stack direction="column" spacing={1.5} maxW={{lg: "60%"}}>
             <Text as="h1" color="brand.yellow" fontSize={25} fontWeight="bold">Refer Partners and Earn Commission</Text>
             <Text color="white">Each time your referral make a sale, you earn monetary commission loaded to your referral wallet.</Text>
@@ -24,7 +24,7 @@ const PartnersReferral: NextPage = () => {
           </Box>
         </Stack>
 
-        <Flex flexDir="column" align="center">
+        <Flex flexDir="column" align="center" className='responsive_1440px'>
           <Text as="h2" color="white" fontSize={31} fontWeight="bold" mb={7}>Steps</Text>
           <Stack direction={["column", "row"]} w="full" justify="space-between" mb={12}>
             <ReferralStepCard index={1} title="Sign Up" description="Create an account here or download app and create account with app." />

@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import Image from "next/image";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
-import { Box, VStack, Text, Button, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
+import { Box, VStack, Text, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import Testimonials, { Testimonial } from '../../components/reusables/Testimonials';
 import TopBanner from '../../components/partners/TopBanner';
@@ -20,6 +19,7 @@ import PartnerSignup from '../../components/reusables/PartnerSignup';
 import Page from '../../components/reusables/Page';
 import { fetchContent } from '../../services/fetch_content.service';
 import { TestimonialProps } from '../../types/components/reusables/testimonials';
+import CustomLink from '../../components/reusables/CustomLink';
 
 const steps: StepType[] = [
   { index: 1, title: "Sign up", description: "Create an account on the site or with the app.", icon: sign_up },
@@ -59,8 +59,12 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
 
       {/* Steps to Become a Partner */}
       <Box as="section" bgColor='brand.nearWhite' className={classes.steps}>
-        <Text as='h2' fontSize={[25, 39]} fontWeight='bold' color='brand.lime.500' mb={[8, '75px']} textAlign='center'>Steps to become a Partner</Text>
-        <VStack spacing={[9, '93px']} mb={[12, '75px']}>
+        <Text as='h2' fontSize={[25, 39]} fontWeight='bold' color='brand.lime.500' mb={[8, '75px']}
+          textAlign='center' className='responsive_1440px'
+        >
+          Steps to become a Partner
+        </Text>
+        <VStack spacing={[9, '93px']} mb={[12, '75px']} className='responsive_1440px'>
           {steps.map(step => (
             <Step key={step.index} index={step.index} title={step.title} description={step.description}
               icon={step.icon} direction={step.index%2 !== 0 ? 'forward' : 'reverse'}
@@ -71,37 +75,29 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
           {/* <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
             Sign up
           </Button> */}
-          {/* <Link href='/apps/android'>
-            <a>
-              <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-                Download App
-              </Button>
-            </a>
-          </Link> */}
+          {/* <CustomLink href='/apps/android' type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+            Download App
+          </CustomLink> */}
         </HStack>
       </Box>
       
       {/* Referral Section */}
       <Box as="section" className={classes.referral}>
-        <Flex align='center' wrap={['wrap', 'nowrap']}>
+        <Flex align='center' wrap={['wrap', 'nowrap']} className='responsive_1440px'>
           <Box flexBasis='49%' display={['none', 'initial']}>
-            <Image src={megaphone} alt='A megaphone' priority />
+            <Image src={megaphone} alt='A megaphone' />
           </Box>
           <Box flexBasis='100%' mb={10} display={['initial', 'none']} textAlign='center' className={classes.megaphone_mobile} >
-            <Image src={megaphone2} alt='A megaphone' priority />
+            <Image src={megaphone2} alt='A megaphone' />
           </Box>
           <Spacer />
           <VStack flexBasis={['100%', '49%', '40%', '35%']} align='start' spacing={6}>
             <Text color='brand.lime.700' fontSize={25} fontWeight='bold'>Referral Program</Text>
             <Text color='brand.lime.700'>Earn more when you refer other partners. Each time your referral makes a sale, you earn a commission.</Text>
             <VStack w='full' align='start' spacing={0} pos='relative'>
-              <Link href='/partners/referral'>
-                <a>
-                  <Button type="button" variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
-                    See Details
-                  </Button>
-                </a>
-              </Link>
+              <CustomLink href='/partners/referral' type="button" variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} />}>
+                See Details
+              </CustomLink>
               <Box pos='absolute' right={0} top={41} display={{base: 'none', md: 'initial'}}>
                 <Image src={yellow_pattern} alt='' />
               </Box>
@@ -112,7 +108,9 @@ const Partners: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
 
       {/* Testimonials Section */}
       <Box as='section' bgColor='brand.nearWhite' py="93px">
-        <Text mb={{base: '60px', md: 12}} textAlign='center' color='brand.lime.700' fontSize={[25, 39]} fontWeight='medium'>
+        <Text mb={{base: '60px', md: 12}} textAlign='center' color='brand.lime.700' fontSize={[25, 39]} fontWeight='medium'
+          className='responsive_1440px'
+        >
           Our 5 Star Agents
         </Text>
         <Testimonials testimonials={testimonials} />

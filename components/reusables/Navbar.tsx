@@ -1,6 +1,5 @@
-import { Box, Button, Flex, HStack, Link as ChakraLink, Menu, MenuButton, MenuItem, MenuList, Spacer, Text, useDisclosure } from '@chakra-ui/react';
+import { Box, Flex, HStack, Link as ChakraLink, Menu, MenuButton, MenuItem, MenuList, Spacer, Text, useDisclosure } from '@chakra-ui/react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Icon } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import scholarly_logo1 from '../../public/scholarly_logo1.svg';
@@ -10,6 +9,7 @@ import { BoxWithAppstoreIcon, BoxWithPlaystoreIcon, BoxWithWindowsIcon } from '.
 import { useRef } from 'react';
 import { MenuIcon } from '@heroicons/react/solid';
 import NavigationDrawer from '../navbar/NavigationDrawer';
+import CustomLink from './CustomLink';
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -18,25 +18,17 @@ export default function Navbar() {
   return (
     <Box as="header" pos='relative' h={{base: 16, lg: 20}} zIndex={100}>
       <nav className={classes.nav}>
-        <Flex align='center'>
-          <Link href='/' passHref>
-            <a className={classes.logo_wrapper}>
-              <Image src={scholarly_logo1} alt="Scholarly Logo" priority />
-            </a>
-          </Link>
+        <Flex align='center' className='responsive_1440px'>
+          <CustomLink href='/' className={classes.logo_wrapper}>
+            <Image src={scholarly_logo1} alt="Scholarly Logo" priority />
+          </CustomLink>
 
           <Spacer />
 
           <HStack spacing={{base: 25, xl: 51}} display={{base: 'none', lg: 'flex'}} className={classes.desktop_nav}>
-            <Link href='/students' passHref>
-              <ChakraLink color='brand.lime.500' fontWeight='medium'>Students</ChakraLink>
-            </Link>
-            <Link href='/partners' passHref>
-              <ChakraLink color='brand.lime.500' fontWeight='medium'>Partners</ChakraLink>
-            </Link>
-            <Link href='/business' passHref>
-              <ChakraLink color='brand.lime.500' fontWeight='medium'>Business</ChakraLink>
-            </Link>
+            <CustomLink href='/students' color='brand.lime.500' fontWeight='medium'>Students</CustomLink>
+            <CustomLink href='/partners' color='brand.lime.500' fontWeight='medium'>Partners</CustomLink>
+            <CustomLink href='/business' color='brand.lime.500' fontWeight='medium'>Business</CustomLink>
             {/* Menu is placed within Box as a workaround to the warning that Chakra UI gives when Menu is a direct child of HStack */}
             <Box>
               <Menu>
@@ -45,60 +37,50 @@ export default function Navbar() {
                 </MenuButton>
                 <MenuList zIndex={3} borderRadius={16} p={6} boxShadow='0px 0px 20px rgba(0, 0, 0, 0.15)'>
                   <MenuItem mb={6}>
-                    <Link href='/apps/android' passHref>
-                      <ChakraLink>
-                        <HStack spacing={3.5} w='full'>
-                          <BoxWithPlaystoreIcon />
-                          <Box color='brand.green'>
-                            <Text fontWeight='medium'>Android Apps</Text>
-                            <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Download from over 30 android apps</Text>
-                          </Box>
-                        </HStack>
-                      </ChakraLink>
-                    </Link>
+                    <CustomLink href='/apps/android'>
+                      <HStack spacing={3.5} w='full'>
+                        <BoxWithPlaystoreIcon />
+                        <Box color='brand.green'>
+                          <Text fontWeight='medium'>Android Apps</Text>
+                          <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Download from over 30 android apps</Text>
+                        </Box>
+                      </HStack>
+                    </CustomLink>
                   </MenuItem>
                   <MenuItem mb={6}>
-                    <Link href='/apps/desktop' passHref>
-                      <ChakraLink>
-                        <HStack spacing={3.5} w='full'>
-                          <BoxWithWindowsIcon />
-                          <Box color='brand.green'>
-                            <Text fontWeight='medium'>Desktop Apps</Text>
-                            {/* <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Access over 30 apps for PC</Text> */}
-                            <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Apps not currently available</Text>
-                          </Box>
-                        </HStack>
-                      </ChakraLink>
-                    </Link>
+                    <CustomLink href='/apps/desktop'>
+                      <HStack spacing={3.5} w='full'>
+                        <BoxWithWindowsIcon />
+                        <Box color='brand.green'>
+                          <Text fontWeight='medium'>Desktop Apps</Text>
+                          {/* <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Access over 30 apps for PC</Text> */}
+                          <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Apps not currently available</Text>
+                        </Box>
+                      </HStack>
+                    </CustomLink>
                   </MenuItem>
                   <MenuItem>
-                    <Link href='/apps/ios' passHref>
-                      <ChakraLink>
-                        <HStack spacing={3.5} w='full'>
-                          <BoxWithAppstoreIcon />
-                          <Box color='brand.green'>
-                            <Text fontWeight='medium'>IOS Apps</Text>
-                            <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Apps not currently available</Text>
-                          </Box>
-                        </HStack>
-                      </ChakraLink>
-                    </Link>
+                    <CustomLink href='/apps/ios'>
+                      <HStack spacing={3.5} w='full'>
+                        <BoxWithAppstoreIcon />
+                        <Box color='brand.green'>
+                          <Text fontWeight='medium'>IOS Apps</Text>
+                          <Text fontSize='13px' opacity='0.8' lineHeight='18px'>Apps not currently available</Text>
+                        </Box>
+                      </HStack>
+                    </CustomLink>
                   </MenuItem>
                 </MenuList>
               </Menu>
             </Box>
             
-            <ChakraLink href='https://blog.scholarly.africa' target='_blank' color='brand.lime.500' fontWeight='medium'>Blog</ChakraLink>
+            <ChakraLink isExternal href='https://blog.scholarly.africa' color='brand.lime.500' fontWeight='medium'>Blog</ChakraLink>
           </HStack>
 
           <Spacer />
 
           <HStack spacing={{base: 5, xl: 6}} display={{base: 'none', lg: 'flex'}} className={classes.desktop_nav}>
-            <Link href='/contact-us' passHref>
-              <ChakraLink _hover={{textDecoration: 'none'}}>
-                <Button type='button' variant='outline'>Contact us</Button>
-              </ChakraLink>
-            </Link>
+            <CustomLink href='/contact-us' type='button' variant='outline'>Contact us</CustomLink>
             {/* <Button type='button' variant='solid'>Activate</Button> */}
             {/* <Menu>
               <MenuButton color='brand.lime.500' fontWeight='medium' pt={1.5}>

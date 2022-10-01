@@ -66,7 +66,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
   // const { handleNavigation } = useCarousel(testimonials, responsive, carousel);
 
   return (
-    <Box pos='relative' className={classes.carousel}>
+    <Box pos='relative' className={`${classes.carousel} responsive_1440px`}>
       <Carousel items={testimonials} mouseTracking responsive={responsive} infinite disableDotsControls
         autoPlay autoPlayStrategy="all" autoPlayInterval={4000}
         renderPrevButton={() => <NavButtons variant='prev' />}

@@ -1,16 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Box, Button, Flex, HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
 import { PhoneIcon, PlusIcon } from '@heroicons/react/outline';
 import classes from '../../styles/Home.module.css';
 import female_professional_working from '../../public/female_professional_working.webp';
+import CustomLink from "../reusables/CustomLink";
 
 export default function Business() {
   return (
     <Box as="section" className={classes.business_section}>
-      <Flex align='center' wrap={{base: 'wrap', md: 'nowrap'}}>
+      <Flex align='center' wrap={{base: 'wrap', md: 'nowrap'}} className='responsive_1440px'>
         <Box fontSize={0} flexBasis={{base: '100%', md: '45%'}}>
-          <Image src={female_professional_working} alt='A young female professional working in a cafe' priority />
+          <Image src={female_professional_working} alt='A young female professional working in a cafe' />
         </Box>
         <Spacer />
         <VStack spacing={{base: 9, md: 10}} align='start' flexBasis={{base: '100%', md: '40%'}} px={{base: 8, md: 0}} mt={{base: 9, md: 0}}>
@@ -22,20 +22,12 @@ export default function Business() {
             Own a School, CBT center or Cyber cafe? Run your business efficiently with our enterprise software while you make more money.
           </Text>
           <HStack spacing={4}>
-            <Link href='/contact-us'>
-              <a>
-                <Button type='button' variant='solid' iconSpacing={{md: 15}} rightIcon={<Icon as={PhoneIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                  Contact us                  
-                </Button>
-              </a>
-            </Link>
-            <Link href='/business'>
-              <a>
-                <Button type='button' variant='outline' iconSpacing={{md: 13}} rightIcon={<Icon as={PlusIcon} display={{base: 'none', md: 'inline-block'}} />}>
-                  Request a demo
-                </Button>
-              </a>
-            </Link>
+            <CustomLink href='/contact-us' type='button' variant='solid' iconSpacing={{md: 15}} rightIcon={<Icon as={PhoneIcon} display={{base: 'none', md: 'inline-block'}} />}>
+              Contact us                  
+            </CustomLink>
+            <CustomLink href='/business' type='button' variant='outline' iconSpacing={{md: 13}} rightIcon={<Icon as={PlusIcon} display={{base: 'none', md: 'inline-block'}} />}>
+              Request a demo
+            </CustomLink>
           </HStack>
         </VStack>
       </Flex>

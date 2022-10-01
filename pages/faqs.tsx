@@ -23,7 +23,7 @@ const FAQs: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
   return (
     <Page title="Frequently Asked Questions | Scholarly" description="See a list of answers to the most popular questions asked by our users about our products and services">
       <Box as="section" px={[5, "10%", 10, 10, "10%"]} pt={{base: 14, md: 20}} pb={16} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
-        <Tabs variant='unstyled' isLazy>
+        <Tabs variant='unstyled' isLazy className='responsive_1440px'>
           <Flex wrap={{base: "wrap", md: "nowrap"}}>
             <Box flexBasis={{base: "100%", md: "40%"}} mb={{base: 10, md: 0}}>
               <TabList mb={8} color="white">

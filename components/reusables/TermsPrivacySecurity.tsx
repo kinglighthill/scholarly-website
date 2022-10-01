@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Box, Flex, ListItem, OrderedList, Spacer, Text, VStack } from "@chakra-ui/react";
 import { TermsPrivacySecurityProps } from "../../types/components/reusables/terms_privacy_security";
 import parse, { domToReact, HTMLReactParserOptions, Element } from 'html-react-parser';
+import CustomLink from "./CustomLink";
 
 export default function TermsPrivacyService({ page, title, content }: TermsPrivacySecurityProps) {
   const parserOptions: HTMLReactParserOptions = {
@@ -21,19 +21,19 @@ export default function TermsPrivacyService({ page, title, content }: TermsPriva
 
   return (
     <Box as="section" pl={[5, "10%", 0]} pr={[5, "10%"]} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
-      <Flex>
+      <Flex className='responsive_1440px'>
         {/* Navigation for devices above 768px */}
         <Box display={{base: "none", md: "block"}} pt={12} color="white" flexBasis="22%" bg="rgba(255, 255, 255, 0.2)">
-          <Text py={3} pl={4} bg={page === 'terms' ? "rgba(255, 255, 255, 0.3)" : "none"}>
-            <Link href="/terms">
-              <a style={{display: "block"}}>Terms</a>
-            </Link>
-          </Text>
-          <Text py={3} pl={4} bg={page === 'privacy' ? "rgba(255, 255, 255, 0.3)" : "none"}>
-            <Link href="/privacy">
-              <a style={{display: "block"}}>Privacy</a>
-            </Link>
-          </Text>
+          <CustomLink href="/terms" display="block" _hover={{textDecor: 'none'}}
+            py={3} pl={4} bg={page === 'terms' ? "rgba(255, 255, 255, 0.3)" : "none"}
+          >
+            Terms
+          </CustomLink>
+          <CustomLink href="/privacy" display="block" _hover={{textDecor: 'none'}}
+            py={3} pl={4} bg={page === 'privacy' ? "rgba(255, 255, 255, 0.3)" : "none"}
+          >
+            Privacy
+          </CustomLink>
         </Box>
 
         <Spacer />
@@ -48,12 +48,12 @@ export default function TermsPrivacyService({ page, title, content }: TermsPriva
 
       {/* Navigation for devices below 768px */}
       <VStack spacing={6} textAlign="center" w="full" mb={20} display={{md: "none"}}>
-        <Text color="brand.yellow" fontWeight="medium" display={page === "terms" ? "none" : "block"}>
-          <Link href="/terms">Terms</Link>
-        </Text>
-        <Text color="brand.yellow" fontWeight="medium" display={page === "privacy" ? "none" : "block"}>
-          <Link href="/privacy">Privacy</Link>
-        </Text>
+        <CustomLink href="/terms" color="brand.yellow" fontWeight="medium" display={page === "terms" ? "none" : "block"}>
+          Terms
+        </CustomLink>
+        <CustomLink href="/privacy" color="brand.yellow" fontWeight="medium" display={page === "privacy" ? "none" : "block"}>
+          Privacy
+        </CustomLink>
       </VStack>
     </Box>
   )

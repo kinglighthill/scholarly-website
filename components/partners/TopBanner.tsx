@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { Box, VStack, Text, Button, HStack, FormControl, FormLabel, Input, Icon, FormErrorMessage } from "@chakra-ui/react";
+import { Box, VStack, Text, Button, HStack, FormControl, FormLabel, Input, FormErrorMessage } from "@chakra-ui/react";
 import classes from "../../styles/Partners.module.css";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import useFeatureNotifier from '../../hooks/useFeatureNotifier';
@@ -9,7 +8,7 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
 
   return (
     <Box as="section" className={classes.top_banner}>
-      <VStack spacing={[8, '51px']} m='auto' maxW='530px' align={['start', 'center']}>
+      <VStack spacing={[8, '51px']} m='auto' maxW='530px' align={['start', 'center']} className='responsive_1440px'>
         <Text fontWeight='black' fontSize={['4xl', '5xl']} textAlign={['left', 'center']} lineHeight='120.5%'>
           <Text as='span' color='brand.yellow'>Resell </Text>
           <Text as='span' color='brand.lime.500'>Activation Pins, </Text>
@@ -17,7 +16,7 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
           <Text as='span' color='brand.lime.500'>Profit</Text>
         </Text>
         <Text fontSize={[16, 20]} maxW='470px' color='brand.lime.700' textAlign={['left', 'center']} lineHeight='144%' fontWeight={450}>
-          Make Money by buying Activation Pins and reselling to Customers
+          Earn profit by reselling discounted activation pins
         </Text>
         <Box w='full' textAlign={['left', 'center']}>
           <Text color='#A6B1AA' mb={2}>Partners Program currently unavailable</Text>
@@ -39,13 +38,9 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
           <Button type="button" variant='solid' onClick={openSignUp} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
             Sign up
           </Button>
-          <Link href='/apps/android'>
-            <a>
-              <Button type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
-                Download App
-              </Button>
-            </a>
-          </Link>
+          <CustomLink href='/apps/android' type="button" variant='outline' iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
+            Download App
+          </CustomLink>
         </HStack> */}
       </VStack>
     </Box>
