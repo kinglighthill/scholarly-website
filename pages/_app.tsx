@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from '../theme';
 import * as gtag from '../lib/gtag';
+import FaqsProvider from '../context/FaqsContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -45,7 +46,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
+        <FaqsProvider>
+          <Component {...pageProps} />
+        </FaqsProvider>
       </ChakraProvider>
     </>
   )
