@@ -13,8 +13,8 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
         <DrawerCloseButton as={XIcon} color='brand.lime.700' _hover={{bgColor: 'brand.lime.50'}} />
         <DrawerBody px={9} pb={9} pt='75px'>
           <VStack spacing={10} align='start'>
-            <CustomLink href='/students' color='brand.lime.700' fontSize={20}>Students</CustomLink>
-            <CustomLink href='/partners' color='brand.lime.700' fontSize={20}>Partners</CustomLink>
+            <CustomLink href='/students' prefetch={false} color='brand.lime.700' fontSize={20}>Students</CustomLink>
+            <CustomLink href='/partners' prefetch={false} color='brand.lime.700' fontSize={20}>Partners</CustomLink>
             <CustomLink href='/business' color='brand.lime.700' fontSize={20}>Business</CustomLink>
             <Accordion w='full' allowToggle>
               <AccordionItem border='none'>
@@ -26,7 +26,7 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
                 </h2>
                 <AccordionPanel pt={4} pb={0} pl={2} pr={0}>
                   <List spacing={8}>
-                    <CustomLink href='/apps/android' display='inline-block'>
+                    <CustomLink href='/apps/android' prefetch={false} display='inline-block'>
                       <ListItem>
                         <HStack spacing={3.5}>
                           <BoxWithPlaystoreIcon />
@@ -38,7 +38,7 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
                       </ListItem>
                     </CustomLink>
 
-                    <CustomLink href='/apps/desktop' display='inline-block'>
+                    <CustomLink href='/apps/desktop' prefetch={false} display='inline-block'>
                       <ListItem>
                         <HStack spacing={3.5}>
                           <BoxWithWindowsIcon />
@@ -51,7 +51,7 @@ export default function NavigationDrawer({ isOpen, onClose, hamburgerRef }: Navi
                       </ListItem>
                     </CustomLink>
 
-                    <CustomLink href='/apps/ios' display='inline-block'>
+                    <CustomLink href='/apps/ios' prefetch={false} display='inline-block'>
                       <ListItem>
                         <HStack spacing={3.5}>
                           <BoxWithAppstoreIcon />

@@ -16,7 +16,7 @@ export default function ExamApps() {
           <Text as='h1' color='brand.lime.700' mb={3} fontSize={[23, 25]} fontWeight='bold'>Over 30+ Exam Apps</Text>
           <Text color='brand.lime.700' fontSize={16}>Download apps for UTME, WASSCE, NECO, Post UTME, BECE etc.</Text>
         </Box>
-        <CustomLink href='/apps/android' type='button' variant='solid' fontSize={16} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+        <CustomLink href='/apps/android' prefetch={false} type='button' variant='solid' fontSize={16} iconSpacing={{md: 4}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
           See Apps
         </CustomLink>
       </VStack>

@@ -30,7 +30,7 @@ export default function Students() {
           <Text color='brand.lime.700' fontSize={{base: 16, md: 20}} textAlign={{base: 'center', md: 'left'}}>
             Over 1 Million students use over 30 scholarly apps to access high quality academic resource and content.
           </Text>
-          <CustomLink href='/apps/android' type='button' variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} mt={0.5} />}>
+          <CustomLink href='/apps/android' prefetch={false} type='button' variant='solid' iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} mt={0.5} />}>
             See Apps
           </CustomLink>
         </VStack>

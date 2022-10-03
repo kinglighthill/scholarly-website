@@ -25,7 +25,7 @@ const sliderItems = sliderDetails.map(item => {
       <VStack spacing={8} align='start' flexBasis='42%'>
         <Text as='h2' color='brand.lime.700' fontSize={{base: 31, md: 25, lg: 31}} fontWeight='bold'>{item.headline}</Text>
         <Text color='brand.lime.700'>{item.description}</Text>
-        <CustomLink href='/apps/android' type='button' variant="solid" iconSpacing={5} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
+        <CustomLink href='/apps/android' prefetch={false} type='button' variant="solid" iconSpacing={5} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
           Download App
         </CustomLink>
       </VStack>

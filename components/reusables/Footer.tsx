@@ -92,8 +92,8 @@ export default function Footer() {
           <Text>Copyright 2020 Scholarly educational software, Inc. All Rights reserved</Text>
           <Spacer />
           <HStack spacing={8}>
-            <CustomLink href='/privacy'>Privacy</CustomLink>
-            <CustomLink href='/terms'>Terms of use</CustomLink>
+            <CustomLink href='/privacy' prefetch={false}>Privacy</CustomLink>
+            <CustomLink href='/terms' prefetch={false}>Terms of use</CustomLink>
           </HStack>
         </Flex>
       </Box>

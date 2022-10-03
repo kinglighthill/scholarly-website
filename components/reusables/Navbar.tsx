@@ -26,8 +26,8 @@ export default function Navbar() {
           <Spacer />
 
           <HStack spacing={{base: 25, xl: 51}} display={{base: 'none', lg: 'flex'}} className={classes.desktop_nav}>
-            <CustomLink href='/students' color='brand.lime.500' fontWeight='medium'>Students</CustomLink>
-            <CustomLink href='/partners' color='brand.lime.500' fontWeight='medium'>Partners</CustomLink>
+            <CustomLink href='/students' prefetch={false} color='brand.lime.500' fontWeight='medium'>Students</CustomLink>
+            <CustomLink href='/partners' prefetch={false} color='brand.lime.500' fontWeight='medium'>Partners</CustomLink>
             <CustomLink href='/business' color='brand.lime.500' fontWeight='medium'>Business</CustomLink>
             {/* Menu is placed within Box as a workaround to the warning that Chakra UI gives when Menu is a direct child of HStack */}
             <Box>
@@ -37,7 +37,7 @@ export default function Navbar() {
                 </MenuButton>
                 <MenuList zIndex={3} borderRadius={16} p={6} boxShadow='0px 0px 20px rgba(0, 0, 0, 0.15)'>
                   <MenuItem mb={6}>
-                    <CustomLink href='/apps/android'>
+                    <CustomLink href='/apps/android' prefetch={false}>
                       <HStack spacing={3.5} w='full'>
                         <BoxWithPlaystoreIcon />
                         <Box color='brand.green'>
@@ -48,7 +48,7 @@ export default function Navbar() {
                     </CustomLink>
                   </MenuItem>
                   <MenuItem mb={6}>
-                    <CustomLink href='/apps/desktop'>
+                    <CustomLink href='/apps/desktop' prefetch={false}>
                       <HStack spacing={3.5} w='full'>
                         <BoxWithWindowsIcon />
                         <Box color='brand.green'>
@@ -60,7 +60,7 @@ export default function Navbar() {
                     </CustomLink>
                   </MenuItem>
                   <MenuItem>
-                    <CustomLink href='/apps/ios'>
+                    <CustomLink href='/apps/ios' prefetch={false}>
                       <HStack spacing={3.5} w='full'>
                         <BoxWithAppstoreIcon />
                         <Box color='brand.green'>

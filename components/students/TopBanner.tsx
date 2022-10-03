@@ -37,7 +37,7 @@ export default function TopBanner() {
             </Box>
           </VStack>
           <HStack spacing={4}>
-            <CustomLink href='/apps/android' type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
+            <CustomLink href='/apps/android' prefetch={false} type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
               Download App
             </CustomLink>
             {/* <Button type='button' variant='outline' display={['none', 'inline-flex']} onClick={onOpen} iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>

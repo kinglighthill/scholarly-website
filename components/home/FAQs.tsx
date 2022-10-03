@@ -36,7 +36,7 @@ export default function FAQs({ data }: { data: FAQ[]}) {
       </Tabs>
 
       <Box textAlign='center' mt={9} className='responsive_1440px'>
-        <CustomLink href='/faqs' type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
+        <CustomLink href='/faqs' prefetch={false} type='button' variant='solid' iconSpacing={4} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>
           View All
         </CustomLink>
       </Box>

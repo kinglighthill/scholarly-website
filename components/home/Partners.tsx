@@ -54,10 +54,10 @@ export default function Partners() {
             </HStack>
           </VStack>
           <HStack spacing={{base: 5, md: "50px"}} justify={{base: 'center', md: 'initial'}}>
-            <CustomLink href='/partners' type="button" variant="outline" iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+            <CustomLink href='/partners' prefetch={false} type="button" variant="outline" iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
               Learn More
             </CustomLink>
-            {/* <CustomLink href='/apps/android' type="button" variant="solid" iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
+            {/* <CustomLink href='/apps/android' prefetch={false} type="button" variant="solid" iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={{base: 'none', md: 'inline-block'}} />}>
               Download App
             </CustomLink> */}
           </HStack>
