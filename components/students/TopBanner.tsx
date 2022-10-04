@@ -1,12 +1,21 @@
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Flex, VStack, Text, Box, HStack, Spacer, Icon, useDisclosure } from '@chakra-ui/react';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import green_pattern from '../../public/green_pattern.svg';
 import { BoxWithJambIcon, BoxWithNecoIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
 import Label from '../reusables/Label';
-import BuyPin from '../reusables/BuyPin';
-import CartProvider from '../../context/CartContext';
 import CustomLink from '../reusables/CustomLink';
+// import BuyPin from '../reusables/BuyPin';
+// import CartProvider from '../../context/CartContext';
+
+const CartProvider = dynamic(() =>
+  import("../../context/CartContext")
+);
+
+const BuyPin = dynamic(() =>
+  import("../reusables/BuyPin")
+);
 
 export default function TopBanner() {
   const { isOpen, onOpen, onClose } = useDisclosure();

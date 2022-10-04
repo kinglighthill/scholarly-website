@@ -1,11 +1,24 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Box, HStack, Icon, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@heroicons/react/outline';
 import activation_pins from '../../public/activation_pins.webp';
-import CartProvider from '../../context/CartContext';
-import BuyPin from '../reusables/BuyPin';
-import PinOutlets from '../reusables/PinOutlets';
+// import CartProvider from '../../context/CartContext';
+// import BuyPin from '../reusables/BuyPin';
+// import PinOutlets from '../reusables/PinOutlets';
 import CustomLink from '../reusables/CustomLink';
+
+const CartProvider = dynamic(() =>
+  import("../../context/CartContext")
+);
+
+const BuyPin = dynamic(() =>
+  import("../reusables/BuyPin")
+);
+
+const PinOutlets = dynamic(() =>
+  import("../reusables/PinOutlets")
+);
 
 export default function ActivationPins() {
   const { isOpen: isSalesOuletsOpen, onOpen: openSalesOutlets, onClose: closeSalesOutlets } = useDisclosure();
