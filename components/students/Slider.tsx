@@ -6,7 +6,7 @@ import classes from '../../styles/Students.module.css';
 import notes from '../../public/notes.webp';
 import scholarly_students_demo2 from '../../public/scholarly_students_demo2.webp';
 import syllabus from '../../public/syllabus.webp';
-import AliceCarousel, { EventObject } from 'react-alice-carousel';
+import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { SliderDetail } from '../../types/components/students/slider';
 import CustomLink from '../reusables/CustomLink';

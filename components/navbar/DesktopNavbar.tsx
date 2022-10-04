@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Link as ChakraLink, Menu, MenuButton, Icon, MenuList, MenuItem, Spacer, Text } from '@chakra-ui/react';
+import { Box, HStack, Link as ChakraLink, Menu, MenuButton, Icon, MenuList, MenuItem, Spacer, Text } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { BoxWithPlaystoreIcon, BoxWithWindowsIcon, BoxWithAppstoreIcon } from '../reusables/BoxWithIcon';
 import CustomLink from '../reusables/CustomLink';

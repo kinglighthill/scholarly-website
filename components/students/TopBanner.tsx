@@ -6,8 +6,6 @@ import green_pattern from '../../public/green_pattern.svg';
 import { BoxWithJambIcon, BoxWithNecoIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
 import Label from '../reusables/Label';
 import CustomLink from '../reusables/CustomLink';
-// import BuyPin from '../reusables/BuyPin';
-// import CartProvider from '../../context/CartContext';
 
 const CartProvider = dynamic(() =>
   import("../../context/CartContext")

@@ -3,9 +3,6 @@ import Image from 'next/image';
 import { Box, HStack, Icon, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@heroicons/react/outline';
 import activation_pins from '../../public/activation_pins.webp';
-// import CartProvider from '../../context/CartContext';
-// import BuyPin from '../reusables/BuyPin';
-// import PinOutlets from '../reusables/PinOutlets';
 import CustomLink from '../reusables/CustomLink';
 
 const CartProvider = dynamic(() =>
