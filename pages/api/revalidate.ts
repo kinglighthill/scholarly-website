@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     if (typeof path === 'string') {
       await res.revalidate(path);
-      return res.json({ revalidated: true });
+      return res.json({ revalidated: true, message: 'Page successfully revalidated' });
     }
   } catch (err) {
     // If there was an error, Next.js will continue
