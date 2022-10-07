@@ -20,10 +20,10 @@ const variants: Variants = {
   }
 }
 
-export default function CustomLink({ children, href, type = 'text', variant = 'solid', leftIcon, rightIcon, iconSpacing, ...props }: CustomLinkProps) {
+export default function CustomLink({ children, href, prefetch, type = 'text', variant = 'solid', leftIcon, rightIcon, iconSpacing, ...props }: CustomLinkProps) {
   if (type === 'text') {
     return (
-      <Link href={href} passHref>
+      <Link href={href} prefetch={prefetch} passHref>
         <ChakraLink {...props}>{children}</ChakraLink>
       </Link>
     )
@@ -31,7 +31,7 @@ export default function CustomLink({ children, href, type = 'text', variant = 's
 
   if (type === 'button') {
     return (
-      <Link href={href} passHref>
+      <Link href={href} prefetch={prefetch} passHref>
         <ChakraLink display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium'
           verticalAlign='middle' px={4} h={10} borderRadius={4} {...variants[variant]} {...props}
         >

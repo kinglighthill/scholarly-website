@@ -3,6 +3,7 @@ import { Box, Flex, Spacer, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStac
 import Questions from "../components/faqs/Questions";
 import Page from "../components/reusables/Page";
 import { fetchContent } from '../services/fetch_content.service';
+import { useFaqsContext } from '../context/FaqsContext';
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
@@ -19,11 +20,12 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const FAQs: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { data } = props;
+  const [faqsSection] = useFaqsContext();
   
   return (
     <Page title="Frequently Asked Questions | Scholarly" description="See a list of answers to the most popular questions asked by our users about our products and services">
       <Box as="section" px={[5, "10%", 10, 10, "10%"]} pt={{base: 14, md: 20}} pb={16} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
-        <Tabs variant='unstyled' isLazy className='responsive_1440px'>
+        <Tabs variant='unstyled' isLazy defaultIndex={faqsSection} className='responsive_1440px'>
           <Flex wrap={{base: "wrap", md: "nowrap"}}>
             <Box flexBasis={{base: "100%", md: "40%"}} mb={{base: 10, md: 0}}>
               <TabList mb={8} color="white">

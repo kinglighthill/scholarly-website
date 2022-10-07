@@ -1,12 +1,19 @@
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Flex, VStack, Text, Box, HStack, Spacer, Icon, useDisclosure } from '@chakra-ui/react';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import green_pattern from '../../public/green_pattern.svg';
 import { BoxWithJambIcon, BoxWithNecoIcon, BoxWithWaecIcon } from '../reusables/BoxWithIcon';
 import Label from '../reusables/Label';
-import BuyPin from '../reusables/BuyPin';
-import CartProvider from '../../context/CartContext';
 import CustomLink from '../reusables/CustomLink';
+
+const CartProvider = dynamic(() =>
+  import("../../context/CartContext")
+);
+
+const BuyPin = dynamic(() =>
+  import("../reusables/BuyPin")
+);
 
 export default function TopBanner() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -37,7 +44,7 @@ export default function TopBanner() {
             </Box>
           </VStack>
           <HStack spacing={4}>
-            <CustomLink href='/apps/android' type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
+            <CustomLink href='/apps/android' prefetch={false} type='button' variant='solid' iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} mt={0.5} />}>
               Download App
             </CustomLink>
             {/* <Button type='button' variant='outline' display={['none', 'inline-flex']} onClick={onOpen} iconSpacing={15} rightIcon={<Icon as={ArrowNarrowRightIcon} />}>

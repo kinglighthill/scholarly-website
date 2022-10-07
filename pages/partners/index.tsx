@@ -1,4 +1,5 @@
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { Box, VStack, Text, Icon, HStack, Flex, Spacer, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
@@ -15,11 +16,14 @@ import megaphone2 from "../../public/megaphone2.webp";
 import yellow_pattern from "../../public/yellow_pattern.svg";
 import Step from "../../components/partners/Step";
 import { StepType } from "../../types/pages/partners";
-import PartnerSignup from '../../components/reusables/PartnerSignup';
 import Page from '../../components/reusables/Page';
 import { fetchContent } from '../../services/fetch_content.service';
 import { TestimonialProps } from '../../types/components/reusables/testimonials';
 import CustomLink from '../../components/reusables/CustomLink';
+
+const PartnerSignup = dynamic(() =>
+  import("../../components/reusables/PartnerSignup")
+);
 
 const steps: StepType[] = [
   { index: 1, title: "Sign up", description: "Create an account on the site or with the app.", icon: sign_up },
