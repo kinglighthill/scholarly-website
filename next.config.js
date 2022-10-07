@@ -5,6 +5,10 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const nextConfig = withBundleAnalyzer({
   reactStrictMode: true,
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
   images: {
     domains: ['play-lh.googleusercontent.com', 'firebasestorage.googleapis.com', 'blog.scholarly.africa'],
   },
