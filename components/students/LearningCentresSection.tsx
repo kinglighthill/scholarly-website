@@ -1,11 +1,15 @@
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Box, Flex, Icon, Spacer, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { LocationMarkerIcon } from '@heroicons/react/outline';
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
-import LearningCentres from '../reusables/LearningCentres';
 import lady_on_headphones_typing from '../../public/lady_on_headphones_typing.webp';
 import green_pattern from '../../public/green_pattern.svg';
 import CustomLink from '../reusables/CustomLink';
+
+const LearningCentres = dynamic(() =>
+  import("../reusables/LearningCentres")
+);
 
 export default function LearningCentresSection() {
   const { isOpen: isLearningCentresOpen, onOpen: openLearningCentres, onClose: closeLearningCentres } = useDisclosure();

@@ -1,12 +1,16 @@
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { Button, Icon, Text, VStack } from "@chakra-ui/react";
 import { ModalBody } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { ArrowNarrowLeftIcon } from "@heroicons/react/solid";
 import { BuyPinTabProps } from "../../types/components/reusables/buy_pin";
 import PayWithCard from "../payment/PayWithCard";
-import PayWithTransfer from "../payment/PayWithTransfer";
 import TransactionSuccessful from "../reusables/TransactionSuccessful";
+
+const PayWithTransfer = dynamic(() =>
+  import("../payment/PayWithTransfer")
+);
 
 export default function Pay({ changeTab }: BuyPinTabProps) {
   const [paymentStatus, setPaymentStatus] = useState<'pending' | 'successful'>('pending');
@@ -47,10 +51,12 @@ export default function Pay({ changeTab }: BuyPinTabProps) {
                 Pay with bank transfer
               </Tab>
             </TabList>
+
             <Button type="button" variant="unstyled" mx={5} mt={3} mb={6} onClick={() => changeTab("cart")}>
               <Icon as={ArrowNarrowLeftIcon} mr={2} verticalAlign="middle" mb={1} />
               Back to Cart
             </Button>
+            
             <TabPanels px={[5, 12]} pb={6}>
               <TabPanel p={0}>
                 <PayWithCard updatePaymentStatus={updatePaymentStatus} updateProvidedEmail={updateProvidedEmail} />

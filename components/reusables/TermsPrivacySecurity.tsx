@@ -24,12 +24,12 @@ export default function TermsPrivacyService({ page, title, content }: TermsPriva
       <Flex className='responsive_1440px'>
         {/* Navigation for devices above 768px */}
         <Box display={{base: "none", md: "block"}} pt={12} color="white" flexBasis="22%" bg="rgba(255, 255, 255, 0.2)">
-          <CustomLink href="/terms" display="block" _hover={{textDecor: 'none'}}
+          <CustomLink href="/terms" prefetch={false} display="block" _hover={{textDecor: 'none'}}
             py={3} pl={4} bg={page === 'terms' ? "rgba(255, 255, 255, 0.3)" : "none"}
           >
             Terms
           </CustomLink>
-          <CustomLink href="/privacy" display="block" _hover={{textDecor: 'none'}}
+          <CustomLink href="/privacy" prefetch={false} display="block" _hover={{textDecor: 'none'}}
             py={3} pl={4} bg={page === 'privacy' ? "rgba(255, 255, 255, 0.3)" : "none"}
           >
             Privacy
@@ -48,10 +48,10 @@ export default function TermsPrivacyService({ page, title, content }: TermsPriva
 
       {/* Navigation for devices below 768px */}
       <VStack spacing={6} textAlign="center" w="full" mb={20} display={{md: "none"}}>
-        <CustomLink href="/terms" color="brand.yellow" fontWeight="medium" display={page === "terms" ? "none" : "block"}>
+        <CustomLink href="/terms" prefetch={false} color="brand.yellow" fontWeight="medium" display={page === "terms" ? "none" : "block"}>
           Terms
         </CustomLink>
-        <CustomLink href="/privacy" color="brand.yellow" fontWeight="medium" display={page === "privacy" ? "none" : "block"}>
+        <CustomLink href="/privacy" prefetch={false} color="brand.yellow" fontWeight="medium" display={page === "privacy" ? "none" : "block"}>
           Privacy
         </CustomLink>
       </VStack>

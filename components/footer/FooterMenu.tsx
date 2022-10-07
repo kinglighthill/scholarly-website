@@ -9,7 +9,7 @@ export default function FooterMenu({ title, items }: FooterMenuProps) {
       <VStack spacing={4} align='start'>
         {items.map(item => (
           <Text key={item.name+item.url} fontWeight='light'>
-            <CustomLink href={item.url}>{item.name}</CustomLink>
+            <CustomLink href={item.url} prefetch={false}>{item.name}</CustomLink>
           </Text>
         ))}
       </VStack>

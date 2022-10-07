@@ -1,16 +1,19 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Box, Icon, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@heroicons/react/outline';
-import CbtCentres from '../reusables/CbtCentres';
 import cbt_centre from '../../public/cbt_centre.webp';
 import CustomLink from '../reusables/CustomLink';
+
+const CbtCentres = dynamic(() =>
+  import("../reusables/CbtCentres")
+);
 
 export default function CbtCentresSection() {
   const { isOpen: isCbtCentresOpen, onOpen: openCbtCentres, onClose: closeCbtCentres } = useDisclosure();
 
   return (
     <>
-    
       <VStack spacing={4} align={{base: "start", md: "center"}} h="100%">
         <Box fontSize={0}>
           <Image src={cbt_centre} alt="" />

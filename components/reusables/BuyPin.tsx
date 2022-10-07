@@ -1,10 +1,17 @@
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton } from "@chakra-ui/react";
 import SelectApps from "../buy_pin/SelectApps";
 import { ModalProps } from "../../types/generics/modal";
-import Cart from "../buy_pin/Cart";
-import Pay from "../buy_pin/Pay";
 import { BuyPinTabOptions } from "../../types/components/reusables/buy_pin";
+
+const Cart = dynamic(() =>
+  import("../buy_pin/Cart")
+);
+
+const Pay = dynamic(() =>
+  import("../buy_pin/Pay")
+);
 
 export default function BuyPin({ isOpen, onClose }: ModalProps) {
   const [tab, setTab] = useState<BuyPinTabOptions>("select-apps");

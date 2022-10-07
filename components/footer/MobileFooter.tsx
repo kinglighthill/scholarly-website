@@ -23,16 +23,16 @@ export default function MobileFooter() {
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
               <ListItem>
-                <CustomLink href='/apps/android'>Mobile Apps</CustomLink>
+                <CustomLink href='/apps/android' prefetch={false}>Mobile Apps</CustomLink>
               </ListItem> 
               <ListItem>
-                <CustomLink href='/apps/desktop'>Desktop Apps</CustomLink>
+                <CustomLink href='/apps/desktop' prefetch={false}>Desktop Apps</CustomLink>
               </ListItem> 
               <ListItem>
-                <CustomLink href='/partners'>Partners App</CustomLink>
+                <CustomLink href='/partners' prefetch={false}>Partners App</CustomLink>
               </ListItem> 
               <ListItem>
-                <CustomLink href='/business'>Enterprise Software</CustomLink>
+                <CustomLink href='/business' prefetch={false}>Enterprise Software</CustomLink>
               </ListItem> 
             </List>
           </AccordionPanel>
@@ -48,13 +48,13 @@ export default function MobileFooter() {
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
               <ListItem>
-                <CustomLink href='/about'>About</CustomLink>
+                <CustomLink href='/about' prefetch={false}>About</CustomLink>
               </ListItem> 
               <ListItem>
-                <CustomLink href='/faqs'>FAQs</CustomLink>
+                <CustomLink href='/faqs' prefetch={false}>FAQs</CustomLink>
               </ListItem> 
               <ListItem>
-                <CustomLink href='/contact-us'>Contact us</CustomLink>
+                <CustomLink href='/contact-us' prefetch={false}>Contact us</CustomLink>
               </ListItem> 
             </List>
           </AccordionPanel>
@@ -70,10 +70,10 @@ export default function MobileFooter() {
           <AccordionPanel pt={5} pb={0} px={0}>
             <List spacing={6} color='white' fontWeight='light'>
               <ListItem>
-                <CustomLink href='/terms'>Terms</CustomLink>
+                <CustomLink href='/terms' prefetch={false}>Terms</CustomLink>
               </ListItem> 
               <ListItem>
-                <CustomLink href='/privacy'>Privacy</CustomLink>
+                <CustomLink href='/privacy' prefetch={false}>Privacy</CustomLink>
               </ListItem> 
             </List>
           </AccordionPanel>

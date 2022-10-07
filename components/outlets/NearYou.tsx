@@ -1,9 +1,13 @@
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { Box, Button, HStack, Icon, Input, InputGroup, InputLeftElement, VStack, FormControl, FormLabel, FormHelperText } from '@chakra-ui/react';
 import { LocationMarkerIcon } from '@heroicons/react/outline';
-import AllOutlets from "./AllOutlets";
 import { Outlet } from '../../types/data';
 import useLocation from "../../hooks/useLocation";
+
+const AllOutlets = dynamic(() =>
+  import("./AllOutlets")
+);
 
 export default function NearYou({ allOutlets }: {allOutlets: Outlet[]}) {
   const [outlets, setOutlets] = useState<Outlet[]>([]);
