@@ -33,7 +33,7 @@ export default function CustomLink({ children, href, prefetch, type = 'text', va
     return (
       <Link href={href} prefetch={prefetch} passHref>
         <ChakraLink display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium'
-          verticalAlign='middle' px={4} h={10} borderRadius={4} {...variants[variant]} {...props}
+          whiteSpace='nowrap' verticalAlign='middle' px={4} h={10} borderRadius={4} {...variants[variant]} {...props}
         >
           {
             leftIcon && 
