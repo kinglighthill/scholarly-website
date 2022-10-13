@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from '../theme';
 import * as gtag from '../lib/gtag';
@@ -10,6 +11,7 @@ import FaqsProvider from '../context/FaqsContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const reCaptchaKey = useMemo(() => process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string, [])
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -45,11 +47,17 @@ function MyApp({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      <ChakraProvider theme={theme}>
-        <FaqsProvider>
-          <Component {...pageProps} />
-        </FaqsProvider>
-      </ChakraProvider>
+      <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}
+        scriptProps={{
+          defer: true,
+        }}
+      >
+        <ChakraProvider theme={theme}>
+          <FaqsProvider>
+            <Component {...pageProps} />
+          </FaqsProvider>
+        </ChakraProvider>
+      </GoogleReCaptchaProvider>
     </>
   )
 }
