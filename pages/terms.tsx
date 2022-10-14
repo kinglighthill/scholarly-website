@@ -21,7 +21,7 @@ const Terms: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) 
   const { data } = props;
 
   return (
-    <Page title="Terms of Service | Scholarly">
+    <Page title="Terms of Service | Scholarly Africa">
       <TermsPrivacySecurity page="terms" title="Terms of Service" content={data.content} />
     </Page>
   )

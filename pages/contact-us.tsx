@@ -8,7 +8,7 @@ import CustomLink from '../components/reusables/CustomLink';
 
 const ContactUs: NextPage = () => {
   return (
-    <Page title="Contact Us | Scholarly" description="Email: info@scholarly.africa, Phone: +2348136941462, WhatsApp: +2348136941462">
+    <Page title="Contact Us | Scholarly Africa" description="Email: info@scholarly.africa, Phone: +2348136941462, WhatsApp: +2348136941462">
       <Box as="section" px={[5, "10%", 10, "13%"]} pt={{base: 14, md: 28}} pb={28} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
         <Text as="h1" color="brand.yellow" mb={["18px", 9]} lineHeight="120%" fontSize={[31, 39]} fontWeight="bold" className='responsive_1440px'>
           Contact Us

@@ -68,7 +68,7 @@ const AppPage: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>
   const { data } = props;
   
   return (
-    <Page title='Scholarly Africa | Apps'>
+    <Page title={`Scholarly Africa | ${data.name}`} description={data.description}>
       <App appData={data} />
     </Page>
   )
