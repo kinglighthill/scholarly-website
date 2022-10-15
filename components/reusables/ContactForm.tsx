@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Button, FormControl, FormLabel, Icon, Input, Text, Textarea, VStack } from "@chakra-ui/react";
 import { ChevronRightIcon } from '@heroicons/react/outline';
 import useCustomToast from "../../hooks/useCustomToast";
-import { sendMessage } from "../../services/send_message";
 import { ContactFormProps, FormData } from "../../types/components/reusables/contact_form";
+import useRecaptcha from "../../hooks/useRecaptcha";
 
 export default function ContactForm({ textColor, defaultSubject }: ContactFormProps) {
   const makeToast = useCustomToast();
+  const verifyUser = useRecaptcha();
   const [loading, setLoading] = useState<boolean>(false);
   const initialFormData = {
     name: '',
@@ -26,10 +27,12 @@ export default function ContactForm({ textColor, defaultSubject }: ContactFormPr
 
     try {
       setLoading(true);
-      const response = await sendMessage(formData);
-      if (response.ok) {
+      const response = await verifyUser('newAppRequest', formData, '/sendMessage/send-message');
+      if (response?.ok) {
         makeToast('Request submitted successfully', "We'll notify you when we have an update.");
         setFormData(initialFormData);
+      } else {
+        makeToast('An error occured', "Please ensure that you're connected to the internet and try again.", 'error');
       }
     }
     catch (error) {

@@ -20,7 +20,7 @@ const AndroidApps: NextPage = (props: InferGetStaticPropsType<typeof getStaticPr
   const { data } = props;
 
   return (
-    <Page title='Scholarly Android Apps - 30+ Apps for android' description='Over 30+ offline android apps available for JAMB, WAEC, Post UTME, NECO, BECE exams, etc.'>
+    <Page title='Scholarly Android Apps - 30+ Apps for Android' description='Over 30+ offline android apps available for JAMB, WAEC, Post UTME, NECO, BECE exams, etc.'>
       <Apps apps_info={data} activeTab='android' />
     </Page>
   )
