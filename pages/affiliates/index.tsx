@@ -30,7 +30,7 @@ const steps: StepType[] = [
   { index: 2, title: "Verify identity", description: "Provide your BVN so that we can better understand who you are.", icon: verify_identity },
   { index: 3, title: "Find customers", description: "Search for students around you to sell and market the app to.", icon: find_customers },
   { index: 4, title: "Buy your first pin", description: "Buy a pin from the app at discounted rate.", icon: buy_pin },
-  { index: 5, title: "Sell your first pin", description: "When you sell a pin to a student, you earn profit.", icon: sell_pin },
+  { index: 5, title: "Sell your first pin", description: "When you sell a pin, you earn commission.", icon: sell_pin },
 ];
 
 export const getStaticProps: GetStaticProps = async () => {
