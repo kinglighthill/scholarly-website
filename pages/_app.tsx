@@ -47,11 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}
-        scriptProps={{
-          defer: true,
-        }}
-      >
+      <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey} scriptProps={{defer: true}}>
         <ChakraProvider theme={theme}>
           <FaqsProvider>
             <Component {...pageProps} />
