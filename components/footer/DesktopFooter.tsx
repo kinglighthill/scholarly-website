@@ -26,7 +26,7 @@ export default function DesktopFooter() {
           items={[
             { name: 'Mobile Apps', url: '/apps/android' },
             { name: 'Desktop Apps', url: '/apps/desktop' },
-            { name: 'Partner Apps', url: '/partners' },
+            { name: 'Affiliate Apps', url: '/affiliates' },
             { name: 'Enterprise Software', url: '/business' }
           ]}
         />

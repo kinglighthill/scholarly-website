@@ -1,6 +1,6 @@
 import { FormControl, FormErrorMessage, FormLabel, HStack, Input, PinInput, PinInputField, Text, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
-import { AuthInfoState, SignupLevelProps } from '../../types/components/reusables/partner_signup';
+import { AuthInfoState, SignupLevelProps } from '../../types/components/reusables/affiliate_signup';
 
 export default function PinSetup({ formData, updateFormData }: SignupLevelProps) {
   const authInfo = formData as AuthInfoState;
@@ -9,7 +9,7 @@ export default function PinSetup({ formData, updateFormData }: SignupLevelProps)
   const [pinsMatch, setPinsMatch] = useState<boolean>(true);
 
   const comparePins = (value: string) => {
-    if (authInfo.pin !== value) {
+    if (authInfo.app_lock_pin !== value) {
       setPinsMatch(false);
       return;
     }
@@ -22,7 +22,7 @@ export default function PinSetup({ formData, updateFormData }: SignupLevelProps)
         <FormControl isRequired>
           <FormLabel htmlFor="pin" color="brand.lime.700" fontSize={13} fontWeight="medium" mb={2}>Pin</FormLabel>
           <HStack spacing={4}>
-            <PinInput mask={hidePin} id="pin" value={authInfo.pin} focusBorderColor="brand.lime.500" onChange={(value) => updateFormData("pin", value)}>
+            <PinInput mask={hidePin} id="app_lock_pin" value={authInfo.app_lock_pin} focusBorderColor="brand.lime.500" onChange={(value) => updateFormData("app_lock_pin", value)}>
               <PinInputField />
               <PinInputField />
               <PinInputField />
@@ -36,8 +36,8 @@ export default function PinSetup({ formData, updateFormData }: SignupLevelProps)
         <FormControl isRequired isInvalid={!pinsMatch}>
           <FormLabel htmlFor="confirm-pin" color="brand.lime.700" fontSize={13} fontWeight="medium" mb={2}>Confirm Pin</FormLabel>
           <HStack spacing={4}>
-            <PinInput mask={hideConfirmPin} id="confirm-pin" value={authInfo.confirmPin} focusBorderColor="brand.lime.500"
-              onChange={(value) => updateFormData("confirmPin", value)} onComplete={value => comparePins(value)}
+            <PinInput mask={hideConfirmPin} id="app_lock_pin" value={authInfo.confirm_app_lock_pin} focusBorderColor="brand.lime.500"
+              onChange={(value) => updateFormData("confirm_app_lock_pin", value)} onComplete={value => comparePins(value)}
             >
               <PinInputField borderColor={!pinsMatch ? "brand.red" : "inherit"}  />
               <PinInputField borderColor={!pinsMatch ? "brand.red" : "inherit"} />

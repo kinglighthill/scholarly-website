@@ -1,5 +1,5 @@
 import { Box, Stack, Text } from "@chakra-ui/react";
-import { ReferralStepCardProps } from "../../types/components/partners/referral";
+import { ReferralStepCardProps } from "../../types/components/affiliates/referral";
 
 export default function ReferralStepCard({ index, title, description }: ReferralStepCardProps) {
   return (

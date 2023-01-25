@@ -19,7 +19,7 @@ export default function FAQs({ data }: { data: FAQ[]}) {
       >
         <TabList mb={9} color="brand.lime.700" justifyContent="center">
           <Tab pl={0} _selected={{pl: 4, borderRadius: 4, color: "white", bg: "brand.lime.500"}}>Students</Tab>
-          <Tab _selected={{borderRadius: 4, color: "white", bg: "brand.lime.500"}}>Partners</Tab>
+          <Tab _selected={{borderRadius: 4, color: "white", bg: "brand.lime.500"}}>Affiliates</Tab>
           <Tab _selected={{borderRadius: 4, color: "white", bg: "brand.lime.500"}}>Business</Tab>
         </TabList>
         <TabPanels>
@@ -27,7 +27,7 @@ export default function FAQs({ data }: { data: FAQ[]}) {
             <Questions questions={data} category="student" color="35, 61, 44" max={4} search={false} />
           </TabPanel>
           <TabPanel p={0}>
-            <Questions questions={data} category="partner" color="35, 61, 44" max={4} search={false} />
+            <Questions questions={data} category="affiliate" color="35, 61, 44" max={4} search={false} />
           </TabPanel>
           <TabPanel p={0}>
             <Questions questions={data} category="business" color="35, 61, 44" max={4} search={false}  />

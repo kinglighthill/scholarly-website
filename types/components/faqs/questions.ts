@@ -1,4 +1,4 @@
-type QuestionCategory = 'student' | 'partner' | 'business';
+type QuestionCategory = 'student' | 'affiliate' | 'business';
 
 export interface FAQ {
   user_type: QuestionCategory;

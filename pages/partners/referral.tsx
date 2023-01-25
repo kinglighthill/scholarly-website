@@ -2,19 +2,19 @@ import type { NextPage } from 'next';
 import { Box, Button, Flex, Icon, Stack, Text, useDisclosure } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import { DownloadIcon } from "@heroicons/react/solid";
-import ReferralStepCard from "../../components/partners/ReferralStepCard";
-import PartnerSignup from "../../components/reusables/PartnerSignup";
+import ReferralStepCard from "../../components/affiliates/ReferralStepCard";
+import AffiliateSignup from "../../components/reusables/AffiliateSignup";
 import Page from "../../components/reusables/Page";
 
-const PartnersReferral: NextPage = () => {
+const AffiliatesReferral: NextPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Page title="Refer A Partner and Earn Extra Income" description="Increase your revenue as a partner with our Partners Referral program. Earn monetary commission each time your referral makes a sale">
+    <Page title="Refer An Affiliate and Earn Extra Income" description="Increase your revenue as an affiliate with our Affiliates Referral program. Earn monetary commission each time your referral makes a sale">
       <Box as="section" px={[5, 7, "10%"]} pt={14} pb={24} bgColor="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
         <Stack direction="row" spacing={[3.5, 5, 20]} w="full" pl={[3.5, 5, 10]} py="18px" mb={12} borderRadius={10} bg="rgba(255, 255, 255, 0.1)" className='responsive_1440px'>
           <Stack direction="column" spacing={1.5} maxW={{lg: "60%"}}>
-            <Text as="h1" color="brand.yellow" fontSize={25} fontWeight="bold">Refer Partners and Earn Commission</Text>
+            <Text as="h1" color="brand.yellow" fontSize={25} fontWeight="bold">Refer Affiliates and Earn Commission</Text>
             <Text color="white">Each time your referral make a sale, you earn monetary commission loaded to your referral wallet.</Text>
           </Stack>
           <Box>
@@ -42,9 +42,9 @@ const PartnersReferral: NextPage = () => {
         </Flex>
       </Box>
       
-      <PartnerSignup isOpen={isOpen} onClose={onClose} />
+      <AffiliateSignup isOpen={isOpen} onClose={onClose} />
     </Page>
   )
 }
 
-export default PartnersReferral;
+export default AffiliatesReferral;

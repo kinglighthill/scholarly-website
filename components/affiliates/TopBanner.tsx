@@ -1,5 +1,5 @@
 import { Box, VStack, Text, Button, HStack, FormControl, FormLabel, Input, FormErrorMessage } from "@chakra-ui/react";
-import classes from "../../styles/Partners.module.css";
+import classes from "../../styles/Affiliates.module.css";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import useFeatureNotifier from '../../hooks/useFeatureNotifier';
 
@@ -19,7 +19,7 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
           Earn profit by reselling discounted activation pins
         </Text>
         <Box w='full' textAlign={['left', 'center']}>
-          <Text color='#A6B1AA' mb={2}>Partners Program currently unavailable</Text>
+          <Text color='#A6B1AA' mb={2}>Affiliates Program currently unavailable</Text>
           <Text color='brand.lime.500' mb={6}>Be the first to know when we launch</Text>
           <form aria-label="Join the waitlist" onSubmit={handleSubmit}>
             <HStack spacing={6} justify={['start', 'center']} align='start'>

@@ -2,7 +2,7 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import { Box, HStack, Text } from '@chakra-ui/react';
 import Business from '../components/home/Business';
 import Students from '../components/home/Students';
-import Partners from '../components/home/Partners';
+import Affiliates from '../components/home/Affiliates';
 import Testimonials, { Testimonial } from '../components/reusables/Testimonials';
 import TopBanner from '../components/home/TopBanner';
 import Page from '../components/reusables/Page';
@@ -40,7 +40,7 @@ const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
     >
       <TopBanner />
       <Students />
-      <Partners />
+      <Affiliates />
       <Business />
 
       {/* Statistics section */}
