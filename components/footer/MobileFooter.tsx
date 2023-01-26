@@ -93,7 +93,7 @@ export default function MobileFooter() {
                   <Box>
                     <HStack spacing={1.5} color='white'>
                       <Icon as={PhoneIcon} />
-                      <CustomLink href='tel:+23481-3694-1462'>+23481-3694-1462</CustomLink>
+                      <CustomLink href='tel:+23470-1739-9124'>+23470-1739-9124</CustomLink>
                     </HStack>
                     <HStack spacing={1.5} color='brand.yellow'>
                       <Icon as={AtSymbolIcon} />
