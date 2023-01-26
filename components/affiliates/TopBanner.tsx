@@ -2,6 +2,7 @@ import { Box, VStack, Text, Button, HStack, FormControl, FormLabel, Input, FormE
 import classes from "../../styles/Affiliates.module.css";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import useFeatureNotifier from '../../hooks/useFeatureNotifier';
+import GooglePlayDownloadBadge from "../reusables/GooglePlayDownloadBadge";
 
 export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
   const { email, emailError, loading, handleChange, handleSubmit } = useFeatureNotifier("partners-signup");
@@ -16,9 +17,12 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
           <Text as='span' color='brand.lime.500'>Profit</Text>
         </Text>
         <Text fontSize={[16, 20]} maxW='470px' color='brand.lime.700' textAlign={['left', 'center']} lineHeight='144%' fontWeight={450}>
-          Earn profit by reselling discounted activation pins
+          Earn commission when you sell Scholarly app activation pins
         </Text>
-        <Box w='full' textAlign={['left', 'center']}>
+        <Box maxW={{base: "150px", md: "177px"}}>
+          <GooglePlayDownloadBadge download_link="https://play.google.com/store/apps/details?id=com.scholarly.affiliate" width={177} height={52} />
+        </Box>
+        {/* <Box w='full' textAlign={['left', 'center']}>
           <Text color='#A6B1AA' mb={2}>Affiliates Program currently unavailable</Text>
           <Text color='brand.lime.500' mb={6}>Be the first to know when we launch</Text>
           <form aria-label="Join the waitlist" onSubmit={handleSubmit}>
@@ -33,7 +37,7 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
               <Button type="submit" variant="solid" isLoading={loading}>Get Notified</Button>
             </HStack>
           </form>
-        </Box>
+        </Box> */}
         {/* <HStack spacing={[4, 6]}>
           <Button type="button" variant='solid' onClick={openSignUp} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>
             Sign up
