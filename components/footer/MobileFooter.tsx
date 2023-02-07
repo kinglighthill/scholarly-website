@@ -29,7 +29,7 @@ export default function MobileFooter() {
                 <CustomLink href='/apps/desktop' prefetch={false}>Desktop Apps</CustomLink>
               </ListItem> 
               <ListItem>
-                <CustomLink href='/partners' prefetch={false}>Partners App</CustomLink>
+                <CustomLink href='/affiliates' prefetch={false}>Affiliates App</CustomLink>
               </ListItem> 
               <ListItem>
                 <CustomLink href='/business' prefetch={false}>Enterprise Software</CustomLink>
@@ -93,7 +93,7 @@ export default function MobileFooter() {
                   <Box>
                     <HStack spacing={1.5} color='white'>
                       <Icon as={PhoneIcon} />
-                      <CustomLink href='tel:+23481-3694-1462'>+23481-3694-1462</CustomLink>
+                      <CustomLink href='tel:+23470-1739-9124'>+23470-1739-9124</CustomLink>
                     </HStack>
                     <HStack spacing={1.5} color='brand.yellow'>
                       <Icon as={AtSymbolIcon} />

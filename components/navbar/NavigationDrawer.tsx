@@ -23,7 +23,7 @@ export default function NavigationDrawer() {
           <DrawerBody px={9} pb={9} pt='75px'>
             <VStack spacing={10} align='start'>
               <CustomLink href='/students' prefetch={false} color='brand.lime.700' fontSize={20}>Students</CustomLink>
-              <CustomLink href='/partners' prefetch={false} color='brand.lime.700' fontSize={20}>Partners</CustomLink>
+              <CustomLink href='/affiliates' prefetch={false} color='brand.lime.700' fontSize={20}>Affiliates</CustomLink>
               <CustomLink href='/business' color='brand.lime.700' fontSize={20}>Business</CustomLink>
               <Accordion w='full' allowToggle>
                 <AccordionItem border='none'>

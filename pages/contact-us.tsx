@@ -8,7 +8,7 @@ import CustomLink from '../components/reusables/CustomLink';
 
 const ContactUs: NextPage = () => {
   return (
-    <Page title="Contact Us | Scholarly Africa" description="Email: info@scholarly.africa, Phone: +2348136941462, WhatsApp: +2348136941462">
+    <Page title="Contact Us | Scholarly Africa" description="Email: info@scholarly.africa, Phone: +2347017399124, WhatsApp: +2347017399124">
       <Box as="section" px={[5, "10%", 10, "13%"]} pt={{base: 14, md: 28}} pb={28} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
         <Text as="h1" color="brand.yellow" mb={["18px", 9]} lineHeight="120%" fontSize={[31, 39]} fontWeight="bold" className='responsive_1440px'>
           Contact Us
@@ -20,7 +20,7 @@ const ContactUs: NextPage = () => {
               <Text color="brand.yellow" fontWeight={500}>Call Us</Text>
               <HStack spacing={3.5} color='white' fontSize={{base: 18, md: 25, lg: 31}} fontWeight={500}>
                 <Icon as={PhoneIcon} />
-                <CustomLink href='tel:+2348136941462'>08136941462</CustomLink>
+                <CustomLink href='tel:+2347017399124'>07017399124</CustomLink>
               </HStack>
             </VStack>
             <VStack spacing={2} align="start">
@@ -29,7 +29,7 @@ const ContactUs: NextPage = () => {
                 <Box fontSize={0} maxW={{base: "25px", md: "100%"}}>
                   <Image src={whatsapp} alt="WhatsApp Icon" />
                 </Box>
-                <ChakraLink isExternal href='https://wa.me/+2348136941462'>08136941462</ChakraLink>
+                <ChakraLink isExternal href='https://wa.me/+2347017399124'>07017399124</ChakraLink>
               </HStack>
             </VStack>
             <VStack spacing={2} align="start">
