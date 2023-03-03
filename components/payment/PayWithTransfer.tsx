@@ -44,7 +44,7 @@ export default function PayWithTransfer() {
       <AliceCarousel items={accountCards} autoPlay autoPlayInterval={5000} infinite mouseTracking disableButtonsControls />
       <VStack spacing={6} align="start">
         <Text color="brand.lime.700">
-          After payment, send a whatsapp message containing payment details to <ChakraLink href="https://wa.me/+2348136941462" target="_blank" aria-label='Send us a message on Whatsapp'>+2348136941462</ChakraLink> using the format below:
+          After payment, send a whatsapp message containing payment details to <ChakraLink href="https://wa.me/+2347017399124" target="_blank" aria-label='Send us a message on Whatsapp'>+2347017399124</ChakraLink> using the format below:
         </Text>
         <Box>
           <OrderedList>
@@ -63,7 +63,7 @@ export default function PayWithTransfer() {
           Receiving activation pin after payment confirmation may take up to 20 minutes
         </Text>
       </VStack>
-      <a href="https://wa.me/+2348136941462" target="_blank" rel="noreferrer" aria-label='Send us a message on Whatsapp'>
+      <a href="https://wa.me/+2347017399124" target="_blank" rel="noreferrer" aria-label='Send us a message on Whatsapp'>
         <Button type="button" variant="solid">I have paid</Button>
       </a>
     </VStack>

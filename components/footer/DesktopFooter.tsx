@@ -26,7 +26,7 @@ export default function DesktopFooter() {
           items={[
             { name: 'Mobile Apps', url: '/apps/android' },
             { name: 'Desktop Apps', url: '/apps/desktop' },
-            { name: 'Partner Apps', url: '/partners' },
+            { name: 'Affiliate Apps', url: '/affiliates' },
             { name: 'Enterprise Software', url: '/business' }
           ]}
         />
@@ -52,7 +52,7 @@ export default function DesktopFooter() {
               <Box>
                 <HStack spacing={1.5} color='white'>
                   <Icon as={PhoneIcon} />
-                  <CustomLink href='tel:+23481-3694-1462'>+23481-3694-1462</CustomLink>
+                  <CustomLink href='tel:+23470-1739-9124'>+23470-1739-9124</CustomLink>
                 </HStack>
                 <HStack spacing={1.5} color='brand.yellow'>
                   <Icon as={AtSymbolIcon} />

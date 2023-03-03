@@ -8,7 +8,7 @@ export default function DesktopNavbar() {
     <>
       <HStack spacing={{base: 25, xl: 51}} display={{base: 'none', lg: 'flex'}}>
         <CustomLink href='/students' prefetch={false} color='brand.lime.500' fontWeight='medium'>Students</CustomLink>
-        <CustomLink href='/partners' prefetch={false} color='brand.lime.500' fontWeight='medium'>Partners</CustomLink>
+        <CustomLink href='/affiliates' prefetch={false} color='brand.lime.500' fontWeight='medium'>Affiliates</CustomLink>
         <CustomLink href='/business' color='brand.lime.500' fontWeight='medium'>Business</CustomLink>
         {/* Menu is placed within Box as a workaround to the warning that Chakra UI gives when Menu is a direct child of HStack */}
         <Box>

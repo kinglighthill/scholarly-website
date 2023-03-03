@@ -30,7 +30,7 @@ const FAQs: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
             <Box flexBasis={{base: "100%", md: "40%"}} mb={{base: 10, md: 0}}>
               <TabList mb={8} color="white">
                 <Tab pl={0} _selected={{pl: 4, borderRadius: 4, bg: "#7EC594"}}>Students</Tab>
-                <Tab _selected={{borderRadius: 4, bg: "#7EC594"}}>Partners</Tab>
+                <Tab _selected={{borderRadius: 4, bg: "#7EC594"}}>Affiliates</Tab>
                 <Tab _selected={{borderRadius: 4, bg: "#7EC594"}}>Business</Tab>
               </TabList>
               <VStack spacing={{base: 4, md: 9}} align="start">
@@ -46,7 +46,7 @@ const FAQs: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
                 <Questions questions={data} category="student" color="255, 255, 255" />
               </TabPanel>
               <TabPanel p={0}>
-                <Questions questions={data} category="partner" color="255, 255, 255" />
+                <Questions questions={data} category="affiliate" color="255, 255, 255" />
               </TabPanel>
               <TabPanel p={0}>
                 <Questions questions={data} category="business" color="255, 255, 255" />

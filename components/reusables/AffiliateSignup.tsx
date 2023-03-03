@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Icon, HStack, StackDivider, Divider } from "@chakra-ui/react";
 import { Button, Text, VStack } from '@chakra-ui/react';
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
-import AccountCredentials from '../partner_signup/AccountCredentials';
-import ContactInfo from '../partner_signup/ContactInfo';
-import PersonalInfo from '../partner_signup/PersonalInfo';
-import PinSetup from '../partner_signup/PinSetup';
+import AccountCredentials from '../affiliate_signup/AccountCredentials';
+import ContactInfo from '../affiliate_signup/ContactInfo';
+import PersonalInfo from '../affiliate_signup/PersonalInfo';
+import PinSetup from '../affiliate_signup/PinSetup';
 import TransactionSuccessful from "./TransactionSuccessful";
 import { ArrowNarrowLeftIcon, ArrowNarrowRightIcon, CheckIcon } from "@heroicons/react/solid";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import { ModalProps } from "../../types/generics/modal";
-import { AccountCredentialsState, AuthInfoState, ContactInfoState, PersonalInfoState } from "../../types/components/reusables/partner_signup";
+import { AccountCredentialsState, AuthInfoState, ContactInfoState, PersonalInfoState } from "../../types/components/reusables/affiliate_signup";
+import { signup } from "../../services/signup.service";
 
 const tabData = [
   { label: "Personal", content: PersonalInfo },
@@ -21,31 +22,32 @@ const tabData = [
 
 const initialFormData = {
   personalInfo: {
-    firstName: '',
-    middleName: '',
-    lastName: '',
-    referralCode: '',
+    first_name: '',
+    middle_name: '',
+    last_name: '',
+    dob: '',
+    referrer_code: '',
   },
   accountCredentials: {
     email: '',
-    phoneNumber: '',
+    phone_number: '',
     password: '',
-    confirmPassword: ''
+    confirm_password: ''
   },
   contactInfo: {
-    country: '',
-    stateOfOrigin: '',
-    stateOfResidence: '',
+    country_id: '',
+    state_of_origin_id: '',
+    state_of_residence_id: '',
     address: ''
   },
   authInfo: {
-    pin: '',
-    confirmPin: '',
+    app_lock_pin: '',
+    confirm_app_lock_pin: '',
     bvn: ''
   }
 };
 
-export default function PartnerSignup({ isOpen, onClose }: ModalProps) {
+export default function AffiliateSignup({ isOpen, onClose }: ModalProps) {
   const [tabIndex, setTabIndex] = useState<number>(0);
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [personalInfo, setPersonalInfo] = useState<PersonalInfoState>(initialFormData.personalInfo);
@@ -72,21 +74,21 @@ export default function PartnerSignup({ isOpen, onClose }: ModalProps) {
   const disableButton = () => {
     // Disable button if any of the required input fields is empty, incomplete, or incorrect.
     if (tabIndex === 0) {
-      const { firstName, lastName } = personalInfo;
-      return firstName === '' || lastName === '';
+      const { first_name, last_name } = personalInfo;
+      return first_name === '' || last_name === '';
     }
     else if (tabIndex === 1) {
-      const { email, phoneNumber, password, confirmPassword } = accountCredentials;
+      const { email, phone_number, password, confirm_password } = accountCredentials;
       // Regex pattern coined from https://www.regular-expressions.info/email.html
-      const emailPattern = /^[A-Z0-9][A-Z0-9._%+-]?@(?:[A-Z0-9-]+\.)+[A-Z]{2,}$/i;
-      return Object.values(accountCredentials).includes('') || !(emailPattern.test(email)) || phoneNumber.length < 2 || password !== confirmPassword;
+      const emailPattern = /^[A-Z0-9][A-Z0-9._%+-]+?@(?:[A-Z0-9-]+\.)+[A-Z]{2,}$/i;
+      return Object.values(accountCredentials).includes('') || !(emailPattern.test(email)) || phone_number.length < 2 || password !== confirm_password;
     }
     else if (tabIndex === 2) {
       return Object.values(contactInfo).includes('');
     }
     else if (tabIndex === 3) {
-      const { pin, confirmPin, bvn } = authInfo;
-      return pin.length < 4 || confirmPin.length < 4 || pin !== confirmPin || bvn.length !== 11; 
+      const { app_lock_pin, confirm_app_lock_pin, bvn } = authInfo;
+      return app_lock_pin.length < 4 || confirm_app_lock_pin.length < 4 || app_lock_pin !== confirm_app_lock_pin || bvn.length !== 11; 
     }
   }
 
@@ -95,7 +97,7 @@ export default function PartnerSignup({ isOpen, onClose }: ModalProps) {
       setPersonalInfo(prev => ({...prev, [targetName]: targetValue}));
     }
     else if (tabIndex === 1) {
-      if (targetName === 'phoneNumber') {
+      if (targetName === 'phone_number') {
         // Allow only numbers and the '+' sign which is used to indicate the country's dial code to be entered.
         // Correspondignly, allow the '+' sign to be entered only as the first value.
         if (/[^0-9+]/.test(targetValue) || targetValue.includes('+', 1)) return;
@@ -115,10 +117,6 @@ export default function PartnerSignup({ isOpen, onClose }: ModalProps) {
   }
 
   const handleNavigation = () => {
-    if (tabIndex === tabData.length-1) {
-      setSubmitted(true);
-      return;
-    }
     setTabIndex(tabIndex+1);
   }
 
@@ -134,6 +132,48 @@ export default function PartnerSignup({ isOpen, onClose }: ModalProps) {
     resetForm();
     setTabIndex(0);
     onClose();
+  }
+// There is no bvn field in the POST data schema, There is no gender field in the design
+  const handleSubmit = async () => {
+    const { address } = contactInfo;
+    const { confirm_password, ...accCredRemaining } = accountCredentials;
+    const { app_lock_pin } = authInfo;
+    const payload = {
+      ...personalInfo, ...accCredRemaining, address, app_lock_pin,
+      country_id: 1,
+      state_of_origin_id: 1,
+      state_of_residence_id: 1,
+      dob: "2000-01-02",
+      gender: "m",
+      fcm_token: "",
+      device_info: {
+        name: "",
+        version: "",
+        api_level: 26,
+        platform: "",
+        form_factor: "web",
+        device_id: "",
+        app_version_name: ""
+      },
+      referrer_info: {
+        referrer_url: "",
+        referrer_click_time: 0,
+        app_install_time: 0,
+        instant_experience_launched: false
+      }
+    }
+
+    try {
+      const response = await signup(payload);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        setSubmitted(true);
+      }
+    }
+    catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -195,10 +235,15 @@ export default function PartnerSignup({ isOpen, onClose }: ModalProps) {
                 >
                   Back
                 </Button>
-                <Button type="button" variant="solid" mt={10} disabled={disableButton()} onClick={handleNavigation}
-                  iconSpacing={3.5} rightIcon={tabIndex !== tabData.length - 1 ? <Icon as={ArrowNarrowRightIcon} /> : undefined}
+                <Button type="button" variant="solid" display={tabIndex === tabData.length - 1 ? "none" : "inline-flex"} mt={10}
+                  disabled={disableButton()} onClick={handleNavigation} iconSpacing={3.5} rightIcon={<Icon as={ArrowNarrowRightIcon} />}
                 >
-                  {tabIndex === tabData.length - 1 ? "Verify" : "Next"}
+                  Next
+                </Button>
+                <Button type="button" variant="solid" display={tabIndex === tabData.length - 1 ? "inline-block" : "none"}
+                  mt={10} disabled={disableButton()} onClick={handleSubmit}
+                >
+                  Verify
                 </Button>
               </HStack>
             </ModalFooter>

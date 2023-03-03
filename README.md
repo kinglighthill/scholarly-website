@@ -19,4 +19,4 @@ For instance, if the REVALIDATION_SECRET_TOKEN is hZ5Tgy8MBu9Nw and the page wit
 <!-- Below is a list of pages using SSG and the data they fetch, as at the time of writing.
 
 * Homepage ('/') - used to fetch the testimonials and FAQs.
-* Students ('/students') and Partners ('/partners') - used to fetch the testimonials. -->
+* Students ('/students') and Affiliates ('/affiliates') - used to fetch the testimonials. -->
