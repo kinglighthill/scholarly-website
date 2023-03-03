@@ -11,7 +11,7 @@ import { ArrowNarrowLeftIcon, ArrowNarrowRightIcon, CheckIcon } from "@heroicons
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import { ModalProps } from "../../types/generics/modal";
 import { AccountCredentialsState, AuthInfoState, ContactInfoState, PersonalInfoState } from "../../types/components/reusables/affiliate_signup";
-import { signup } from "../../services/signup.service";
+// import { signup } from "../../services/signup.service";
 
 const tabData = [
   { label: "Personal", content: PersonalInfo },
@@ -163,17 +163,17 @@ export default function AffiliateSignup({ isOpen, onClose }: ModalProps) {
       }
     }
 
-    try {
-      const response = await signup(payload);
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-        setSubmitted(true);
-      }
-    }
-    catch (error) {
-      console.log(error)
-    }
+    // try {
+    //   const response = await signup(payload);
+    //   if (response.ok) {
+    //     const data = await response.json();
+    //     console.log(data);
+    //     setSubmitted(true);
+    //   }
+    // }
+    // catch (error) {
+    //   console.log(error)
+    // }
   }
 
   return (
