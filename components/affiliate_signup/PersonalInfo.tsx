@@ -5,7 +5,7 @@ export default function PersonalInfo({ formData, updateFormData }: SignupLevelPr
   const personalInfo = formData as PersonalInfoState;
 
   const handleChange = (e: React.ChangeEvent) => {
-    updateFormData(e.target.name, e.target.value)
+    updateFormData((e.target as HTMLInputElement).name, (e.target as HTMLInputElement).value)
   }
 
   const validateDate = () => {
