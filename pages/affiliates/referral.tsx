@@ -10,7 +10,12 @@ const AffiliatesReferral: NextPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Page title="Refer An Affiliate and Earn Extra Income" description="Increase your revenue as an affiliate with our Affiliates Referral program. Earn monetary commission each time your referral makes a sale">
+    <Page title="Refer An Affiliate and Earn Extra Income" description="Increase your revenue as an affiliate with our Affiliates Referral program. Earn monetary commission each time your referral makes a sale"
+      keywords={[
+        'referral commissions', 'refer to earn', 'increase your revenue', 'earn extra income', 'leads', 'customers', 'funnel',
+        'register as an affiliate', 'become an affiliate', 'resell activation pins', 'reward systems'
+      ]}
+    >
       <Box as="section" px={[5, 7, "10%"]} pt={14} pb={24} bgColor="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
         <Stack direction="row" spacing={[3.5, 5, 20]} w="full" pl={[3.5, 5, 10]} py="18px" mb={12} borderRadius={10} bg="rgba(255, 255, 255, 0.1)" className='responsive_1440px'>
           <Stack direction="column" spacing={1.5} maxW={{lg: "60%"}}>

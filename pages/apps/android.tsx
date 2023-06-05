@@ -20,7 +20,17 @@ const AndroidApps: NextPage = (props: InferGetStaticPropsType<typeof getStaticPr
   const { data } = props;
 
   return (
-    <Page title='Scholarly Android Apps - 30+ Apps for Android' description='Over 30+ offline android apps available for JAMB, WAEC, Post UTME, NECO, BECE exams, etc.'>
+    <Page title='Scholarly Android Apps - 30+ Apps for Android' description='Over 30+ offline android apps available for JAMB, WAEC, Post UTME, NECO, BECE exams, etc.'
+      keywords={[
+        'Learning', 'Learn', 'Study apps and notes', 'Students', 'Prepare for examinations', 'Ace your examinations', 'Android education apps', 'Desktop education apps', 'iOS education Apps', 'Playstore education apps', 'Google Education', 'Education blog',
+        'utme past questions', 'post utme past questions', 'waec past questions', 'jamb past questions', 'wassce past questions', 'putme past questions', 'unilag examinations', 'unizik examinations', 'unn examinatons', 'uniport examinatons', 'unilorin examinatons', 'oau examinatons', 'UI examinatons', 'imsu examinatons',
+        'absu examinatons', 'delsu examinations', 'futo examinations', 'futa examinations', 'futminna examinations', 'uniabuja examinations', 'unijos examinations', 'buk examinations', 'abu examinations', 'esut examinations',
+        'funaab examinations', 'NDA examinations', 'uniben examinations', 'rsust examinations', 'unical examinations', 'literature examinations', 'bece examinations', 'jhs examinations', 'neco examinations',
+        'unilag past questions', 'unizik past questions', 'unn examinatons', 'uniport examinatons', 'unilorin examinatons', 'oau examinatons', 'UI examinatons', 'imsu examinatons', 'absu examinatons',
+        'delsu past questions', 'futo past questions', 'futa past questions', 'futminna past questions', 'uniabuja past questions', 'unijos past questions', 'buk past questions', 'abu past questions', 'esut past questions',
+        'funaab past questions', 'NDA past questions', 'uniben past questions', 'rsust past questions', 'unical past questions', 'literature past questions', 'bece past questions', 'jhs past questions', 'neco past questions'
+      ]}
+    >
       <Apps apps_info={data} activeTab='android' />
     </Page>
   )

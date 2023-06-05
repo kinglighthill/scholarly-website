@@ -23,7 +23,13 @@ const FAQs: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
   const [faqsSection] = useFaqsContext();
   
   return (
-    <Page title="Frequently Asked Questions | Scholarly Africa" description="See a list of answers to the most popular questions asked by our users about our products and services">
+    <Page title="Frequently Asked Questions | Scholarly Africa" description="See a list of answers to the most popular questions asked by our users about our products and services"
+      keywords={[
+        'What is Scholarly all about?', 'How can I get Scholarly apps?', 'How can I activate Scholarly app?', 'How do I pay for activation pin?',
+        'How long does an activation last?', 'Can an activation pin be used on multiple devices?', 'Does Scholarly apps work with data subscription?',
+        "I can't find the app for a particular exam?", 'Does Scholarly apps work for iOS and PC?'
+      ]}
+    >
       <Box as="section" px={[5, "10%", 10, 10, "10%"]} pt={{base: 14, md: 20}} pb={16} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
         <Tabs variant='unstyled' isLazy defaultIndex={faqsSection} className='responsive_1440px'>
           <Flex wrap={{base: "wrap", md: "nowrap"}}>

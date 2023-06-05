@@ -41,7 +41,12 @@ const Students: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps
   }, []);
   
   return (
-    <Page title='Scholarly For Students - Smash Any Exam' description='Smash your JAMB, WAEC, Post UTME, NECO, BECE and other exams with Scholarly Apps. Over 1 million students use Scholarly apps to study for their exams. Available for Android, iOS and Desktop.'>
+    <Page title='Scholarly For Students - Smash Any Exam' description='Smash your JAMB, WAEC, Post UTME, NECO, BECE and other exams with Scholarly Apps. Over 1 million students use Scholarly apps to study for their exams. Available for Android, iOS and Desktop.'
+      keywords={[
+        'utme', 'jamb', 'wassce', 'waec', 'bece', 'post utme', 'exam novels', 'literature novels', 'Education', 'Learning', 'Learn', 'Study apps and notes', 'Students', 'Prepare for examinations', 'Ace your examinations',
+        'Android education apps', 'Desktop education apps', 'iOS education Apps', 'Playstore education apps', 'Google Education', 'Education blog', 'School',
+      ]}
+    >
       <TopBanner />
       <Slider />
 
