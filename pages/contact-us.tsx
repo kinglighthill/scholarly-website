@@ -8,7 +8,12 @@ import CustomLink from '../components/reusables/CustomLink';
 
 const ContactUs: NextPage = () => {
   return (
-    <Page title="Contact Us | Scholarly Africa" description="Email: info@scholarly.africa, Phone: +2347017399124, WhatsApp: +2347017399124">
+    <Page title="Contact Us | Scholarly Africa" description="Email: info@scholarly.africa, Phone: +2347017399124, WhatsApp: +2347017399124"
+      keywords={[
+        'Contact Scholarly', 'Get in touch with Scholarly', 'Contact Scholarly to make enquiries and resolve your complaints', 'Follow Scholarly on Instagram', 'Follow Scholarly on Twitter',
+        'Follow Scholarly on Facebook', 'Follow Scholarly on LinkedIn', 'Connect with Scholarly on WhatsApp', 'Send a meesage on WhatsApp to buy an activation pin',
+      ]}
+    >
       <Box as="section" px={[5, "10%", 10, "13%"]} pt={{base: 14, md: 28}} pb={28} bg="brand.lime.700" borderBottom="1px solid" borderColor="brand.yellow">
         <Text as="h1" color="brand.yellow" mb={["18px", 9]} lineHeight="120%" fontSize={[31, 39]} fontWeight="bold" className='responsive_1440px'>
           Contact Us

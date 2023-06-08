@@ -116,7 +116,7 @@ export default function MobileFooter() {
                 <ChakraLink href='https://www.instagram.com/scholarlyng/' isExternal aria-label='Visit our instagram page'>
                   <Image src={instagram} alt='Instagram Icon' />
                 </ChakraLink>
-                <ChakraLink href='https://wa.me/+2349061701939' isExternal aria-label='Send us a message on Whatsapp'>
+                <ChakraLink href='https://wa.me/+2347017399124' isExternal aria-label='Send us a message on Whatsapp'>
                   <Image src={whatsapp} alt='WhatsApp Icon' />
                 </ChakraLink>
               </HStack>

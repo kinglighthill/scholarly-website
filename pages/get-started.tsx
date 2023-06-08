@@ -12,7 +12,9 @@ const getStartedOptions: GetStartedCardProps[] = [
 
 const GetStarted: NextPage = () => {
   return (
-    <Page title="For Students, Affiliates and Businesses" description="Scholarly is available for students sitting for exams, affiliates who aim to make profit from reselling activation pins, and businesses who want to increase their revenues with our enterprise software.">
+    <Page title="For Students, Affiliates and Businesses" description="Scholarly is available for students sitting for exams, affiliates who aim to make profit from reselling activation pins, and businesses who want to increase their revenues with our enterprise software."
+      keywords={['students', 'affiliates', 'businesses', 'cbt centres', 'affiliate marketing', 'Scholarly affiliates']}
+    >
       <Box as="section" bg="brand.lime.700" m="auto" px={[5, "10%", 7, "10%"]} pt={12} pb={28} borderBottom="1px solid" borderColor="brand.yellow">
         <Text as="h1" mb={5} color="brand.yellow" fontSize={39} fontWeight="medium" className='responsive_1440px'>
           Get Started

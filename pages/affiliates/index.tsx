@@ -58,7 +58,12 @@ const Affiliates: NextPage = (props: InferGetStaticPropsType<typeof getStaticPro
   ));
 
   return (
-    <Page title='Scholarly For Affiliates - Resell Activation Pins, Make Profit' description='Sign up to become a certified Scholarly affiliate. Scholarly affiliates are licensed to distribute Scholarly apps and software while they make profit in turn.'>
+    <Page title='Scholarly For Affiliates - Resell Activation Pins, Make Profit' description='Sign up to become a certified Scholarly affiliate. Scholarly affiliates are licensed to distribute Scholarly apps and software while they make profit in turn.'
+      keywords={[
+        'referral commissions', 'refer to earn', 'affiliates', 'affiliate marketing', 'Scholarly affiliates app', 'leads', 'customers', 'funnel', 'register as an affiliate', 'become an affiliate',
+        'affiliates mobile wallet', 'resell activation pins', 'reward systems'
+      ]}
+    >
       {/* Banner Section */}
       <TopBanner openSignUp={onOpen} />
 

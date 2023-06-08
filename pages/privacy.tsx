@@ -21,7 +21,11 @@ const Privacy: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>
   const { data } = props;
 
   return (
-    <Page title="Privacy Policy | Scholarly Africa">
+    <Page title="Privacy Policy | Scholarly Africa"
+      keywords={[
+        "Scholarly's Privacy Policy", "Scholarly's licences", "Scholarly's data protection", "Scholarly's third-party affiliations"
+      ]}
+    >
       <TermsPrivacySecurity page="privacy" title="Privacy" content={data.content} />
     </Page>
   )

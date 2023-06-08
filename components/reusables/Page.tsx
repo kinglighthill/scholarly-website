@@ -3,12 +3,13 @@ import { PageProps } from "../../types/components/reusables/page";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
-export default function Page({ children, title, description }: PageProps) {
+export default function Page({ children, title, description, keywords }: PageProps) {
   return (
     <div>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="keywords" content={keywords?.join(', ')} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />

@@ -37,6 +37,10 @@ const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
   return (
     <Page title='Scholarly Africa | Improved Learning, Better Academic Performance'
       description='Ace your JAMB, WAEC, Post UTME, NECO, BECE, and other exams with Scholarly Apps. Over 1 million students use Scholarly apps to study for their exams. Available for Android, iOS and Desktop.'
+      keywords={[
+        'Scholarly', 'Scholarly Nigeria', 'Scholarly Africa', 'Student', 'Affiliates', 'Business', 'Education', 'Learning', 'Learn', 'Study', 'App', 'Android education apps', 'Desktop education apps', 'iOS education Apps', 'Playstore education apps',
+        'Google Education', 'Activation Pins', 'Education blog', 'School', 'UTME', 'Post UTME', 'JAMB', 'BECE', 'NECO', 'WAEC', 'Examination apps', 'Prepare for examinations', 'Ace your examinations', 'EdTech', 'Educational Technology'
+      ]}
     >
       <TopBanner />
       <Students />
