@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 
 export interface DownloadCardProps {
   store_icon: StaticImageData;
-  platform: string;
+  platform: "Android" | "iOS" | "Windows";
   app_rating: number;
   app_availability: boolean;
   download_link?: string;
