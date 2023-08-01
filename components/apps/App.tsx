@@ -42,7 +42,7 @@ export default function App({ appData }: AppProps) {
       </Box>
 
       {/* App Details */}
-      <Box as="section" py="50px" px={[5, 12, 12, "120px"]}>
+      <Box as="section" py={[8, "50px"]} px={[5, 12, 12, "120px"]}>
         <Stack direction="row" spacing={{base: 0, md: 10}} justify="center" className='responsive_1440px'>
           <Box display={{base: "none", md: "block"}} filter="drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25))">
             <Image src={appData.icon_url} alt={`${appData.name} Icon`} width={145} height={145} />
@@ -55,11 +55,11 @@ export default function App({ appData }: AppProps) {
       </Box>
 
       {/* Download Section */}
-      <Box as="section" py={8} px={[5, 12, 12, "120px"]} bg={{md: "linear-gradient(to bottom, white 50%, #FEF8E8 50%)"}}>
+      <Box as="section" pt={[6, 8]} pb={8} px={[5, 12, 12, "120px"]} bg={{md: "linear-gradient(to bottom, white 50%, #FEF8E8 50%)"}}>
         <Stack direction={{base: "column", md: "row"}} spacing={6} justify="center" className='responsive_1440px'>
           <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android} download_link={appData.download_link_android} />
-          <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios} />
-          <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop} />
+          {/* <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios} />
+          <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop} /> */}
         </Stack>
       </Box>
 
