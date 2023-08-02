@@ -4,14 +4,14 @@ import { Box, Button, Icon, Link as ChakraLink, Text, Tooltip, VStack } from "@c
 import { DownloadIcon, StarIcon } from "@heroicons/react/solid";
 import { StarIcon as OutlinedStarIcon } from "@heroicons/react/outline";
 import { DownloadCardProps } from "../../types/components/apps/download_card";
-import { useEffect, useRef } from "react";
+// import { useEffect, useRef } from "react";
 
 export default function DownloadCard({ store_icon, platform, app_rating, app_availability, download_link }: DownloadCardProps) {
-  const downloadBtn = useRef<HTMLButtonElement>(null);
+  // const downloadBtn = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    platform === "Android" && downloadBtn.current?.focus();
-  }, []);
+  // useEffect(() => {
+  //   platform === "Android" && downloadBtn.current?.focus();
+  // }, []);
   
   return (
     <Box maxW={{base: "full", md: "235px"}} py={[6, 8]} px={7} bg="white" borderRadius={8} boxShadow="0px 2.90312px 36.289px 17.4187px rgba(0, 0, 0, 0.08)">
@@ -28,8 +28,8 @@ export default function DownloadCard({ store_icon, platform, app_rating, app_ava
         <Tooltip hasArrow label={app_availability ? undefined : 'App is currently unavailable on this platform'} bg='blue.600' shouldWrapChildren>
           <Link href={download_link ? download_link : '/apps/android'} passHref>
             <ChakraLink isExternal _hover={{textDecoration: 'none'}}>
-              <Button disabled={!app_availability} type="button" variant="solid" ref={downloadBtn}
-                iconSpacing={{base: 0, md: 4}} rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}
+              <Button disabled={!app_availability} type="button" variant="solid" iconSpacing={{base: 0, md: 4}}
+                rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}
               >
                 Download
               </Button>
