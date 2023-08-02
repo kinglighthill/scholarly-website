@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Box, Flex, Spacer, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, Icon, Link as ChakraLink, Spacer, Stack, Text, VStack } from "@chakra-ui/react";
 import young_male_with_khaki_shirt from "../../public/young_male_with_khaki_shirt.webp";
 import scholarly_students_demo2 from "../../public/scholarly_students_demo2.webp";
 import appstore from "../../public/appstore.svg";
@@ -9,6 +9,8 @@ import DownloadCard from "./DownloadCard";
 import Testimonials, { Testimonial } from "../reusables/Testimonials";
 import { AppProps } from "../../types/components/apps/app";
 import { TestimonialProps } from "../../types/components/reusables/testimonials";
+import { DownloadIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 
 export default function App({ appData }: AppProps) {
   const generateLogoAlt = () => {
@@ -42,8 +44,8 @@ export default function App({ appData }: AppProps) {
       </Box>
 
       {/* App Details */}
-      <Box as="section" py={[8, "50px"]} px={[5, 12, 12, "120px"]}>
-        <Stack direction="row" spacing={{base: 0, md: 10}} justify="center" className='responsive_1440px'>
+      <Flex as="section" justify='space-between' align='center' py={[8, "50px"]} px={[5, 12, 12, "120px"]}>
+        <Stack flexBasis={{base: '100%', lg: '75%'}} direction="row" spacing={{base: 0, md: 10}} justify="center" className='responsive_1440px'>
           <Box display={{base: "none", md: "block"}} filter="drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.25))">
             <Image src={appData.icon_url} alt={`${appData.name} Icon`} width={145} height={145} />
           </Box>
@@ -52,7 +54,16 @@ export default function App({ appData }: AppProps) {
             <Text color="brand.lime.700" lineHeight="120%" fontSize={14} fontWeight="medium">{appData.description}</Text>
           </VStack>
         </Stack>
-      </Box>
+        <Link href={appData.download_link_android} passHref>
+          <ChakraLink isExternal display={{base: 'none', lg: 'inline'}} _hover={{textDecoration: 'none'}}>
+            <Button type="button" variant="solid" iconSpacing={{base: 0, md: 4}}
+              rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}
+            >
+              Download
+            </Button>
+          </ChakraLink>
+        </Link>
+      </Flex>
 
       {/* Download Section */}
       <Box as="section" pt={[6, 8]} pb={8} px={[5, 12, 12, "120px"]} bg={{md: "linear-gradient(to bottom, white 50%, #FEF8E8 50%)"}}>
