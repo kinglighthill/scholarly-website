@@ -11,12 +11,20 @@ import { AppProps } from "../../types/components/apps/app";
 import { TestimonialProps } from "../../types/components/reusables/testimonials";
 import { DownloadIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import * as fbq from '../../lib/fpixel';
+import { useRouter } from "next/router";
 
 export default function App({ appData }: AppProps) {
+  const router = useRouter();
+
   const generateLogoAlt = () => {
     const urlSecondHalf = appData.logo_url.split('exam_logos%2F')[1];
     const imageName = urlSecondHalf.slice(0, urlSecondHalf.indexOf('.'));
     return (imageName + ' Logo');
+  }
+
+  const handleLinkClick = () => {
+    fbq.customEvent('Download link click', { content_name: appData.name, content_ids: [router.query.app] })
   }
 
   const testimonials = appData.testimonials.map((testimonial: TestimonialProps, index: number) => (
@@ -54,7 +62,7 @@ export default function App({ appData }: AppProps) {
             <Text color="brand.lime.700" lineHeight="120%" fontSize={14} fontWeight="medium">{appData.description}</Text>
           </VStack>
         </Stack>
-        <Link href={appData.download_link_android} passHref>
+        <Link passHref href={appData.download_link_android} onClick={handleLinkClick}>
           <ChakraLink isExternal display={{base: 'none', lg: 'inline'}} _hover={{textDecoration: 'none'}}>
             <Button type="button" variant="solid" iconSpacing={{base: 0, md: 4}}
               rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}
@@ -68,7 +76,9 @@ export default function App({ appData }: AppProps) {
       {/* Download Section */}
       <Box as="section" pt={[6, 8]} pb={8} px={[5, 12, 12, "120px"]} bg={{md: "linear-gradient(to bottom, white 50%, #FEF8E8 50%)"}}>
         <Stack direction={{base: "column", md: "row"}} spacing={6} justify="center" className='responsive_1440px'>
-          <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android} download_link={appData.download_link_android} />
+          <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android}
+            download_link={appData.download_link_android} handleLinkClick={handleLinkClick}
+          />
           {/* <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios} />
           <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop} /> */}
         </Stack>

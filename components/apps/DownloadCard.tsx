@@ -6,7 +6,7 @@ import { StarIcon as OutlinedStarIcon } from "@heroicons/react/outline";
 import { DownloadCardProps } from "../../types/components/apps/download_card";
 // import { useEffect, useRef } from "react";
 
-export default function DownloadCard({ store_icon, platform, app_rating, app_availability, download_link }: DownloadCardProps) {
+export default function DownloadCard({ store_icon, platform, app_rating, app_availability, download_link, handleLinkClick }: DownloadCardProps) {
   // const downloadBtn = useRef<HTMLButtonElement>(null);
 
   // useEffect(() => {
@@ -26,7 +26,7 @@ export default function DownloadCard({ store_icon, platform, app_rating, app_ava
         </Box>
         <Text textAlign="center">Download for {platform}</Text>
         <Tooltip hasArrow label={app_availability ? undefined : 'App is currently unavailable on this platform'} bg='blue.600' shouldWrapChildren>
-          <Link href={download_link ? download_link : '/apps/android'} passHref>
+          <Link passHref href={download_link ? download_link : '/apps/android'} onClick={handleLinkClick}>
             <ChakraLink isExternal _hover={{textDecoration: 'none'}}>
               <Button disabled={!app_availability} type="button" variant="solid" iconSpacing={{base: 0, md: 4}}
                 rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}
