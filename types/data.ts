@@ -40,6 +40,16 @@ export interface Outlet {
 //   }[];
 // }
 
+interface FooterMenuItem {
+  name: string;
+  url: string;
+}
+
+export interface FooterMenu {
+  title: string;
+  items: FooterMenuItem[];
+}
+
 export interface TeamMember {
   name: string;
   position: string;

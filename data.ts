@@ -10,7 +10,7 @@
 import sales_outlet1 from "./public/sales_outlet1.webp";
 import sales_outlet2 from "./public/sales_outlet2.webp";
 import sales_outlet3 from "./public/sales_outlet3.webp";
-import { Outlet, Statistic } from "./types/data";
+import { FooterMenu, Outlet, Statistic } from "./types/data";
 import uche_umeh from './public/uche_umeh.webp';
 import kingsley_ugwudinso from './public/kingsley_ugwudinso.webp';
 import chinonso_umeh from './public/chinonso_umeh.webp';
@@ -114,6 +114,34 @@ export const lgas: string[] = ['Mushin', 'Victoria Island', 'Owerri West'];
 //     },
 //   ]
 // }
+
+export const footerMenu: FooterMenu[] = [
+  {
+    title: 'Products',
+    items: [
+      { name: 'Mobile Apps', url: '/apps/android' },
+      { name: 'Desktop Apps', url: '/apps/desktop' },
+      { name: 'Affiliate App', url: '/affiliates' },
+      { name: 'Enterprise Software', url: '/business' }
+    ]
+  },
+  {
+    title: 'Company',
+    items: [
+      { name: 'About', url: '/about' },
+      { name: 'Our Team', url: '/team' },
+      { name: 'FAQs', url: '/faqs' },
+      { name: 'Contact us', url: '/contact-us' },
+    ]
+  },
+  {
+    title: 'Legal',
+    items: [
+      { name: 'Terms', url: '/terms' },
+      { name: 'Privacy', url: '/privacy' },
+    ]
+  },
+]
 
 export const team: TeamMember[] = [
   {
