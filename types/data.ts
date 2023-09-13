@@ -39,3 +39,10 @@ export interface Outlet {
 //     apps: App[];
 //   }[];
 // }
+
+export interface TeamMember {
+  name: string;
+  position: string;
+  picture: StaticImageData | string;
+  bio: string;
+}
