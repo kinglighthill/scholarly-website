@@ -8,77 +8,39 @@ import instagram from '../../public/instagram.svg';
 import whatsapp from '../../public/whatsapp.svg';
 import classes from '../../styles/components/Footer.module.css';
 import CustomLink from '../reusables/CustomLink';
+import { footerMenu } from '../../data';
+import { FooterMenu as IFooterMenu } from '../../types/data';
+
+function FooterMenu({ menu }: { menu: IFooterMenu}) {
+  const { title, items } = menu;
+  return (
+    <AccordionItem mb={7} pb={10} className={classes.accordion_item}>
+      <h2>
+        <AccordionButton p={0} _hover={{bg: 'none'}}>
+          <Box flex='1' textAlign='left' color='white' fontSize={20}>{title}</Box>
+          <AccordionIcon textAlign='right' color='white' />
+        </AccordionButton>
+      </h2>
+      <AccordionPanel pt={5} pb={0} px={0}>
+        <List spacing={6} color='white' fontWeight='light'>
+          {items.map(({ name, url }) => (
+            <ListItem key={name+url}>
+              <CustomLink href={url} prefetch={false}>{name}</CustomLink>
+            </ListItem> 
+          ))}
+        </List>
+      </AccordionPanel>
+    </AccordionItem>
+  )
+}
 
 export default function MobileFooter() {
   return (
     <>
       <Accordion w='full' mb={6} allowMultiple defaultIndex={[0]} className={classes.accordion}>
-        <AccordionItem mb={7} pb={10} className={classes.accordion_item}>
-          <h2>
-            <AccordionButton p={0} _hover={{bg: 'none'}}>
-              <Box flex='1' textAlign='left' color='white' fontSize={20}>Products</Box>
-              <AccordionIcon textAlign='right' color='white' />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pt={5} pb={0} px={0}>
-            <List spacing={6} color='white' fontWeight='light'>
-              <ListItem>
-                <CustomLink href='/apps/android' prefetch={false}>Mobile Apps</CustomLink>
-              </ListItem> 
-              <ListItem>
-                <CustomLink href='/apps/desktop' prefetch={false}>Desktop Apps</CustomLink>
-              </ListItem> 
-              <ListItem>
-                <CustomLink href='/affiliates' prefetch={false}>Affiliates App</CustomLink>
-              </ListItem> 
-              <ListItem>
-                <CustomLink href='/business' prefetch={false}>Enterprise Software</CustomLink>
-              </ListItem> 
-            </List>
-          </AccordionPanel>
-        </AccordionItem>
-        
-        <AccordionItem mb={7} pb={10} className={classes.accordion_item}>
-          <h2>
-            <AccordionButton p={0} _hover={{bg: 'none'}}>
-              <Box flex='1' textAlign='left' color='white' fontSize={20}>Company</Box>
-              <AccordionIcon textAlign='right' color='white' />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pt={5} pb={0} px={0}>
-            <List spacing={6} color='white' fontWeight='light'>
-              <ListItem>
-                <CustomLink href='/about' prefetch={false}>About</CustomLink>
-              </ListItem> 
-              <ListItem>
-                <CustomLink href='/faqs' prefetch={false}>FAQs</CustomLink>
-              </ListItem> 
-              <ListItem>
-                <CustomLink href='/contact-us' prefetch={false}>Contact us</CustomLink>
-              </ListItem> 
-            </List>
-          </AccordionPanel>
-        </AccordionItem>
-        
-        <AccordionItem mb={7} pb={10} className={classes.accordion_item}>
-          <h2>
-            <AccordionButton p={0} _hover={{bg: 'none'}}>
-              <Box flex='1' textAlign='left' color='white' fontSize={20}>Legal</Box>
-              <AccordionIcon textAlign='right' color='white' />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pt={5} pb={0} px={0}>
-            <List spacing={6} color='white' fontWeight='light'>
-              <ListItem>
-                <CustomLink href='/terms' prefetch={false}>Terms</CustomLink>
-              </ListItem> 
-              <ListItem>
-                <CustomLink href='/privacy' prefetch={false}>Privacy</CustomLink>
-              </ListItem> 
-            </List>
-          </AccordionPanel>
-        </AccordionItem>
-        
+        {footerMenu.map(menu => (
+          <FooterMenu key={menu.title} menu={menu} />
+        ))}
         <AccordionItem pb={9} className={classes.accordion_item}>
           <h2>
             <AccordionButton p={0} _hover={{bg: 'none'}}>
