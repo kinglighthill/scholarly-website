@@ -10,7 +10,16 @@
 import sales_outlet1 from "./public/sales_outlet1.webp";
 import sales_outlet2 from "./public/sales_outlet2.webp";
 import sales_outlet3 from "./public/sales_outlet3.webp";
-import { Outlet, Statistic } from "./types/data";
+import { FooterMenu, Outlet, Statistic } from "./types/data";
+import uche_umeh from './public/uche_umeh.webp';
+import kingsley_ugwudinso from './public/kingsley_ugwudinso.webp';
+import chinonso_umeh from './public/chinonso_umeh.webp';
+import chukwuamaka_osuji from './public/chukwuamaka_osuji.webp';
+import john_uzodinma from './public/john_uzodinma.webp';
+import iheme_tobechukwu from './public/iheme_tobechukwu.webp';
+import ebuka_okoli from './public/ebuka_okoli.webp';
+import lilian_onyeneke from './public/lilian_onyeneke.webp';
+import { TeamMember } from './types/data';
 
 export const statistics: Statistic[] = [
   { title: 'Apps', value: '30+' },
@@ -105,3 +114,82 @@ export const lgas: string[] = ['Mushin', 'Victoria Island', 'Owerri West'];
 //     },
 //   ]
 // }
+
+export const footerMenu: FooterMenu[] = [
+  {
+    title: 'Products',
+    items: [
+      { name: 'Mobile Apps', url: '/apps/android' },
+      { name: 'Desktop Apps', url: '/apps/desktop' },
+      { name: 'Affiliate App', url: '/affiliates' },
+      { name: 'Enterprise Software', url: '/business' }
+    ]
+  },
+  {
+    title: 'Company',
+    items: [
+      { name: 'About', url: '/about' },
+      { name: 'Our Team', url: '/team' },
+      { name: 'FAQs', url: '/faqs' },
+      { name: 'Contact us', url: '/contact-us' },
+    ]
+  },
+  {
+    title: 'Legal',
+    items: [
+      { name: 'Terms', url: '/terms' },
+      { name: 'Privacy', url: '/privacy' },
+    ]
+  },
+]
+
+export const team: TeamMember[] = [
+  {
+    name: 'Uche Umeh',
+    position: 'Co-Founder & CEO',
+    picture: uche_umeh,
+    bio: "Building Scholarly."
+  },
+  {
+    name: 'Kingsley Ugwudinso',
+    position: 'Co-Founder & CTO',
+    picture: kingsley_ugwudinso,
+    bio: "Building Scholarly."
+  },
+  {
+    name: 'Chinonso Umeh',
+    position: 'Product Designer',
+    picture: chinonso_umeh,
+    bio: "Chinonso is a product designer and no-code developer. He is passionate about creating beautiful user-centered products that solve real-world problems. With a focus on user experience and interaction design, Chinonso works closely with cross-functional teams to bring products to life that are both useful and enjoyable to use. In his spare time, Nonso enjoys exploring new technologies, learning about different cultures, and creating content."
+  },
+  {
+    name: 'Chukwuamaka Osuji',
+    position: 'Frontend Engineer',
+    picture: chukwuamaka_osuji,
+    bio: "Chukwuamaka is a Software Developer with experience building applications and bringing visually appealing interfaces to life. As you might have guessed, he specializes in Frontend Engineering. He loves everything frontend but also likes to dabble in other areas of software development from time to time. He has a keen eye for details, a zest for learning, and passion for providing great user experiences and using technology to provide solutions to problems and drive positive impact."
+  },
+  {
+    name: 'John Uzodinma',
+    position: 'Software Engineer',
+    picture: john_uzodinma,
+    bio: "John is an adept Software Developer driven by a passion for creating innovative solutions to complex challenges. He is proficient in Java and dedicated to pushing the boundaries of what is possible in the tech ecosystem. With years of hands-on experience in software development, he has honed his skills in designing, implementing, and optimizing software systems that deliver impactful results. He is presently delving into the realm of Cloud Technology and excited by its potential to revolutionize software development and deployment. This reflects his commitment to lifelong learning and his desire to remain at the forefront of technological advancement."
+  },
+  {
+    name: 'Iheme Tobechukwu',
+    position: 'Android Engineer',
+    picture: iheme_tobechukwu,
+    bio: "Tobechukwu is a Computer Science graduate and Software Engineer. He specializes in the design and development of mobile applications and software alike and also has a deep interest in machine learning. His hobbies are playing video games and the guitar."
+  },
+  {
+    name: 'Okoli Ebuka Leyon',
+    position: 'Sales and Marketing Manager',
+    picture: ebuka_okoli,
+    bio: "Leyon is a result-driven Sales and Marketing Manager with a proven track record of driving revenue growth and expanding market presence. With some years of experience in the industry, he has excelled at developing and executing strategic sales and marketing initiatives that deliver measurable results. Leyon's expertise lies in crafting innovative marketing campaigns, identifying target markets, and leveraging data-driven insights to optimize sales processes. He is known for his exceptional leadership skills and his ability to drive cross-functional teams to exceed sales targets and achieve marketing goals."
+  },
+  {
+    name: 'Lilian Onyeneke',
+    position: 'Customer Support',
+    picture: lilian_onyeneke,
+    bio: "Lorem ipsum dolor sit amet consectetur. Vitae nunc platea scelerisque facilisis ut tincidunt sit odio quis. At faucibus nisl malesuada mollis tempor quis quis. Dui fermentum orci placerat dui netus consectetur arcu etiam mi. Id maecenas non amet egestas. Et enim hac cursus ultricies egestas fringilla magna pellentesque. Proin vulputate mattis sed aliquet felis placerat. Augue arcu varius porta metus. Velit viverra purus pulvinar tincidunt platea blandit. Est vestibulum id elit magna diam. Sem egestas in dictumst purus ridiculus pharetra proin eros. Libero rutrum condimentum suspendisse tincidunt eu eget risus."
+  },
+]

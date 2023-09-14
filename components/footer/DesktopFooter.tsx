@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { Box, HStack, Flex, Link as ChakraLink, Spacer, Text, VStack, Icon } from '@chakra-ui/react';
 import { PhoneIcon, AtSymbolIcon } from '@heroicons/react/outline';
 import CustomLink from '../reusables/CustomLink';
-import FooterMenu from './FooterMenu';
 import classes from '../../styles/components/Footer.module.css';
 import scholarly_logo2 from '../../public/scholarly_logo2.svg';
 import facebook from '../../public/facebook.svg';
@@ -10,6 +9,24 @@ import twitter from '../../public/twitter.svg';
 import linkedin from '../../public/linkedin.svg';
 import instagram from '../../public/instagram.svg';
 import whatsapp from '../../public/whatsapp.svg';
+import { footerMenu } from '../../data';
+import { FooterMenu as IFooterMenu } from '../../types/data';
+
+function FooterMenu({ menu }: { menu: IFooterMenu}) {
+  const { title, items } = menu;
+  return (
+    <Box color='white'>
+      <Box as='h2' fontWeight='medium' mb={5}>{title}</Box>
+      <VStack spacing={4} align='start'>
+        {items.map(item => (
+          <Text key={item.name+item.url} fontWeight='light'>
+            <CustomLink href={item.url} prefetch={false}>{item.name}</CustomLink>
+          </Text>
+        ))}
+      </VStack>
+    </Box>
+  )
+}
 
 export default function DesktopFooter() {
   return (
@@ -21,31 +38,10 @@ export default function DesktopFooter() {
         </HStack>
       </CustomLink>
 
-      <Flex mb='50px'>
-        <FooterMenu title='Products'
-          items={[
-            { name: 'Mobile Apps', url: '/apps/android' },
-            { name: 'Desktop Apps', url: '/apps/desktop' },
-            { name: 'Affiliate Apps', url: '/affiliates' },
-            { name: 'Enterprise Software', url: '/business' }
-          ]}
-        />
-        <Spacer />
-        <FooterMenu title='Company'
-          items={[
-            { name: 'About', url: '/about' },
-            { name: 'FAQs', url: '/faqs' },
-            { name: 'Contact us', url: '/contact-us' },
-          ]}
-        />
-        <Spacer />
-        <FooterMenu title='Legal'
-          items={[
-            { name: 'Terms', url: '/terms' },
-            { name: 'Privacy', url: '/privacy' },
-          ]}
-        />
-        <Spacer />
+      <Flex mb='50px' justify='space-between'>
+        {footerMenu.map(menu => (
+          <FooterMenu key={menu.title} menu={menu} />
+        ))}
         <Box>
           <Box p='25px 14px' mb={4} borderRadius='30px 0' background='rgba(255,255,255,0.2)' maxW='273px'>
             <VStack spacing='26px'>

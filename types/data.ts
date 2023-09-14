@@ -39,3 +39,20 @@ export interface Outlet {
 //     apps: App[];
 //   }[];
 // }
+
+interface FooterMenuItem {
+  name: string;
+  url: string;
+}
+
+export interface FooterMenu {
+  title: string;
+  items: FooterMenuItem[];
+}
+
+export interface TeamMember {
+  name: string;
+  position: string;
+  picture: StaticImageData | string;
+  bio: string;
+}
