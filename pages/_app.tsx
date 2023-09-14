@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const reCaptchaKey = useMemo(() => process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string, [])
 
+  // For Meta Pixel
   useEffect(() => {
     // This pageview only triggers the first time (it's important for Pixel to have real information)
     fbq.pageview();
@@ -28,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
   
+  // For Google Analytics
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       gtag.pageview(url)
