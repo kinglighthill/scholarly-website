@@ -6,6 +6,7 @@ import ComingSoon from "../reusables/ComingSoon";
 import { AppsProps } from "../../types/components/apps/apps";
 import ContactForm from "../reusables/ContactForm";
 import CustomLink from "../reusables/CustomLink";
+import DownloadPrompt from "./DownloadPrompt";
 
 export default function Apps({ apps_info, activeTab }: AppsProps) {  
   if (activeTab === "desktop" || activeTab === "ios") {
@@ -42,7 +43,8 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                         >
                           <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} priority />
                         </CustomLink>
-                        <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.50'}} onClick={(e) => e.stopPropagation()}
+                        <DownloadPrompt download_link={app.download_link} />
+                        {/* <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.50'}} onClick={(e) => e.stopPropagation()}
                           display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium' verticalAlign='middle'
                           px={4} h={10} borderRadius={4} color='brand.lime.500' border='1px solid' borderColor='brand.lime.500' zIndex={1}
                         >
@@ -50,7 +52,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                           <Text as='span' ml={{base: 0, md: 3.5}} display='inline-flex'>
                             <Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />
                           </Text>
-                        </ChakraLink>
+                        </ChakraLink> */}
                       </VStack>
                     </GridItem>
                   ))}
@@ -76,7 +78,8 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                     >
                       <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} />
                     </CustomLink>
-                    <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.50'}} onClick={(e) => e.stopPropagation()}
+                    <DownloadPrompt download_link={app.download_link} />
+                    {/* <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.50'}} onClick={(e) => e.stopPropagation()}
                       display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium' verticalAlign='middle'
                       px={4} h={10} borderRadius={4} color='brand.lime.500' border='1px solid' borderColor='brand.lime.500' zIndex={1}
                     >
@@ -84,7 +87,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                       <Text as='span' ml={{base: 0, md: 3.5}} display='inline-flex'>
                         <Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />
                       </Text>
-                    </ChakraLink>
+                    </ChakraLink> */}
                   </VStack>
                 </GridItem>
               ))}
