@@ -14,6 +14,20 @@ const nextConfig = withBundleAnalyzer({
   },
   experimental: {
     scrollRestoration: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: '/jamb',
+        destination: '/jamb-utme',
+        permanent: true
+      },
+      {
+        source: '/waec',
+        destination: '/waec-ssce',
+        permanent: true
+      },
+    ]
   }
 })
 
