@@ -55,4 +55,5 @@ export interface TeamMember {
   position: string;
   picture: StaticImageData | string;
   bio: string;
+  duration: string;
 }

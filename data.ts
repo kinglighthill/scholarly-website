@@ -148,48 +148,56 @@ export const team: TeamMember[] = [
     name: 'Uche Umeh',
     position: 'Co-Founder & CEO',
     picture: uche_umeh,
-    bio: "Building Scholarly."
+    bio: "Uche is an innovative Co-founder with a Bachelor's degree in Electronics and Computer Engineering (First Class Honors) from the Federal University of Technology (FUTO) and recognized as an undergraduate scholar by PTDF LSS and FSB. With over four years of experience in software development for students, He has a deep understanding of their needs. His diverse skill set includes technical expertise and proficiency in sales, marketing, and management. Uche envisions revolutionizing the Edtech sector by creating solutions that empower students and educators through technology. At Scholarly, we are eager to collaborate with like-minded individuals who share a passion for innovation in education. Education is not a one-size-fits-all concept, and We are committed to creating solutions that cater to diverse learning styles and needs.",
+    duration: "January 2019 - Present"
   },
   {
     name: 'Kingsley Ugwudinso',
     position: 'Co-Founder & CTO',
     picture: kingsley_ugwudinso,
-    bio: "Building Scholarly."
+    bio: "Kingsley brings over four years of hands-on experience in developing and maintaining student-centric software, complemented by strong mathematical and analytical skills, and a knack for problem-solving. His academic background includes a First Class Honors Bachelor's degree in Electronics and Computer Engineering from the Federal University of Technology (FUTO), a testament to my dedication and commitment to excellence. Additionally, I've been recognized as a PTDF LSS undergraduate scholar. With the goal of leveraging his technical prowess and passion for problem-solving to create innovative solutions that enhance the educational experience, Kingsley is enthusiastic about collaborating with individuals who share a vision for driving positive change through technology in education.",
+    duration: "January 2019 - Present"
   },
   {
     name: 'Chinonso Umeh',
     position: 'Product Designer',
     picture: chinonso_umeh,
-    bio: "Chinonso is a product designer and no-code developer. He is passionate about creating beautiful user-centered products that solve real-world problems. With a focus on user experience and interaction design, Chinonso works closely with cross-functional teams to bring products to life that are both useful and enjoyable to use. In his spare time, Nonso enjoys exploring new technologies, learning about different cultures, and creating content."
-  },
-  {
-    name: 'Chukwuamaka Osuji',
-    position: 'Frontend Engineer',
-    picture: chukwuamaka_osuji,
-    bio: "Chukwuamaka is a Software Developer with experience building applications and bringing visually appealing interfaces to life. As you might have guessed, he specializes in Frontend Engineering. He loves everything frontend but also likes to dabble in other areas of software development from time to time. He has a keen eye for details, a zest for learning, and passion for providing great user experiences and using technology to provide solutions to problems and drive positive impact."
+    bio: "Chinonso is a product designer and no-code developer. He is passionate about creating beautiful user-centered products that solve real-world problems. With a focus on user experience and interaction design, Chinonso works closely with cross-functional teams to bring products to life that are both useful and enjoyable to use. In his spare time, Nonso enjoys exploring new technologies, learning about different cultures, and creating content.",
+    duration: "January 2021 - Present"
   },
   {
     name: 'John Uzodinma',
     position: 'Software Engineer',
     picture: john_uzodinma,
-    bio: "John is an adept Software Developer driven by a passion for creating innovative solutions to complex challenges. He is proficient in Java and dedicated to pushing the boundaries of what is possible in the tech ecosystem. With years of hands-on experience in software development, he has honed his skills in designing, implementing, and optimizing software systems that deliver impactful results. He is presently delving into the realm of Cloud Technology and excited by its potential to revolutionize software development and deployment. This reflects his commitment to lifelong learning and his desire to remain at the forefront of technological advancement."
+    bio: "John is an adept Software Developer driven by a passion for creating innovative solutions to complex challenges. He is proficient in Java and dedicated to pushing the boundaries of what is possible in the tech ecosystem. With years of hands-on experience in software development, he has honed his skills in designing, implementing, and optimizing software systems that deliver impactful results. He is presently delving into the realm of Cloud Technology and is excited by its potential to revolutionize software development and deployment. This reflects his commitment to lifelong learning and his desire to remain at the forefront of technological advancement.",
+    duration: "March 2022 - Present"
+  },
+  {
+    name: 'Chukwuamaka Osuji',
+    position: 'Frontend Engineer',
+    picture: chukwuamaka_osuji,
+    bio: "Chukwuamaka is a Software Developer with experience building applications and bringing visually appealing interfaces to life. As you might have guessed, he specializes in Frontend Engineering. He loves everything frontend but also likes to dabble in other areas of software development from time to time. He has a keen eye for details, a zest for learning, and a passion for providing great user experiences and using technology to provide solutions to problems and drive positive impact.",
+    duration: "June 2022 - Present"
   },
   {
     name: 'Iheme Tobechukwu',
     position: 'Android Engineer',
     picture: iheme_tobechukwu,
-    bio: "Tobechukwu is a Computer Science graduate and Software Engineer. He specializes in the design and development of mobile applications and software alike and also has a deep interest in machine learning. His hobbies are playing video games and the guitar."
-  },
-  {
-    name: 'Okoli Ebuka Leyon',
-    position: 'Sales and Marketing Manager',
-    picture: ebuka_okoli,
-    bio: "Leyon is a result-driven Sales and Marketing Manager with a proven track record of driving revenue growth and expanding market presence. With some years of experience in the industry, he has excelled at developing and executing strategic sales and marketing initiatives that deliver measurable results. Leyon's expertise lies in crafting innovative marketing campaigns, identifying target markets, and leveraging data-driven insights to optimize sales processes. He is known for his exceptional leadership skills and his ability to drive cross-functional teams to exceed sales targets and achieve marketing goals."
+    bio: "Tobechukwu is a Computer Science graduate and Software Engineer. He specializes in the design and development of mobile applications and software alike and also has a deep interest in machine learning. His hobbies are playing video games and the guitar.",
+    duration: "July 2022 - Present"
   },
   {
     name: 'Lilian Onyeneke',
     position: 'Customer Support',
     picture: lilian_onyeneke,
-    bio: "Lorem ipsum dolor sit amet consectetur. Vitae nunc platea scelerisque facilisis ut tincidunt sit odio quis. At faucibus nisl malesuada mollis tempor quis quis. Dui fermentum orci placerat dui netus consectetur arcu etiam mi. Id maecenas non amet egestas. Et enim hac cursus ultricies egestas fringilla magna pellentesque. Proin vulputate mattis sed aliquet felis placerat. Augue arcu varius porta metus. Velit viverra purus pulvinar tincidunt platea blandit. Est vestibulum id elit magna diam. Sem egestas in dictumst purus ridiculus pharetra proin eros. Libero rutrum condimentum suspendisse tincidunt eu eget risus."
+    bio: "Lilian is a graduate of Business Education from Nnamdi Azikiwe University, Awka. She also undertook a professional course on Customer Service Relation Management and Human Resources. She proudly serves as a Customer Care Representative at Scholarly Educational Software Limited. Her mission is to ensure exceptional customer experiences by actively listening to Scholarly's valued clients, gathering their feedback, and translating it into actions that exceed their expectations. She thrives on resolving inquiries, fostering trust, and contributing to the organization's growth. Together with our customers, She's dedicated to creating a brighter educational experience.",
+    duration: "July 2023 - Present"
+  },
+  {
+    name: 'Okoli Ebuka Leyon',
+    position: 'Sales and Marketing Manager',
+    picture: ebuka_okoli,
+    bio: "Leyon is a result-driven Sales and Marketing Manager with a proven track record of driving revenue growth and expanding market presence. With some years of experience in the industry, he has excelled at developing and executing strategic sales and marketing initiatives that deliver measurable results. Leyon's expertise lies in crafting innovative marketing campaigns, identifying target markets, and leveraging data-driven insights to optimize sales processes. He is known for his exceptional leadership skills and his ability to drive cross-functional teams to exceed sales targets and achieve marketing goals.",
+    duration: "August 2023 - Present"
   },
 ]

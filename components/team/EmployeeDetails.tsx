@@ -5,7 +5,7 @@ import { TeamMember } from "../../types/data";
 import Image from "next/image";
 
 export default function EmployeeDetails({ isOpen, onClose, employee }: ModalProps & {employee: TeamMember}) {
-  const { name, position, picture, bio } = employee;
+  const { name, position, picture, bio, duration } = employee;
   return (
     <Modal isOpen={isOpen} onClose={onClose} size='full' scrollBehavior="inside">
       <ModalOverlay />
@@ -25,6 +25,7 @@ export default function EmployeeDetails({ isOpen, onClose, employee }: ModalProp
               <VStack spacing={3} align='start'>
                 <Text color='brand.lime.700' fontSize='1.125rem' fontWeight='semibold'>{name}</Text>
                 <Text color='#798897' fontSize='0.875rem' fontWeight='medium' lineHeight={7}>{position}</Text>
+                <Text color='#798897' fontSize='0.875rem' fontWeight='medium' lineHeight={7}>{duration}</Text>
               </VStack>
             </VStack>
             <Text flexBasis={{base: '100%', md: '49%'}} color='brand.lime.700' fontSize='0.875rem' fontWeight='medium'
