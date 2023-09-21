@@ -5,7 +5,7 @@ import { TeamMember } from "../types/data";
 
 export default function useEmployeeDisclosure() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [employee, setEmployee] = useState<TeamMember>({name: '', position: '', picture: '', bio: ''});
+  const [employee, setEmployee] = useState<TeamMember>({name: '', position: '', picture: '', bio: '', duration: ''});
 
   const showEmployeeDetails: EmployeeCardProps['showEmployeeDetails'] = (employee) => {
     setEmployee(employee);
