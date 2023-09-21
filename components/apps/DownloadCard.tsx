@@ -26,8 +26,8 @@ export default function DownloadCard({ store_icon, platform, app_rating, app_ava
         </Box>
         <Text textAlign="center">Download for {platform}</Text>
         <Tooltip hasArrow label={app_availability ? undefined : 'App is currently unavailable on this platform'} bg='blue.600' shouldWrapChildren>
-          <Link passHref href={download_link ? download_link : '/apps/android'} onClick={handleLinkClick}>
-            <ChakraLink isExternal _hover={{textDecoration: 'none'}}>
+          <Link passHref href={download_link ? download_link : '/apps/android'}>
+            <ChakraLink isExternal _hover={{textDecoration: 'none'}} onClick={handleLinkClick}>
               <Button disabled={!app_availability} type="button" variant="solid" iconSpacing={{base: 0, md: 4}}
                 rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}
               >

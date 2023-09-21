@@ -62,8 +62,10 @@ export default function App({ appData }: AppProps) {
             <Text color="brand.lime.700" lineHeight="120%" fontSize={14} fontWeight="medium">{appData.description}</Text>
           </VStack>
         </Stack>
-        <Link passHref href={appData.download_link_android} onClick={handleLinkClick}>
-          <ChakraLink isExternal display={{base: 'none', lg: 'inline'}} _hover={{textDecoration: 'none'}}>
+        <Link passHref href={appData.download_link_android}>
+          <ChakraLink isExternal onClick={handleLinkClick}
+            display={{base: 'none', lg: 'inline'}} _hover={{textDecoration: 'none'}}
+          >
             <Button type="button" variant="solid" iconSpacing={{base: 0, md: 4}}
               rightIcon={<Icon display={{base: "none", md: "inline-block"}} as={DownloadIcon} />}
             >
@@ -88,10 +90,13 @@ export default function App({ appData }: AppProps) {
       {testimonials.length !== 0 &&
         <Box as='section' bg='brand.nearWhite' pt={{base: '60px', md: '82px'}} pb={{base: '60px', md: '115px'}}>
           <Box textAlign='center' mb={{base: '90px', md: 12}} px={{base: 5, md: 0}}>
-            <Text display='inline-block' textAlign='center' px='42px' py='10px' borderRadius={4} bgColor='brand.lime.700' color='brand.nearWhite'
-              fontSize={[20, 31]} fontWeight='medium' className='responsive_1440px'
+            <Text display='inline-block' color='brand.lime.700' textAlign='center'
+              fontStyle='italic' fontSize={[20, 25]} fontWeight='medium' className='responsive_1440px'
             >
               What people are saying
+              <svg xmlns="http://www.w3.org/2000/svg" width="303" height="13" viewBox="0 0 303 13" fill="none">
+                <path d="M0.132744 4.5638C6.13126 4.69707 21.3276 18.538 111.105 7.02917C200.883 -4.47965 259.702 4.32892 302.058 11.2714" stroke="#F8C343"/>
+              </svg>
             </Text>
           </Box>
           <Testimonials testimonials={testimonials} />
