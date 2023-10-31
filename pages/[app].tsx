@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       const response = await fetchContent(`getApps/apps/${params.app}`);
       const content = await response.json();
       // Pass content to the page via props  
-      return { props: { data: content.data } }
+      return { props: { data: content.data, app: params.app } }
     }
     catch (error) {
       console.log('An error occurred in the getStaticProps function: ' + error);
@@ -65,11 +65,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 const AppPage: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { data } = props;
+  const { data, app } = props;
   
   return (
     <Page title={`Scholarly Africa | ${data.name}`} description={data.description}>
-      <App appData={data} />
+      <App appData={data} name={app} />
     </Page>
   )
 }

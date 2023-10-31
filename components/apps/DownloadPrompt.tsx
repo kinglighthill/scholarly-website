@@ -12,7 +12,8 @@ export default function DownloadPrompt({ download_link }: { download_link: strin
       </MenuButton>
       <Portal>
         <MenuList zIndex={3} borderRadius={16} p={6} boxShadow='0px 0px 20px rgba(0, 0, 0, 0.15)'>
-          <MenuItem as='a' href={download_link} mb={6}>
+          {/* <MenuItem as='a' href={download_link} mb={6}> */}
+          <MenuItem as='a' href={`/api/download?fileName=${download_link}`} mb={6}>
             <HStack spacing={3.5} w='full'>
               <BoxWithPlaystoreIcon width={32} height={29} />
               <Box color='brand.green'>

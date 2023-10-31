@@ -16,4 +16,5 @@ export interface AppData {
 
 export interface AppProps {
   appData: AppData;
+  name: string
 }
