@@ -7,9 +7,10 @@ import { AppsProps } from "../../types/components/apps/apps";
 import ContactForm from "../reusables/ContactForm";
 import CustomLink from "../reusables/CustomLink";
 import DownloadPrompt from "./DownloadPrompt";
+import { AppMinified } from "../../types/components/apps/apps";
 
 export default function Apps({ apps_info, activeTab }: AppsProps) {
-  if (activeTab === "desktop" || activeTab === "ios") {
+  if (apps_info.length === 0) {
     return (
       <Box as="section">
         <MobileTabNavigation activeTab={activeTab} />
@@ -43,7 +44,17 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                         >
                           <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} priority />
                         </CustomLink>
-                        <DownloadPrompt download_link={app.path} />
+                        <DownloadPrompt app={
+                          {
+                            path: app.path,
+                            download_link_android: app.download_link_android,
+                            download_link_ios: app.download_link_ios,
+                            download_link_desktop: app.download_link_desktop,
+                            available_on_android: app.available_on_android,
+                            available_on_ios: app.available_on_ios,
+                            available_on_desktop: app.available_on_desktop
+                          }
+                        } />
                         {/* <DownloadPrompt download_link={app.download_link} /> */}
                         {/* <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.50'}} onClick={(e) => e.stopPropagation()}
                           display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium' verticalAlign='middle'
@@ -79,7 +90,17 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                     >
                       <Image src={app.icon_url} alt={app.name + 'Icon'} width={152} height={152} />
                     </CustomLink>
-                    <DownloadPrompt download_link={app.path} />
+                    <DownloadPrompt app={
+                      {
+                        path: app.path,
+                        download_link_android: app.download_link_android,
+                        download_link_ios: app.download_link_ios,
+                        download_link_desktop: app.download_link_desktop,
+                        available_on_android: app.available_on_android,
+                        available_on_ios: app.available_on_ios,
+                        available_on_desktop: app.available_on_desktop
+                      }
+                    } />
                     {/* <DownloadPrompt download_link={app.download_link} /> */}
                     {/* <ChakraLink href={app.download_link} isExternal _hover={{textDecoration: 'none', bg: 'brand.lime.50'}} onClick={(e) => e.stopPropagation()}
                       display='inline-flex' justifyContent='center' alignItems='center' fontWeight='medium' verticalAlign='middle'

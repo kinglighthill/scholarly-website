@@ -9,11 +9,24 @@ async function getDownloadUrl(fileName: string) {
     return downloadURL
 }
 
+function getAbsoluteFileName(fileName: string, platform: string): string {
+    switch (platform) {
+        case "ios":
+            return `${fileName}.ipa`
+        case "windows":
+            return `${fileName}.msi`
+        default:
+            return `${fileName}.apk`
+    }
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const fileName = req.query.fileName as string
+    const platform = req.query.platform as string || "android"
 
     try {
-        const downloadUrl = await getDownloadUrl(`${fileName}.apk`);
+        const absoluteFileName = getAbsoluteFileName(fileName, platform)
+        const downloadUrl = await getDownloadUrl(absoluteFileName);
         res.redirect(downloadUrl);
     } catch (error) {
         console.error('Error fetching download URL:', error);

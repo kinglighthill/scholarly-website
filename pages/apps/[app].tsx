@@ -26,7 +26,6 @@ export async function getStaticPaths() {
   try {
     const response = await fetchContent('getApps/apps');
     const content = await response.json();
-    // Get the paths we want to pre-render based on the app data
     const androidAppPaths = generateAppPaths(content.data.android);
     const iosAppPaths = generateAppPaths(content.data.ios);
     const desktopAppPaths = generateAppPaths(content.data.desktop);
@@ -58,7 +57,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       return { props: { data: content.data, app: params.app } }
     }
     catch (error) {
-      console.log('An error occurred in the getStaticProps function: ' + error);
+      console.log("Hi")
+      // console.log('An error occurred in the getStaticProps function: ' + error);
     }
   }
   return { props: { error: true } }

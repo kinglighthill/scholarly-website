@@ -13,6 +13,7 @@ import { DownloadIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import * as fbq from '../../lib/fpixel';
 import { useRouter } from "next/router";
+import DownloadPrompt from "./DownloadPrompt";
 
 export default function App({ appData, name }: AppProps) {
   const router = useRouter();
@@ -63,7 +64,7 @@ export default function App({ appData, name }: AppProps) {
           </VStack>
         </Stack>
         {/* <Link passHref href={appData.download_link_android}> */}
-        <Link passHref href={`/api/download?fileName=${name}`}>
+        {/*<Link passHref href={`/api/download?fileName=${name}`}>
           <ChakraLink isExternal onClick={handleLinkClick}
             display={{ base: 'none', lg: 'inline' }} _hover={{ textDecoration: 'none' }}
           >
@@ -73,19 +74,52 @@ export default function App({ appData, name }: AppProps) {
               Download
             </Button>
           </ChakraLink>
-        </Link>
+        </Link>*/}
+        <DownloadPrompt app={
+          {
+            path: name,
+            download_link_android: appData.download_link_android,
+            download_link_ios: appData.download_link_ios,
+            download_link_desktop: appData.download_link_desktop,
+            available_on_android: appData.available_on_android,
+            available_on_ios: appData.available_on_ios,
+            available_on_desktop: appData.available_on_desktop
+          }
+        } dark={true} />
       </Flex>
 
       {/* Download Section */}
       <Box as="section" pt={[6, 8]} pb={8} px={[5, 12, 12, "120px"]} bg={{ md: "linear-gradient(to bottom, white 50%, #FEF8E8 50%)" }}>
         <Stack direction={{ base: "column", md: "row" }} spacing={6} justify="center" className='responsive_1440px'>
           {/* <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android}
-            download_link={appData.download_link_android} handleLinkClick={handleLinkClick} */}
-          <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android}
-            download_link={`/api/download?fileName=${name}`} handleLinkClick={handleLinkClick}
-          />
-          {/* <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios} />
+            download_link={appData.download_link_android} handleLinkClick={handleLinkClick} 
+          <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios} />
           <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop} /> */}
+
+          {
+            appData.available_on_android
+              ? <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android}
+                download_link={`/api/download?fileName=${name}&platform=android`} handleLinkClick={handleLinkClick}
+              />
+              : <></>
+          }
+
+          {
+            appData.available_on_ios
+              ? <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios}
+                download_link={`/api/download?fileName=${name}&platform=ios`} handleLinkClick={handleLinkClick}
+              />
+              : <></>
+          }
+
+          {
+            appData.available_on_desktop
+              ? <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop}
+                download_link={`/api/download?fileName=${name}&platform=windows`} handleLinkClick={handleLinkClick}
+              />
+              : <></>
+          }
+
         </Stack>
       </Box>
 

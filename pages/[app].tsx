@@ -55,6 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       const response = await fetchContent(`getApps/apps/${params.app}`);
       const content = await response.json();
       // Pass content to the page via props  
+      // Pass content to the page via props  
       return { props: { data: content.data, app: params.app } }
     }
     catch (error) {
