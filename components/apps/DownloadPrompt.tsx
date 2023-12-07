@@ -8,7 +8,7 @@ function DownloadPrompt({ app, dark }: { app: AppMinified, dark: boolean }) {
     <Menu>
       {
         dark ?
-          <MenuButton as={Button} variant='solid' fontWeight='medium'
+          <MenuButton as={Button} variant='solid' fontWeight='medium' display={{base: "none", lg: "inline"}}
             rightIcon={<Icon display={{ base: "none", md: "inline-block" }} verticalAlign='middle' as={DownloadIcon} />}
           >
             Download

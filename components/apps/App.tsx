@@ -64,7 +64,7 @@ export default function App({ appData, name }: AppProps) {
           </VStack>
         </Stack>
         {/* <Link passHref href={appData.download_link_android}> */}
-        {/*<Link passHref href={`/api/download?fileName=${name}`}>
+        {/* <Link passHref href={`/api/download?fileName=${name}`}>
           <ChakraLink isExternal onClick={handleLinkClick}
             display={{ base: 'none', lg: 'inline' }} _hover={{ textDecoration: 'none' }}
           >
@@ -74,7 +74,7 @@ export default function App({ appData, name }: AppProps) {
               Download
             </Button>
           </ChakraLink>
-        </Link>*/}
+        </Link> */}
         <DownloadPrompt app={
           {
             path: name,
