@@ -36,7 +36,11 @@ const Team: NextPage = () => {
   }, [router.query.name])
 
   return (
-    <Page title='Meet the team at Scholarly Africa' description='Learn more about the people that make things happen at Scholarly Africa.'>
+    <Page title='Meet the team at Scholarly Africa' description='Learn more about the people that make things happen at Scholarly Africa.'
+      keywords={[
+        'Scholarly team', 'People at Scholarly', 'Humans at Scholarly', 'Meet our team'
+      ]}
+    >
       <Box as='section' px={{base: '4vw', lg: '9vw'}} py='60px'>
         <VStack spacing={1} align='start'>
           <Text as='h1' w='full' color='brand.lime.700' textAlign={['center', 'left']}

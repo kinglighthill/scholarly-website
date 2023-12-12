@@ -20,7 +20,7 @@ export default function PinSetup({ formData, updateFormData }: SignupLevelProps)
     <form>
       <VStack spacing={6} align="start">
         <FormControl isRequired>
-          <FormLabel htmlFor="pin" color="brand.lime.700" fontSize={13} fontWeight="medium" mb={2}>Pin</FormLabel>
+          <FormLabel htmlFor="app_lock_pin" color="brand.lime.700" fontSize={13} fontWeight="medium" mb={2}>Pin</FormLabel>
           <HStack spacing={4}>
             <PinInput mask={hidePin} id="app_lock_pin" value={authInfo.app_lock_pin} focusBorderColor="brand.lime.500" onChange={(value) => updateFormData("app_lock_pin", value)}>
               <PinInputField />
@@ -28,15 +28,15 @@ export default function PinSetup({ formData, updateFormData }: SignupLevelProps)
               <PinInputField />
               <PinInputField />
             </PinInput>
-            <Text cursor="pointer" fontSize={13} fontWeight="brand.lime.700" onClick={() => setHidePin(!hidePin)}>
+            <Text cursor="pointer" fontSize={13} onClick={() => setHidePin(!hidePin)}>
               {hidePin ? "Show" : "Hide"}
             </Text>
           </HStack>
         </FormControl>
         <FormControl isRequired isInvalid={!pinsMatch}>
-          <FormLabel htmlFor="confirm-pin" color="brand.lime.700" fontSize={13} fontWeight="medium" mb={2}>Confirm Pin</FormLabel>
+          <FormLabel htmlFor="confirm_app_lock_pin" color="brand.lime.700" fontSize={13} fontWeight="medium" mb={2}>Confirm Pin</FormLabel>
           <HStack spacing={4}>
-            <PinInput mask={hideConfirmPin} id="app_lock_pin" value={authInfo.confirm_app_lock_pin} focusBorderColor="brand.lime.500"
+            <PinInput mask={hideConfirmPin} id="confirm_app_lock_pin" value={authInfo.confirm_app_lock_pin} focusBorderColor="brand.lime.500"
               onChange={(value) => updateFormData("confirm_app_lock_pin", value)} onComplete={value => comparePins(value)}
             >
               <PinInputField borderColor={!pinsMatch ? "brand.red" : "inherit"}  />
@@ -44,7 +44,7 @@ export default function PinSetup({ formData, updateFormData }: SignupLevelProps)
               <PinInputField borderColor={!pinsMatch ? "brand.red" : "inherit"} />
               <PinInputField borderColor={!pinsMatch ? "brand.red" : "inherit"} />
             </PinInput>
-            <Text cursor="pointer" fontSize={13} fontWeight="brand.lime.700" onClick={() => setHideConfirmPin(!hideConfirmPin)}>
+            <Text cursor="pointer" fontSize={13} onClick={() => setHideConfirmPin(!hideConfirmPin)}>
               {hideConfirmPin ? "Show" : "Hide"}
             </Text>
           </HStack>

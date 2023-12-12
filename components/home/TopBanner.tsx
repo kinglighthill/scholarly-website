@@ -51,8 +51,8 @@ export default function TopBanner() {
           <Box display={{base: 'block', md: 'none'}} pos='absolute' top={['10%', '18%']} left={['7%', '13%']} zIndex={0}>
             <Image src={fan_blades} alt="" />
           </Box>
-          <Label labelText='BECE JHS' labelIcon={<BoxWithGESIcon/>} box={{top: ['2%', '6%', '6%', 160], right: {base: '50%', lg: 303}}} />
-          <Label labelText='WAEC' labelIcon={<BoxWithWaecIcon/>} box={{bottom: {base: '37%', md: '8%', lg: 5}, right: {base: '10%', md: 1}}} />
+          <Label labelText='BECE JHS' labelIcon={<BoxWithGESIcon/>} boxProps={{top: ['2%', '6%', '6%', 160], right: {base: '50%', lg: 303}}} />
+          <Label labelText='WAEC' labelIcon={<BoxWithWaecIcon/>} boxProps={{bottom: {base: '37%', md: '8%', lg: 5}, right: {base: '10%', md: 1}}} />
         </Box>
       </Flex>
     </Box>
