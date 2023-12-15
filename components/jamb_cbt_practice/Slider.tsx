@@ -33,6 +33,7 @@ export default function Slider() {
   const slider_items = slider_images.map((image, index) => (
     <Box key={`demo${index+1}`} fontSize={0}
       h={{base: activeIndex === index ? 213 : 175, md: activeIndex === index ? 333 : 290}}
+      
     >
       <Image src={image} alt="JAMB 2024 CBT App Demo" onDragStart={handleDragStart}
         objectFit='contain' layout="fill" height='100%'
