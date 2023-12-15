@@ -4,8 +4,8 @@ import { PersonalInfoState, SignupLevelProps } from '../../types/components/reus
 export default function PersonalInfo({ formData, updateFormData }: SignupLevelProps) {
   const personalInfo = formData as PersonalInfoState;
 
-  const handleChange = (e: React.ChangeEvent) => {
-    updateFormData((e.target as HTMLInputElement).name, (e.target as HTMLInputElement).value)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    updateFormData(e.target.name, e.target.value)
   }
 
   const validateDate = () => {
