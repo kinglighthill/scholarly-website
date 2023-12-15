@@ -2,8 +2,9 @@ import { Box, Flex, Icon, Text, VStack } from "@chakra-ui/react";
 import { DownloadIcon } from "@heroicons/react/outline";
 import CustomLink from "../reusables/CustomLink";
 import Slider from "./Slider";
+import { ChildrenWithDownloadButton } from "../../pages/jamb-cbt-practice-software-2024";
 
-export default function Banner() {
+export default function Banner({ trackDownloadClick }: ChildrenWithDownloadButton) {
   return (
     <Box as='section' bg='brand.nearWhite' px={{base: 5, md: 0}} py={{base: '82px', md: '120px'}}>
       <Flex justify='space-between' align='center' flexWrap={{base: 'wrap', md: 'nowrap'}} className='responsive_1440px'>
@@ -14,6 +15,7 @@ export default function Banner() {
           </Text>
           <CustomLink href="https://scholarly.africa/api/download?fileName=jamb-utme&platform=windows" type="button" variant="solid"
             h='76px' rounded='full' px={6} iconSpacing={4} rightIcon={<Icon as={DownloadIcon} boxSize='1.5em' />}
+            onClick={trackDownloadClick}
           >
             Download for Windows
           </CustomLink>
@@ -30,7 +32,6 @@ export default function Banner() {
           ></Box>
         </Box>
       </Flex>
-
     </Box>
   )
 }
