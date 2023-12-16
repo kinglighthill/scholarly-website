@@ -31,7 +31,7 @@ const IOSApps: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>
         'funaab past questions', 'NDA past questions', 'uniben past questions', 'rsust past questions', 'unical past questions', 'literature past questions', 'bece past questions', 'jhs past questions', 'neco past questions'
       ]}
     >
-      <Apps apps_info={data.ios} activeTab='ios' />
+      <Apps apps_info={data} activeTab='ios' />
     </Page>
   )
 }
