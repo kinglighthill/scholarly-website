@@ -46,6 +46,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                         </CustomLink>
                         <DownloadPrompt app={
                           {
+                            app_name: app.name,
                             path: app.path,
                             download_link_android: app.download_link_android,
                             download_link_ios: app.download_link_ios,
@@ -92,6 +93,7 @@ export default function Apps({ apps_info, activeTab }: AppsProps) {
                     </CustomLink>
                     <DownloadPrompt app={
                       {
+                        app_name: app.name,
                         path: app.path,
                         download_link_android: app.download_link_android,
                         download_link_ios: app.download_link_ios,

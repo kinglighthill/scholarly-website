@@ -11,9 +11,9 @@ import { AppProps } from "../../types/components/apps/app";
 import { TestimonialProps } from "../../types/components/reusables/testimonials";
 import { DownloadIcon } from "@heroicons/react/solid";
 import Link from "next/link";
-import * as fbq from '../../lib/fpixel';
 import { useRouter } from "next/router";
 import DownloadPrompt from "./DownloadPrompt";
+import { trackDownloadClick } from "../../utils";
 
 export default function App({ appData, name }: AppProps) {
   const router = useRouter();
@@ -22,10 +22,6 @@ export default function App({ appData, name }: AppProps) {
     const urlSecondHalf = appData.logo_url.split('exam_logos%2F')[1];
     const imageName = urlSecondHalf.slice(0, urlSecondHalf.indexOf('.'));
     return (imageName + ' Logo');
-  }
-
-  const handleLinkClick = () => {
-    fbq.customEvent('Download link click', { content_name: appData.name, content_ids: [router.query.app] })
   }
 
   const testimonials = appData.testimonials.map((testimonial: TestimonialProps, index: number) => (
@@ -63,9 +59,8 @@ export default function App({ appData, name }: AppProps) {
             <Text color="brand.lime.700" lineHeight="120%" fontSize={14} fontWeight="medium">{appData.description}</Text>
           </VStack>
         </Stack>
-        {/* <Link passHref href={appData.download_link_android}> */}
         {/*<Link passHref href={`/api/download?fileName=${name}`}>
-          <ChakraLink isExternal onClick={handleLinkClick}
+          <ChakraLink isExternal onClick={trackDownloadClick}
             display={{ base: 'none', lg: 'inline' }} _hover={{ textDecoration: 'none' }}
           >
             <Button type="button" variant="solid" iconSpacing={{ base: 0, md: 4 }}
@@ -75,51 +70,48 @@ export default function App({ appData, name }: AppProps) {
             </Button>
           </ChakraLink>
         </Link>*/}
-        <DownloadPrompt app={
-          {
-            path: name,
-            download_link_android: appData.download_link_android,
-            download_link_ios: appData.download_link_ios,
-            download_link_desktop: appData.download_link_desktop,
-            available_on_android: appData.available_on_android,
-            available_on_ios: appData.available_on_ios,
-            available_on_desktop: appData.available_on_desktop
-          }
-        } dark={true} />
+        <Box display={{ base: "none", md: "block" }}>
+          <DownloadPrompt
+            app={{
+              app_name: appData.name,
+              path: name,
+              download_link_android: appData.download_link_android,
+              download_link_ios: appData.download_link_ios,
+              download_link_desktop: appData.download_link_desktop,
+              available_on_android: appData.available_on_android,
+              available_on_ios: appData.available_on_ios,
+              available_on_desktop: appData.available_on_desktop
+            }} dark={true}
+          />
+        </Box>
       </Flex>
 
       {/* Download Section */}
       <Box as="section" pt={[6, 8]} pb={8} px={[5, 12, 12, "120px"]} bg={{ md: "linear-gradient(to bottom, white 50%, #FEF8E8 50%)" }}>
         <Stack direction={{ base: "column", md: "row" }} spacing={6} justify="center" className='responsive_1440px'>
-          {/* <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android}
-            download_link={appData.download_link_android} handleLinkClick={handleLinkClick} 
-          <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios} />
-          <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop} /> */}
-
           {
-            appData.available_on_android
-              ? <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android}
-                download_link={`/api/download?fileName=${name}&platform=android`} handleLinkClick={handleLinkClick}
+            appData.available_on_android &&
+              <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android}
+                download_link={`/api/download?fileName=${name}&platform=android`}
+                trackDownloadClick={() => trackDownloadClick(appData.name, "Android", "From Apps pages", [router.query.app as string])}
               />
-              : <></>
           }
 
           {
-            appData.available_on_ios
-              ? <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios}
-                download_link={`/api/download?fileName=${name}&platform=ios`} handleLinkClick={handleLinkClick}
+            appData.available_on_ios &&
+              <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios}
+                download_link={`/api/download?fileName=${name}&platform=ios`}
+                trackDownloadClick={() => trackDownloadClick(appData.name, "iOS", "From Apps pages", [router.query.app as string])}
               />
-              : <></>
           }
 
           {
-            appData.available_on_desktop
-              ? <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop}
-                download_link={`/api/download?fileName=${name}&platform=windows`} handleLinkClick={handleLinkClick}
+            appData.available_on_desktop &&
+              <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop}
+                download_link={`/api/download?fileName=${name}&platform=windows`}
+                trackDownloadClick={() => trackDownloadClick(appData.name, "Windows", "From Apps pages", [], 2024)}
               />
-              : <></>
           }
-
         </Stack>
       </Box>
 

@@ -15,6 +15,7 @@ export interface App {
 }
 
 export interface AppMinified {
+  app_name: string;
   path: string;
   download_link_android: string
   download_link_ios: string
