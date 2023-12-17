@@ -9,12 +9,21 @@ async function getDownloadUrl(fileName: string) {
     return downloadURL
 }
 
+const windowsFileName = (fileName: string): string => {
+    switch (fileName) {
+        case "jamb-utme":
+            return "Scholarly Jamb CBT"
+        default:
+            return fileName
+    }
+}
+
 function getAbsoluteFileName(fileName: string, platform: string): string {
     switch (platform) {
         case "ios":
             return `${fileName}.ipa`
         case "windows":
-            return `${fileName}.msi`
+            return `windows/${windowsFileName(fileName)}.msi`
         default:
             return `${fileName}.apk`
     }
@@ -24,12 +33,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const fileName = req.query.fileName as string
     const platform = req.query.platform as string || "android"
 
+    console.log("Filename: ", fileName)
+    console.log("Platform: ", platform)
+
     try {
         const absoluteFileName = getAbsoluteFileName(fileName, platform)
-        const downloadUrl = await getDownloadUrl(absoluteFileName);
+        console.log("Absolute Filename: ", absoluteFileName)
+        const downloadUrl = await getDownloadUrl(absoluteFileName)
+        console.log("Download Url: ", downloadUrl)
         res.redirect(downloadUrl);
     } catch (error) {
-        console.error('Error fetching download URL:', error);
+        console.error('Error fetching download URL:', error)
         res.redirect('/404')
     }
 }
