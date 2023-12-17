@@ -24,7 +24,7 @@ function DownloadPrompt({ app, dark }: { app: AppMinified, dark: boolean }) {
           {/* <MenuItem as='a' href={download_link} mb={6}> */}
           {
             app.available_on_android ?
-              <MenuItem as='a' href={`/api/download?fileName=${app.path}`} mb={6}>
+              <MenuItem as='a' href={`/api/download?fileName=${app.path}&platform=android`} mb={6}>
                 <HStack spacing={3.5} w='full'>
                   <BoxWithPlaystoreIcon width={32} height={29} />
                   <Box color='brand.green'>
@@ -33,7 +33,7 @@ function DownloadPrompt({ app, dark }: { app: AppMinified, dark: boolean }) {
                   </Box>
                 </HStack>
               </MenuItem>
-              : <MenuItem as='a' href={`/api/download?fileName=${app.path}&platform=android`} mb={6} disabled>
+              : <MenuItem as='a' href={`/apps/android`} mb={6} disabled>
                 <HStack spacing={3.5} w='full'>
                   <BoxWithPlaystoreIcon width={32} height={29} />
                   <Box color='brand.green'>
