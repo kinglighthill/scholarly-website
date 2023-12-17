@@ -20,7 +20,8 @@ export default function TopBanner({ openSignUp }: { openSignUp: () => void }) {
           Earn commission when you sell Scholarly app activation pins
         </Text>
         <Box maxW={{base: "150px", md: "177px"}}>
-          <GooglePlayDownloadBadge download_link="https://play.google.com/store/apps/details?id=com.scholarly.affiliate" width={177} height={52} />
+          {/* <GooglePlayDownloadBadge download_link="https://play.google.com/store/apps/details?id=com.scholarly.affiliate" width={177} height={52} /> */}
+          <GooglePlayDownloadBadge download_link="/api/download?fileName=partners-app/scholarly-affiliate&platform=android&is_partners_app=true" width={177} height={52} />
         </Box>
         {/* <Box w='full' textAlign={['left', 'center']}>
           <Text color='#A6B1AA' mb={2}>Affiliates Program currently unavailable</Text>

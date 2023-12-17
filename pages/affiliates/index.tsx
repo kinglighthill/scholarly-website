@@ -82,7 +82,8 @@ const Affiliates: NextPage = (props: InferGetStaticPropsType<typeof getStaticPro
           ))}
         </VStack>
         <Box maxW={{base: "150px", md: "177px"}} mx='auto'>
-          <GooglePlayDownloadBadge download_link="https://play.google.com/store/apps/details?id=com.scholarly.affiliate" width={177} height={52} />
+          {/* <GooglePlayDownloadBadge download_link="https://play.google.com/store/apps/details?id=com.scholarly.affiliate" width={177} height={52} /> */}
+          <GooglePlayDownloadBadge download_link="/api/download?fileName=partners-app/scholarly-affiliate&platform=android&is_partners_app=true" width={177} height={52} />
         </Box>
         {/* <HStack spacing={[4, 6]} justify='center'>
           <Button type="button" variant='solid' onClick={onOpen} iconSpacing={{md: 5}} rightIcon={<Icon as={ChevronRightIcon} display={['none', 'inline-block']} />}>

@@ -30,7 +30,8 @@ export default function Affiliates() {
               <Box flexBasis={{base: '100%', md: 'initial'}}>
                 <Text fontSize={20} fontWeight="bold" color="brand.lime.700">Sign up</Text>
                 <Text mt={2} color="brand.lime.700" mb={5}>Download the app to create an account.</Text>
-                <GooglePlayDownloadBadge download_link="https://play.google.com/store/apps/details?id=com.scholarly.affiliate" width={120} height={35} />
+                {/* <GooglePlayDownloadBadge download_link="https://play.google.com/store/apps/details?id=com.scholarly.affiliate" width={120} height={35} /> */}
+                <GooglePlayDownloadBadge download_link="/api/download?fileName=partners-app/scholarly-affiliate&platform=android&is_partners_app=true" width={177} height={52} />
                 {/* <Button type="button" variant="solid" mt={{base: 5, md: 7}} onClick={onOpen} iconSpacing={5} rightIcon={<Icon as={ChevronRightIcon} mt={0.5} />}>
                   Sign up
                 </Button> */}
