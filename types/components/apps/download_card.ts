@@ -6,5 +6,5 @@ export interface DownloadCardProps {
   app_rating: number;
   app_availability: boolean;
   download_link?: string;
-  handleLinkClick?: () => void;
+  trackDownloadClick?: () => void;
 }

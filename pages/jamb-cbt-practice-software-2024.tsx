@@ -6,12 +6,6 @@ import { TestimonialProps } from "../types/components/reusables/testimonials";
 import { fetchContent } from "../services/fetch_content.service";
 import AppFeatures from "../components/jamb_cbt_practice/AppFeatures";
 import Banner from "../components/jamb_cbt_practice/Banner";
-import * as fbq from '../lib/fpixel';
-import * as gtag from '../lib/gtag';
-
-export interface ChildrenWithDownloadButton {
-  trackDownloadClick: () => void;
-}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
@@ -34,11 +28,6 @@ const JambCbtPracticeSoftware: NextPage = (props: InferGetStaticPropsType<typeof
       rating={testimonial.rating} profile_pic_sm={testimonial.profile_pic_sm} content={testimonial.content}
     />
   ));
-
-  const trackDownloadClick = () => {
-    fbq.customEvent('Download link click', { content_name: 'JAMB CBT Practice Software', content_ids: ['jamb-utme'] });
-    gtag.event('Download JAMB CBT Software', 'Downloads', 'Download JAMB CBT Software 2024', 2024);
-  }
   
   return (
     <Page title='2024 JAMB CBT Practice Software' description='Prepare for your JAMB exam with Scholarly JAMB CBT Practice Software. Over 1 million students use Scholarly apps to study for their exams.'
@@ -48,11 +37,11 @@ const JambCbtPracticeSoftware: NextPage = (props: InferGetStaticPropsType<typeof
       ]}
     >
       {/* Slider Section */}
-      <Banner trackDownloadClick={trackDownloadClick} />
+      <Banner />
 
       {/* Features Section */}
       <Box as='section'>
-        <AppFeatures trackDownloadClick={trackDownloadClick} />
+        <AppFeatures />
       </Box>
 
       {/* Testimonials Section */}

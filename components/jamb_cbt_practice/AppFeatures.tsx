@@ -7,7 +7,7 @@ import { DesktopComputerIcon } from "@heroicons/react/outline";
 import NotesIcon from "../../components/icons/NotesIcon";
 import NovelsIcon from "../../components/icons/NovelsIcon";
 import CustomLink from "../reusables/CustomLink";
-import { ChildrenWithDownloadButton } from "../../pages/jamb-cbt-practice-software-2024";
+import { trackDownloadClick } from "../../utils";
 
 const app_features: string[] = [
   "Up-to-date past and modelled questions", "CBT practice interface", "Built-in timer feature",
@@ -15,7 +15,7 @@ const app_features: string[] = [
   "JAMB and Literature Novels", "CBT mode, Study mode, Mock mode, and Game mode"
 ];
 
-export default function AppFeatures({ trackDownloadClick }: ChildrenWithDownloadButton) {
+export default function AppFeatures() {
   return (
     <Flex align='start' justify='space-between' flexDir={{base: 'column-reverse', md: 'row'}}
       gap={{base: 12, md: 0}} px={{base: 5, lg: '120px'}} py='60px' className='responsive_1440px'
@@ -92,7 +92,7 @@ export default function AppFeatures({ trackDownloadClick }: ChildrenWithDownload
         </VStack>
         <CustomLink href="https://scholarly.africa/api/download?fileName=jamb-utme&platform=windows" type="button" variant="solid"
           h='76px' rounded='full' px={6} iconSpacing={4} rightIcon={<Icon as={DownloadIcon} boxSize='1.5em' />}
-          onClick={trackDownloadClick}
+          onClick={() => trackDownloadClick("Scholarly JAMB CBT Practice App", "Windows", "From marketing campaign page", ["jamb-utme"], 2024)}
         >
           Download for Windows
         </CustomLink>

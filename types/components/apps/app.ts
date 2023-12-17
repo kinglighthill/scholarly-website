@@ -8,6 +8,8 @@ export interface AppData {
   countries: string[];
   description: string;
   download_link_android: string;
+  download_link_ios: string;
+  download_link_desktop: string;
   icon_url: string;
   logo_url: string;
   name: string;
@@ -16,4 +18,5 @@ export interface AppData {
 
 export interface AppProps {
   appData: AppData;
+  name: string
 }
