@@ -52,7 +52,7 @@ const FAQs: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
                 <Questions questions={data} category="student" color="255, 255, 255" />
               </TabPanel>
               <TabPanel p={0}>
-                <Questions questions={data} category="affiliate" color="255, 255, 255" />
+                <Questions questions={data} category="partner" color="255, 255, 255" />
               </TabPanel>
               <TabPanel p={0}>
                 <Questions questions={data} category="business" color="255, 255, 255" />
