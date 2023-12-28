@@ -27,7 +27,7 @@ export default function FAQs({ data }: { data: FAQ[]}) {
             <Questions questions={data} category="student" color="35, 61, 44" max={4} search={false} />
           </TabPanel>
           <TabPanel p={0}>
-            <Questions questions={data} category="affiliate" color="35, 61, 44" max={4} search={false} />
+            <Questions questions={data} category="partner" color="35, 61, 44" max={4} search={false} />
           </TabPanel>
           <TabPanel p={0}>
             <Questions questions={data} category="business" color="35, 61, 44" max={4} search={false}  />
