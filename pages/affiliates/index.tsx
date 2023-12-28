@@ -36,7 +36,7 @@ const steps: StepType[] = [
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const response = await fetchContent('getTestimonials/testimonials/affiliate');
+    const response = await fetchContent('getTestimonials/testimonials/partner');
     const content = await response.json();
     // Pass content to the page via props  
     return { props: { data: content.data } }
