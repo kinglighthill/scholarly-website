@@ -3,6 +3,8 @@ import Page from '../../components/reusables/Page';
 import App from '../../components/apps/App';
 import { fetchContent } from '../../services/fetch_content.service';
 import { Apps } from '../../types/components/apps/apps';
+import { useEffect } from 'react';
+import * as gtag from "../../lib/gtag";
 
 interface Path {
   params: { app: string },
@@ -65,11 +67,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 const AppPage: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { data, app } = props;
+  const { data, app: appPath } = props;
+
+  useEffect(() => {
+    if (appPath === "jamb-utme") {
+      gtag.triggerGoogleAdConversion();
+    }
+  }, [appPath]);
   
   return (
     <Page title={`Scholarly Africa | ${data.name}`} description={data.description}>
-      <App appData={data} name={app} />
+      <App appData={data} appPath={appPath} />
     </Page>
   )
 }

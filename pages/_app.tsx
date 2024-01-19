@@ -79,6 +79,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             gtag('config', '${gtag.GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });
+            gtag('config', '${gtag.ADS_TRACKING_ID});
           `,
         }}
       />
