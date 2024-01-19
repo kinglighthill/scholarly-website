@@ -15,7 +15,7 @@ import { useRouter } from "next/router";
 import DownloadPrompt from "./DownloadPrompt";
 import { trackDownloadClick } from "../../utils";
 
-export default function App({ appData, name }: AppProps) {
+export default function App({ appData, appPath }: AppProps) {
   const router = useRouter();
 
   const generateLogoAlt = () => {
@@ -74,7 +74,7 @@ export default function App({ appData, name }: AppProps) {
           <DownloadPrompt
             app={{
               app_name: appData.name,
-              path: name,
+              path: appPath,
               download_link_android: appData.download_link_android,
               download_link_ios: appData.download_link_ios,
               download_link_desktop: appData.download_link_desktop,

@@ -6,6 +6,8 @@ import { TestimonialProps } from "../types/components/reusables/testimonials";
 import { fetchContent } from "../services/fetch_content.service";
 import AppFeatures from "../components/jamb_cbt_practice/AppFeatures";
 import Banner from "../components/jamb_cbt_practice/Banner";
+import { useEffect } from "react";
+import * as gtag from "../lib/gtag";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
@@ -28,6 +30,10 @@ const JambCbtPracticeSoftware: NextPage = (props: InferGetStaticPropsType<typeof
       rating={testimonial.rating} profile_pic_sm={testimonial.profile_pic_sm} content={testimonial.content}
     />
   ));
+
+  useEffect(() => {
+    gtag.triggerGoogleAdConversion();
+  }, []);
   
   return (
     <Page title='2024 JAMB CBT Practice Software' description='Prepare for your JAMB exam with Scholarly JAMB CBT Practice Software. Over 1 million students use Scholarly apps to study for their exams.'
