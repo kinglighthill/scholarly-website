@@ -92,7 +92,7 @@ export default function App({ appData, appPath }: AppProps) {
           {
             appData.available_on_android &&
               <DownloadCard store_icon={playstore} platform="Android" app_rating={5} app_availability={appData.available_on_android}
-                download_link={`/api/download?fileName=${name}&platform=android`}
+                download_link={`/api/download?fileName=${appPath}&platform=android`}
                 trackDownloadClick={() => trackDownloadClick(appData.name, "Android", "From Apps pages", [router.query.app as string])}
               />
           }
@@ -100,7 +100,7 @@ export default function App({ appData, appPath }: AppProps) {
           {
             appData.available_on_ios &&
               <DownloadCard store_icon={appstore} platform="iOS" app_rating={5} app_availability={appData.available_on_ios}
-                download_link={`/api/download?fileName=${name}&platform=ios`}
+                download_link={`/api/download?fileName=${appPath}&platform=ios`}
                 trackDownloadClick={() => trackDownloadClick(appData.name, "iOS", "From Apps pages", [router.query.app as string])}
               />
           }
@@ -108,7 +108,7 @@ export default function App({ appData, appPath }: AppProps) {
           {
             appData.available_on_desktop &&
               <DownloadCard store_icon={windows} platform="Windows" app_rating={5} app_availability={appData.available_on_desktop}
-                download_link={`/api/download?fileName=${name}&platform=windows`}
+                download_link={`/api/download?fileName=${appPath}&platform=windows`}
                 trackDownloadClick={() => trackDownloadClick(appData.name, "Windows", "From Apps pages", [], 2024)}
               />
           }
