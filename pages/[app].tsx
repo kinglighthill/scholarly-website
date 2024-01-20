@@ -66,11 +66,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 const AppPage: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { data, app } = props;
+  const { data, app: appPath } = props;
   
   return (
     <Page title={`Scholarly Africa | ${data.name}`} description={data.description}>
-      <App appData={data} name={app} />
+      <App appData={data} appPath={appPath} />
     </Page>
   )
 }
