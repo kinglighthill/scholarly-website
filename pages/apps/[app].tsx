@@ -70,7 +70,7 @@ const AppPage: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>
   const { data, app: appPath } = props;
 
   useEffect(() => {
-    if (appPath === "jamb-utme") {
+    if (appPath === "jamb-utme" && typeof window !== "undefined") {
       gtag.triggerGoogleAdConversion();
     }
   }, [appPath]);
