@@ -32,7 +32,9 @@ const JambCbtPracticeSoftware: NextPage = (props: InferGetStaticPropsType<typeof
   ));
 
   useEffect(() => {
-    gtag.triggerGoogleAdConversion();
+    if (typeof window !== "undefined") {
+      gtag.triggerGoogleAdConversion();
+    }
   }, []);
   
   return (
