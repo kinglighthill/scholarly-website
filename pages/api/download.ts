@@ -2,13 +2,43 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import app from '../../config/conn';
 
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner"
+import { S3, S3Client, GetObjectCommand } from "@aws-sdk/client-s3"
+import AWS from "aws-sdk"
+
+AWS.config.update({
+    accessKeyId: process.env.SPACES_ACCESS_KEY,
+    secretAccessKey: process.env.SPACES_SECRET_KEY,
+    region: "us-east-1",
+})
+
+const s3 = new AWS.S3({
+    endpoint: "https://scholarly-website-assets.fra1.cdn.digitaloceanspaces.com",
+})
+
 async function getDownloadUrl(fileName: string, isPartnersApp: boolean) {
-    const storage = getStorage(app)
     const url = isPartnersApp ? fileName : `apps/${fileName}`
-    const fileRef = ref(storage, url)
-    const downloadURL = await getDownloadURL(fileRef)
-    return downloadURL
+
+    const params = {
+        Bucket: 'scholarly-website-assets',
+        Key: url,
+        Expires: 3600,
+    }
+
+    const signedUrl = s3.getSignedUrl('getObject', params)
+    return signedUrl.replace(
+        "scholarly-website-assets.scholarly-website-assets.fra1.cdn.digitaloceanspaces.com", 
+        "scholarly-website-assets.fra1.cdn.digitaloceanspaces.com"
+    )
 }
+
+// async function getDownloadUrl(fileName: string, isPartnersApp: boolean) {
+//     const storage = getStorage(app)
+//     const url = isPartnersApp ? fileName : `apps/${fileName}`
+//     const fileRef = ref(storage, url)
+//     const downloadURL = await getDownloadURL(fileRef)
+//     return downloadURL
+// }
 
 const windowsFileName = (fileName: string): string => {
     switch (fileName) {

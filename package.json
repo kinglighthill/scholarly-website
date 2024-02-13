@@ -11,10 +11,13 @@
     "deploy": "vercel"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.504.0",
+    "@aws-sdk/s3-request-presigner": "^3.504.0",
     "@chakra-ui/react": "2.3.5",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@heroicons/react": "^1.0.6",
+    "aws-sdk": "^2.1550.0",
     "firebase": "^10.5.2",
     "framer-motion": "^6.3.10",
     "global": "^4.4.0",
@@ -29,7 +32,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.3.1",
-    "@types/node": "17.0.36",
+    "@types/node": "^20.11.16",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
     "cross-env": "^7.0.3",
