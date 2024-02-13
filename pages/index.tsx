@@ -71,7 +71,7 @@ const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
         <Testimonials testimonials={testimonials} />
       </Box>
 
-      <Blog />
+{/*       <Blog /> */}
       <FAQs data={faqsData} />
     </Page>
   )
