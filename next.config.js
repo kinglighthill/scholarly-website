@@ -11,6 +11,7 @@ const nextConfig = withBundleAnalyzer({
   },
   images: {
     domains: ['play-lh.googleusercontent.com', 'firebasestorage.googleapis.com', 'blog.scholarly.africa'],
+    unoptimized: true,
   },
   experimental: {
     scrollRestoration: true,
