@@ -40,23 +40,37 @@ async function getDownloadUrl(fileName: string, isPartnersApp: boolean) {
 //     return downloadURL
 // }
 
+function transformPutmeName(fileName: string): string {
+  const parts = fileName.split("-");
+
+  if (parts[0] !== "putme" || parts.length < 2) {
+    throw new Error(`Invalid fileName format: ${fileName}`);
+  }
+
+  const uni = parts[1].toUpperCase();
+
+  return `Scholarly ${uni} Post Jamb CBT`;
+}
+
 const windowsFileName = (fileName: string): string => {
   switch (fileName) {
     case "jamb-utme":
-      return "Scholarly Jamb CBT";
+      return "Scholarly JAMB CBT";
+    case "waec-ssce":
+      return "Scholarly WAEC CBT";
     default:
-      return fileName;
+      return transformPutmeName(fileName);
   }
 };
 
 function getAbsoluteFileName(fileName: string, platform: string): string {
   switch (platform) {
     case "ios":
-      return `${fileName}.ipa`
+      return `${fileName}.ipa`;
     case "windows":
-      return `windows/${windowsFileName(fileName)}.msi`
+      return `windows/${windowsFileName(fileName)}.msi`;
     default:
-      return `android/${fileName}.apk`
+      return `android/${fileName}.apk`;
   }
 }
 
